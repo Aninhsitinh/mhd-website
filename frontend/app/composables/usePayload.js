@@ -38,6 +38,7 @@ export const usePayload = () => {
     return useFetch(`${payloadUrl}/${col}`, {
       params: query,
       key: cacheKey,
+      dedupe: 'defer',
       getCachedData: (key) => nuxtApp.payload.data[key] || nuxtApp.static.data[key],
       transform: (res) => (res?.docs ? res.docs.map(mapPayloadPost) : [])
     })
@@ -50,6 +51,7 @@ export const usePayload = () => {
     return useFetch(`${payloadUrl}/${col}`, {
       params: { 'where[slug][equals]': slug, limit: 1, depth: 1 },
       key: cacheKey,
+      dedupe: 'defer',
       getCachedData: (key) => nuxtApp.payload.data[key] || nuxtApp.static.data[key],
       transform: (res) => (res?.docs?.length > 0 ? mapPayloadPost(res.docs[0]) : null)
     })
