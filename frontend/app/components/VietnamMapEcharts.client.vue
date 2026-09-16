@@ -160,14 +160,12 @@ const handleResize = () => {
   })
 }
 
-onMounted(async () => {
-  if (!process.client) return
-  
-  await nextTick()
+let observer = null
+
+const initChart = () => {
+  if (!chartRef.value || chart) return
   
   try {
-    if (!chartRef.value) throw new Error("chartRef is null even after nextTick");
-    
     // Register Vietnam Map
     echarts.registerMap('VN', vietnamGeoJson)
     
@@ -256,9 +254,35 @@ onMounted(async () => {
   } catch (err) {
     errorMsg.value = err.message || err.toString()
   }
+}
+
+onMounted(async () => {
+  if (!process.client) return
+  await nextTick()
+
+  if (typeof IntersectionObserver !== 'undefined' && chartRef.value) {
+    observer = new IntersectionObserver((entries) => {
+      const entry = entries[0]
+      if (entry && entry.isIntersecting) {
+        initChart()
+        if (observer) {
+          observer.disconnect()
+          observer = null
+        }
+      }
+    }, { rootMargin: '200px' })
+
+    observer.observe(chartRef.value)
+  } else {
+    initChart()
+  }
 })
 
 onUnmounted(() => {
+  if (observer) {
+    observer.disconnect()
+    observer = null
+  }
   if (chart) {
     chart.dispose()
     chart = null

@@ -76,6 +76,7 @@ export const Posts: CollectionConfig = {
       name: 'status',
       type: 'select',
       defaultValue: 'published',
+      index: true,
       options: [
         { label: 'Nháp', value: 'draft' },
         { label: 'Đã xuất bản', value: 'published' },
@@ -88,6 +89,7 @@ export const Posts: CollectionConfig = {
     {
       name: 'publishedDate',
       type: 'date',
+      index: true,
       label: 'Ngày xuất bản',
       admin: {
         position: 'sidebar',
