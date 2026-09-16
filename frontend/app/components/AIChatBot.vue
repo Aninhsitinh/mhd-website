@@ -1,9 +1,12 @@
 <template>
-  <div class="fixed bottom-40 right-6 z-40 flex flex-col items-end print:hidden">
+  <div class="fixed bottom-36 sm:bottom-40 right-4 sm:right-6 z-40 flex flex-col items-end print:hidden">
     
-    <!-- Chat Window -->
+    <!-- Chat Window (Full-width bottom modal on mobile, sleek floating card on tablet/desktop) -->
     <Transition name="chat-window">
-      <div v-if="isOpen" class="mb-4 w-[350px] sm:w-[400px] h-[500px] bg-surface backdrop-blur-xl shadow-corporate-lg rounded-2xl flex flex-col overflow-hidden origin-bottom-right">
+      <div 
+        v-if="isOpen" 
+        class="fixed sm:absolute bottom-4 sm:bottom-16 right-3 sm:right-0 w-[calc(100vw-24px)] sm:w-[380px] md:w-[400px] h-[78vh] sm:h-[500px] max-h-[620px] bg-surface backdrop-blur-xl shadow-2xl rounded-2xl flex flex-col overflow-hidden origin-bottom-right z-50 border border-border/10"
+      >
         
         <!-- Header -->
         <div class="bg-primary p-4 flex justify-between items-center text-white">
