@@ -19,7 +19,7 @@
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
           <!-- Left Text Content (7 cols) -->
-          <div class="lg:col-span-7 reveal-on-scroll">
+          <div class="lg:col-span-7">
             <div class="inline-flex items-center gap-2 px-3.5 py-1.5 mb-5 rounded-full bg-black/40 border border-white/15 backdrop-blur-md text-white text-[11px] font-mono font-bold tracking-wider uppercase">
               <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
               ĐỦ ĐIỀU KIỆN HÀNH NGHỀ THEO QUY ĐỊNH BỘ TÀI CHÍNH
@@ -48,8 +48,8 @@
           </div>
 
           <!-- Right Floating Stats Card (5 cols) - Semi-transparent Glass style to reveal background behind -->
-          <div class="lg:col-span-5 reveal-right">
-            <div class="bg-surface/90 dark:bg-surface/80 backdrop-blur-2xl rounded-2xl p-4 sm:p-6 lg:p-7 shadow-2xl space-y-4 sm:space-y-5 border border-white/20">
+          <div class="lg:col-span-5 w-full">
+            <div class="bg-surface/90 dark:bg-surface/80 backdrop-blur-2xl rounded-2xl p-5 sm:p-6 lg:p-7 shadow-2xl space-y-4 sm:space-y-5 border border-white/20 w-full">
               <div class="flex items-center justify-between pb-1">
                 <span class="text-[10px] sm:text-[11px] font-mono font-bold uppercase tracking-wider text-primary">BẢO CHỨNG NĂNG LỰC</span>
                 <span class="text-[9px] sm:text-[10px] text-text-muted font-mono">Dữ liệu lũy kế</span>
