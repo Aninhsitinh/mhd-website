@@ -96,11 +96,6 @@ export default defineNuxtConfig({
   },
   nitro: {
     compressPublicAssets: true, // Enables Gzip & Brotli pre-compression for all static assets
-  },
-  router: {
-    options: {
-      linkPrefetchedClass: 'nuxt-link-prefetched'
-    }
   }
 })
 
