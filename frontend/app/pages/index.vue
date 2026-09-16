@@ -302,40 +302,46 @@
           </p>
         </div>
 
-        <!-- Terminal Tab Selector Pills (With Icons & Active Polish) -->
-        <div class="flex items-center justify-start md:justify-center gap-2.5 overflow-x-auto pb-4 mb-10 no-scrollbar reveal-on-scroll">
+        <!-- Terminal Tab Selector (2-Col Grid on Mobile for Instant Access, Centered Row on Desktop) -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:flex md:items-center md:justify-center gap-2 md:gap-2.5 mb-6 md:mb-10 reveal-on-scroll">
           <button
             v-for="(service, idx) in services"
             :key="idx"
             @click="activeTerminalIndex = idx"
-            class="px-5 py-3 rounded-full text-xs font-bold uppercase tracking-wider whitespace-nowrap transition-all duration-300 flex items-center gap-2.5 shadow-sm"
-            :class="activeTerminalIndex === idx ? 'bg-primary text-white shadow-corporate hover:shadow-corporate-hover -translate-y-0.5' : 'bg-surface text-text-secondary hover:text-text hover:bg-surface-muted hover:-translate-y-0.5'"
+            class="w-full md:w-auto px-2.5 sm:px-4 md:px-5 py-2.5 md:py-3 rounded-xl md:rounded-full text-[11px] sm:text-xs font-bold uppercase tracking-wider transition-all duration-300 flex items-center justify-start md:justify-center gap-2 shadow-sm text-left md:text-center min-h-[46px] md:min-h-0"
+            :class="activeTerminalIndex === idx ? 'bg-primary text-white shadow-corporate hover:shadow-corporate-hover -translate-y-0.5 ring-1 ring-primary' : 'bg-surface text-text-secondary hover:text-text hover:bg-surface-muted hover:-translate-y-0.5'"
           >
             <!-- SVG Icon dynamically matching each asset type -->
-            <svg v-if="service.icon === 'home'" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-            </svg>
-            <svg v-else-if="service.icon === 'truck'" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-            </svg>
-            <svg v-else-if="service.icon === 'chart'" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-            </svg>
-            <svg v-else-if="service.icon === 'building'" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-            </svg>
-            <svg v-else-if="service.icon === 'star'" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
-            </svg>
-            <svg v-else xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-            </svg>
-            <span>{{ service.title }}</span>
+            <span class="shrink-0 w-4 h-4 flex items-center justify-center">
+              <svg v-if="service.icon === 'home'" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+              </svg>
+              <svg v-else-if="service.icon === 'truck'" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+              </svg>
+              <svg v-else-if="service.icon === 'chart'" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+              </svg>
+              <svg v-else-if="service.icon === 'building'" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+              </svg>
+              <svg v-else-if="service.icon === 'star'" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+              </svg>
+              <svg v-else xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+              </svg>
+            </span>
+            <span class="leading-tight line-clamp-2 md:line-clamp-none">{{ service.title }}</span>
           </button>
         </div>
 
         <!-- Terminal Active Asset Card View (Two-Column Interactive Showcase) -->
-        <div class="bg-surface rounded-3xl p-6 sm:p-8 lg:p-10 shadow-2xl reveal-on-scroll relative overflow-hidden transition-all duration-500">
+        <div 
+          class="bg-surface rounded-3xl p-5 sm:p-8 lg:p-10 shadow-2xl reveal-on-scroll relative overflow-hidden transition-all duration-500"
+          @touchstart="handleTouchStart"
+          @touchend="handleTouchEnd"
+        >
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
             
             <!-- Left: High-Res Asset Media & Visual Indicator (6 cols) -->
@@ -347,15 +353,37 @@
               />
               <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent"></div>
               
-              <div class="absolute top-4 left-4">
+              <div class="absolute top-4 left-4 right-4 flex items-center justify-between z-10">
                 <span class="px-3 py-1.5 bg-black/60 backdrop-blur-md text-white text-[11px] font-mono font-bold uppercase tracking-wider rounded-full shadow-sm">
                   Danh mục 0{{ activeTerminalIndex + 1 }} / 06
                 </span>
+
+                <!-- Quick Step Navigation for Mobile Thumb Control -->
+                <div class="flex items-center gap-1.5 md:hidden">
+                  <button 
+                    @click.stop="prevTerminal"
+                    class="w-8 h-8 rounded-full bg-black/60 backdrop-blur-md text-white flex items-center justify-center hover:bg-primary active:scale-90 transition-all shadow-sm"
+                    aria-label="Danh mục trước"
+                  >
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7" />
+                    </svg>
+                  </button>
+                  <button 
+                    @click.stop="nextTerminal"
+                    class="w-8 h-8 rounded-full bg-black/60 backdrop-blur-md text-white flex items-center justify-center hover:bg-primary active:scale-90 transition-all shadow-sm"
+                    aria-label="Danh mục kế tiếp"
+                  >
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </button>
+                </div>
               </div>
 
-              <div class="absolute bottom-5 left-5 right-5 text-white">
-                <span class="text-[11px] font-mono text-primary font-bold uppercase tracking-wider block mb-1">Quy chuẩn thẩm định áp dụng</span>
-                <h3 class="text-2xl md:text-3xl font-bold font-display text-white">
+              <div class="absolute bottom-4 sm:bottom-5 left-4 sm:left-5 right-4 sm:right-5 text-white">
+                <span class="text-[10px] sm:text-[11px] font-mono text-primary font-bold uppercase tracking-wider block mb-1">Quy chuẩn thẩm định áp dụng</span>
+                <h3 class="text-xl sm:text-2xl md:text-3xl font-bold font-display text-white">
                   {{ services[activeTerminalIndex].title }}
                 </h3>
               </div>
@@ -413,6 +441,18 @@
                 >
                   <span>Gửi Hồ Sơ Định Giá</span>
                 </NuxtLink>
+              </div>
+
+              <!-- Mobile Dots Indicator -->
+              <div class="flex items-center justify-center gap-1.5 pt-2 md:hidden">
+                <button 
+                  v-for="(_, dotIdx) in services" 
+                  :key="dotIdx"
+                  @click="activeTerminalIndex = dotIdx"
+                  class="h-1.5 rounded-full transition-all duration-300"
+                  :class="activeTerminalIndex === dotIdx ? 'w-6 bg-primary' : 'w-1.5 bg-text-muted/30 hover:bg-text-muted/60'"
+                  :aria-label="`Chuyển sang danh mục 0${dotIdx + 1}`"
+                />
               </div>
 
             </div>
@@ -769,8 +809,37 @@ const { fetchPosts, fetchGlobal } = usePayload()
 // Fetch Global Site Settings (Hero Banner, Logos from Payload CMS)
 const { data: siteSettings } = await fetchGlobal('site-settings')
 
-// Active index for Terminal Interactive Tab
+// Active index & navigation for Terminal Interactive Tab
 const activeTerminalIndex = ref(0)
+
+const nextTerminal = () => {
+  activeTerminalIndex.value = (activeTerminalIndex.value + 1) % services.length
+}
+
+const prevTerminal = () => {
+  activeTerminalIndex.value = (activeTerminalIndex.value - 1 + services.length) % services.length
+}
+
+let touchStartX = 0
+let touchEndX = 0
+
+const handleTouchStart = (e) => {
+  if (e.changedTouches && e.changedTouches[0]) {
+    touchStartX = e.changedTouches[0].screenX
+  }
+}
+
+const handleTouchEnd = (e) => {
+  if (e.changedTouches && e.changedTouches[0]) {
+    touchEndX = e.changedTouches[0].screenX
+    const swipeThreshold = 50
+    if (touchEndX < touchStartX - swipeThreshold) {
+      nextTerminal()
+    } else if (touchEndX > touchStartX + swipeThreshold) {
+      prevTerminal()
+    }
+  }
+}
 
 // Fetch Team data (maintained for reference if needed)
 const { data: teamData } = await fetchPosts({ per_page: 20, sort: 'order' }, 'team')
