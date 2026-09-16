@@ -104,9 +104,22 @@
           </div>
         </div>
 
-        <!-- Loading Skeleton -->
+        <!-- Loading Skeleton with Shimmer -->
         <div v-if="pending && posts.length === 0" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div v-for="i in 6" :key="i" class="bg-surface rounded-3xl h-96 animate-pulse"></div>
+          <div v-for="i in 6" :key="i" class="bg-surface rounded-3xl overflow-hidden shadow-corporate skeleton-shimmer flex flex-col h-[400px]">
+            <div class="h-48 bg-bg/80 w-full"></div>
+            <div class="p-6 flex flex-col flex-grow justify-between space-y-4">
+              <div class="space-y-2.5">
+                <div class="h-3.5 bg-bg/80 rounded-md w-24"></div>
+                <div class="h-5 bg-bg/80 rounded-md w-11/12"></div>
+                <div class="h-5 bg-bg/80 rounded-md w-3/4"></div>
+              </div>
+              <div class="space-y-2">
+                <div class="h-3 bg-bg/80 rounded-md w-full"></div>
+                <div class="h-3 bg-bg/80 rounded-md w-4/5"></div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <!-- Posts Grid (Magazine Borderless Cards) -->

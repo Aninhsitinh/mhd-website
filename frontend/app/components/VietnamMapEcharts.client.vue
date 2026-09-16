@@ -163,8 +163,8 @@ const handleResize = () => {
 let observer = null
 
 const initChart = () => {
-  if (!chartRef.value || chart) return
-  
+  if (chart || !chartRef.value) return
+
   try {
     // Register Vietnam Map
     echarts.registerMap('VN', vietnamGeoJson)
@@ -260,20 +260,20 @@ onMounted(async () => {
   if (!process.client) return
   await nextTick()
 
-  if (typeof IntersectionObserver !== 'undefined' && chartRef.value) {
-    observer = new IntersectionObserver((entries) => {
-      const entry = entries[0]
-      if (entry && entry.isIntersecting) {
-        initChart()
-        if (observer) {
-          observer.disconnect()
-          observer = null
-        }
-      }
-    }, { rootMargin: '200px' })
+  if (!chartRef.value) return
 
+  // High performance: Only init ECharts when the user scrolls near the map section
+  if ('IntersectionObserver' in window) {
+    observer = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        initChart()
+        observer.disconnect()
+        observer = null
+      }
+    }, { rootMargin: '200px 0px' })
     observer.observe(chartRef.value)
   } else {
+    // Fallback for older browsers
     initChart()
   }
 })

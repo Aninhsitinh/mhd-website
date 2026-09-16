@@ -83,12 +83,26 @@
           </div>
         </div>
 
-        <!-- Loading Skeletons -->
+        <!-- Loading Skeletons with Shimmer -->
         <div v-if="pending && projects.length === 0" class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-          <div class="lg:col-span-5 space-y-4">
-            <div v-for="i in 5" :key="i" class="h-28 bg-surface rounded-2xl animate-pulse"></div>
+          <div class="lg:col-span-5 space-y-3">
+            <div v-for="i in 5" :key="i" class="p-4 rounded-2xl bg-surface/60 shadow-corporate skeleton-shimmer flex items-center gap-4">
+              <div class="w-20 h-20 rounded-xl bg-bg/80 shrink-0"></div>
+              <div class="flex-grow space-y-2.5">
+                <div class="h-3.5 bg-bg/80 rounded-md w-24"></div>
+                <div class="h-4 bg-bg/80 rounded-md w-4/5"></div>
+                <div class="h-3 bg-bg/80 rounded-md w-1/2"></div>
+              </div>
+            </div>
           </div>
-          <div class="lg:col-span-7 h-[560px] bg-surface rounded-3xl animate-pulse"></div>
+          <div class="lg:col-span-7 h-[600px] bg-surface/80 rounded-3xl shadow-corporate skeleton-shimmer p-8 flex flex-col justify-between">
+            <div class="h-72 bg-bg/80 rounded-2xl w-full"></div>
+            <div class="space-y-3 mt-6">
+              <div class="h-6 bg-bg/80 rounded-md w-3/4"></div>
+              <div class="h-4 bg-bg/80 rounded-md w-full"></div>
+              <div class="h-4 bg-bg/80 rounded-md w-2/3"></div>
+            </div>
+          </div>
         </div>
 
         <!-- LAYOUT 1: INTERACTIVE BLUEPRINT SPLIT VIEW (PHƯƠNG ÁN B) -->

@@ -87,9 +87,10 @@ export default defineNuxtConfig({
     // 4. API Endpoints: Strictly disable cache to ensure POST bodies & rate limits work properly
     '/api/**': { cache: false, cors: true },
 
-    // 5. Static Assets & Images: Long-term browser caching for instant asset loading
-    '/images/**': { headers: { 'cache-control': 'public, max-age=31536000, immutable' } },
-    '/_nuxt/**': { headers: { 'cache-control': 'public, max-age=31536000, immutable' } }
+    // 5. Static Assets Caching: 1-year immutable cache for lightning-fast subsequent loads
+    '/_nuxt/**': { headers: { 'cache-control': 'public, max-age=31536000, immutable' } },
+    '/images/**': { headers: { 'cache-control': 'public, max-age=86400, stale-while-revalidate=604800' } },
+    '/favicon.png': { headers: { 'cache-control': 'public, max-age=604800' } }
   }
 })
 

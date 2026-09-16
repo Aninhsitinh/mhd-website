@@ -83,9 +83,22 @@
 
         </div>
 
-        <!-- Documents Loading State -->
+        <!-- Documents Loading State with Shimmer -->
         <div v-if="pending" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div v-for="i in 6" :key="i" class="bg-surface rounded-3xl h-64 animate-pulse shadow-corporate"></div>
+          <div v-for="i in 6" :key="i" class="bg-surface rounded-3xl p-6 shadow-corporate skeleton-shimmer flex flex-col justify-between h-64">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <div class="w-10 h-10 rounded-xl bg-bg/80"></div>
+                <div class="h-4 bg-bg/80 rounded-full w-20"></div>
+              </div>
+              <div class="h-5 bg-bg/80 rounded-md w-full mt-4"></div>
+              <div class="h-4 bg-bg/80 rounded-md w-2/3"></div>
+            </div>
+            <div class="flex items-center justify-between pt-4 border-t border-border/10">
+              <div class="h-3 bg-bg/80 rounded-md w-24"></div>
+              <div class="h-8 bg-bg/80 rounded-full w-24"></div>
+            </div>
+          </div>
         </div>
         
         <!-- Documents Grid -->
