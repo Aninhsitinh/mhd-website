@@ -1,0 +1,396 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "services": "Services",
+    "projects": "Projects",
+    "news": "News",
+    "documents": "Documents",
+    "careers": "Careers",
+    "contact": "Contact",
+    "language": "Language",
+    "profile": "Company Profile",
+    "legal": "Legal Documents",
+    "process": "Valuation Process"
+  },
+  "footer": {
+    "about_title": "About MHD Valuation",
+    "quick_links": "Quick Links",
+    "contact_info": "Contact Info",
+    "address": "52 Tran Binh Trong, Binh Loi Trung ward, Ho Chi Minh City",
+    "phone": "028 3535 0858",
+    "hotline": "0906 636 100",
+    "email": "info@mhd.com.vn",
+    "tax_code": "0316497274",
+    "newsletter": "Subscribe to Newsletter",
+    "newsletter_desc": "Stay updated with market news and valuation laws.",
+    "newsletter_placeholder": "Enter your email...",
+    "subscribe": "Subscribe",
+    "copyright": "Copyright © MHD Valuation",
+    "all_rights_reserved": "All rights reserved.",
+    "privacy_policy": "Privacy Policy",
+    "terms_of_use": "Terms of Use",
+    "about_desc": "MHD Valuation Company Limited provides professional, independent, and objective valuation services in Vietnam."
+  },
+  "services": {
+    "business": "Business Valuation",
+    "business_desc": "M&A, equitization, restructuring",
+    "real_estate": "Real Estate Valuation",
+    "real_estate_desc": "Land, housing, apartments, projects",
+    "movables": "Movables Valuation",
+    "movables_desc": "Machinery, equipment, vehicles",
+    "project": "Project Appraisal",
+    "project_desc": "Investment project evaluation",
+    "goodwill": "Goodwill Appraisal",
+    "goodwill_desc": "Brands, intellectual property",
+    "immigration": "Immigration Assets",
+    "immigration_desc": "US, Australia, Canada, Europe immigration",
+    "view_all": "View all services"
+  },
+  "home": {
+    "hero_badge": "Prestige - Independence - Objectivity",
+    "hero_title": "Vietnam's Leading Valuation Ecosystem",
+    "hero_desc": "The leading independent and prestigious valuation unit in Vietnam. We provide accurate and objective valuation reports for all types of assets.",
+    "explore_services": "Explore Services",
+    "profile": "Company Profile",
+    "stats_years": "Years of Experience",
+    "stats_branches": "Branches Nationwide",
+    "stats_clients": "Trusted Clients",
+    "stats_reports": "Reports Issued",
+    "services_title": "Valuation <span class=\"text-primary\">Services</span>",
+    "services_desc": "A variety of services to meet all customer valuation needs.",
+    "learn_more": "Learn more",
+    "projects_title": "Featured <span class=\"text-primary\">Projects</span>",
+    "projects_desc": "Discover the outstanding valuation projects MHD has implemented nationwide.",
+    "view_all_projects": "View all projects",
+    "news_title": "News & <span class=\"text-primary\">Events</span>",
+    "news_desc": "Update the latest market information and industry knowledge.",
+    "partners_title": "Trusted <span class=\"text-primary\">Partners</span>",
+    "partners_desc": "Accompanying hundreds of large enterprises and organizations nationwide.",
+    "cta_title": "Need Valuation <span class=\"text-primary\">Consulting?</span>",
+    "cta_desc": "Contact MHD Valuation now to receive professional advice and the fastest service quote.",
+    "cta_button": "Request a Quote Now",
+    "meta_title": "Home - MHD VALUATION COMPANY LIMITED",
+    "meta_desc": "MHD VALUATION COMPANY LIMITED provides professional valuation services in Vietnam."
+  },
+  "about": {
+    "title": "About Us",
+    "company_name": "MHD Valuation Company Limited",
+    "desc_1": "<strong>MHD Valuation Company Limited (MHD)</strong> is one of the most professional valuation service providers in Vietnam, headquartered at <strong>52 Tran Binh Trong, Binh Loi Trung Ward, Ho Chi Minh City</strong>.",
+    "desc_2": "<strong>MHD</strong> is one of the enterprises with extensive experience in specializing in providing conditional valuation consulting services such as: business valuation, real estate valuation, movables, goodwill and other assets (for purposes: M&A, investment cooperation, mortgage borrowing, proving financial capacity, new asset procurement, asset liquidation, buying, selling, transferring real estate...). In addition, MHD also provides financial consulting services, compensation, site clearance...",
+    "vision_title": "Vision",
+    "vision_desc": "As a young and dynamic enterprise, <strong>MHD</strong> aims to become a leading brand in the Valuation field and always accompany customers to success. To achieve this, MHD constantly trains to build a high-quality human resources team, knowledgeable in many fields; with synthetic and analytical skills; and especially always keeps in mind <strong>\"Customer success is the guarantee for MHD's development\"</strong>.",
+    "mission_title": "Mission",
+    "mission_desc": "MHD not only provides suitable services, real value to all customers but also contributes to building and cultivating a transparent, strong valuation market, contributing to the overall development of the community and Vietnam's economy.",
+    "core_values_title": "Core Values",
+    "core_values_desc": "If you need prestige, speed, accuracy and transparency, please <strong>ACCOMPANY</strong> us. Proficient, masterful in professional operations, understanding and complying with regulations to best meet customer requirements. Each member always masters their work; thinking, acting to achieve the common goals of the MHD family.",
+    "leadership_title": "MHD Board of Directors and Executives",
+    "view_more_team": "View more Team",
+    "cta_title": "Do you need consulting on Valuation Services?",
+    "cta_button": "Contact MHD Now",
+    "meta_title": "About Us - MHD Valuation",
+    "meta_desc": "Learn about MHD Valuation, our experienced team of experts and our mission to bring real value to customers in the field of valuation."
+  },
+  "process": {
+    "title": "Valuation Process",
+    "click_to_view": "Click to view details of this step.",
+    "cta_title": "Need Support with Valuation Services?",
+    "cta_desc": "Our team of experts is always ready to advise and provide you with the best services.",
+    "cta_button": "Contact Us Now",
+    "meta_title": "Valuation Process - MHD Valuation",
+    "meta_desc": "Professional, transparent and optimized valuation process at MHD Valuation, helping customers receive results quickly and accurately.",
+    "steps": {
+      "step_1": {
+        "title": "Determine general assets and value",
+        "description": "An important initial step to establish the legal foundation and valuation basis.",
+        "details": [
+          "Determine basic legal, economic - technical characteristics of the asset.",
+          "Identify the user of the valuation results.",
+          "Determine the purpose and time of valuation.",
+          "Determine the value basis of the valuation.",
+          "Identify assumptions and special assumptions."
+        ]
+      },
+      "step_2": {
+        "title": "Make a valuation plan",
+        "description": "To clearly determine the scope and progress of each work content scientifically.",
+        "details": [
+          "Determine goals, requirements, scope and content.",
+          "Determine methods and procedures to proceed.",
+          "Determine necessary data, reliable document sources.",
+          "Build implementation schedule, human resource organization.",
+          "Determine whether to hire consultants (if any)."
+        ]
+      },
+      "step_3": {
+        "title": "Field survey, information collection",
+        "description": "The team of experts goes directly to the site to assess the actual condition of the asset.",
+        "details": [
+          "Check the actual condition of the asset against the legal dossier.",
+          "Record factors directly affecting the asset value.",
+          "Collect market data, transaction prices of similar assets.",
+          "Study related macro and micro economic factors."
+        ]
+      },
+      "step_4": {
+        "title": "Information analysis",
+        "description": "Use in-depth financial tools to assess and quantify risks.",
+        "details": [
+          "Analyze the legality and planning of the asset.",
+          "Analyze the highest and best economic use.",
+          "Evaluate and process data collected from the market.",
+          "Select the most appropriate valuation method."
+        ]
+      },
+      "step_5": {
+        "title": "Determine value and make report",
+        "description": "Complete dossiers, certificates and transparently transfer results to customers.",
+        "details": [
+          "Run calculation models to produce estimated value results.",
+          "Prepare detailed, logical and strict valuation reports.",
+          "Internal quality control before issuance.",
+          "Issue official Valuation Certificates to customers."
+        ]
+      }
+    }
+  },
+  "team": {
+    "title": "Our Team",
+    "subtitle": "MHD Valuation's experienced, dynamic and dedicated team of experts, always accompanying our customers' success.",
+    "experience_label": "Experience: ",
+    "cta_title": "Become an MHD Member?",
+    "cta_desc": "We always welcome new talents to join our team.",
+    "cta_button": "Apply Now",
+    "meta_title": "Our Team - MHD Valuation",
+    "meta_desc": "Meet the team of experienced, dynamic and dedicated experts at MHD Valuation.",
+    "members": [
+      {
+        "name": "Tran Khanh Du",
+        "title": "Director",
+        "experience": "15 years",
+        "description": [
+          "Bachelor of Economics, majoring in valuation, University of Economics Ho Chi Minh City",
+          "Price Appraiser Card - Ministry of Finance",
+          "Real Estate Valuation Certificate - Department of Construction",
+          "Auctioneer Certificate - Ministry of Justice"
+        ]
+      },
+      {
+        "name": "Nguyen Le Ha",
+        "title": "Deputy Director",
+        "experience": "10 years",
+        "description": [
+          "Bachelor of Economics (Valuation & Banking Finance) - University of Economics Ho Chi Minh City",
+          "Price Appraiser Card - Ministry of Finance",
+          "Member of Vietnam Valuation Association"
+        ]
+      },
+      {
+        "name": "Tran Minh Tuan",
+        "title": "Deputy Director",
+        "experience": "14 years",
+        "description": [
+          "Master of Economics - Corporate Finance - University of Economics HCMC",
+          "Price Appraiser Card",
+          "Certified Public Accountant (CPA)"
+        ]
+      },
+      {
+        "name": "Phan Nguyen Uyen Ha",
+        "title": "Valuer - Head of Control Department",
+        "experience": "7 years",
+        "description": [
+          "Master in Land Management",
+          "Price Appraiser of Ministry of Finance",
+          "Real Estate Valuer of Department of Construction"
+        ]
+      },
+      {
+        "name": "Le Ngoc Anh",
+        "title": "Valuer - Head of Valuation Department",
+        "experience": "9 years",
+        "description": [
+          "Bachelor of Economics, majoring in valuation",
+          "Real Estate Valuation Certificate - Department of Construction",
+          "Real Estate Brokerage and Floor Management Certificate"
+        ]
+      },
+      {
+        "name": "BUI QUYNH",
+        "title": "Valuer - Director of Binh Dinh Branch",
+        "experience": "9 years",
+        "description": [
+          "Price Appraiser of Ministry of Finance",
+          "Real Estate Valuer of Department of Construction",
+          "Senior specialist in real estate brokerage, management and operation"
+        ]
+      },
+      {
+        "name": "NGUYEN THANH HAI",
+        "title": "Valuer",
+        "experience": "7 years",
+        "description": [
+          "Bachelor of Valuation - University of Economics Ho Chi Minh City"
+        ]
+      },
+      {
+        "name": "LE THI LIEN",
+        "title": "Valuer",
+        "experience": "6 years",
+        "description": [
+          "Bachelor of Valuation"
+        ]
+      },
+      {
+        "name": "PHAM DANG DIEM TRINH",
+        "title": "Valuer",
+        "experience": "6 years",
+        "description": [
+          "Bachelor of Valuation"
+        ]
+      },
+      {
+        "name": "PHAM NGOC QUYNH TRAM",
+        "title": "Valuer",
+        "experience": "5 years",
+        "description": [
+          "Bachelor of Valuation"
+        ]
+      },
+      {
+        "name": "VO HUONG GIANG",
+        "title": "Valuer - Binh Dinh Branch",
+        "experience": "6 years",
+        "description": [
+          "Bachelor of Valuation"
+        ]
+      },
+      {
+        "name": "VI THI MONG LY",
+        "title": "Accountant",
+        "experience": "8 years",
+        "description": [
+          "Bachelor of Accounting"
+        ]
+      },
+      {
+        "name": "NGUYEN TRUONG KHANH NGOC",
+        "title": "Accountant",
+        "experience": "8 years",
+        "description": [
+          "Bachelor of Accounting"
+        ]
+      },
+      {
+        "name": "NGUYEN THI TUYET VY",
+        "title": "Human Resources & Administration",
+        "experience": "2 years",
+        "description": [
+          "Bachelor of Business Administration - Industrial University of Ho Chi Minh City"
+        ]
+      }
+    ]
+  },
+  "careers": {
+    "title": "Careers",
+    "nav_submit": "Submission Info",
+    "nav_opportunities": "Career Opportunities",
+    "meta_title": "Careers - MHD Valuation",
+    "meta_desc": "Join our team at MHD Valuation. We are looking for talented individuals to join our professional valuation team.",
+    "why_choose_us": {
+      "title": "Why Choose MHD?",
+      "f1_title": "Professional and Dynamic Working Environment",
+      "f1_desc": "At <strong>MHD</strong>, we constantly promote and develop our \"warriors\". The Board of Directors of MHD always orients and builds MHD to become the most ideal workplace for employees. Sharing sessions and training seem indispensable. Besides working hard, we also relax and motivate to participate in future battles.",
+      "f2_title": "Competitive Salary and Bonus System",
+      "f2_desc": "Salary level is determined based on experience, capacity, complexity and importance of each position. Salary review once a year based on performance. Quarterly bonus for sales staff exceeding targets and annual bonus for all employees. In addition, there are full allowances for meals, gasoline, telephone, and business trips.",
+      "f3_title": "Training and Career Development",
+      "f3_desc": "<strong>MHD</strong> constantly trains and promotes the development of individual warriors' skills through training and courses. You will have a clear career path and advancement that best suits your goals and participate in large-scale projects."
+    },
+    "benefits": {
+      "title": "Company Benefits",
+      "items": [
+        {
+          "title": "BONUS",
+          "desc": "Income policy, remuneration and fair, transparent bonus regime. Full 13th month salary. Annual salary adjustment based on evaluation results."
+        },
+        {
+          "title": "HEALTH INSURANCE",
+          "desc": "In addition to fully implementing the health insurance policy according to state regulations, MHD also supports employees with annual health insurance packages depending on their working time."
+        },
+        {
+          "title": "TEAM ACTIVITIES",
+          "desc": "Regularly organize Teambuilding, Party, Sports Clubs (Football, Badminton) and give gifts, lucky money on birthdays, Holidays/New Year to connect members."
+        },
+        {
+          "title": "TRAINING",
+          "desc": "Build training and successor development programs. You will learn new knowledge to help develop your career and long-term commitment."
+        },
+        {
+          "title": "ANNUAL LEAVE",
+          "desc": "Employees are entitled to 12 days of annual leave and holidays as prescribed. The number of annual leaves increases based on seniority working at the Company."
+        },
+        {
+          "title": "OTHER",
+          "desc": "Enjoy many other policies such as: maternity allowance, filial piety, sickness, uniform, team activity expenses..."
+        }
+      ]
+    },
+    "cta": {
+      "title": "OPPORTUNITY TO WORK IN ONE OF THE BEST PLACES",
+      "button": "Apply Now"
+    }
+  },
+  "contact": {
+    "title": "CONTACT",
+    "meta_title": "Contact Us - MHD Valuation",
+    "meta_desc": "Contact MHD Valuation immediately via Hotline or Email for valuation service consultation. Our nationwide branch system is always ready to serve.",
+    "company_name": "MHD VALUATION COMPANY LIMITED",
+    "headquarters": "Headquarters",
+    "address": "52 Tran Binh Trong, Binh Loi Trung ward, Ho Chi Minh City",
+    "hotline": "Hotline",
+    "email": "Email",
+    "tax_code": "Tax Code",
+    "bank": "Bank",
+    "bank_desc": "007.100.131.6688 - Joint Stock Commercial Bank for Foreign Trade of Vietnam (Vietcombank) - Tan Sai Gon Branch",
+    "branch_system": "BRANCH SYSTEM",
+    "notice": "(*) Note:",
+    "notice_desc": "MHD includes the system of member branches / representative offices officially announced according to the information above. Other organizations and units outside this system are not under MHD's management. Partners and Customers please note to avoid confusion in trading and business activities.",
+    "form": {
+      "title": "SEND US A MESSAGE",
+      "name_placeholder": "Your full name *",
+      "email_placeholder": "Email address *",
+      "phone_placeholder": "Phone number *",
+      "message_placeholder": "Your message *",
+      "submit": "Send Message",
+      "submitting": "Sending...",
+      "success": "Thank you! Your message has been sent successfully.",
+      "error": "An error occurred. Please try again later.",
+      "validation": "Please fill in all required fields."
+    },
+    "branches": [
+      { "name": "HANOI BRANCH", "address": "No. 34, Alley 8 Hoa Lu, Hai Ba Trung Ward, Hanoi City", "phone": "0989 294 636 - Ms. Ha", "email": "hanoi.cn@mhd.com.vn" },
+      { "name": "NGHE AN BRANCH", "address": "No. 187 Pham Dinh Toai, Vinh Phu ward, Nghe An province", "phone": "0236 655 8555 - Mr. Dung", "email": "nghean.cn@mhd.com.vn" },
+      { "name": "DA NANG BRANCH", "address": "373 Trung Nu Vuong, Hai Chau ward, Da Nang city", "phone": "0909 63 0504 - Mr. Anh", "email": "danang.cn@mhd.com.vn" },
+      { "name": "BINH DINH BRANCH", "address": "Lot N1LK20, extended Thanh Thai street, Quy Nhon Nam ward, Gia Lai province", "phone": "0902 315 934 - Mr. Quynh", "email": "binhdinh.cn@mhd.com.vn" },
+      { "name": "KHANH HOA BRANCH", "address": "No. 22 Cao Ba Quat, Nha Trang ward, Khanh Hoa province", "phone": "0888 91 6969 - Mr Nhat", "email": "cnkhanhhoa@mhd.com.vn" },
+      { "name": "DAK LAK BRANCH", "address": "213 Nguyen Cong Tru, Buon Ma Thuot ward, Dak Lak province", "phone": "038 447 2212 - Mr. Hai", "email": "daklak.cn@mhd.com.vn" },
+      { "name": "BINH PHUOC BRANCH", "address": "No. 1291 Phu Rieng Do, Binh Phuoc ward, Dong Nai province", "phone": "0914 412 233 - Mr. Ly", "email": "binhphuoc.cn@mhd.com.vn" },
+      { "name": "BA RIA - VUNG TAU BRANCH", "address": "No. 03 Hoang Viet, Long Huong ward, Ho Chi Minh City", "phone": "0909 630 504 - Mr. Anh", "email": "bariavungtau.cn@mhd.com.vn" },
+      { "name": "DONG NAI REP. OFFICE", "address": "117/3, quarter 3, Trang Dai ward, Dong Nai province", "phone": "0906 606 739 - Mr Nam", "email": "dongnai.cn@mhd.com.vn" },
+      { "name": "TRA VINH REP. OFFICE", "address": "No. 64A Nguyen Thai Hoc, Ward 2, Tra Vinh city", "phone": "0901 02 03 48 - Mr Vien", "email": "travinh.vpdd@mhd.com.vn" },
+      { "name": "LONG AN REP. OFFICE", "address": "46 Nguyen Thong, Long An ward, Tay Ninh province", "phone": "0989 294 636 - Ms. Ha", "email": "longan.vpdd@mhd.com.vn" },
+      { "name": "AN GIANG REP. OFFICE", "address": "No. 3 Stadium residence, Chau Doc ward, An Giang province", "phone": "0931 037 907 - Ms. Tuyet Nhi", "email": "angiang.vpdd@mhd.com.vn" },
+      { "name": "VINH LONG REP. OFFICE", "address": "No. 221 Tran Dai Nghia, Phuoc Hau ward, Vinh Long province", "phone": "0981 546 469 - Ms. Cam Tu", "email": "vinhlong.vpdd@mhd.com.vn" }
+    ]
+  },
+  "popup": {
+    "title": "Need Valuation Consulting?",
+    "subtitle": "Leave your information, our experts will call you back in 5 minutes!"
+  },
+  "share": {
+    "title": "Share:"
+  },
+  "news": {
+    "related": "Related Articles"
+  }
+}

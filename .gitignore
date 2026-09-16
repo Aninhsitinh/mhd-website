@@ -1,0 +1,31 @@
+# Nuxt dev/build outputs
+.output
+.data
+.nuxt
+.nitro
+.cache
+dist
+
+# Next.js build outputs & cache (Payload CMS)
+.next
+**/.next/
+**/.next
+next-env.d.ts
+
+# Node dependencies
+node_modules
+**/node_modules/
+
+# Logs
+logs
+*.log
+
+# Misc
+.DS_Store
+.fleet
+.idea
+
+# Local env files
+.env
+.env.*
+!.env.example

@@ -1,0 +1,21 @@
+{
+  "name": "mhd-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "npm run dev --prefix frontend",
+    "dev:all": "concurrently \"npm run dev --prefix frontend\" \"npm run dev --prefix cms\"",
+    "dev:frontend": "npm run dev --prefix frontend",
+    "dev:cms": "npm run dev --prefix cms",
+    "build": "npm run build --prefix frontend",
+    "build:all": "npm run build --prefix cms && npm run build --prefix frontend",
+    "build:frontend": "npm run build --prefix frontend",
+    "build:cms": "npm run build --prefix cms",
+    "docker:up": "docker compose up -d",
+    "docker:down": "docker compose down",
+    "docker:build": "docker compose build"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-bg text-text antialiased;
+  }
+
+  /* Remove ugly WordPress horizontal borders/dividers globally */
+  hr, 
+  .is-divider, 
+  .divider, 
+  .wp-block-separator, 
+  .ux-shape-divider--top, 
+  .ux-shape-divider--bottom {
+    display: none !important;
+  }
+}

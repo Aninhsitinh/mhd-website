@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light Theme (MHD Corporate) */
+    --color-bg: 244 242 238; /* Warm Paper: #F4F2EE */
+    --color-surface: 255 255 255; /* White: #FFFFFF */
+    --color-border: 63 69 71; /* Graphite with opacity for borders */
+    --color-text: 17 24 39; /* Deep Solid Black for text headings & body: #111827 */
+    --color-text-secondary: 31 41 55; /* Clear Dark Slate for readable paragraph content: #1F2937 */
+    --color-text-muted: 100 116 139; /* Muted gray for small metadata: #64748B */
+    --color-primary: 236 74 0; /* MHD Orange: #EC4A00 */
+    --color-primary-hover: 189 57 0; /* Orange Dark: #BD3900 */
+    --color-hero: 63 69 71; /* Graphite: #3F4547 */
+  }
+
+  .dark {
+    /* Dark Theme (Adapted for MHD Corporate) */
+    --color-bg: 24 33 36; /* Dark background: #182124 */
+    --color-surface: 31 41 44; /* Dark Surface: #1F292C */
+    --color-border: 244 242 238; /* Warm Paper with opacity for borders */
+    --color-text: 241 245 249; /* Crisp Light Gray/White for headings on dark: #F1F5F9 */
+    --color-text-secondary: 203 213 225; /* Soft Muted Slate Gray for content on dark: #CBD5E1 */
+    --color-text-muted: 148 163 184; /* Soft slate gray: #94A3B8 */
+    --color-primary: 236 74 0; /* MHD Orange */
+    --color-primary-hover: 189 57 0; /* Orange Dark */
+    --color-hero: 244 242 238; /* Warm Paper inverse */
+  }
+
+  body {
+    @apply bg-bg text-text antialiased transition-colors duration-300 font-sans;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-display {
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+  }
+
+  /* Specific Content Typography: Pure dark/black text on light, soft gray on dark */
+  .prose, .html-content, .service-content, .document-content {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: rgb(31 41 55); /* Black / deep slate on light */
+  }
+
+  .dark .prose, 
+  .dark .html-content, 
+  .dark .service-content, 
+  .dark .document-content {
+    color: rgb(203 213 225) !important; /* Soft soothing gray on dark */
+  }
+
+  .prose p, .html-content p, .service-content p {
+    color: rgb(31 41 55);
+  }
+  .dark .prose p, .dark .html-content p, .dark .service-content p {
+    color: rgb(203 213 225) !important;
+  }
+
+  .prose li, .html-content li, .service-content li {
+    color: rgb(31 41 55);
+  }
+  .dark .prose li, .dark .html-content li, .dark .service-content li {
+    color: rgb(203 213 225) !important;
+  }
+
+  .prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6,
+  .html-content h1, .html-content h2, .html-content h3, .html-content h4,
+  .service-content h1, .service-content h2, .service-content h3, .service-content h4 {
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+    color: rgb(17 24 39);
+  }
+  .dark .prose h1, .dark .prose h2, .dark .prose h3, .dark .prose h4, .dark .prose h5, .dark .prose h6,
+  .dark .html-content h1, .dark .html-content h2, .dark .html-content h3, .dark .html-content h4,
+  .dark .service-content h1, .dark .service-content h2, .dark .service-content h3, .dark .service-content h4 {
+    color: rgb(241 245 249) !important;
+  }
+
+  /* Global removal of borders and dividers */
+  hr, 
+  .is-divider, 
+  .divider, 
+  .wp-block-separator, 
+  .ux-shape-divider--top, 
+  .ux-shape-divider--bottom {
+    display: none !important;
+  }
+
+  /* Scroll Reveal Utilities */
+  .reveal-on-scroll {
+    opacity: 0;
+    transform: translate3d(0, 24px, 0);
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal-on-scroll.is-revealed {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+  
+  /* Variations for scroll reveal */
+  .reveal-left {
+    transform: translate3d(-24px, 0, 0);
+  }
+  .reveal-left.is-revealed {
+    transform: translate3d(0, 0, 0);
+  }
+  .reveal-right {
+    transform: translate3d(24px, 0, 0);
+  }
+  .reveal-right.is-revealed {
+    transform: translate3d(0, 0, 0);
+  }
+  .delay-100 { transition-delay: 100ms; }
+  .delay-200 { transition-delay: 200ms; }
+  .delay-300 { transition-delay: 300ms; }
+  .delay-400 { transition-delay: 400ms; }
+}
+
+/* Nuxt Page Transition */
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1), transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.page-enter-from {
+  opacity: 0;
+  transform: translateY(8px);
+}
+.page-leave-to {
+  opacity: 0;
+  transform: translateY(-8px);
+}

@@ -1,0 +1,20 @@
+# Next.js build outputs & cache
+.next
+.next/
+next-env.d.ts
+
+# Node dependencies
+node_modules/
+
+# Local env files
+.env
+.env.*
+!.env.example
+
+# Logs
+logs
+*.log
+
+# Misc
+.DS_Store
+.idea

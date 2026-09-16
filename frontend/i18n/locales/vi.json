@@ -1,0 +1,470 @@
+{
+  "nav": {
+    "home": "Trang chủ",
+    "about": "Giới thiệu",
+    "services": "Lĩnh vực",
+    "projects": "Dự án",
+    "news": "Tin tức",
+    "documents": "Tài liệu",
+    "careers": "Tuyển dụng",
+    "contact": "Liên hệ",
+    "language": "Ngôn ngữ",
+    "profile": "Hồ sơ năng lực",
+    "legal": "Hồ sơ pháp lý",
+    "process": "Quy trình thẩm định"
+  },
+  "footer": {
+    "about_title": "Về MHD Valuation",
+    "quick_links": "Liên kết nhanh",
+    "contact_info": "Thông tin liên hệ",
+    "address": "Số 52 Trần Bình Trọng, phường Bình Lợi Trung, Thành phố Hồ Chí Minh",
+    "phone": "028 3535 0858",
+    "hotline": "0906 636 100",
+    "email": "info@mhd.com.vn",
+    "tax_code": "0316497274",
+    "newsletter": "Đăng ký nhận bản tin",
+    "newsletter_desc": "Cập nhật những thông tin mới nhất về thị trường và luật thẩm định giá.",
+    "newsletter_placeholder": "Nhập email của bạn...",
+    "subscribe": "Đăng ký",
+    "copyright": "Bản quyền thuộc về MHD Valuation",
+    "all_rights_reserved": "Mọi quyền được bảo lưu.",
+    "privacy_policy": "Chính sách bảo mật",
+    "terms_of_use": "Điều khoản sử dụng",
+    "about_desc": "Công ty TNHH Thẩm Định Giá MHD cung cấp các dịch vụ thẩm định giá chuyên nghiệp, độc lập và khách quan tại Việt Nam."
+  },
+  "services": {
+    "business": "Doanh Nghiệp",
+    "business_desc": "Phục vụ mua bán, sáp nhập, cổ phần hóa",
+    "real_estate": "Bất Động Sản",
+    "real_estate_desc": "Đất đai, nhà phố, căn hộ, dự án",
+    "movables": "Động Sản",
+    "movables_desc": "Máy móc, thiết bị, phương tiện vận tải",
+    "project": "Dự Án Đầu Tư",
+    "project_desc": "Lập và đánh giá hiệu quả dự án đầu tư",
+    "goodwill": "Lợi Thế Thương Mại",
+    "goodwill_desc": "Thương hiệu, quyền sở hữu trí tuệ",
+    "immigration": "Tài Sản Định Cư",
+    "immigration_desc": "Định cư Mỹ, Úc, Canada, Châu Âu",
+    "view_all": "Xem tất cả lĩnh vực"
+  },
+  "home": {
+    "hero_badge": "Uy tín - Độc lập - Khách quan",
+    "hero_title": "Hệ sinh thái Thẩm định giá hàng đầu Việt Nam",
+    "hero_desc": "Đơn vị thẩm định giá độc lập, uy tín hàng đầu tại Việt Nam. Chúng tôi cung cấp các báo cáo thẩm định giá chính xác, khách quan cho mọi loại hình tài sản.",
+    "explore_services": "Khám Phá Dịch Vụ",
+    "profile": "Hồ Sơ Năng Lực",
+    "stats_years": "Năm kinh nghiệm",
+    "stats_branches": "Chi nhánh toàn quốc",
+    "stats_clients": "Khách hàng tin tưởng",
+    "stats_reports": "Báo cáo phát hành",
+    "services_title": "Lĩnh Vực <span class=\"text-primary\">Thẩm Định</span>",
+    "services_desc": "Đa dạng các loại hình dịch vụ đáp ứng mọi nhu cầu thẩm định của khách hàng.",
+    "learn_more": "Tìm hiểu thêm",
+    "projects_title": "Dự Án <span class=\"text-primary\">Tiêu Biểu</span>",
+    "projects_desc": "Khám phá các dự án thẩm định giá nổi bật mà MHD đã thực hiện trên toàn quốc.",
+    "view_all_projects": "Xem tất cả dự án",
+    "news_title": "Tin Tức & <span class=\"text-primary\">Sự Kiện</span>",
+    "news_desc": "Cập nhật những thông tin mới nhất về thị trường và kiến thức chuyên ngành.",
+    "partners_title": "Đối Tác <span class=\"text-primary\">Tin Cậy</span>",
+    "partners_desc": "Đồng hành cùng hàng trăm doanh nghiệp và tổ chức lớn trên toàn quốc.",
+    "cta_title": "Bạn Cần Tư Vấn Dịch Vụ <span class=\"text-primary\">Thẩm Định Giá?</span>",
+    "cta_desc": "Hãy liên hệ ngay với MHD Valuation để nhận được sự tư vấn chuyên nghiệp và báo giá dịch vụ nhanh chóng nhất.",
+    "cta_button": "Yêu Cầu Tư Vấn Ngay",
+    "meta_title": "Trang Chủ - MHD Valuation",
+    "meta_desc": "MHD Valuation - Đơn vị thẩm định giá uy tín hàng đầu, cung cấp các dịch vụ thẩm định giá bất động sản, động sản, doanh nghiệp chuyên nghiệp và chính xác."
+  },
+  "about": {
+    "title": "VỀ CHÚNG TÔI",
+    "company_name": "Công Ty TNHH Thẩm Định Giá MHD",
+    "desc_1": "<strong>Công ty TNHH Thẩm Định Giá MHD (MHD)</strong> được thành lập từ những chuyên gia hàng đầu trong lĩnh vực thẩm định giá. Với đội ngũ năng động, nhiệt huyết, MHD luôn mang đến sự an tâm tuyệt đối và đảm bảo lợi ích tốt nhất cho quý khách hàng.",
+    "desc_2": "<strong>MHD</strong> là một trong những doanh nghiệp có kinh nghiệm dày dặn trong việc chuyên cung cấp các dịch vụ tư vấn thẩm định giá (kinh doanh có điều kiện) như: thẩm định giá trị doanh nghiệp, thẩm định giá trị bất động sản, động sản, lợi thế thương mại và các tài sản khác (phục vụ cho các mục đích: M&A, hợp tác đầu tư, thế chấp vay vốn, chứng minh năng lực tài chính, mua sắm mới tài sản, thanh lý tài sản, mua, bán, chuyển nhượng bất động sản…). Ngoài ra MHD còn cung cấp dịch vụ tư vấn tài chính, bồi thường, giải phóng mặt bằng…",
+    "vision_title": "Tầm Nhìn",
+    "vision_desc": "Là một doanh nghiệp trẻ và năng động, <strong>MHD</strong> đặt mục tiêu trở thành một thương hiệu hàng đầu trong lĩnh vực Thẩm định giá và luôn đồng hành với Quý khách hàng đi đến thành công. Để đạt được điều này, MHD không ngừng đào tạo xây dựng một đội ngũ nhân sự có chất lượng cao, am hiểu nhiều lĩnh vực; có kỹ năng tổng hợp và phân tích; và đặc biệt luôn tâm niệm <strong>\"Thành công của khách hàng là sự đảm bảo cho phát triển của MHD\"</strong>.",
+    "mission_title": "Sứ Mệnh",
+    "mission_desc": "MHD không chỉ cung cấp những dịch vụ phù hợp, giá trị thật cho mọi khách hàng mà còn góp phần xây dựng và vun đắp cho một thị trường thẩm định minh bạch, vững mạnh, đóng góp vào sự phát triển chung của cộng đồng và nền kinh tế Việt Nam.",
+    "core_values_title": "Giá Trị Cốt Lõi",
+    "core_values_desc": "Nếu bạn cần sự uy tín, nhanh chóng, chính xác và minh bạch, hãy <strong>ĐỒNG HÀNH</strong> cùng chúng tôi. Thành thạo, điêu luyện trong các hoạt động nghiệp vụ và chuyên môn, thông hiểu và tuân thủ các quy định để đáp ứng tốt nhất yêu cầu của khách hàng. Mỗi thành viên luôn làm chủ trong công việc; suy nghĩ, hành động để đạt được các mục tiêu chung của gia đình MHD.",
+    "leadership_title": "Ban Lãnh Đạo Và Điều Hành MHD",
+    "view_more_team": "Xem thêm Đội ngũ",
+    "cta_title": "Bạn Cần Tư Vấn Về Dịch Vụ Thẩm Định Giá?",
+    "cta_button": "Liên Hệ Ngay MHD",
+    "meta_title": "Giới Thiệu - MHD Valuation",
+    "meta_desc": "Tìm hiểu về MHD Valuation, đội ngũ chuyên gia giàu kinh nghiệm và sứ mệnh mang lại giá trị thực cho khách hàng trong lĩnh vực thẩm định giá."
+  },
+  "process": {
+    "title": "Quy Trình Thẩm Định",
+    "click_to_view": "Nhấp để xem chi tiết bước này.",
+    "cta_title": "Bạn Cần Hỗ Trợ Dịch Vụ Thẩm Định?",
+    "cta_desc": "Đội ngũ chuyên gia của chúng tôi luôn sẵn sàng tư vấn và cung cấp dịch vụ tốt nhất cho bạn.",
+    "cta_button": "Liên Hệ Ngay",
+    "meta_title": "Quy Trình Thẩm Định - MHD Valuation",
+    "meta_desc": "Quy trình thẩm định giá chuyên nghiệp tại MHD Valuation, đảm bảo tính khách quan, minh bạch và tuân thủ các chuẩn mực thẩm định giá Việt Nam.",
+    "steps": {
+      "step_1": {
+        "title": "Xác định tổng quát tài sản và giá trị",
+        "description": "Bước khởi đầu quan trọng nhằm thiết lập nền tảng pháp lý và cơ sở thẩm định.",
+        "details": [
+          "Xác định các đặc điểm cơ bản về pháp lý, kinh tế – kỹ thuật của tài sản.",
+          "Xác định đối tượng sử dụng kết quả thẩm định.",
+          "Xác định mục đích và thời điểm thẩm định giá.",
+          "Xác định cơ sở giá trị của thẩm định giá.",
+          "Xác định giả thiết và giả thiết đặc biệt."
+        ]
+      },
+      "step_2": {
+        "title": "Lập kế hoạch thẩm định giá",
+        "description": "Nhằm xác định rõ phạm vi, tiến độ thực hiện từng nội dung công việc một cách khoa học.",
+        "details": [
+          "Xác định mục tiêu, yêu cầu, phạm vi và nội dung.",
+          "Xác định phương thức, cách thức tiến hành.",
+          "Xác định dữ liệu cần thiết, nguồn tài liệu đáng tin cậy.",
+          "Xây dựng tiến độ thực hiện, tổ chức nhân sự.",
+          "Xác định việc thuê chuyên gia tư vấn (nếu có)."
+        ]
+      },
+      "step_3": {
+        "title": "Khảo sát thực tế, thu thập thông tin",
+        "description": "Đội ngũ chuyên gia trực tiếp đến hiện trường để đánh giá thực trạng tài sản.",
+        "details": [
+          "Kiểm tra hiện trạng tài sản trên thực tế so với hồ sơ pháp lý.",
+          "Ghi nhận các yếu tố ảnh hưởng trực tiếp đến giá trị tài sản.",
+          "Thu thập dữ liệu thị trường, giá giao dịch của các tài sản tương tự.",
+          "Nghiên cứu các yếu tố kinh tế vĩ mô và vi mô liên quan."
+        ]
+      },
+      "step_4": {
+        "title": "Phân tích thông tin",
+        "description": "Sử dụng các công cụ tài chính chuyên sâu để đánh giá và định lượng rủi ro.",
+        "details": [
+          "Phân tích tính pháp lý và quy hoạch của tài sản.",
+          "Phân tích công dụng kinh tế tốt nhất và hiệu quả nhất.",
+          "Đánh giá và xử lý các số liệu thu thập được từ thị trường.",
+          "Lựa chọn phương pháp thẩm định giá phù hợp nhất."
+        ]
+      },
+      "step_5": {
+        "title": "Xác định giá trị và lập báo cáo",
+        "description": "Hoàn thiện hồ sơ, chứng thư và chuyển giao kết quả minh bạch cho khách hàng.",
+        "details": [
+          "Chạy mô hình tính toán để đưa ra kết quả giá trị ước tính.",
+          "Lập báo cáo thẩm định giá chi tiết, logic và chặt chẽ.",
+          "Kiểm soát chất lượng nội bộ trước khi phát hành.",
+          "Phát hành Chứng thư Thẩm định giá chính thức cho khách hàng."
+        ]
+      }
+    }
+  },
+  "team": {
+    "title": "Đội Ngũ Nhân Sự",
+    "meta_title": "Đội Ngũ Nhân Sự - MHD Valuation",
+    "meta_desc": "Gặp gỡ đội ngũ chuyên gia, thẩm định viên giàu kinh nghiệm và nhiệt huyết tại MHD Valuation.",
+    "subtitle": "Những chuyên gia hàng đầu làm nên sự thành công của MHD Valuation",
+    "experience_label": "Kinh nghiệm: ",
+    "cta_title": "Trở Thành Thành Viên MHD?",
+    "cta_desc": "Chúng tôi luôn chào đón những nhân tài mới gia nhập vào đội ngũ của mình.",
+    "cta_button": "Tuyển Dụng Ngay",
+    "members": [
+      {
+        "name": "Trần Khánh Du",
+        "title": "Giám đốc",
+        "experience": "15 năm",
+        "description": [
+          "Cử nhân kinh tế, chuyên ngành thẩm định giá, trường Đại học Kinh tế TP.HCM",
+          "Thẻ thẩm định viên về giá – Bộ Tài chính",
+          "Chứng chỉ định giá Bất động sản – Sở xây dựng",
+          "Chứng chỉ đấu giá viên – Bộ Tư Pháp"
+        ]
+      },
+      {
+        "name": "Nguyễn Lê Hà",
+        "title": "Phó Giám đốc",
+        "experience": "10 năm",
+        "description": [
+          "Cử nhân kinh tế (Thẩm định giá & Tài chính ngân hàng) - ĐH Kinh tế TP.HCM",
+          "Thẻ thẩm định viên về giá – Bộ Tài chính",
+          "Hội viên Hiệp hội Thẩm định giá việt Nam"
+        ]
+      },
+      {
+        "name": "Trần Minh Tuấn",
+        "title": "Phó Giám đốc",
+        "experience": "14 năm",
+        "description": [
+          "Thạc sĩ Kinh tế – Tài Chính Doanh Nghiệp – Đại học Kinh tế TP. HCM",
+          "Thẻ thẩm định viên giá",
+          "Chứng chỉ Kiểm toán viên (CPA)"
+        ]
+      },
+      {
+        "name": "Hồ Bình Minh",
+        "title": "Phó Giám đốc",
+        "experience": "12 năm",
+        "description": [
+          "Thạc sĩ Kinh tế",
+          "Thẩm định viên về giá"
+        ]
+      },
+      {
+        "name": "Phan Nguyên Uyên Hạ",
+        "title": "TĐV – Trưởng bộ phận kiểm soát",
+        "experience": "7 năm",
+        "description": [
+          "Thạc sĩ chuyên ngành quản lý đất đai",
+          "Thẩm định viên về giá của Bộ Tài Chính",
+          "Định giá viên Bất động sản của Sở Xây dựng"
+        ]
+      },
+      {
+        "name": "Lê Ngọc Ánh",
+        "title": "TĐV - Trưởng phòng thẩm định",
+        "experience": "9 năm",
+        "description": [
+          "Cử nhân kinh tế, chuyên ngành thẩm định giá",
+          "Chứng chỉ định giá BĐS – Sở Xây dựng",
+          "Chứng chỉ môi giới và quản lý sàn BĐS"
+        ]
+      },
+      {
+        "name": "BÙI QUỲNH",
+        "title": "TĐV - Giám đốc Chi nhánh Bình Định",
+        "experience": "9 năm",
+        "description": [
+          "Thẩm định viên về giá của Bộ Tài Chính",
+          "Định giá viên Bất động sản của Sở Xây dựng",
+          "Chuyên viên cao cấp môi giới, quản lý và điều hành sàn BĐS"
+        ]
+      },
+      {
+        "name": "NGUYỄN THANH HẢI",
+        "title": "Thẩm định viên",
+        "experience": "7 năm",
+        "description": [
+          "Cử nhân chuyên ngành Thẩm định giá – ĐH Kinh tế Tp. Hồ Chí Minh"
+        ]
+      },
+      {
+        "name": "LÊ THỊ LIÊN",
+        "title": "Thẩm định viên",
+        "experience": "6 năm",
+        "description": [
+          "Cử nhân chuyên ngành Thẩm định giá"
+        ]
+      },
+      {
+        "name": "PHẠM ĐẶNG DIỄM TRINH",
+        "title": "Thẩm định viên",
+        "experience": "6 năm",
+        "description": [
+          "Cử nhân chuyên ngành Thẩm định giá"
+        ]
+      },
+      {
+        "name": "PHẠM NGỌC QUỲNH TRÂM",
+        "title": "Thẩm định viên",
+        "experience": "5 năm",
+        "description": [
+          "Cử nhân chuyên ngành Thẩm định giá"
+        ]
+      },
+      {
+        "name": "VÕ HƯƠNG GIANG",
+        "title": "TĐV - CN Bình Định",
+        "experience": "6 năm",
+        "description": [
+          "Cử nhân chuyên ngành Thẩm định giá"
+        ]
+      },
+      {
+        "name": "VI THỊ MỘNG LY",
+        "title": "Kế toán viên",
+        "experience": "8 năm",
+        "description": [
+          "Cử nhân chuyên ngành Kế toán"
+        ]
+      },
+      {
+        "name": "NGUYỄN TRƯƠNG KHÁNH NGỌC",
+        "title": "Kế toán viên",
+        "experience": "8 năm",
+        "description": [
+          "Cử nhân chuyên ngành Kế toán"
+        ]
+      },
+      {
+        "name": "NGUYỄN THỊ TUYẾT VY",
+        "title": "Hành chính nhân sự",
+        "experience": "2 năm",
+        "description": [
+          "Cử nhân ngành Quản trị kinh doanh - ĐH Công nghiệp Tp. Hồ Chí Minh"
+        ]
+      }
+    ]
+  },
+  "careers": {
+    "title": "Tuyển Dụng",
+    "meta_title": "Tuyển Dụng - MHD Valuation",
+    "meta_desc": "Gia nhập đội ngũ MHD Valuation để trải nghiệm môi trường làm việc chuyên nghiệp, cơ hội thăng tiến rõ ràng và hệ thống phúc lợi hấp dẫn.",
+    "nav_submit": "Thông Tin Gửi Hồ Sơ",
+    "nav_opportunities": "Cơ Hội Nghề Nghiệp",
+    "why_choose_us": {
+      "title": "Vì Sao Chọn MHD?",
+      "f1_title": "Môi Trường Làm Việc Chuyên Nghiệp Năng Động",
+      "f1_desc": "Tại <strong>MHD</strong>, chúng tôi không ngừng thúc đẩy và phát triển các \"chiến binh\" của mình. Ban lãnh đạo MHD luôn định hướng, xây dựng MHD trở thành nơi làm việc lý tưởng nhất cho nhân viên. Các buổi chia sẻ và training dường như là điều không thể thiếu. Bên cạnh làm việc hết sức, chúng tôi cũng thư giãn và truyền động lực để tham gia các cuộc chiến sau này.",
+      "f2_title": "Hệ Thống Lương Thưởng Cạnh Tranh",
+      "f2_desc": "Bậc lương được xác định dựa trên kinh nghiệm, năng lực, mức độ phức tạp và tầm quan trọng của từng vị trí. Một năm xét duyệt lương 1 lần căn cứ vào hiệu suất làm việc. Tiến hành thưởng quý đối với nhân viên kinh doanh vượt chỉ tiêu và thưởng năm đối với tất cả nhân viên. Ngoài ra, có các mức trợ cấp ăn uống, xăng xe, điện thoại, công tác đầy đủ.",
+      "f3_title": "Đào Tạo Phát Triển Nghề Nghiệp",
+      "f3_desc": "<strong>MHD</strong> không ngừng rèn luyện và thúc đẩy phát triển kỹ năng từng cá nhân chiến binh thông qua training và các khóa học. Bạn sẽ có một lộ trình làm việc và thăng tiến rõ ràng phù hợp nhất với mục tiêu bản thân và tham gia các dự án có quy mô lớn."
+    },
+    "benefits": {
+      "title": "Phúc Lợi Công Ty",
+      "items": [
+        {
+          "title": "THƯỞNG",
+          "desc": "Chính sách thu nhập, chế độ đãi ngộ và thưởng công bằng, minh bạch. Lương tháng 13 đầy đủ. Điều chỉnh lương định kỳ hằng năm dựa vào kết quả đánh giá."
+        },
+        {
+          "title": "BẢO HIỂM SỨC KHỎE",
+          "desc": "Ngoài việc thực hiện đầy đủ chính sách BHYT theo quy định nhà nước, MHD còn hỗ trợ nhân viên các gói bảo hiểm sức khỏe hằng năm tùy vào thời gian làm việc."
+        },
+        {
+          "title": "HOẠT ĐỘNG NHÓM",
+          "desc": "Thường xuyên tổ chức Teambuilding, Party, CLB Thể thao (Bóng đá, Cầu lông) và tặng quà, lì xì dịp sinh nhật, Lễ/Tết nhằm gắn kết thành viên."
+        },
+        {
+          "title": "ĐÀO TẠO",
+          "desc": "Xây dựng các chương trình đào tạo và phát triển đội ngũ kế thừa. Bạn sẽ được học những kiến thức mới giúp phát triển sự nghiệp và gắn bó lâu dài."
+        },
+        {
+          "title": "NGÀY PHÉP",
+          "desc": "Nhân viên được hưởng đầy đủ 12 ngày phép năm và các ngày lễ theo quy định. Số phép năm tăng dựa vào thâm niên làm việc tại Công ty."
+        },
+        {
+          "title": "KHÁC",
+          "desc": "Được hưởng nhiều chính sách khác như: trợ cấp sinh con, hiếu hỉ, ốm đau, đồng phục, chi phí hoạt động đội nhóm…"
+        }
+      ]
+    },
+    "cta": {
+      "title": "CƠ HỘI ĐƯỢC LÀM VIỆC TẠI MỘT TRONG NHỮNG NƠI TỐT NHẤT",
+      "button": "Ứng Tuyển Ngay"
+    }
+  },
+  "contact": {
+    "title": "LIÊN HỆ",
+    "meta_title": "Liên Hệ - MHD Valuation",
+    "meta_desc": "Liên hệ ngay với MHD Valuation qua Hotline hoặc Email để được tư vấn dịch vụ thẩm định giá. Hệ thống chi nhánh toàn quốc luôn sẵn sàng phục vụ.",
+    "company_name": "CÔNG TY TNHH THẨM ĐỊNH GIÁ MHD",
+    "headquarters": "Trụ sở chính",
+    "address": "Số 52 Trần Bình Trọng, phường Bình Lợi Trung, Thành phố Hồ Chí Minh",
+    "hotline": "Hotline",
+    "email": "Email",
+    "tax_code": "Mã số thuế",
+    "bank": "Ngân hàng",
+    "bank_desc": "007.100.131.6688 - NH TMCP Ngoại Thương VN (Vietcombank) - CN Tân Sài Gòn",
+    "branch_system": "HỆ THỐNG CHI NHÁNH",
+    "notice": "(*) Lưu ý:",
+    "notice_desc": "MHD bao gồm hệ thống các chi nhánh/ văn phòng đại diện thành viên được công bố chính thức theo thông tin như trên. Các tổ chức, đơn vị khác ngoài hệ thống này không thuộc sự quản lý của MHD. Quý đối tác và Quý khách hàng xin vui lòng lưu ý để tránh nhầm lẫn trong các hoạt động giao dịch, kinh doanh.",
+    "form": {
+      "title": "GỬI TIN NHẮN CHO CHÚNG TÔI",
+      "name_placeholder": "Họ và tên của bạn *",
+      "email_placeholder": "Địa chỉ email *",
+      "phone_placeholder": "Số điện thoại *",
+      "message_placeholder": "Tin nhắn của bạn *",
+      "submit": "Gửi Thông Điệp",
+      "submitting": "Đang gửi...",
+      "success": "Gửi thành công! Chúng tôi sẽ liên hệ lại sớm nhất.",
+      "error": "Đã có lỗi xảy ra. Vui lòng thử lại sau.",
+      "validation": "Vui lòng điền đầy đủ và chính xác thông tin."
+    },
+    "branches": [
+      {
+        "name": "CHI NHÁNH HÀ NỘI",
+        "address": "Số 34, Ngõ 8 Hoa Lư, Phường Hai Bà Trưng, TP. Hà Nội",
+        "phone": "0989 294 636 – Ms. Hà",
+        "email": "hanoi.cn@mhd.com.vn"
+      },
+      {
+        "name": "CHI NHÁNH NGHỆ AN",
+        "address": "Số 187 Phạm Đình Toái, phường Vinh Phú, tỉnh Nghệ An",
+        "phone": "0236 655 8555 – Mr. Dũng",
+        "email": "nghean.cn@mhd.com.vn"
+      },
+      {
+        "name": "CHI NHÁNH ĐÀ NẴNG",
+        "address": "373 Trưng Nữ Vương, phường Hải Châu, Tp. Đà Nẵng",
+        "phone": "0909 63 0504 – Mr. Ánh",
+        "email": "danang.cn@mhd.com.vn"
+      },
+      {
+        "name": "CHI NHÁNH BÌNH ĐỊNH",
+        "address": "Lô N1LK20, đường Thành Thái nối dài, phường Quy Nhơn Nam, tỉnh Gia Lai",
+        "phone": "0902 315 934 – Mr. Quỳnh",
+        "email": "binhdinh.cn@mhd.com.vn"
+      },
+      {
+        "name": "CHI NHÁNH KHÁNH HOÀ",
+        "address": "Số 22 Cao Bá Quát, phường Nha Trang, tỉnh Khánh Hòa",
+        "phone": "0888 91 6969 – Mr Nhật",
+        "email": "cnkhanhhoa@mhd.com.vn"
+      },
+      {
+        "name": "CHI NHÁNH ĐĂKLĂK",
+        "address": "213 Nguyễn Công Trứ, phường Buôn Ma Thuột, tỉnh Đắk Lắk",
+        "phone": "038 447 2212 – Mr. Hải",
+        "email": "daklak.cn@mhd.com.vn"
+      },
+      {
+        "name": "CHI NHÁNH BÌNH PHƯỚC",
+        "address": "Số 1291 Phú Riềng Đỏ, phường Bình Phước, tỉnh Đồng Nai",
+        "phone": "0914 412 233 – Mr. Lý",
+        "email": "binhphuoc.cn@mhd.com.vn"
+      },
+      {
+        "name": "CHI NHÁNH BÀ RỊA - VŨNG TÀU",
+        "address": "Số 03 Hoàng Việt, phường Long Hương, TP. Hồ Chí Minh",
+        "phone": "0909 630 504 – Mr. Ánh",
+        "email": "bariavungtau.cn@mhd.com.vn"
+      },
+      {
+        "name": "VPĐD ĐỒNG NAI",
+        "address": "117/3, khu phố 3, phường Trảng Dài, tỉnh Đồng Nai",
+        "phone": "0906 606 739 – Mr Nam",
+        "email": "dongnai.cn@mhd.com.vn"
+      },
+      {
+        "name": "VPĐD TRÀ VINH",
+        "address": "Số 64A Nguyễn Thái Học, Phường 2, thành phố Trà Vinh",
+        "phone": "0901 02 03 48 – Mr Viễn",
+        "email": "travinh.vpdd@mhd.com.vn"
+      },
+      {
+        "name": "VPĐD LONG AN",
+        "address": "46 Nguyễn Thông, phường Long An, tỉnh Tây Ninh",
+        "phone": "0989 294 636 – Ms. Hà",
+        "email": "longan.vpdd@mhd.com.vn"
+      },
+      {
+        "name": "VPĐD AN GIANG",
+        "address": "Số 3 cư xá Sân Vận Động, phường Châu Đốc, tỉnh An Giang",
+        "phone": "0931 037 907 – Ms. Tuyết Nhi",
+        "email": "angiang.vpdd@mhd.com.vn"
+      },
+      {
+        "name": "VPĐD VĨNH LONG",
+        "address": "Số 221 Trần Đại Nghĩa, phường Phước Hậu, tỉnh Vĩnh Long",
+        "phone": "0981 546 469 – Ms. Cẩm Tú",
+        "email": "vinhlong.vpdd@mhd.com.vn"
+      }
+    ]
+  },
+  "popup": {
+    "title": "Bạn Cần Tư Vấn Định Giá?",
+    "subtitle": "Để lại thông tin, chuyên gia của chúng tôi sẽ gọi lại ngay trong 5 phút!"
+  },
+  "share": {
+    "title": "Chia sẻ:"
+  },
+  "news": {
+    "related": "Bài Viết Liên Quan"
+  }
+}
