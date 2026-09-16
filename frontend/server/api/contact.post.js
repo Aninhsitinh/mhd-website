@@ -1,6 +1,9 @@
 const isValidEmail = (email) => /^\S+@\S+\.\S+$/.test(email)
 
 export default defineEventHandler(async (event) => {
+  // Rate limit: max 5 submissions per 10 minutes per IP address to block spam bots
+  checkRateLimit(event, 5, 10 * 60 * 1000, 'contact-form')
+
   try {
     const body = await readBody(event) || {}
     const config = useRuntimeConfig()

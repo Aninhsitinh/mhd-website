@@ -49,6 +49,9 @@ Bạn luôn dùng tiếng Việt. Xưng hô là "MHD Valuation" hoặc "chúng t
 const responseCache = new Map<string, string>()
 
 export default defineEventHandler(async (event) => {
+  // Rate limit: max 10 messages per minute per IP to prevent quota exhaustion
+  checkRateLimit(event, 10, 60 * 1000, 'ai-chat')
+
   const config = useRuntimeConfig()
   const apiKey = config.geminiApiKey
 

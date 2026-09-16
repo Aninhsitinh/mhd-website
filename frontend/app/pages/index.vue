@@ -25,8 +25,8 @@
               ĐỦ ĐIỀU KIỆN HÀNH NGHỀ THEO QUY ĐỊNH BỘ TÀI CHÍNH
             </div>
             
-            <h1 class="text-3xl sm:text-4xl lg:text-[44px] xl:text-[50px] font-display font-extrabold text-white leading-[1.2] tracking-tight mb-4 drop-shadow-md">
-              Giá trị tài sản,<br>
+            <h1 class="text-3xl sm:text-4xl lg:text-[44px] xl:text-[50px] font-display font-extrabold text-white leading-[1.35] sm:leading-[1.4] lg:leading-[1.35] tracking-tight mb-5 drop-shadow-md">
+              Giá trị tài sản,<br class="hidden sm:inline">
               <span class="text-primary">minh chứng</span> bằng dữ liệu
             </h1>
             

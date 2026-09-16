@@ -1,1 +1,33 @@
 /* Custom SCSS for Payload CMS Admin Panel */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+}
+
+html, body, #app {
+  font-family: var(--font-body) !important;
+}
+
+/* Lexical Editor, ContentEditable, Blocks, and Inputs */
+[contenteditable="true"],
+[contenteditable="true"] *,
+.editor-container,
+.rich-text,
+.rich-text *,
+.payload-richtext,
+.payload-richtext *,
+.lexical-editor,
+.lexical-editor *,
+.ContentEditable__root,
+.ContentEditable__root *,
+input,
+textarea,
+p, span, div {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+  font-feature-settings: "liga" 1, "calt" 1;
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+

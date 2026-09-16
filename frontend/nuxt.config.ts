@@ -43,8 +43,16 @@ export default defineNuxtConfig({
     url: 'https://mhdvaluation.com.vn',
     name: 'MHD Valuation'
   },
+  ssr: true, // Full Server-Side Rendering for 100% SEO indexing
   image: {
-    domains: ['localhost', '127.0.0.1']
+    domains: [
+      'localhost',
+      '127.0.0.1',
+      'mhdvaluation.com.vn',
+      'www.mhdvaluation.com.vn',
+      'cms.mhdvaluation.com.vn',
+      'mhd.com.vn'
+    ]
   },
   colorMode: {
     classSuffix: ''
@@ -58,11 +66,26 @@ export default defineNuxtConfig({
     detectBrowserLanguage: false
   },
   routeRules: {
-    // Enable Stale-While-Revalidate (SWR) caching for all pages only in production
-    // This dramatically increases load speed and reduces WP backend queries.
-    '/**': process.env.NODE_ENV === 'production' ? { swr: 3600 } : {},
-    // Do not cache API routes to avoid consuming POST bodies prematurely
-    '/api/**': { cache: false }
+    // 1. High-priority Static/Corporate Pages: ISR/SWR cache for instant 0.1s load
+    '/': { swr: 3600 },
+    '/gioi-thieu': { swr: 3600 },
+    '/quy-trinh': { swr: 3600 },
+    '/ho-so-nang-luc': { swr: 3600 },
+    '/ho-so-phap-ly': { swr: 3600 },
+
+    // 2. Dynamic Content Collections: Revalidate in background every 30 minutes
+    '/du-an/**': { swr: 1800 },
+    '/tin-tuc/**': { swr: 1800 },
+    '/tai-lieu/**': { swr: 1800 },
+    '/linh-vuc/**': { swr: 3600 },
+
+    // 3. Dynamic Interactive & Form Pages: SSR without cache
+    '/lien-he': { ssr: true },
+    '/cong-thong-tin': { ssr: true },
+    '/tra-cuu-chung-thu': { ssr: true },
+
+    // 4. API Endpoints: Strictly disable cache to ensure POST bodies & rate limits work properly
+    '/api/**': { cache: false, cors: true }
   }
 })
 

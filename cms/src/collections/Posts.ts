@@ -1,8 +1,12 @@
 import type { CollectionConfig } from 'payload'
 import { lexicalHTML } from '@payloadcms/richtext-lexical'
+import { normalizeUnicodeHook } from '../hooks/normalizeUnicode'
 
 export const Posts: CollectionConfig = {
   slug: 'posts',
+  hooks: {
+    beforeChange: [normalizeUnicodeHook],
+  },
   admin: {
     useAsTitle: 'title',
     defaultColumns: ['title', 'category', 'status', 'publishedDate'],
