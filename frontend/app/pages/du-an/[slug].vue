@@ -242,46 +242,46 @@
             <div class="sticky top-28 space-y-6">
               
               <!-- Comprehensive Technical Specs Card -->
-              <div class="p-6 rounded-3xl bg-surface shadow-corporate">
-                <div class="flex items-center justify-between pb-4 mb-4">
+              <div class="p-5 sm:p-6 rounded-3xl bg-surface shadow-corporate">
+                <div class="flex items-center justify-between pb-4 mb-4 border-b border-border/10">
                   <h3 class="text-sm font-bold font-display text-text uppercase tracking-wider font-mono">Thông số hồ sơ kỹ thuật</h3>
                   <span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-emerald-500/10 text-emerald-600">HOÀN TẤT THẨM ĐỊNH</span>
                 </div>
 
                 <div class="space-y-4 text-xs">
-                  <div>
-                    <span class="text-text-muted block text-[11px] font-mono mb-0.5">Khách hàng / Đối tác:</span>
-                    <span class="font-bold text-text text-sm leading-snug">{{ specs.client || 'Khách hàng Doanh nghiệp' }}</span>
+                  <div class="space-y-0.5">
+                    <span class="text-text-muted block text-[11px] font-mono">Khách hàng / Đối tác:</span>
+                    <span class="font-bold text-text text-sm leading-snug break-words">{{ specs.client || 'Khách hàng Doanh nghiệp' }}</span>
                   </div>
 
-                  <div>
-                    <span class="text-text-muted block text-[11px] font-mono mb-0.5">Loại hình tài sản:</span>
-                    <span class="font-bold text-text">{{ specs.assetType || getCategoryName(project) }}</span>
+                  <div class="space-y-0.5">
+                    <span class="text-text-muted block text-[11px] font-mono">Loại hình tài sản:</span>
+                    <span class="font-bold text-text break-words">{{ specs.assetType || getCategoryName(project) }}</span>
                   </div>
 
-                  <div>
-                    <span class="text-text-muted block text-[11px] font-mono mb-0.5">Quy mô diện tích / Công suất:</span>
-                    <span class="font-bold text-primary">{{ specs.scale || 'Hồ sơ tiêu chuẩn' }}</span>
+                  <div class="space-y-0.5">
+                    <span class="text-text-muted block text-[11px] font-mono">Quy mô diện tích / Công suất:</span>
+                    <span class="font-bold text-primary break-words">{{ specs.scale || 'Hồ sơ tiêu chuẩn' }}</span>
                   </div>
 
-                  <div>
-                    <span class="text-text-muted block text-[11px] font-mono mb-0.5">Địa bàn thẩm định:</span>
-                    <span class="font-bold text-text">{{ specs.location || 'Việt Nam' }}</span>
+                  <div class="space-y-0.5">
+                    <span class="text-text-muted block text-[11px] font-mono">Địa bàn thẩm định:</span>
+                    <span class="font-bold text-text break-words">{{ specs.location || 'Việt Nam' }}</span>
                   </div>
 
-                  <div>
-                    <span class="text-text-muted block text-[11px] font-mono mb-0.5">Phương pháp thẩm định:</span>
-                    <span class="font-bold text-text">{{ specs.method || 'Tiêu chuẩn Thẩm định giá Việt Nam' }}</span>
+                  <div class="space-y-0.5">
+                    <span class="text-text-muted block text-[11px] font-mono">Phương pháp thẩm định:</span>
+                    <span class="font-bold text-text break-words">{{ specs.method || 'Tiêu chuẩn Thẩm định giá Việt Nam' }}</span>
                   </div>
 
-                  <div>
-                    <span class="text-text-muted block text-[11px] font-mono mb-0.5">Mục đích thẩm định:</span>
-                    <span class="font-semibold text-text">{{ specs.purpose || 'Tài trợ vốn tín dụng & xác định giá trị tài sản' }}</span>
+                  <div class="space-y-0.5">
+                    <span class="text-text-muted block text-[11px] font-mono">Mục đích thẩm định:</span>
+                    <span class="font-semibold text-text break-words">{{ specs.purpose || 'Tài trợ vốn tín dụng & xác định giá trị tài sản' }}</span>
                   </div>
 
-                  <div>
-                    <span class="text-text-muted block text-[11px] font-mono mb-0.5">Đơn vị thẩm định:</span>
-                    <span class="font-semibold text-secondary">MHD Valuation (Chính thức)</span>
+                  <div class="space-y-0.5">
+                    <span class="text-text-muted block text-[11px] font-mono">Đơn vị thẩm định:</span>
+                    <span class="font-semibold text-secondary break-words">MHD Valuation (Chính thức)</span>
                   </div>
                 </div>
               </div>

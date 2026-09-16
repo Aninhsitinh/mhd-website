@@ -101,7 +101,7 @@
                   type="text" 
                   v-model="formData.name"
                   :placeholder="$t('contact.form.name_placeholder')" 
-                  class="w-full px-4 py-3 rounded-xl bg-surface text-text shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all placeholder:text-text-muted"
+                  class="w-full px-4 py-3.5 min-h-[48px] text-base sm:text-sm rounded-xl bg-surface text-text shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all placeholder:text-text-muted"
                   :class="{ 'ring-2 ring-red-500': errors.name }"
                 />
               </div>
@@ -113,7 +113,7 @@
                     type="email" 
                     v-model="formData.email"
                     :placeholder="$t('contact.form.email_placeholder')" 
-                    class="w-full px-4 py-3 rounded-xl bg-surface text-text shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all placeholder:text-text-muted"
+                    class="w-full px-4 py-3.5 min-h-[48px] text-base sm:text-sm rounded-xl bg-surface text-text shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all placeholder:text-text-muted"
                     :class="{ 'ring-2 ring-red-500': errors.email }"
                   />
                 </div>
@@ -122,7 +122,7 @@
                     type="tel" 
                     v-model="formData.phone"
                     :placeholder="$t('contact.form.phone_placeholder')" 
-                    class="w-full px-4 py-3 rounded-xl bg-surface text-text shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all placeholder:text-text-muted"
+                    class="w-full px-4 py-3.5 min-h-[48px] text-base sm:text-sm rounded-xl bg-surface text-text shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all placeholder:text-text-muted"
                     :class="{ 'ring-2 ring-red-500': errors.phone }"
                   />
                 </div>
@@ -134,7 +134,7 @@
                   v-model="formData.message"
                   :placeholder="$t('contact.form.message_placeholder')" 
                   rows="4"
-                  class="w-full px-4 py-3 rounded-xl bg-surface text-text shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all resize-none placeholder:text-text-muted"
+                  class="w-full px-4 py-3.5 text-base sm:text-sm rounded-xl bg-surface text-text shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all resize-none placeholder:text-text-muted"
                   :class="{ 'ring-2 ring-red-500': errors.message }"
                 ></textarea>
               </div>

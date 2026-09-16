@@ -325,6 +325,12 @@ const PER_PAGE = 24
 const activeCategory = ref(0)
 const viewLayout = ref('interactive') // 'interactive' (Phương án B) | 'grid'
 
+onMounted(() => {
+  if (process.client && window.innerWidth < 768) {
+    viewLayout.value = 'grid' // Default to comfortable card grid on mobile devices
+  }
+})
+
 const categories = [
   { id: 0, name: 'Tất cả dự án' },
   { id: 64, name: 'Bất động sản' },

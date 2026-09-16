@@ -1,5 +1,5 @@
 <template>
-  <div class="relative w-full h-[600px] md:h-[800px] bg-transparent flex items-center justify-center">
+  <div class="relative w-full h-[480px] sm:h-[580px] md:h-[750px] lg:h-[800px] bg-transparent flex items-center justify-center">
     
     <!-- Removed Background Glow as requested -->
 
@@ -155,7 +155,8 @@ const handleResize = () => {
   const isMob = window.innerWidth < 768
   chart.setOption({
     geo: {
-      zoom: isMob ? 1.2 : 1.1
+      zoom: isMob ? 1.25 : 1.1,
+      center: isMob ? [107.5, 16.0] : undefined
     }
   })
 }
@@ -212,7 +213,8 @@ const initChart = () => {
       geo: {
         map: 'VN',
         roam: false,
-        zoom: isMobile ? 1.2 : 1.1,
+        zoom: isMobile ? 1.25 : 1.1,
+        center: isMobile ? [107.5, 16.0] : undefined,
         itemStyle: theme.geo.itemStyle,
         emphasis: {
           itemStyle: theme.geo.emphasis.itemStyle,
