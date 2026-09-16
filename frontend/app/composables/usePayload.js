@@ -67,6 +67,28 @@ export const usePayload = () => {
     return useFetch(`${payloadUrl}/media/${id}`, { key: `media-${id}` })
   }
 
+  // Fetch a Payload global (e.g. 'site-settings')
+  const fetchGlobal = (slug = 'site-settings') => {
+    const cacheKey = `payload-global-${slug}`
+    return useFetch(`${payloadUrl}/globals/${slug}`, {
+      key: cacheKey,
+      getCachedData: (key) => nuxtApp.payload.data[key] || nuxtApp.static.data[key],
+      transform: (res) => {
+        if (!res) return null
+        const resolveUrl = (media) => {
+          if (!media?.url) return null
+          return media.url.startsWith('http') ? media.url : `${payloadUrl.replace('/api', '')}${media.url}`
+        }
+        return {
+          ...res,
+          heroBannerUrl: resolveUrl(res.heroBanner),
+          teamPhotoUrl: resolveUrl(res.teamPhoto),
+          companyLogoUrl: resolveUrl(res.companyLogo),
+        }
+      }
+    })
+  }
+
   // Map Payload doc → same shape that existing .vue pages expect
   const mapPayloadPost = (doc) => {
     if (!doc) return null
@@ -160,6 +182,7 @@ export const usePayload = () => {
     fetchMorePosts,
     fetchPage,
     fetchMedia,
+    fetchGlobal,
     resolveCollection
   }
 }

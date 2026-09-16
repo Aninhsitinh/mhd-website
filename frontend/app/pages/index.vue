@@ -5,7 +5,7 @@
       <!-- Full-bleed background image with clear right-side exposure -->
       <div class="absolute inset-0 w-full h-full">
         <NuxtImg 
-          src="/images/hero-office.png" 
+          :src="siteSettings?.heroBannerUrl || '/images/hero-office.png'" 
           alt="MHD Office Landmark Background" 
           class="w-full h-full object-cover object-[70%_center] sm:object-[65%_center] lg:object-right-center" 
           format="webp" 
@@ -764,7 +764,10 @@ useSeoMeta({
   ogImage: '/images/logo-mhd.png'
 })
 
-const { fetchPosts } = usePayload()
+const { fetchPosts, fetchGlobal } = usePayload()
+
+// Fetch Global Site Settings (Hero Banner, Logos from Payload CMS)
+const { data: siteSettings } = await fetchGlobal('site-settings')
 
 // Active index for Terminal Interactive Tab
 const activeTerminalIndex = ref(0)

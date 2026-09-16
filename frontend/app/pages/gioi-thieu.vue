@@ -28,7 +28,7 @@
           </div>
           <div class="relative">
             <div class="rounded-2xl overflow-hidden shadow-corporate bg-surface">
-              <img src="~/assets/team-photo.jpg" alt="Đội ngũ MHD" loading="lazy" class="w-full h-auto min-h-[380px] max-h-[500px] object-cover object-center">
+              <img :src="siteSettings?.teamPhotoUrl || '/images/team-photo.jpg'" alt="Đội ngũ MHD" loading="lazy" class="w-full h-auto min-h-[380px] max-h-[500px] object-cover object-center">
             </div>
           </div>
         </div>
@@ -139,7 +139,8 @@ import { useI18n } from '#imports'
 const { t } = useI18n()
 useScrollReveal()
 
-const { fetchPosts } = usePayload()
+const { fetchPosts, fetchGlobal } = usePayload()
+const { data: siteSettings } = await fetchGlobal('site-settings')
 const { data: teamData } = await fetchPosts({ per_page: 50, sort: 'order' }, 'team')
 const leadershipTeam = computed(() => {
   const team = teamData.value || []

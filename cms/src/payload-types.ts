@@ -103,8 +103,12 @@ export interface Config {
     defaultIDType: number;
   };
   fallbackLocale: null;
-  globals: {};
-  globalsSelect: {};
+  globals: {
+    'site-settings': SiteSetting;
+  };
+  globalsSelect: {
+    'site-settings': SiteSettingsSelect<false> | SiteSettingsSelect<true>;
+  };
   locale: null;
   widgets: {
     collections: CollectionsWidget;
@@ -808,6 +812,30 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
   batch?: T;
   updatedAt?: T;
   createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "site-settings".
+ */
+export interface SiteSetting {
+  id: number;
+  heroBanner?: (number | null) | Media;
+  teamPhoto?: (number | null) | Media;
+  companyLogo?: (number | null) | Media;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "site-settings_select".
+ */
+export interface SiteSettingsSelect<T extends boolean = true> {
+  heroBanner?: T;
+  teamPhoto?: T;
+  companyLogo?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
