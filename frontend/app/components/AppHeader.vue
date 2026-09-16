@@ -111,7 +111,7 @@
           {{ locale === 'vi' ? 'EN' : 'VN' }}
         </button>
 
-        <button class="flex items-center justify-center w-10 h-10 min-w-[44px] min-h-[44px] rounded-full bg-primary/5 hover:bg-primary text-primary hover:text-white transition-all duration-300 shadow-sm" @click="mobileMenuOpen = !mobileMenuOpen" aria-label="Toggle navigation menu">
+        <button class="flex items-center justify-center w-8 h-8 rounded-full bg-primary/5 hover:bg-primary text-primary hover:text-white transition-all duration-300 shadow-sm" @click="mobileMenuOpen = !mobileMenuOpen">
           <svg v-if="!mobileMenuOpen" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
@@ -122,7 +122,7 @@
       </div>
     </div>
 
-    <!-- Mobile Navigation Drawer with backdrop overlay -->
+    <!-- Mobile Navigation Drawer -->
     <Transition
       enter-active-class="transition duration-300 ease-out"
       enter-from-class="transform -translate-y-4 opacity-0"
@@ -131,20 +131,17 @@
       leave-from-class="transform translate-y-0 opacity-100"
       leave-to-class="transform -translate-y-4 opacity-0"
     >
-      <div v-show="mobileMenuOpen" class="md:hidden absolute top-full left-3 right-3 sm:left-4 sm:right-4 mt-2 bg-surface rounded-2xl p-4 sm:p-5 shadow-corporate-lg z-50 max-h-[calc(85vh-80px)] overflow-y-auto">
-        <nav class="flex flex-col gap-1">
+      <div v-show="mobileMenuOpen" class="md:hidden absolute top-full left-4 right-4 mt-2 bg-surface rounded-2xl p-5 shadow-corporate-lg z-50">
+        <nav class="flex flex-col gap-1.5">
           <NuxtLink 
             v-for="link in navLinks" 
             :key="link.path" 
             :to="link.path" 
-            class="text-sm font-semibold text-text hover:text-primary px-4 py-3 rounded-xl hover:bg-primary/5 transition-colors flex items-center justify-between" 
+            class="text-sm font-semibold text-text hover:text-primary px-4 py-2.5 rounded-xl hover:bg-primary/5 transition-colors" 
             active-class="!text-primary bg-primary/10 font-bold" 
             @click="mobileMenuOpen = false"
           >
-            <span>{{ link.name }}</span>
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 opacity-40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-            </svg>
+            {{ link.name }}
           </NuxtLink>
         </nav>
       </div>

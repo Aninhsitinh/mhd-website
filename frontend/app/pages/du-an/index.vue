@@ -397,11 +397,4 @@ const loadMore = async () => {
     loadingMore.value = false
   }
 }
-
-onMounted(() => {
-  if (process.client && window.innerWidth < 768) {
-    // Default to clean card grid on mobile phones for effortless one-hand scrolling
-    viewLayout.value = 'grid'
-  }
-})
 </script>

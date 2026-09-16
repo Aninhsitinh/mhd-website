@@ -101,7 +101,7 @@
                   type="text" 
                   v-model="formData.name"
                   :placeholder="$t('contact.form.name_placeholder')" 
-                  class="w-full px-4 py-3 sm:py-3.5 rounded-xl bg-surface text-base md:text-sm text-text shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all placeholder:text-text-muted min-h-[48px]"
+                  class="w-full px-4 py-3 rounded-xl bg-surface text-text shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all placeholder:text-text-muted"
                   :class="{ 'ring-2 ring-red-500': errors.name }"
                 />
               </div>
@@ -113,7 +113,7 @@
                     type="email" 
                     v-model="formData.email"
                     :placeholder="$t('contact.form.email_placeholder')" 
-                    class="w-full px-4 py-3 sm:py-3.5 rounded-xl bg-surface text-base md:text-sm text-text shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all placeholder:text-text-muted min-h-[48px]"
+                    class="w-full px-4 py-3 rounded-xl bg-surface text-text shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all placeholder:text-text-muted"
                     :class="{ 'ring-2 ring-red-500': errors.email }"
                   />
                 </div>
@@ -122,7 +122,7 @@
                     type="tel" 
                     v-model="formData.phone"
                     :placeholder="$t('contact.form.phone_placeholder')" 
-                    class="w-full px-4 py-3 sm:py-3.5 rounded-xl bg-surface text-base md:text-sm text-text shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all placeholder:text-text-muted min-h-[48px]"
+                    class="w-full px-4 py-3 rounded-xl bg-surface text-text shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all placeholder:text-text-muted"
                     :class="{ 'ring-2 ring-red-500': errors.phone }"
                   />
                 </div>
@@ -134,7 +134,7 @@
                   v-model="formData.message"
                   :placeholder="$t('contact.form.message_placeholder')" 
                   rows="4"
-                  class="w-full px-4 py-3 sm:py-3.5 rounded-xl bg-surface text-base md:text-sm text-text shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all resize-none placeholder:text-text-muted"
+                  class="w-full px-4 py-3 rounded-xl bg-surface text-text shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all resize-none placeholder:text-text-muted"
                   :class="{ 'ring-2 ring-red-500': errors.message }"
                 ></textarea>
               </div>
@@ -145,7 +145,7 @@
               <button 
                 type="submit" 
                 :disabled="isSubmitting"
-                class="w-full py-4 bg-primary text-white font-bold rounded-xl hover:bg-orange-600 transition-colors shadow-lg shadow-primary/30 flex justify-center items-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed min-h-[48px]"
+                class="w-full py-4 bg-primary text-white font-bold rounded-xl hover:bg-orange-600 transition-colors shadow-lg shadow-primary/30 flex justify-center items-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
               >
                 <svg v-if="isSubmitting" class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                   <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>

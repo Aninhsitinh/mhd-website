@@ -1,13 +1,17 @@
 <template>
-  <div class="relative w-full h-[480px] sm:h-[600px] md:h-[750px] bg-transparent flex items-center justify-center">
+  <div class="relative w-full h-[600px] md:h-[800px] bg-transparent flex items-center justify-center">
     
+    <!-- Removed Background Glow as requested -->
+
+
+
     <!-- ECharts Container -->
     <div 
       v-show="!errorMsg" 
       ref="chartRef" 
       class="w-full h-full"
     ></div>
-    <div v-show="errorMsg" class="absolute inset-0 flex items-center justify-center bg-bg text-red-500 font-bold p-6 sm:p-10 z-50 text-center text-xs sm:text-sm">
+    <div v-show="errorMsg" class="absolute inset-0 flex items-center justify-center bg-bg text-red-500 font-bold p-10 z-50 text-center">
       Error: {{ errorMsg }}
     </div>
 
