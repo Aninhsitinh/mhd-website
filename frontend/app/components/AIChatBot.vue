@@ -1,11 +1,11 @@
 <template>
-  <div class="fixed bottom-36 sm:bottom-40 right-4 sm:right-6 z-40 flex flex-col items-end print:hidden">
+  <div class="print:hidden">
     
-    <!-- Chat Window (Full-width bottom modal on mobile, sleek floating card on tablet/desktop) -->
+    <!-- Chat Window (Clean floating modal aligned with the right vertical floating column) -->
     <Transition name="chat-window">
       <div 
         v-if="isOpen" 
-        class="fixed sm:absolute bottom-4 sm:bottom-16 right-3 sm:right-0 w-[calc(100vw-24px)] sm:w-[380px] md:w-[400px] h-[78vh] sm:h-[500px] max-h-[620px] bg-surface backdrop-blur-xl shadow-2xl rounded-2xl flex flex-col overflow-hidden origin-bottom-right z-50 border border-border/10"
+        class="fixed bottom-24 sm:bottom-24 right-4 sm:right-6 w-[calc(100vw-32px)] sm:w-[380px] md:w-[400px] h-[75vh] sm:h-[520px] max-h-[640px] bg-surface backdrop-blur-xl shadow-2xl rounded-3xl flex flex-col overflow-hidden origin-bottom-right z-50 border border-border/20"
       >
         
         <!-- Header -->
@@ -94,24 +94,15 @@
         </form>
       </div>
     </Transition>
-
-    <!-- AI Floating Button -->
-    <button @click="toggleChat" class="relative flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-r from-primary to-orange-400 text-white shadow-lg shadow-primary/40 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 group z-50">
-      <span v-if="!isOpen" class="absolute inset-0 rounded-full animate-ping bg-primary opacity-50"></span>
-      <svg v-if="!isOpen" xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 relative z-10 group-hover:scale-110 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
-      </svg>
-      <svg v-else xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 relative z-10 group-hover:rotate-90 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-      </svg>
-    </button>
     
   </div>
 </template>
 
 <script setup>
-import { ref, nextTick, onMounted, watch } from 'vue'
+import { ref, nextTick, onMounted, onUnmounted, watch } from 'vue'
+import { useNuxtApp } from '#imports'
 
+const nuxtApp = useNuxtApp()
 const isOpen = ref(false)
 const inputMessage = ref('')
 const messages = ref([])
@@ -130,8 +121,13 @@ const sendQuickQuestion = (question) => {
   sendMessage()
 }
 
+let unhook = null
+
 onMounted(() => {
   if (process.client) {
+    unhook = nuxtApp.hook('mhd:open-ai-chat', () => {
+      toggleChat()
+    })
     const saved = localStorage.getItem('mhd_chat_history')
     if (saved) {
       try {
@@ -140,6 +136,12 @@ onMounted(() => {
         console.error('Lỗi khi đọc lịch sử chat:', e)
       }
     }
+  }
+})
+
+onUnmounted(() => {
+  if (unhook) {
+    unhook()
   }
 })
 
