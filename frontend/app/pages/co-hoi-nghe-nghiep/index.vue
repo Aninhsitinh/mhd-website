@@ -134,7 +134,7 @@
           </div>
 
           <!-- Location Filters Pills -->
-          <div class="flex flex-wrap items-center gap-2 pt-2 border-t border-surface-muted/60">
+          <div class="flex flex-wrap items-center gap-2 pt-2">
             <span class="text-xs text-text-muted font-bold font-mono uppercase mr-2">Địa điểm:</span>
             <button
               v-for="loc in locationOptions"
@@ -199,7 +199,7 @@
               </div>
 
               <!-- Action Right -->
-              <div class="flex sm:flex-row md:flex-col items-stretch sm:items-center md:items-end gap-3 shrink-0 pt-4 md:pt-0 border-t md:border-t-0 border-surface-muted/60">
+              <div class="flex sm:flex-row md:flex-col items-stretch sm:items-center md:items-end gap-3 shrink-0 pt-4 md:pt-0">
                 <NuxtLink 
                   :to="`/co-hoi-nghe-nghiep/${job.slug}`" 
                   class="w-full sm:w-auto px-6 py-3.5 rounded-2xl bg-primary text-white font-bold text-xs uppercase tracking-wider shadow-md hover:bg-primary-hover transition-all text-center inline-flex items-center justify-center gap-2 group-hover:scale-105"

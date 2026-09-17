@@ -276,7 +276,7 @@ watchEffect(() => {
 }
 
 :deep(.html-content td) {
-  @apply px-4 py-3 text-text-secondary text-sm border-b border-border/40;
+  @apply px-4 py-3 text-text-secondary text-sm;
 }
 
 :deep(.html-content img) {

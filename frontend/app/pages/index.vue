@@ -20,7 +20,7 @@
           
           <!-- Left Text Content (7 cols) -->
           <div class="lg:col-span-7">
-            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 mb-5 rounded-full bg-black/40 border border-white/15 backdrop-blur-md text-white text-[11px] font-mono font-bold tracking-wider uppercase">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 mb-5 rounded-full bg-black/40 backdrop-blur-md text-white text-[11px] font-mono font-bold tracking-wider uppercase">
               <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
               ĐỦ ĐIỀU KIỆN HÀNH NGHỀ THEO QUY ĐỊNH BỘ TÀI CHÍNH
             </div>
@@ -35,13 +35,13 @@
             </p>
             
             <div class="flex flex-col sm:flex-row items-center gap-3.5 w-full">
-              <NuxtLink to="/lien-he" class="w-full sm:w-auto px-7 py-3.5 text-center justify-center bg-primary hover:bg-primary-hover text-white text-xs font-bold uppercase tracking-wider rounded-full shadow-corporate hover:shadow-corporate-hover transition-all transform hover:-translate-y-0.5 inline-flex items-center gap-2">
+              <NuxtLink to="/lien-he" class="w-full sm:w-auto px-7 py-3.5 text-center justify-center bg-primary hover:bg-primary-hover text-white text-xs font-bold uppercase tracking-wider rounded-full shadow-corporate hover:shadow-corporate-glow transition-all transform hover:-translate-y-0.5 inline-flex items-center gap-2">
                 <span>Yêu cầu thẩm định tài sản</span>
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
               </NuxtLink>
-              <NuxtLink to="/cong-thong-tin" class="w-full sm:w-auto px-6 py-3.5 text-center justify-center bg-black/40 hover:bg-black/60 border border-white/20 backdrop-blur-md text-white text-xs font-bold uppercase tracking-wider rounded-full transition-all transform hover:-translate-y-0.5">
+              <NuxtLink to="/cong-thong-tin" class="w-full sm:w-auto px-6 py-3.5 text-center justify-center bg-black/40 hover:bg-black/60 backdrop-blur-md text-white text-xs font-bold uppercase tracking-wider rounded-full transition-all transform hover:-translate-y-0.5">
                 Cổng thông tin B2B / Ngân hàng
               </NuxtLink>
             </div>
@@ -49,7 +49,7 @@
 
           <!-- Right Floating Stats Card (5 cols) - Semi-transparent Glass style to reveal background behind -->
           <div class="lg:col-span-5 w-full">
-            <div class="bg-surface/90 dark:bg-surface/80 backdrop-blur-2xl rounded-2xl p-5 sm:p-6 lg:p-7 shadow-2xl space-y-4 sm:space-y-5 border border-white/20 w-full">
+            <div class="bg-surface/90 dark:bg-surface/80 backdrop-blur-2xl rounded-2xl p-5 sm:p-6 lg:p-7 shadow-2xl space-y-4 sm:space-y-5 w-full">
               <div class="flex items-center justify-between pb-1">
                 <span class="text-[10px] sm:text-[11px] font-mono font-bold uppercase tracking-wider text-primary">BẢO CHỨNG NĂNG LỰC</span>
                 <span class="text-[9px] sm:text-[10px] text-text-muted font-mono">Dữ liệu lũy kế</span>
@@ -309,7 +309,7 @@
             :key="idx"
             @click="activeTerminalIndex = idx"
             class="w-full md:w-auto px-2.5 sm:px-4 md:px-5 py-2.5 md:py-3 rounded-xl md:rounded-full text-[11px] sm:text-xs font-bold uppercase tracking-wider transition-all duration-300 flex items-center justify-start md:justify-center gap-2 shadow-sm text-left md:text-center min-h-[46px] md:min-h-0"
-            :class="activeTerminalIndex === idx ? 'bg-primary text-white shadow-corporate hover:shadow-corporate-hover -translate-y-0.5 ring-1 ring-primary' : 'bg-surface text-text-secondary hover:text-text hover:bg-surface-muted hover:-translate-y-0.5'"
+            :class="activeTerminalIndex === idx ? 'bg-primary text-white shadow-corporate hover:shadow-corporate-hover -translate-y-0.5' : 'bg-surface text-text-secondary hover:text-text hover:bg-surface-muted hover:-translate-y-0.5'"
           >
             <!-- SVG Icon dynamically matching each asset type -->
             <span class="shrink-0 w-4 h-4 flex items-center justify-center">
@@ -427,7 +427,7 @@
               <div class="flex flex-col sm:flex-row items-center gap-3.5 pt-2">
                 <NuxtLink 
                   :to="services[activeTerminalIndex].link" 
-                  class="w-full sm:w-auto px-7 py-3.5 bg-primary hover:bg-primary-hover text-white text-xs font-bold uppercase tracking-wider rounded-full shadow-corporate hover:shadow-corporate-hover transition-all inline-flex items-center justify-center gap-2 transform hover:-translate-y-0.5"
+                  class="w-full sm:w-auto px-7 py-3.5 bg-primary hover:bg-primary-hover text-white text-xs font-bold uppercase tracking-wider rounded-full shadow-corporate hover:shadow-corporate-glow transition-all inline-flex items-center justify-center gap-2 transform hover:-translate-y-0.5"
                 >
                   <span>Xem Chi Tiết Dịch Vụ</span>
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -739,7 +739,7 @@
           <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
             <NuxtLink 
               to="/lien-he" 
-              class="w-full sm:w-auto px-8 py-4 bg-primary hover:bg-primary-hover text-white text-xs font-bold uppercase tracking-wider rounded-full shadow-corporate hover:shadow-corporate-hover transition-all transform hover:-translate-y-0.5 inline-flex items-center justify-center gap-2"
+              class="w-full sm:w-auto px-8 py-4 bg-primary hover:bg-primary-hover text-white text-xs font-bold uppercase tracking-wider rounded-full shadow-corporate hover:shadow-corporate-glow transition-all transform hover:-translate-y-0.5 inline-flex items-center justify-center gap-2"
             >
               <span>Gửi Yêu Cầu Thẩm Định</span>
               <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">

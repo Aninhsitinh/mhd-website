@@ -21,7 +21,7 @@
               {{ $t('about.company_name') }}
             </h2>
             
-            <div class="space-y-4 text-base text-text-secondary leading-relaxed text-justify">
+            <div class="space-y-4 text-base text-text-secondary leading-relaxed text-left">
               <p v-html="$t('about.desc_1')"></p>
               <p v-html="$t('about.desc_2')"></p>
             </div>
@@ -46,7 +46,7 @@
               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" /></svg>
             </div>
             <h3 class="text-lg font-bold text-text mb-4 uppercase tracking-wider">{{ $t('about.vision_title') }}</h3>
-            <p class="text-text-secondary text-sm leading-relaxed text-justify" v-html="$t('about.vision_desc')"></p>
+            <p class="text-text-secondary text-sm leading-relaxed text-left" v-html="$t('about.vision_desc')"></p>
           </div>
 
           <!-- Mission -->
@@ -55,7 +55,7 @@
               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
             </div>
             <h3 class="text-lg font-bold text-text mb-4 uppercase tracking-wider">{{ $t('about.mission_title') }}</h3>
-            <p class="text-text-secondary text-sm leading-relaxed text-justify" v-html="$t('about.mission_desc')"></p>
+            <p class="text-text-secondary text-sm leading-relaxed text-left" v-html="$t('about.mission_desc')"></p>
           </div>
 
           <!-- Core Values -->
@@ -64,7 +64,7 @@
               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
             </div>
             <h3 class="text-lg font-bold text-text mb-4 uppercase tracking-wider">{{ $t('about.core_values_title') }}</h3>
-            <p class="text-text-secondary text-sm leading-relaxed text-justify" v-html="$t('about.core_values_desc')"></p>
+            <p class="text-text-secondary text-sm leading-relaxed text-left" v-html="$t('about.core_values_desc')"></p>
           </div>
 
         </div>

@@ -243,7 +243,7 @@
               
               <!-- Comprehensive Technical Specs Card -->
               <div class="p-5 sm:p-6 rounded-3xl bg-surface shadow-corporate">
-                <div class="flex items-center justify-between pb-4 mb-4 border-b border-border/10">
+                <div class="flex items-center justify-between pb-4 mb-4">
                   <h3 class="text-sm font-bold font-display text-text uppercase tracking-wider font-mono">Thông số hồ sơ kỹ thuật</h3>
                   <span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-emerald-500/10 text-emerald-600">HOÀN TẤT THẨM ĐỊNH</span>
                 </div>

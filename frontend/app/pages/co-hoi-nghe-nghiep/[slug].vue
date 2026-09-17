@@ -238,7 +238,7 @@ watchEffect(() => {
   @apply bg-primary/10 text-text font-bold px-4 py-3 text-left;
 }
 :deep(.prose td) {
-  @apply px-4 py-3 text-text-secondary border-b border-border/40;
+  @apply px-4 py-3 text-text-secondary;
 }
 :deep(.prose ul) {
   @apply list-none pl-0 space-y-3 my-4;

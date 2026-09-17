@@ -3,7 +3,13 @@ import { useFetch, useRuntimeConfig, useNuxtApp } from '#app'
 export const usePayload = () => {
   const config = useRuntimeConfig()
   const nuxtApp = useNuxtApp()
-  const payloadUrl = config.public.payloadApiUrl || 'http://localhost:3001/api'
+  // Use internal Docker URL during SSR if available, otherwise public URL
+  const payloadUrl = import.meta.server
+    ? (config.payloadServerUrl || config.public.payloadApiUrl || 'http://localhost:3001/api')
+    : (config.public.payloadApiUrl || 'http://localhost:3001/api')
+
+  // Public media base for URLs rendered into HTML for browser consumption
+  const publicMediaBase = (config.public.payloadApiUrl || 'http://localhost:3001/api').replace('/api', '')
 
   // Build Payload REST query params from a plain object
   const buildQuery = (params = {}) => {
@@ -39,47 +45,73 @@ export const usePayload = () => {
       params: query,
       key: cacheKey,
       dedupe: 'defer',
-      getCachedData: (key) => nuxtApp.payload.data[key] || nuxtApp.static.data[key],
-      transform: (res) => (res?.docs ? res.docs.map(mapPayloadPost) : [])
+      getCachedData(key) {
+        // Return in-memory SSR payload if it exists
+        return nuxtApp.payload.data[key] || nuxtApp.static.data[key]
+      },
+      transform: (response) => {
+        if (!response || !response.docs) return []
+        return response.docs.map(mapPayloadPost).filter(Boolean)
+      }
     })
   }
 
-  // Fetch a single post by slug
-  const fetchPage = (slug, collection = 'posts') => {
-    const col = resolveCollection(collection)
-    const cacheKey = `payload-single-${col}-${slug}`
-    return useFetch(`${payloadUrl}/${col}`, {
-      params: { 'where[slug][equals]': slug, limit: 1, depth: 1 },
-      key: cacheKey,
-      dedupe: 'defer',
-      getCachedData: (key) => nuxtApp.payload.data[key] || nuxtApp.static.data[key],
-      transform: (res) => (res?.docs?.length > 0 ? mapPayloadPost(res.docs[0]) : null)
-    })
-  }
-
-  // Non-reactive fetch — for loadMore buttons
+  // Pagination-aware fetch — returns docs array AND totalDocs, totalPages, page
   const fetchMorePosts = async (params = {}, collection = 'posts') => {
     const col = resolveCollection(collection)
     const query = buildQuery(params)
-    const res = await $fetch(`${payloadUrl}/${col}`, { params: query })
-    return res?.docs ? res.docs.map(mapPayloadPost) : []
+    const url = new URL(`${payloadUrl}/${col}`)
+    Object.entries(query).forEach(([k, v]) => url.searchParams.set(k, String(v)))
+
+    const response = await $fetch(url.toString()).catch(() => null)
+    if (!response || !response.docs) {
+      return { docs: [], totalDocs: 0, totalPages: 1, page: 1 }
+    }
+    return {
+      docs: response.docs.map(mapPayloadPost).filter(Boolean),
+      totalDocs: response.totalDocs || 0,
+      totalPages: response.totalPages || 1,
+      page: response.page || 1
+    }
   }
 
-  const fetchMedia = (id) => {
-    return useFetch(`${payloadUrl}/media/${id}`, { key: `media-${id}` })
+  // Single post / page by slug
+  const fetchPage = async (slug, collection = 'posts') => {
+    const col = resolveCollection(collection)
+    const query = {
+      'where[slug][equals]': slug,
+      limit: 1,
+      depth: 1
+    }
+    const url = new URL(`${payloadUrl}/${col}`)
+    Object.entries(query).forEach(([k, v]) => url.searchParams.set(k, String(v)))
+
+    const response = await $fetch(url.toString()).catch(() => null)
+    if (!response?.docs?.length) return null
+    return mapPayloadPost(response.docs[0])
   }
 
-  // Fetch a Payload global (e.g. 'site-settings')
+  // Fetch media by ID
+  const fetchMedia = async (id) => {
+    if (!id) return null
+    const doc = await $fetch(`${payloadUrl}/media/${id}`).catch(() => null)
+    return doc || null
+  }
+
+  // Fetch Global settings (e.g. site-settings)
   const fetchGlobal = (slug = 'site-settings') => {
     const cacheKey = `payload-global-${slug}`
     return useFetch(`${payloadUrl}/globals/${slug}`, {
       key: cacheKey,
-      getCachedData: (key) => nuxtApp.payload.data[key] || nuxtApp.static.data[key],
+      dedupe: 'defer',
+      getCachedData(key) {
+        return nuxtApp.payload.data[key] || nuxtApp.static.data[key]
+      },
       transform: (res) => {
         if (!res) return null
         const resolveUrl = (media) => {
           if (!media?.url) return null
-          return media.url.startsWith('http') ? media.url : `${payloadUrl.replace('/api', '')}${media.url}`
+          return media.url.startsWith('http') ? media.url : `${publicMediaBase}${media.url}`
         }
         return {
           ...res,
@@ -99,7 +131,7 @@ export const usePayload = () => {
     if (doc.featuredImage?.url) {
       imageUrl = doc.featuredImage.url.startsWith('http')
         ? doc.featuredImage.url
-        : `${payloadUrl.replace('/api', '')}${doc.featuredImage.url}`
+        : `${publicMediaBase}${doc.featuredImage.url}`
     }
 
     // categories may be a relation (array of objects or IDs) from 'category' or 'docType'
@@ -117,13 +149,13 @@ export const usePayload = () => {
       if (!img) return null
       return img.url?.startsWith('http')
         ? img.url
-        : `${payloadUrl.replace('/api', '')}${img.url}`
+        : `${publicMediaBase}${img.url}`
     }).filter(Boolean)
 
     // Fallback: extract image links from lexicalHtml if gallery is empty
     if (galleryImages.length === 0 && doc.lexicalHtml) {
       const inlineMatches = [...doc.lexicalHtml.matchAll(/href="(\/api\/media\/file\/[^"]+)"/g)]
-      galleryImages = inlineMatches.map(m => `${payloadUrl.replace('/api', '')}${m[1]}`)
+      galleryImages = inlineMatches.map(m => `${publicMediaBase}${m[1]}`)
     }
 
     // Partners mapping
@@ -133,7 +165,7 @@ export const usePayload = () => {
       if (logoItem?.url) {
         partnerLogoUrl = logoItem.url.startsWith('http')
           ? logoItem.url
-          : `${payloadUrl.replace('/api', '')}${logoItem.url}`
+          : `${publicMediaBase}${logoItem.url}`
       }
       return {
         id: doc.id,
@@ -150,7 +182,7 @@ export const usePayload = () => {
       if (photoItem?.url) {
         photoUrl = photoItem.url.startsWith('http')
           ? photoItem.url
-          : `${payloadUrl.replace('/api', '')}${photoItem.url}`
+          : `${publicMediaBase}${photoItem.url}`
       }
       return {
         id: doc.id,

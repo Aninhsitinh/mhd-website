@@ -5,9 +5,9 @@ services:
     container_name: mhd_postgres
     restart: unless-stopped
     environment:
-      POSTGRES_USER: ${POSTGRES_USER:-postgres}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-Bobom1234@}
-      POSTGRES_DB: ${POSTGRES_DB:-mhd_cms}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
     volumes:
       - postgres_data:/var/lib/postgresql/data
     ports:
@@ -15,7 +15,7 @@ services:
     networks:
       - mhd_network
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-postgres} -d ${POSTGRES_DB:-mhd_cms}"]
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
       interval: 5s
       timeout: 5s
       retries: 5
@@ -31,12 +31,13 @@ services:
       postgres:
         condition: service_healthy
     environment:
-      DATABASE_URI: postgresql://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD:-Bobom1234@}@postgres:5432/${POSTGRES_DB:-mhd_cms}
-      PAYLOAD_SECRET: ${PAYLOAD_SECRET:-mhd-payload-secret-change-in-production-2024}
+      DATABASE_URI: postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD_ENCODED}@postgres:5432/${POSTGRES_DB}
+      PAYLOAD_SECRET: ${PAYLOAD_SECRET}
       NEXT_PUBLIC_SERVER_URL: ${NEXT_PUBLIC_SERVER_URL:-http://localhost:3001}
       NODE_ENV: production
     volumes:
-      - cms_media:/app/media
+      - ./media:/media
+      - ./media:/app/media
     ports:
       - "3001:3001"
     networks:
@@ -55,8 +56,10 @@ services:
       NODE_ENV: production
       PORT: 3000
       HOST: 0.0.0.0
-      PAYLOAD_API_URL: http://cms:3001/api
-      GEMINI_API_KEY: ${GEMINI_API_KEY:-}
+      PAYLOAD_SERVER_URL: ${PAYLOAD_SERVER_URL:-http://cms:3001/api}
+      PAYLOAD_API_URL: ${PAYLOAD_API_URL:-http://localhost:3001/api}
+      NUXT_PUBLIC_PAYLOAD_API_URL: ${NUXT_PUBLIC_PAYLOAD_API_URL:-http://localhost:3001/api}
+      GEMINI_API_KEY: ${GEMINI_API_KEY}
     ports:
       - "3000:3000"
     networks:
@@ -68,6 +71,4 @@ networks:
 
 volumes:
   postgres_data:
-    driver: local
-  cms_media:
     driver: local

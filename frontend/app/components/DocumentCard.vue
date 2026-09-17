@@ -53,7 +53,7 @@
     </p>
 
     <!-- Bottom Action Footer (Borderless) -->
-    <div class="pt-4 mt-auto flex items-center justify-between text-xs border-t border-surface-muted/60">
+    <div class="pt-4 mt-auto flex items-center justify-between text-xs">
       <span class="text-[11px] text-text-muted font-medium flex items-center gap-1.5">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />

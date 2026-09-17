@@ -94,7 +94,7 @@
               <div class="h-5 bg-bg/80 rounded-md w-full mt-4"></div>
               <div class="h-4 bg-bg/80 rounded-md w-2/3"></div>
             </div>
-            <div class="flex items-center justify-between pt-4 border-t border-border/10">
+            <div class="flex items-center justify-between pt-4">
               <div class="h-3 bg-bg/80 rounded-md w-24"></div>
               <div class="h-8 bg-bg/80 rounded-full w-24"></div>
             </div>

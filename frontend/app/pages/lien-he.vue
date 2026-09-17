@@ -14,84 +14,86 @@
 
     <!-- Main Content -->
     <div class="container mx-auto px-4 pb-20 md:pb-28">
-      <div class="max-w-6xl mx-auto bg-surface rounded-2xl p-6 md:p-10 shadow-corporate">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
           
           <!-- Contact Info -->
-          <div>
-            <h2 class="text-3xl font-bold text-primary mb-8">{{ $t('contact.company_name') }}</h2>
-            
-            <div class="space-y-6">
-              <!-- Address -->
-              <div class="flex items-start gap-4 group">
-                <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors shrink-0">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
+          <div class="bg-surface rounded-3xl p-8 sm:p-10 shadow-corporate flex flex-col justify-between">
+            <div>
+              <h2 class="text-2xl md:text-3xl font-bold text-primary mb-8">{{ $t('contact.company_name') }}</h2>
+              
+              <div class="space-y-6">
+                <!-- Address -->
+                <div class="flex items-start gap-4 group">
+                  <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                  </div>
+                  <div class="flex-1">
+                    <h3 class="text-base font-bold text-text mb-1">{{ $t('contact.headquarters') }}</h3>
+                    <p class="text-text-secondary text-sm leading-relaxed">{{ $t('contact.address') }}</p>
+                  </div>
                 </div>
-                <div class="flex-1">
-                  <h3 class="text-lg font-bold text-text mb-1">{{ $t('contact.headquarters') }}</h3>
-                  <p class="text-text-secondary">{{ $t('contact.address') }}</p>
-                </div>
-              </div>
 
-              <!-- Hotline -->
-              <div class="flex items-start gap-4 group">
-                <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors shrink-0">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                  </svg>
+                <!-- Hotline -->
+                <div class="flex items-start gap-4 group">
+                  <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 class="text-base font-semibold text-text mb-1">{{ $t('contact.hotline') }}</h3>
+                    <a href="tel:02835153516" class="text-text-secondary hover:text-primary font-medium transition-colors text-sm">(028) 3515 3516</a>
+                  </div>
                 </div>
-                <div>
-                  <h3 class="text-lg font-semibold text-text mb-1">{{ $t('contact.hotline') }}</h3>
-                  <a href="tel:02835153516" class="text-text-secondary hover:text-primary font-medium transition-colors">(028) 3515 3516</a>
-                </div>
-              </div>
 
-              <!-- Email -->
-              <div class="flex items-start gap-4 group">
-                <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors shrink-0">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
+                <!-- Email -->
+                <div class="flex items-start gap-4 group">
+                  <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 class="text-base font-semibold text-text mb-1">{{ $t('contact.email') }}</h3>
+                    <a href="mailto:info@mhd.com.vn" class="text-text-secondary hover:text-primary transition-colors text-sm">info@mhd.com.vn</a>
+                  </div>
                 </div>
-                <div>
-                  <h3 class="text-lg font-semibold text-text mb-1">{{ $t('contact.email') }}</h3>
-                  <a href="mailto:info@mhd.com.vn" class="text-text-secondary hover:text-primary transition-colors">info@mhd.com.vn</a>
-                </div>
-              </div>
 
-              <!-- Tax -->
-              <div class="flex items-start gap-4 group">
-                <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors shrink-0">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 14l6-6m-5.5.5h.01m4.99 5h.01M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16l3.5-2 3.5 2 3.5-2 3.5 2zM10 8.5a.5.5 0 11-1 0 .5.5 0 011 0zm5 5a.5.5 0 11-1 0 .5.5 0 011 0z" />
-                  </svg>
+                <!-- Tax -->
+                <div class="flex items-start gap-4 group">
+                  <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 14l6-6m-5.5.5h.01m4.99 5h.01M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16l3.5-2 3.5 2 3.5-2 3.5 2zM10 8.5a.5.5 0 11-1 0 .5.5 0 011 0zm5 5a.5.5 0 11-1 0 .5.5 0 011 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 class="text-base font-semibold text-text mb-1">{{ $t('contact.tax_code') }}</h3>
+                    <p class="text-text-secondary text-sm">0312231570</p>
+                  </div>
                 </div>
-                <div>
-                  <h3 class="text-lg font-semibold text-text mb-1">{{ $t('contact.tax_code') }}</h3>
-                  <p class="text-text-secondary">0312231570</p>
-                </div>
-              </div>
 
-              <!-- Bank -->
-              <div class="flex items-start gap-4 group">
-                <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors shrink-0">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z" />
-                  </svg>
-                </div>
-                <div>
-                  <h3 class="text-lg font-semibold text-text mb-1">{{ $t('contact.bank') }}</h3>
-                  <p class="text-text-secondary">{{ $t('contact.bank_desc') }}</p>
+                <!-- Bank -->
+                <div class="flex items-start gap-4 group">
+                  <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 class="text-base font-semibold text-text mb-1">{{ $t('contact.bank') }}</h3>
+                    <p class="text-text-secondary text-sm">{{ $t('contact.bank_desc') }}</p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
           <!-- Contact Form -->
-          <div class="bg-bg rounded-2xl p-8 shadow-inner">
+          <div class="bg-surface rounded-3xl p-8 sm:p-10 shadow-corporate">
             <h2 class="text-2xl font-bold text-text mb-6">{{ $t('contact.form.title') }}</h2>
             
             <form @submit.prevent="submitForm" class="space-y-4">
@@ -101,7 +103,7 @@
                   type="text" 
                   v-model="formData.name"
                   :placeholder="$t('contact.form.name_placeholder')" 
-                  class="w-full px-4 py-3.5 min-h-[48px] text-base sm:text-sm rounded-xl bg-surface text-text shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all placeholder:text-text-muted"
+                  class="w-full px-4 py-3.5 min-h-[48px] text-base sm:text-sm rounded-xl bg-bg text-text shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all placeholder:text-text-muted"
                   :class="{ 'ring-2 ring-red-500': errors.name }"
                 />
               </div>
@@ -113,7 +115,7 @@
                     type="email" 
                     v-model="formData.email"
                     :placeholder="$t('contact.form.email_placeholder')" 
-                    class="w-full px-4 py-3.5 min-h-[48px] text-base sm:text-sm rounded-xl bg-surface text-text shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all placeholder:text-text-muted"
+                    class="w-full px-4 py-3.5 min-h-[48px] text-base sm:text-sm rounded-xl bg-bg text-text shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all placeholder:text-text-muted"
                     :class="{ 'ring-2 ring-red-500': errors.email }"
                   />
                 </div>
@@ -122,7 +124,7 @@
                     type="tel" 
                     v-model="formData.phone"
                     :placeholder="$t('contact.form.phone_placeholder')" 
-                    class="w-full px-4 py-3.5 min-h-[48px] text-base sm:text-sm rounded-xl bg-surface text-text shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all placeholder:text-text-muted"
+                    class="w-full px-4 py-3.5 min-h-[48px] text-base sm:text-sm rounded-xl bg-bg text-text shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all placeholder:text-text-muted"
                     :class="{ 'ring-2 ring-red-500': errors.phone }"
                   />
                 </div>
@@ -134,18 +136,16 @@
                   v-model="formData.message"
                   :placeholder="$t('contact.form.message_placeholder')" 
                   rows="4"
-                  class="w-full px-4 py-3.5 text-base sm:text-sm rounded-xl bg-surface text-text shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all resize-none placeholder:text-text-muted"
+                  class="w-full px-4 py-3.5 text-base sm:text-sm rounded-xl bg-bg text-text shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all resize-none placeholder:text-text-muted"
                   :class="{ 'ring-2 ring-red-500': errors.message }"
                 ></textarea>
               </div>
 
-              <!-- Removed Static Status Messages -->
-              
               <!-- Submit Button -->
               <button 
                 type="submit" 
                 :disabled="isSubmitting"
-                class="w-full py-4 bg-primary text-white font-bold rounded-xl hover:bg-orange-600 transition-colors shadow-lg shadow-primary/30 flex justify-center items-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
+                class="w-full py-4 bg-primary text-white font-bold rounded-xl hover:bg-orange-600 transition-all shadow-corporate hover:shadow-corporate-glow transform hover:-translate-y-0.5 active:scale-[0.99] flex justify-center items-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
               >
                 <svg v-if="isSubmitting" class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                   <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>

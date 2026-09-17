@@ -17,7 +17,7 @@
             </NuxtLink>
             
             <!-- Mega Menu Dropdown -->
-            <div class="absolute top-full left-1/2 -translate-x-1/2 w-[580px] bg-surface rounded-2xl shadow-corporate-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 overflow-hidden">
+            <div class="absolute top-full left-1/2 -translate-x-1/2 w-[580px] bg-surface rounded-2xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 overflow-hidden">
               <div class="grid grid-cols-2 gap-4 p-6">
                 <NuxtLink :to="localePath('/linh-vuc/tham-dinh-gia-doanh-nghiep')" class="flex items-start gap-4 p-3 rounded-xl hover:bg-primary/5 transition-colors group/item">
                   <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover/item:scale-110 transition-transform">

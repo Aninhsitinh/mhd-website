@@ -29,9 +29,24 @@
     --color-hero: 244 242 238; /* Warm Paper inverse */
   }
 
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
   body {
     @apply bg-bg text-text antialiased transition-colors duration-300 font-sans;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Crisp image rendering for high-DPI Retina/OLED displays */
+  img, svg {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
   }
 
   h1, h2, h3, h4, h5, h6, .font-display {

@@ -38,8 +38,8 @@
           >
             <!-- The Station Node (Dot on the track) -->
             <div 
-              class="absolute left-[2.25rem] md:left-1/2 -translate-x-1/2 w-10 h-10 rounded-full border-[5px] transition-all duration-700 flex items-center justify-center z-20"
-              :class="isActive(index) ? 'bg-primary border-bg shadow-[0_0_25px_rgba(232,93,32,1)] scale-110' : 'bg-surface border-border scale-90'"
+              class="absolute left-[2.25rem] md:left-1/2 -translate-x-1/2 w-9 h-9 rounded-full transition-all duration-700 flex items-center justify-center z-20"
+              :class="isActive(index) ? 'bg-primary text-white shadow-[0_0_25px_rgba(232,93,32,0.8)] scale-110' : 'bg-surface text-text-muted shadow-md scale-95'"
             >
               <!-- Inner pulse for active node -->
               <div v-if="isActive(index)" class="w-3 h-3 bg-white rounded-full animate-ping"></div>

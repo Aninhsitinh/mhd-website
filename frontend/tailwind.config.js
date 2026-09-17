@@ -48,6 +48,7 @@ export default {
         'corporate-hover': '0 12px 30px -4px rgba(0, 0, 0, 0.08), 0 4px 10px -2px rgba(0, 0, 0, 0.03)',
         'corporate-lg': '0 20px 40px -12px rgba(0, 0, 0, 0.09)',
         'corporate-dark': '0 8px 24px -4px rgba(0, 0, 0, 0.35)',
+        'corporate-glow': '0 8px 25px -4px rgba(236, 74, 0, 0.35)',
       },
       borderRadius: {
         'corporate': '20px',

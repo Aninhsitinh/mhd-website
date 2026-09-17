@@ -5,8 +5,9 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   runtimeConfig: {
     geminiApiKey: process.env.GEMINI_API_KEY,
+    payloadServerUrl: process.env.PAYLOAD_SERVER_URL || process.env.PAYLOAD_API_URL || 'http://localhost:3001/api',
     public: {
-      payloadApiUrl: process.env.PAYLOAD_API_URL || 'http://localhost:3001/api',
+      payloadApiUrl: process.env.NUXT_PUBLIC_PAYLOAD_API_URL || process.env.PAYLOAD_API_URL || 'http://localhost:3001/api',
       aiChatbotUrl: process.env.AI_CHATBOT_URL || '/api/chat'
     }
   },
