@@ -234,13 +234,11 @@ const printDocument = () => {
   line-height: 1.6;
   color: inherit;
   text-align: justify;
-  text-justify: inter-word;
 }
 
 :deep(.document-content p) {
   margin-bottom: 0.75em;
   text-align: justify;
-  text-justify: inter-word;
   line-height: 1.6;
 }
 
@@ -519,7 +517,6 @@ const printDocument = () => {
     font-size: 14pt !important;
     line-height: 1.5 !important;
     text-align: justify !important;
-    text-justify: inter-word !important;
     width: 100% !important;
     margin: 0 !important;
     padding: 0 !important;
@@ -535,7 +532,6 @@ const printDocument = () => {
   /* Canh đều hai lề tuyệt đối cho mọi đoạn văn bản */
   .document-content p {
     text-align: justify !important;
-    text-justify: inter-word !important;
     line-height: 1.5 !important;
     margin-bottom: 6pt !important;
     orphans: 3;

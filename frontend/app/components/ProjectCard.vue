@@ -2,7 +2,7 @@
   <NuxtLink 
     :to="`/du-an/${project.slug}`" 
     data-aos="fade-up" 
-    class="group flex flex-col h-full bg-surface rounded-2xl overflow-hidden transition-all duration-500 shadow-corporate hover:shadow-2xl hover:-translate-y-1.5 relative"
+    class="group flex flex-col h-full bg-surface rounded-3xl overflow-hidden transition-all duration-500 shadow-corporate hover:shadow-2xl hover:-translate-y-1.5 relative"
   >
     <!-- Top Image Container -->
     <div class="relative aspect-[16/10] overflow-hidden bg-surface-muted">

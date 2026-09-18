@@ -247,7 +247,7 @@ watchEffect(() => {
 }
 
 :deep(.html-content p) {
-  @apply mb-5 leading-relaxed text-justify md:text-left;
+  @apply mb-5 leading-relaxed text-left;
 }
 
 :deep(.html-content strong) {

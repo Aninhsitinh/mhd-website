@@ -17,7 +17,7 @@
             </NuxtLink>
             
             <!-- Mega Menu Dropdown -->
-            <div class="absolute top-full left-1/2 -translate-x-1/2 w-[580px] bg-surface rounded-2xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 overflow-hidden">
+            <div class="absolute top-full left-1/2 -translate-x-1/2 w-[580px] bg-surface rounded-3xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 overflow-hidden">
               <div class="grid grid-cols-2 gap-4 p-6">
                 <NuxtLink :to="localePath('/linh-vuc/tham-dinh-gia-doanh-nghiep')" class="flex items-start gap-4 p-3 rounded-xl hover:bg-primary/5 transition-colors group/item">
                   <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover/item:scale-110 transition-transform">
@@ -136,7 +136,7 @@
       leave-from-class="transform translate-y-0 opacity-100"
       leave-to-class="transform -translate-y-4 opacity-0"
     >
-      <div v-show="mobileMenuOpen" class="md:hidden absolute top-full left-3 right-3 sm:left-4 sm:right-4 mt-2 bg-surface/95 backdrop-blur-xl rounded-2xl p-4 sm:p-5 shadow-corporate-lg z-50 max-h-[calc(100vh-80px)] overflow-y-auto">
+      <div v-show="mobileMenuOpen" class="md:hidden absolute top-full left-3 right-3 sm:left-4 sm:right-4 mt-2 bg-surface/95 backdrop-blur-xl rounded-3xl p-4 sm:p-5 shadow-corporate-lg z-50 max-h-[calc(100vh-80px)] overflow-y-auto">
         <nav class="flex flex-col gap-1">
           <NuxtLink 
             v-for="link in navLinks" 

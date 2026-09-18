@@ -42,7 +42,7 @@
                 type="button"
                 @click="sendQuickQuestion(q)"
                 :disabled="isLoading"
-                class="text-left text-xs bg-surface hover:bg-primary/10 hover:text-primary text-text-secondary px-3 py-1.5 rounded-full shadow-sm border border-border/10 transition-colors disabled:opacity-50"
+                class="text-left text-xs bg-surface hover:bg-primary/10 hover:text-primary text-text-secondary px-3 py-1.5 rounded-full shadow-sm transition-colors disabled:opacity-50"
               >
                 {{ q }}
               </button>

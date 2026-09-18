@@ -76,7 +76,7 @@
         </div>
       </div>
 
-      <div class="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-text-muted">
+      <div class="mt-8 px-6 py-5 rounded-2xl bg-text/[0.03] dark:bg-white/[0.03] flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-text-muted">
         <p>&copy; {{ new Date().getFullYear() }} {{ $t('footer.copyright') }}. {{ $t('footer.all_rights_reserved') }}</p>
         <div class="flex gap-5">
           <NuxtLink :to="localePath('/chinh-sach-bao-mat')" class="hover:text-primary transition-colors">{{ $t('footer.privacy_policy') }}</NuxtLink>

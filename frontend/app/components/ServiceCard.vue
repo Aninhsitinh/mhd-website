@@ -1,5 +1,5 @@
 <template>
-  <NuxtLink :to="service.link" data-aos="fade-up" class="group block h-full bg-surface rounded-2xl p-6 shadow-corporate hover:shadow-corporate-hover transition-all duration-300 flex flex-col">
+  <NuxtLink :to="service.link" data-aos="fade-up" class="group block h-full bg-surface rounded-3xl p-6 shadow-corporate hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col">
     <!-- Icon Wrapper -->
     <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-5 text-primary">
       <!-- SVG Icons mapping based on name -->
