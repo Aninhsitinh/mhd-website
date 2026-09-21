@@ -19,28 +19,25 @@
 
         <div class="container mx-auto px-4 max-w-7xl relative z-10" data-aos="fade-up">
           <nav class="text-xs text-text-muted mb-4 flex items-center gap-2">
-            <NuxtLink :to="localePath('/')" class="hover:text-primary transition-colors">{{ isEn ? 'Home' : 'Trang chủ' }}</NuxtLink>
+            <NuxtLink :to="localePath('/')" class="hover:text-primary transition-colors">Trang chủ</NuxtLink>
             <span>/</span>
-            <NuxtLink :to="localePath('/linh-vuc')" class="hover:text-primary transition-colors">{{ isEn ? 'Services' : 'Lĩnh vực' }}</NuxtLink>
+            <NuxtLink :to="localePath('/linh-vuc')" class="hover:text-primary transition-colors">Lĩnh vực</NuxtLink>
             <span>/</span>
             <span class="text-primary font-medium truncate max-w-[250px]" v-html="service.title"></span>
           </nav>
 
           <div class="flex flex-wrap items-center gap-3 mb-4">
             <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-primary/10 text-primary">
-              {{ isEn ? 'MHD Valuation Services' : 'Dịch vụ thẩm định MHD' }}
+              Dịch vụ thẩm định MHD
             </span>
             <span class="px-2.5 py-1 rounded-full text-[10px] font-mono font-bold bg-emerald-500/10 text-emerald-600">
-              {{ isEn ? 'VVS / IVS STANDARDS' : 'TIÊU CHUẨN TĐGVN' }}
+              TIÊU CHUẨN TĐGVN
             </span>
           </div>
 
           <h1 class="text-3xl md:text-5xl font-display font-bold text-text leading-tight mb-4 max-w-5xl" v-html="service.title"></h1>
           <p class="text-base md:text-lg text-text-secondary leading-relaxed max-w-4xl">
-            {{ isEn 
-              ? 'Providing independent, objective, and authoritative appraisal solutions catering to transactions, bank credit facilities, M&A, and legal compliance.' 
-              : 'Cung cấp giải pháp định giá độc lập, trung thực và khách quan, phục vụ đa dạng nhu cầu giao dịch, tín dụng ngân hàng, đầu tư và pháp lý.' 
-            }}
+            Cung cấp giải pháp định giá độc lập, trung thực và khách quan, phục vụ đa dạng nhu cầu giao dịch, tín dụng ngân hàng, đầu tư và pháp lý.
           </p>
         </div>
       </header>
@@ -212,24 +209,21 @@
 import { useRoute } from 'vue-router'
 import { computed, watchEffect } from 'vue'
 import { services } from '~/data/services.js'
-import { useLocalePath, useI18n } from '#imports'
+import { useLocalePath } from '#imports'
 
 const route = useRoute()
 const localePath = useLocalePath()
-const { locale } = useI18n()
-const isEn = computed(() => locale.value === 'en')
-
 const currentSlug = computed(() => route.params.slug)
 const service = computed(() => services[currentSlug.value] || null)
 
-const otherServices = computed(() => [
-  { slug: 'tham-dinh-gia-bat-dong-san', name: isEn.value ? 'Real Estate' : 'Bất động sản' },
-  { slug: 'tham-dinh-gia-dong-san', name: isEn.value ? 'Machinery & Equipment' : 'Động sản & Thiết bị' },
-  { slug: 'tham-dinh-gia-doanh-nghiep', name: isEn.value ? 'Business Valuation' : 'Giá trị Doanh nghiệp' },
-  { slug: 'tham-dinh-du-an-dau-tu', name: isEn.value ? 'Project Appraisal' : 'Dự án Đầu tư' },
-  { slug: 'tham-dinh-loi-the-thuong-mai', name: isEn.value ? 'Commercial Goodwill' : 'Lợi thế Thương mại' },
-  { slug: 'tham-dinh-tai-san-de-dinh-cu', name: isEn.value ? 'Immigration Assets' : 'Tài sản Định cư' },
-])
+const otherServices = [
+  { slug: 'tham-dinh-gia-bat-dong-san', name: 'Bất động sản' },
+  { slug: 'tham-dinh-gia-dong-san', name: 'Động sản & Thiết bị' },
+  { slug: 'tham-dinh-gia-doanh-nghiep', name: 'Giá trị Doanh nghiệp' },
+  { slug: 'tham-dinh-du-an-dau-tu', name: 'Dự án Đầu tư' },
+  { slug: 'tham-dinh-loi-the-thuong-mai', name: 'Lợi thế Thương mại' },
+  { slug: 'tham-dinh-tai-san-de-dinh-cu', name: 'Tài sản Định cư' },
+]
 
 // Clean HTML and normalize line breaks and formatting
 const cleanHtml = (html) => {

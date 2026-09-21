@@ -21,7 +21,6 @@ export const Posts: CollectionConfig = {
       type: 'text',
       required: true,
       label: 'Tiêu đề',
-      localized: true,
     },
     {
       name: 'slug',
@@ -37,7 +36,6 @@ export const Posts: CollectionConfig = {
       name: 'content',
       type: 'richText',
       label: 'Nội dung',
-      localized: true,
     },
 
     lexicalHTML('content', { name: 'lexicalHtml' }),
@@ -45,7 +43,6 @@ export const Posts: CollectionConfig = {
       name: 'excerpt',
       type: 'textarea',
       label: 'Tóm tắt',
-      localized: true,
     },
     {
       name: 'featuredImage',

@@ -28,13 +28,13 @@
           <div class="flex items-start gap-2 max-w-[85%]">
             <div class="w-8 h-8 rounded-full bg-primary flex-shrink-0 flex items-center justify-center text-white text-xs font-bold shadow-sm">AI</div>
             <div class="p-3 bg-surface rounded-2xl rounded-tl-sm shadow-sm text-sm text-text">
-              {{ isEn ? 'Hello! I am the AI Assistant of MHD Valuation. How may I assist you with valuation standards, asset appraisal, or corporate dossiers today?' : 'Xin chào! Tôi là Trợ lý AI của MHD Valuation. Bạn có câu hỏi nào về dịch vụ thẩm định giá cần tôi hỗ trợ không?' }}
+              Xin chào! Tôi là Trợ lý AI của MHD Valuation. Bạn có câu hỏi nào về dịch vụ thẩm định giá cần tôi hỗ trợ không?
             </div>
           </div>
 
           <!-- Quick Suggestion Chips (Shown when chat history is empty) -->
           <div v-if="messages.length === 0" class="pl-10 flex flex-col gap-1.5 pt-1">
-            <p class="text-[11px] font-semibold text-text-muted">{{ isEn ? 'Quick Inquiries:' : 'Gợi ý câu hỏi nhanh:' }}</p>
+            <p class="text-[11px] font-semibold text-text-muted">Gợi ý câu hỏi nhanh:</p>
             <div class="flex flex-wrap gap-1.5">
               <button 
                 v-for="q in quickQuestions" 
@@ -107,11 +107,7 @@
 </template>
 
 <script setup>
-import { ref, computed, nextTick, onMounted, watch } from 'vue'
-import { useI18n } from '#imports'
-
-const { locale } = useI18n()
-const isEn = computed(() => locale.value === 'en')
+import { ref, nextTick, onMounted, watch } from 'vue'
 
 const isOpen = ref(false)
 const inputMessage = ref('')
@@ -119,22 +115,12 @@ const messages = ref([])
 const isLoading = ref(false)
 const messagesContainer = ref(null)
 
-const quickQuestions = computed(() => {
-  if (isEn.value) {
-    return [
-      'Real estate valuation service fee structure?',
-      'Required legal documents for project appraisal?',
-      'MHD 6-step professional valuation process',
-      'Turnaround time for Valuation Certificates?'
-    ]
-  }
-  return [
-    'Chi phí thẩm định giá bất động sản?',
-    'Hồ sơ thẩm định dự án cần chuẩn bị gì?',
-    'Quy trình thẩm định giá 6 bước của MHD',
-    'Thời gian cấp chứng thư mất bao lâu?'
-  ]
-})
+const quickQuestions = [
+  'Chi phí thẩm định giá bất động sản?',
+  'Hồ sơ thẩm định dự án cần chuẩn bị gì?',
+  'Quy trình thẩm định giá 6 bước của MHD',
+  'Thời gian cấp chứng thư mất bao lâu?'
+]
 
 const sendQuickQuestion = (question) => {
   inputMessage.value = question
@@ -187,7 +173,6 @@ const sendMessage = async () => {
   try {
     const payload = {
       message: text,
-      locale: locale.value || 'vi',
       history: [...messages.value.slice(0, -1)]
     }
 
