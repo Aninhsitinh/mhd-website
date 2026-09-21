@@ -26,9 +26,9 @@
         <div class="container mx-auto px-4 max-w-7xl relative z-10" data-aos="fade-up">
           <!-- Breadcrumbs -->
           <nav class="flex items-center gap-2 text-xs text-text-muted mb-4">
-            <NuxtLink to="/" class="hover:text-primary transition-colors">Trang chủ</NuxtLink>
+            <NuxtLink :to="localePath('/')" class="hover:text-primary transition-colors">Trang chủ</NuxtLink>
             <span>/</span>
-            <NuxtLink to="/du-an" class="hover:text-primary transition-colors">Dự án</NuxtLink>
+            <NuxtLink :to="localePath('/du-an')" class="hover:text-primary transition-colors">Dự án</NuxtLink>
             <span>/</span>
             <span class="text-primary font-medium">{{ getCategoryName(project) }}</span>
           </nav>
@@ -404,6 +404,7 @@ import { getProjectDossier } from '~/data/projectDossiers'
 import { cleanLegacyHtml } from '~/utils/htmlSanitizer'
 
 const route = useRoute()
+const localePath = useLocalePath()
 const { fetchPosts } = usePayload()
 
 // Lightbox state

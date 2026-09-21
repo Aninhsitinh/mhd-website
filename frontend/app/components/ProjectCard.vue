@@ -1,8 +1,8 @@
 <template>
   <NuxtLink 
-    :to="`/du-an/${project.slug}`" 
+    :to="localePath(`/du-an/${project.slug}`)" 
     data-aos="fade-up" 
-    class="group flex flex-col h-full bg-surface rounded-3xl overflow-hidden transition-all duration-500 shadow-corporate hover:shadow-2xl hover:-translate-y-1.5 relative"
+    class="group flex flex-col h-full bg-surface rounded-3xl overflow-hidden transition-all duration-500 shadow-corporate hover:shadow-2xl hover:-translate-y-1.5 relative border border-black/5 dark:border-white/5"
   >
     <!-- Top Image Container -->
     <div class="relative aspect-[16/10] overflow-hidden bg-surface-muted">
@@ -32,44 +32,51 @@
 
       <!-- Specs Badge on Image Bottom -->
       <div v-if="specs.badge" class="absolute bottom-3 left-3 right-3 flex items-center gap-1.5 text-xs font-semibold text-white/95">
-        <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-primary/90 text-white backdrop-blur-md shadow-sm text-[11px] font-medium">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-primary/90 text-white backdrop-blur-md shadow-sm text-[11px] font-medium max-w-[95%] truncate">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
           </svg>
-          {{ specs.badge }}
+          <span class="truncate">{{ specs.badge }}</span>
         </span>
       </div>
     </div>
     
     <!-- Content Body -->
     <div class="p-5 flex flex-col flex-grow bg-surface">
-      <!-- Title -->
-      <h3 class="text-base font-bold text-text mb-2 line-clamp-2 group-hover:text-primary transition-colors leading-snug tracking-tight" v-html="project.title"></h3>
+      <!-- Title (Locked min-h for 2 lines) -->
+      <h3 
+        class="text-base font-bold text-text mb-2.5 line-clamp-2 min-h-[2.75rem] group-hover:text-primary transition-colors leading-snug tracking-tight" 
+        :title="cleanTitle"
+        v-html="project.title"
+      ></h3>
       
-      <!-- Key Metadata Pills (Borderless) -->
-      <div v-if="specs.location || specs.purpose" class="space-y-1.5 mb-3 text-[11px]">
-        <div v-if="specs.location" class="flex items-center gap-1.5 text-text-secondary truncate">
+      <!-- Key Metadata Pills (Fixed min-height for uniform 2-row layout) -->
+      <div class="space-y-1.5 mb-3.5 text-[11px] min-h-[44px] flex flex-col justify-center">
+        <div class="flex items-center gap-1.5 text-text-secondary">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 text-primary flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
           </svg>
-          <span class="truncate">{{ specs.location }}</span>
+          <span class="truncate font-medium" :title="displayLocation">{{ displayLocation }}</span>
         </div>
-        <div v-if="specs.purpose" class="flex items-center gap-1.5 text-text-secondary truncate">
+        <div class="flex items-center gap-1.5 text-text-secondary">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 text-secondary flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
           </svg>
-          <span class="truncate">{{ specs.purpose }}</span>
+          <span class="truncate" :title="displayPurpose">{{ displayPurpose }}</span>
         </div>
       </div>
 
-      <!-- Excerpt -->
-      <p class="text-xs text-text-secondary line-clamp-2 mb-4 flex-grow leading-relaxed" v-html="project.excerpt"></p>
+      <!-- Excerpt (Fixed min-height for 2 lines) -->
+      <p 
+        class="text-xs text-text-secondary line-clamp-2 min-h-[2.25rem] mb-4 flex-grow leading-relaxed" 
+        v-html="displayExcerpt"
+      ></p>
       
       <!-- Card Footer (Borderless) -->
-      <div class="pt-3 flex items-center justify-between text-xs font-bold mt-auto bg-surface">
+      <div class="pt-3 flex items-center justify-between text-xs font-bold mt-auto bg-surface border-t border-black/5 dark:border-white/5">
         <span class="text-[11px] text-text-muted uppercase tracking-wider font-semibold">Hồ sơ năng lực</span>
-        <span class="text-primary group-hover:translate-x-1 transition-transform flex items-center gap-1">
+        <span class="text-primary group-hover:translate-x-1 transition-transform flex items-center gap-1 font-semibold">
           Xem chi tiết
           <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -84,6 +91,8 @@
 import { computed } from 'vue'
 import { getProjectSpecs } from '~/data/projectSpecs'
 
+const localePath = useLocalePath()
+
 const props = defineProps({
   project: {
     type: Object,
@@ -92,6 +101,24 @@ const props = defineProps({
 })
 
 const specs = computed(() => getProjectSpecs(props.project.slug))
+
+const cleanTitle = computed(() => {
+  return (props.project?.title || '').replace(/<[^>]*>?/gm, '')
+})
+
+const displayLocation = computed(() => {
+  return specs.value.location || 'TP. Hồ Chí Minh & Toàn quốc'
+})
+
+const displayPurpose = computed(() => {
+  return specs.value.purpose || 'Thẩm định giá trị tài sản độc lập'
+})
+
+const displayExcerpt = computed(() => {
+  const raw = props.project?.excerpt || ''
+  const stripped = raw.replace(/<[^>]*>?/gm, '').trim()
+  return stripped || 'Hồ sơ năng lực thẩm định giá chi tiết tài sản và dự án đầu tư theo tiêu chuẩn quốc gia & quốc tế.'
+})
 
 const getCategoryName = (project) => {
   if (project.categories?.includes(64)) return 'Bất động sản'
