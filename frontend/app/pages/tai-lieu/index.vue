@@ -3,16 +3,15 @@
     <!-- Editorial Header: Archive & Standard Repository -->
     <header class="pt-32 pb-16 bg-bg notranslate">
       <div class="container mx-auto px-4 max-w-6xl">
-        <nav class="text-xs text-text-muted mb-4 flex items-center gap-2 font-mono">
-          <NuxtLink :to="localePath('/')" class="hover:text-primary transition-colors">TRANG CHỦ</NuxtLink>
+        <nav class="text-xs text-text-muted mb-4 flex items-center gap-2">
+          <NuxtLink :to="localePath('/')" class="hover:text-primary transition-colors">Trang chủ</NuxtLink>
           <span>/</span>
-          <span class="text-primary font-bold">{{ ($t('nav.documents') || 'TÀI LIỆU').toUpperCase() }}</span>
+          <span class="text-primary font-medium">{{ $t('nav.documents') || 'Tài liệu' }}</span>
         </nav>
         
         <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div class="max-w-2xl">
-            <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-bold uppercase tracking-wider bg-primary/10 text-primary mb-3">
-              <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-primary/10 text-primary mb-3">
               Kho Lưu Trữ Pháp Quy &amp; Tiêu Chuẩn Thẩm Định Giá
             </span>
             <h1 class="text-3xl md:text-5xl font-display font-bold text-text leading-tight uppercase">
@@ -25,13 +24,13 @@
 
           <!-- Quick Stats / Badges -->
           <div class="flex items-center gap-3">
-            <div class="p-4 rounded-2xl bg-surface shadow-corporate text-center min-w-[100px]">
+            <div class="p-4 rounded-2xl bg-surface shadow-corporate text-center min-w-[100px] border border-black/5 dark:border-white/5">
               <div class="text-2xl font-bold font-display text-primary">{{ posts?.length || 10 }}</div>
-              <div class="text-[10px] text-text-muted uppercase font-mono mt-0.5">Văn bản số hóa</div>
+              <div class="text-xs text-text-muted uppercase font-medium mt-0.5">Văn bản số hóa</div>
             </div>
-            <div class="p-4 rounded-2xl bg-surface shadow-corporate text-center min-w-[100px]">
+            <div class="p-4 rounded-2xl bg-surface shadow-corporate text-center min-w-[100px] border border-black/5 dark:border-white/5">
               <div class="text-2xl font-bold font-display text-emerald-500">100%</div>
-              <div class="text-[10px] text-text-muted uppercase font-mono mt-0.5">Chuẩn NĐ 30/2020</div>
+              <div class="text-xs text-text-muted uppercase font-medium mt-0.5">Chuẩn NĐ 30/2020</div>
             </div>
           </div>
         </div>
@@ -51,7 +50,7 @@
               v-for="tab in categories" 
               :key="tab.id"
               @click="activeCategory = tab.id"
-              class="px-5 py-2.5 rounded-full font-bold text-xs uppercase tracking-wider transition-all duration-300"
+              class="px-5 py-2.5 rounded-full font-bold text-xs uppercase tracking-wider transition-all duration-300 border border-black/5 dark:border-white/5"
               :class="activeCategory === tab.id ? 'bg-primary text-white shadow-corporate' : 'bg-surface text-text-secondary hover:text-primary shadow-sm'"
             >
               {{ tab.name }}

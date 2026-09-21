@@ -27,11 +27,11 @@
           </nav>
 
           <div class="flex flex-wrap items-center gap-3 mb-4">
-            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-primary/10 text-primary">
+            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-primary/10 text-primary">
               Dịch vụ thẩm định MHD
             </span>
-            <span class="px-2.5 py-1 rounded-full text-[10px] font-mono font-bold bg-emerald-500/10 text-emerald-600">
-              TIÊU CHUẨN TĐGVN
+            <span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-600">
+              Tiêu chuẩn TĐGVN
             </span>
           </div>
 
@@ -49,91 +49,89 @@
           <!-- Left Column (8 cols): Structured Content Sections -->
           <div class="lg:col-span-8 space-y-8">
             
-            <!-- Clean Intro Summary Box (Cleaned, no Flatsome trash tags) -->
-            <div v-if="introText" class="p-8 md:p-10 rounded-3xl bg-surface shadow-corporate">
-              <div class="flex items-center gap-2.5 text-xs font-mono font-bold uppercase tracking-wider text-primary mb-3">
-                <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+            <!-- Clean Intro Summary Box -->
+            <div v-if="introText" class="p-8 md:p-10 rounded-2xl bg-surface shadow-corporate border border-black/5 dark:border-white/5">
+              <div class="flex items-center gap-2.5 text-xs font-semibold uppercase tracking-wider text-primary mb-3">
                 TỔNG QUAN DỊCH VỤ
               </div>
-              <h2 class="text-xl md:text-2xl font-bold font-display text-text mb-4">Ý nghĩa & Giá trị thẩm định</h2>
-              <div class="rich-content text-sm md:text-base text-text-secondary leading-relaxed font-normal bg-bg p-6 rounded-2xl shadow-sm space-y-3" v-html="introText"></div>
+              <h2 class="text-xl md:text-2xl font-bold font-display text-text mb-4">Ý nghĩa &amp; Giá trị thẩm định</h2>
+              <div class="rich-content text-sm md:text-base text-text-secondary leading-relaxed font-normal bg-bg p-6 rounded-xl border border-black/5 dark:border-white/5 space-y-3" v-html="introText"></div>
             </div>
 
-            <!-- Sections List (Borderless Cards) -->
+            <!-- Sections List -->
             <div 
               v-for="(section, idx) in service.sections" 
               :key="idx" 
-              class="p-8 md:p-10 rounded-3xl bg-surface shadow-corporate"
+              class="p-8 md:p-10 rounded-2xl bg-surface shadow-corporate border border-black/5 dark:border-white/5"
             >
-              <!-- Section Header: Badge & Title aligned (Borderless) -->
+              <!-- Section Header -->
               <div class="flex items-start gap-4 mb-6 pb-2">
-                <div class="w-10 h-10 rounded-2xl bg-primary/10 text-primary flex items-center justify-center font-mono font-bold text-sm flex-shrink-0 mt-0.5">
+                <div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center font-bold text-sm flex-shrink-0 mt-0.5">
                   0{{ idx + 1 }}
                 </div>
                 <div class="flex-1 min-w-0">
-                  <span class="text-[11px] font-mono font-bold uppercase tracking-wider text-primary block mb-1">Hạng mục chi tiết</span>
+                  <span class="text-xs font-semibold uppercase tracking-wider text-primary block mb-1">Hạng mục chi tiết</span>
                   <h3 class="text-lg md:text-xl font-bold font-display text-text leading-snug">{{ section.title }}</h3>
                 </div>
               </div>
 
-              <!-- Section Content: Directly flush with card padding, beautifully formatted -->
+              <!-- Section Content: Rich Text Justified -->
               <div class="rich-content service-content text-sm md:text-base leading-relaxed" v-html="cleanHtml(section.content)"></div>
             </div>
 
             <!-- Process Milestone Box (6-Step Standard Workflow) -->
-            <div class="p-8 md:p-10 rounded-3xl bg-surface shadow-corporate">
-              <div class="flex items-center gap-2.5 text-xs font-mono font-bold uppercase tracking-wider text-secondary mb-3">
-                <span class="w-2 h-2 rounded-full bg-secondary"></span>
-                CHUẨN HÓA QUY TRÌNH
+            <div class="p-8 md:p-10 rounded-2xl bg-surface shadow-corporate border border-black/5 dark:border-white/5">
+              <div class="flex items-center gap-2.5 text-xs font-semibold uppercase tracking-wider text-secondary mb-3">
+                QUY TRÌNH THẨM ĐỊNH CHUẨN MỰC
               </div>
-              <h3 class="text-lg md:text-xl font-bold font-display text-text mb-6">Quy trình thực hiện thẩm định giá tại MHD</h3>
+              <h3 class="text-lg md:text-xl font-bold font-display text-text mb-6">Trình tự thực hiện thẩm định giá tại MHD</h3>
               
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div class="p-4 rounded-2xl bg-bg shadow-sm flex items-start gap-3">
-                  <span class="w-7 h-7 rounded-xl bg-primary/10 text-primary flex items-center justify-center font-mono font-bold text-xs flex-shrink-0">1</span>
+                <div class="p-4 rounded-xl bg-bg border border-black/5 dark:border-white/5 flex items-start gap-3">
+                  <span class="w-7 h-7 rounded-lg bg-primary/10 text-primary flex items-center justify-center font-bold text-xs flex-shrink-0">1</span>
                   <div>
                     <h4 class="text-xs font-bold text-text uppercase">Tiếp nhận yêu cầu</h4>
-                    <p class="text-[11px] text-text-secondary mt-0.5">Tiếp nhận hồ sơ pháp lý tài sản và mục tiêu thẩm định từ khách hàng.</p>
+                    <p class="text-xs text-text-secondary mt-0.5">Tiếp nhận hồ sơ pháp lý tài sản và mục tiêu thẩm định từ khách hàng.</p>
                   </div>
                 </div>
 
-                <div class="p-4 rounded-2xl bg-bg shadow-sm flex items-start gap-3">
-                  <span class="w-7 h-7 rounded-xl bg-primary/10 text-primary flex items-center justify-center font-mono font-bold text-xs flex-shrink-0">2</span>
+                <div class="p-4 rounded-xl bg-bg border border-black/5 dark:border-white/5 flex items-start gap-3">
+                  <span class="w-7 h-7 rounded-lg bg-primary/10 text-primary flex items-center justify-center font-bold text-xs flex-shrink-0">2</span>
                   <div>
-                    <h4 class="text-xs font-bold text-text uppercase">Báo phí & Ký hợp đồng</h4>
-                    <p class="text-[11px] text-text-secondary mt-0.5">Thống nhất phương án phí, kế hoạch và ký kết hợp đồng dịch vụ.</p>
+                    <h4 class="text-xs font-bold text-text uppercase">Báo phí &amp; Ký hợp đồng</h4>
+                    <p class="text-xs text-text-secondary mt-0.5">Thống nhất phương án phí, kế hoạch và ký kết hợp đồng dịch vụ.</p>
                   </div>
                 </div>
 
-                <div class="p-4 rounded-2xl bg-bg shadow-sm flex items-start gap-3">
-                  <span class="w-7 h-7 rounded-xl bg-primary/10 text-primary flex items-center justify-center font-mono font-bold text-xs flex-shrink-0">3</span>
+                <div class="p-4 rounded-xl bg-bg border border-black/5 dark:border-white/5 flex items-start gap-3">
+                  <span class="w-7 h-7 rounded-lg bg-primary/10 text-primary flex items-center justify-center font-bold text-xs flex-shrink-0">3</span>
                   <div>
                     <h4 class="text-xs font-bold text-text uppercase">Lập kế hoạch thẩm định</h4>
-                    <p class="text-[11px] text-text-secondary mt-0.5">Xác định cơ sở giá trị, phương pháp tiếp cận và nhân sự thẩm định viên.</p>
+                    <p class="text-xs text-text-secondary mt-0.5">Xác định cơ sở giá trị, phương pháp tiếp cận và nhân sự thẩm định viên.</p>
                   </div>
                 </div>
 
-                <div class="p-4 rounded-2xl bg-bg shadow-sm flex items-start gap-3">
-                  <span class="w-7 h-7 rounded-xl bg-primary/10 text-primary flex items-center justify-center font-mono font-bold text-xs flex-shrink-0">4</span>
+                <div class="p-4 rounded-xl bg-bg border border-black/5 dark:border-white/5 flex items-start gap-3">
+                  <span class="w-7 h-7 rounded-lg bg-primary/10 text-primary flex items-center justify-center font-bold text-xs flex-shrink-0">4</span>
                   <div>
                     <h4 class="text-xs font-bold text-text uppercase">Khảo sát hiện trường</h4>
-                    <p class="text-[11px] text-text-secondary mt-0.5">Thị sát thực địa, lập biên bản khảo sát và đối chiếu dữ liệu thị trường.</p>
+                    <p class="text-xs text-text-secondary mt-0.5">Thị sát thực địa, lập biên bản khảo sát và đối chiếu dữ liệu thị trường.</p>
                   </div>
                 </div>
 
-                <div class="p-4 rounded-2xl bg-bg shadow-sm flex items-start gap-3">
-                  <span class="w-7 h-7 rounded-xl bg-primary/10 text-primary flex items-center justify-center font-mono font-bold text-xs flex-shrink-0">5</span>
+                <div class="p-4 rounded-xl bg-bg border border-black/5 dark:border-white/5 flex items-start gap-3">
+                  <span class="w-7 h-7 rounded-lg bg-primary/10 text-primary flex items-center justify-center font-bold text-xs flex-shrink-0">5</span>
                   <div>
-                    <h4 class="text-xs font-bold text-text uppercase">Phân tích & Lập báo cáo</h4>
-                    <p class="text-[11px] text-text-secondary mt-0.5">Xử lý mô hình định giá, kiểm tra kiểm toán nội bộ và lập chứng thư.</p>
+                    <h4 class="text-xs font-bold text-text uppercase">Phân tích &amp; Lập báo cáo</h4>
+                    <p class="text-xs text-text-secondary mt-0.5">Xử lý mô hình định giá, kiểm tra kiểm toán nội bộ và lập chứng thư.</p>
                   </div>
                 </div>
 
-                <div class="p-4 rounded-2xl bg-bg shadow-sm flex items-start gap-3">
-                  <span class="w-7 h-7 rounded-xl bg-emerald-500/10 text-emerald-600 flex items-center justify-center font-mono font-bold text-xs flex-shrink-0">6</span>
+                <div class="p-4 rounded-xl bg-bg border border-black/5 dark:border-white/5 flex items-start gap-3">
+                  <span class="w-7 h-7 rounded-lg bg-emerald-500/10 text-emerald-600 flex items-center justify-center font-bold text-xs flex-shrink-0">6</span>
                   <div>
                     <h4 class="text-xs font-bold text-text uppercase">Phát hành Chứng thư</h4>
-                    <p class="text-[11px] text-text-secondary mt-0.5">Bàn giao Chứng thư và Báo cáo thẩm định giá chính thức cho khách hàng.</p>
+                    <p class="text-xs text-text-secondary mt-0.5">Bàn giao Chứng thư và Báo cáo thẩm định giá chính thức cho khách hàng.</p>
                   </div>
                 </div>
               </div>
@@ -146,8 +144,8 @@
             <div class="sticky top-28 space-y-6">
               
               <!-- Quick Navigation to other services -->
-              <div class="p-6 rounded-3xl bg-surface shadow-corporate">
-                <h3 class="text-sm font-bold font-display text-text uppercase tracking-wider font-mono mb-4">
+              <div class="p-6 rounded-2xl bg-surface shadow-corporate border border-black/5 dark:border-white/5">
+                <h3 class="text-xs font-bold uppercase tracking-wider text-text mb-4">
                   Danh mục lĩnh vực
                 </h3>
                 <div class="space-y-1.5">
@@ -166,17 +164,17 @@
                 </div>
               </div>
 
-              <!-- Consultation CTA Box (Borderless) -->
-              <div class="p-6 rounded-3xl bg-gradient-to-br from-primary to-primary-hover text-white shadow-xl relative overflow-hidden">
+              <!-- Consultation CTA Box -->
+              <div class="p-6 rounded-2xl bg-primary text-white shadow-xl relative overflow-hidden">
                 <div class="relative z-10">
-                  <span class="inline-block px-2.5 py-1 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider bg-white/20 backdrop-blur-sm mb-3">Tư vấn trực tiếp</span>
+                  <span class="inline-block px-2.5 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-white/20 backdrop-blur-sm mb-3">Tư vấn trực tiếp</span>
                   <h4 class="text-lg font-bold font-display leading-snug mb-2">Cần báo giá dịch vụ này?</h4>
                   <p class="text-xs text-white/90 leading-relaxed mb-5">
-                    MHD cung cấp mức phí cạnh tranh, thời gian phát hành chứng thư nhanh chóng và đáp ứng khắt khe các yêu cầu bảo mật.
+                    MHD cung cấp mức phí cạnh tranh, thời gian phát hành chứng thư nhanh chóng và đáp ứng đầy đủ yêu cầu của các ngân hàng.
                   </p>
                   <NuxtLink 
                     :to="localePath('/lien-he')" 
-                    class="w-full inline-flex items-center justify-center gap-2 py-3 px-6 rounded-xl bg-white text-primary font-bold text-xs uppercase tracking-wider shadow-lg hover:bg-white/90 transition-all transform hover:-translate-y-0.5"
+                    class="w-full inline-flex items-center justify-center gap-2 py-3 px-6 rounded-xl bg-white text-primary font-bold text-xs uppercase tracking-wider shadow-md hover:bg-white/90 transition-all transform hover:-translate-y-0.5"
                   >
                     Yêu cầu báo phí thẩm định
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">

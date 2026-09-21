@@ -3,19 +3,18 @@
     <!-- Corporate Careers Hero Header -->
     <header class="pt-32 pb-16 bg-bg notranslate">
       <div class="container mx-auto px-4 max-w-6xl">
-        <nav class="text-xs text-text-muted mb-4 flex items-center gap-2 font-mono">
-          <NuxtLink to="/" class="hover:text-primary transition-colors">TRANG CHỦ</NuxtLink>
+        <nav class="text-xs text-text-muted mb-4 flex items-center gap-2">
+          <NuxtLink to="/" class="hover:text-primary transition-colors">Trang chủ</NuxtLink>
           <span>/</span>
-          <NuxtLink to="/tuyen-dung" class="hover:text-primary transition-colors">TUYỂN DỤNG</NuxtLink>
+          <NuxtLink to="/tuyen-dung" class="hover:text-primary transition-colors">Tuyển dụng</NuxtLink>
           <span>/</span>
-          <span class="text-primary font-bold">CƠ HỘI NGHỀ NGHIỆP</span>
+          <span class="text-primary font-medium">Cơ hội nghề nghiệp</span>
         </nav>
 
         <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-8">
           <div class="max-w-2xl">
-            <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-bold uppercase tracking-wider bg-primary/10 text-primary mb-3">
-              <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
-              Gia Nhập Đội Ngũ Định Giá Tiên Phong
+            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-primary/10 text-primary mb-3">
+              Gia Nhập Đội Ngũ Thẩm Định MHD
             </span>
             <h1 class="text-3xl md:text-5xl font-display font-bold text-text leading-tight uppercase">
               Cơ Hội Nghề Nghiệp
@@ -26,7 +25,7 @@
           </div>
 
           <!-- Quick Navigation Pill Toggle -->
-          <div class="flex items-center gap-2.5 p-1.5 bg-surface rounded-full shadow-corporate shrink-0 self-start lg:self-auto">
+          <div class="flex items-center gap-2.5 p-1.5 bg-surface rounded-full shadow-corporate shrink-0 self-start lg:self-auto border border-black/5 dark:border-white/5">
             <NuxtLink 
               to="/tuyen-dung" 
               class="px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider text-text-secondary hover:text-primary transition-all"
@@ -48,8 +47,8 @@
     <section class="pb-12 notranslate">
       <div class="container mx-auto px-4 max-w-6xl">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          <div class="p-6 rounded-3xl bg-surface shadow-corporate flex items-start gap-4">
-            <div class="w-12 h-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center flex-shrink-0">
+          <div class="p-6 rounded-2xl bg-surface shadow-corporate flex items-start gap-4 border border-black/5 dark:border-white/5">
+            <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center flex-shrink-0">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
               </svg>

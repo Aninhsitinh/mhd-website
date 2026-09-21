@@ -20,18 +20,17 @@
           
           <!-- Left Text Content (7 cols) -->
           <div class="lg:col-span-7">
-            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 mb-5 rounded-full bg-black/40 backdrop-blur-md text-white text-[11px] font-mono font-bold tracking-wider uppercase">
-              <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+            <div class="inline-flex items-center gap-2 px-3 py-1 mb-5 rounded-full bg-white/10 backdrop-blur-md text-white/90 text-[11px] font-semibold tracking-wide uppercase border border-white/15">
               ĐỦ ĐIỀU KIỆN HÀNH NGHỀ THEO QUY ĐỊNH BỘ TÀI CHÍNH
             </div>
             
             <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-[44px] xl:text-[50px] font-display font-extrabold text-white leading-[1.3] sm:leading-[1.35] lg:leading-[1.35] tracking-tight mb-5 drop-shadow-md">
-              Giá trị tài sản,<br class="hidden sm:inline">
-              <span class="text-primary">minh chứng</span> bằng dữ liệu
+              Thẩm định giá chuẩn xác,<br class="hidden sm:inline">
+              <span class="text-primary">minh bạch</span> theo chuẩn quốc tế
             </h1>
             
             <p class="text-sm sm:text-base text-white/90 mb-7 leading-relaxed max-w-xl font-normal drop-shadow">
-              MHD cung cấp giải pháp thẩm định giá độc lập cho doanh nghiệp, bất động sản, động sản và dự án đầu tư — tuân thủ chuẩn mực Việt Nam &amp; quốc tế, minh bạch từng bước bằng dữ liệu thị trường kiểm chứng được.
+              MHD cung cấp dịch vụ thẩm định giá độc lập cho doanh nghiệp, bất động sản, động sản và dự án đầu tư — tuân thủ chuẩn mực Việt Nam &amp; quốc tế, bảo vệ quyền lợi tối đa cho nhà đầu tư và tổ chức tín dụng.
             </p>
             
             <div class="flex flex-col sm:flex-row items-center gap-3.5 w-full">
@@ -41,40 +40,40 @@
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
               </NuxtLink>
-              <NuxtLink to="/cong-thong-tin" class="w-full sm:w-auto px-6 py-3.5 text-center justify-center bg-black/40 hover:bg-black/60 backdrop-blur-md text-white text-xs font-bold uppercase tracking-wider rounded-full transition-all transform hover:-translate-y-0.5">
-                Cổng thông tin B2B / Ngân hàng
+              <NuxtLink to="/cong-thong-tin" class="w-full sm:w-auto px-6 py-3.5 text-center justify-center bg-white/10 hover:bg-white/20 text-white text-xs font-bold uppercase tracking-wider rounded-full transition-all transform hover:-translate-y-0.5 border border-white/15">
+                Cổng thông tin Doanh nghiệp &amp; Ngân hàng
               </NuxtLink>
             </div>
           </div>
 
-          <!-- Right Floating Stats Card (5 cols) - Semi-transparent Glass style to reveal background behind -->
+          <!-- Right Floating Stats Card (5 cols) - Natural executive card style -->
           <div class="lg:col-span-5 w-full">
-            <div class="bg-surface/90 dark:bg-surface/80 backdrop-blur-2xl rounded-2xl p-5 sm:p-6 lg:p-7 shadow-2xl space-y-4 sm:space-y-5 w-full">
-              <div class="flex items-center justify-between pb-1">
-                <span class="text-[10px] sm:text-[11px] font-mono font-bold uppercase tracking-wider text-primary">BẢO CHỨNG NĂNG LỰC</span>
-                <span class="text-[9px] sm:text-[10px] text-text-muted font-mono">Dữ liệu lũy kế</span>
+            <div class="bg-surface/95 dark:bg-surface/90 rounded-2xl p-6 sm:p-7 shadow-2xl space-y-5 w-full border border-black/5 dark:border-white/10">
+              <div class="flex items-center justify-between pb-1 border-b border-black/5 dark:border-white/10">
+                <span class="text-xs font-bold uppercase tracking-wider text-primary">NĂNG LỰC DOANH NGHIỆP</span>
+                <span class="text-xs text-text-muted">Lũy kế 2010 - nay</span>
               </div>
               
               <div class="grid grid-cols-3 gap-2 sm:gap-3">
                 <div>
-                  <p class="text-xl sm:text-2xl lg:text-3xl font-black text-primary font-display mb-0.5">5.000<span class="text-sm sm:text-base font-bold">+</span></p>
-                  <p class="text-[9px] sm:text-[10px] lg:text-[11px] text-text-secondary uppercase tracking-wider font-semibold leading-tight">Dự án hoàn thành</p>
+                  <p class="text-xl sm:text-2xl lg:text-3xl font-bold text-text font-display mb-0.5">5.000<span class="text-sm sm:text-base font-semibold text-primary">+</span></p>
+                  <p class="text-[11px] text-text-secondary uppercase tracking-wider font-semibold leading-tight">Hồ sơ phát hành</p>
                 </div>
                 <div>
-                  <p class="text-xl sm:text-2xl lg:text-3xl font-black text-primary font-display mb-0.5">60<span class="text-sm sm:text-base font-bold">+</span></p>
-                  <p class="text-[9px] sm:text-[10px] lg:text-[11px] text-text-secondary uppercase tracking-wider font-semibold leading-tight">Thẩm định viên</p>
+                  <p class="text-xl sm:text-2xl lg:text-3xl font-bold text-text font-display mb-0.5">60<span class="text-sm sm:text-base font-semibold text-primary">+</span></p>
+                  <p class="text-[11px] text-text-secondary uppercase tracking-wider font-semibold leading-tight">Thẩm định viên</p>
                 </div>
                 <div>
-                  <p class="text-xl sm:text-2xl lg:text-3xl font-black text-primary font-display mb-0.5">100<span class="text-sm sm:text-base font-bold">%</span></p>
-                  <p class="text-[9px] sm:text-[10px] lg:text-[11px] text-text-secondary uppercase tracking-wider font-semibold leading-tight">Khách tin chọn</p>
+                  <p class="text-xl sm:text-2xl lg:text-3xl font-bold text-text font-display mb-0.5">100<span class="text-sm sm:text-base font-semibold text-primary">%</span></p>
+                  <p class="text-[11px] text-text-secondary uppercase tracking-wider font-semibold leading-tight">Hợp lệ pháp lý</p>
                 </div>
               </div>
               
-              <div class="flex items-start gap-2.5 bg-bg/75 dark:bg-bg/50 p-3 sm:p-3.5 rounded-xl">
+              <div class="flex items-start gap-3 bg-bg/80 dark:bg-bg/40 p-3.5 rounded-xl border border-black/5 dark:border-white/5">
                 <div class="w-5 h-5 rounded-md bg-primary/10 text-primary flex items-center justify-center shrink-0 mt-0.5">
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
                 </div>
-                <p class="text-[10px] sm:text-[11px] text-text-secondary leading-relaxed">
+                <p class="text-xs text-text-secondary leading-relaxed">
                   Quy trình thẩm định tuân thủ nghiêm ngặt hệ thống Tiêu chuẩn Thẩm định giá Việt Nam ban hành theo TT 30-36/2024/TT-BTC.
                 </p>
               </div>
@@ -91,15 +90,14 @@
         
         <!-- Section Header (Centered Clean Layout) -->
         <div class="text-center max-w-3xl mx-auto mb-14 reveal-on-scroll">
-          <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-bold uppercase tracking-wider bg-primary/10 text-primary mb-4">
-            <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
-            VÌ SAO CHỌN MHD VALUATION
+          <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-primary/10 text-primary mb-3">
+            NĂNG LỰC &amp; TIÊU CHUẨN HOẠT ĐỘNG
           </span>
           <h2 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-hero leading-tight mb-4">
-            Bảo chứng pháp lý &amp; năng lực thẩm định độc lập
+            Giá trị pháp lý &amp; uy tín thẩm định độc lập
           </h2>
           <p class="text-text-secondary text-sm md:text-base leading-relaxed max-w-2xl mx-auto">
-            Mỗi chứng thư do MHD phát hành là kết tinh giữa đội ngũ thẩm định viên thẻ đỏ Bộ Tài chính, chuẩn mực pháp lý nghiêm ngặt và giải pháp số hóa minh bạch.
+            Mỗi chứng thư do MHD phát hành là kết tinh giữa đội ngũ thẩm định viên thẻ đỏ Bộ Tài chính, chuẩn mực pháp lý nghiêm ngặt và quy trình kiểm soát độc lập.
           </p>
         </div>
 
@@ -107,15 +105,15 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 lg:gap-8 reveal-on-scroll">
           
           <!-- Pillar Item 1: Legal Accreditation & Ministry of Finance -->
-          <div class="bg-bg rounded-3xl p-7 sm:p-8 shadow-corporate hover:shadow-2xl transition-all duration-500 flex flex-col justify-between group">
+          <div class="bg-bg rounded-2xl p-7 sm:p-8 shadow-corporate hover:shadow-xl transition-all duration-300 flex flex-col justify-between group border border-black/5 dark:border-white/5">
             <div>
               <div class="flex items-center justify-between mb-5">
-                <div class="w-11 h-11 rounded-2xl bg-primary/10 text-primary flex items-center justify-center group-hover:scale-110 transition-transform">
+                <div class="w-11 h-11 rounded-xl bg-primary/10 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all">
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                   </svg>
                 </div>
-                <span class="text-[11px] font-mono font-bold uppercase tracking-wider text-text-muted">TRỤ CỘT 01</span>
+                <span class="text-xs font-semibold uppercase tracking-wider text-text-muted">TIÊU CHUẨN 01</span>
               </div>
 
               <h3 class="text-xl sm:text-2xl font-bold font-display text-text group-hover:text-primary transition-colors mb-2.5">
@@ -127,26 +125,26 @@
 
               <!-- Standard Badges -->
               <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 mb-2">
-                <div class="p-3 rounded-2xl bg-surface">
-                  <span class="text-[10px] font-mono font-bold text-primary block uppercase">Tiêu Chuẩn 01</span>
+                <div class="p-3 rounded-xl bg-surface border border-black/5 dark:border-white/5">
+                  <span class="text-xs font-bold text-primary block uppercase">Tiêu Chuẩn 01</span>
                   <span class="text-xs font-bold text-text mt-0.5 block">TT 30/2024/TT-BTC</span>
-                  <span class="text-[10px] text-text-muted">Đạo đức hành nghề</span>
+                  <span class="text-[11px] text-text-muted">Đạo đức hành nghề</span>
                 </div>
-                <div class="p-3 rounded-2xl bg-surface">
-                  <span class="text-[10px] font-mono font-bold text-primary block uppercase">Tiêu Chuẩn 02</span>
+                <div class="p-3 rounded-xl bg-surface border border-black/5 dark:border-white/5">
+                  <span class="text-xs font-bold text-primary block uppercase">Tiêu Chuẩn 02</span>
                   <span class="text-xs font-bold text-text mt-0.5 block">TT 31/2024/TT-BTC</span>
-                  <span class="text-[10px] text-text-muted">Khảo sát tài sản</span>
+                  <span class="text-[11px] text-text-muted">Khảo sát tài sản</span>
                 </div>
-                <div class="p-3 rounded-2xl bg-surface">
-                  <span class="text-[10px] font-mono font-bold text-primary block uppercase">Tiêu Chuẩn 03</span>
+                <div class="p-3 rounded-xl bg-surface border border-black/5 dark:border-white/5">
+                  <span class="text-xs font-bold text-primary block uppercase">Tiêu Chuẩn 03</span>
                   <span class="text-xs font-bold text-text mt-0.5 block">TT 36/2024/TT-BTC</span>
-                  <span class="text-[10px] text-text-muted">Chứng thư chuẩn</span>
+                  <span class="text-[11px] text-text-muted">Chứng thư chuẩn</span>
                 </div>
               </div>
             </div>
 
-            <div class="pt-5 mt-5 flex items-center justify-between">
-              <span class="text-xs text-text-muted font-mono">ĐKDN: 0312231570</span>
+            <div class="pt-5 mt-5 flex items-center justify-between border-t border-black/5 dark:border-white/5">
+              <span class="text-xs text-text-muted font-medium">ĐKDN: 0312231570</span>
               <NuxtLink :to="localePath('/ho-so-phap-ly')" class="text-primary font-bold text-xs uppercase tracking-wider hover:underline inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
                 Xem hồ sơ pháp lý →
               </NuxtLink>
@@ -154,15 +152,15 @@
           </div>
 
           <!-- Pillar Item 2: Certified Appraisers -->
-          <div class="bg-bg rounded-3xl p-7 sm:p-8 shadow-corporate hover:shadow-2xl transition-all duration-500 flex flex-col justify-between group">
+          <div class="bg-bg rounded-2xl p-7 sm:p-8 shadow-corporate hover:shadow-xl transition-all duration-300 flex flex-col justify-between group border border-black/5 dark:border-white/5">
             <div>
               <div class="flex items-center justify-between mb-5">
-                <div class="w-11 h-11 rounded-2xl bg-primary/10 text-primary flex items-center justify-center group-hover:scale-110 transition-transform">
+                <div class="w-11 h-11 rounded-xl bg-primary/10 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all">
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                   </svg>
                 </div>
-                <span class="text-[11px] font-mono font-bold uppercase tracking-wider text-text-muted">TRỤ CỘT 02</span>
+                <span class="text-xs font-semibold uppercase tracking-wider text-text-muted">TIÊU CHUẨN 02</span>
               </div>
 
               <h3 class="text-xl sm:text-2xl font-bold font-display text-text group-hover:text-primary transition-colors mb-2.5">
@@ -173,20 +171,20 @@
               </p>
 
               <!-- Key metric highlight -->
-              <div class="p-4 sm:p-5 rounded-2xl bg-surface flex items-center justify-between">
+              <div class="p-4 sm:p-5 rounded-xl bg-surface flex items-center justify-between border border-black/5 dark:border-white/5">
                 <div>
-                  <p class="text-2xl sm:text-3xl font-black font-display text-primary">60<span class="text-base font-bold">+</span></p>
-                  <p class="text-[11px] sm:text-xs text-text-secondary font-semibold uppercase tracking-wider mt-0.5">Thẩm định viên &amp; Chuyên gia</p>
+                  <p class="text-2xl sm:text-3xl font-bold font-display text-primary">60<span class="text-base font-bold">+</span></p>
+                  <p class="text-xs text-text-secondary font-medium uppercase tracking-wider mt-0.5">Thẩm định viên &amp; Chuyên gia</p>
                 </div>
                 <div class="text-right">
-                  <p class="text-2xl sm:text-3xl font-black font-display text-text">15<span class="text-base font-bold">+</span></p>
-                  <p class="text-[11px] sm:text-xs text-text-secondary font-semibold uppercase tracking-wider mt-0.5">Năm kinh nghiệm bình quân</p>
+                  <p class="text-2xl sm:text-3xl font-bold font-display text-text">15<span class="text-base font-bold">+</span></p>
+                  <p class="text-xs text-text-secondary font-medium uppercase tracking-wider mt-0.5">Năm kinh nghiệm bình quân</p>
                 </div>
               </div>
             </div>
 
-            <div class="pt-5 mt-5 flex items-center justify-between">
-              <span class="text-xs text-text-muted font-mono">100% chứng thư ký duyệt độc lập</span>
+            <div class="pt-5 mt-5 flex items-center justify-between border-t border-black/5 dark:border-white/5">
+              <span class="text-xs text-text-muted">100% chứng thư ký duyệt độc lập</span>
               <NuxtLink :to="localePath('/doi-ngu-nhan-su')" class="text-primary font-bold text-xs uppercase tracking-wider hover:underline inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
                 Xem hội đồng chuyên môn →
               </NuxtLink>
@@ -194,16 +192,16 @@
           </div>
 
           <!-- Pillar Item 3: Nationwide Network & 24h Field Survey -->
-          <div class="bg-bg rounded-3xl p-7 sm:p-8 shadow-corporate hover:shadow-2xl transition-all duration-500 flex flex-col justify-between group">
+          <div class="bg-bg rounded-2xl p-7 sm:p-8 shadow-corporate hover:shadow-xl transition-all duration-300 flex flex-col justify-between group border border-black/5 dark:border-white/5">
             <div>
               <div class="flex items-center justify-between mb-5">
-                <div class="w-11 h-11 rounded-2xl bg-primary/10 text-primary flex items-center justify-center group-hover:scale-110 transition-transform">
+                <div class="w-11 h-11 rounded-xl bg-primary/10 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all">
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
                 </div>
-                <span class="text-[11px] font-mono font-bold uppercase tracking-wider text-text-muted">TRỤ CỘT 03</span>
+                <span class="text-xs font-semibold uppercase tracking-wider text-text-muted">TIÊU CHUẨN 03</span>
               </div>
 
               <h3 class="text-xl sm:text-2xl font-bold font-display text-text group-hover:text-primary transition-colors mb-2.5">
@@ -214,20 +212,20 @@
               </p>
 
               <!-- Branch & Speed Pill -->
-              <div class="p-4 sm:p-5 rounded-2xl bg-surface flex items-center justify-between">
+              <div class="p-4 sm:p-5 rounded-xl bg-surface flex items-center justify-between border border-black/5 dark:border-white/5">
                 <div>
-                  <p class="text-2xl sm:text-3xl font-black font-display text-primary">13</p>
-                  <p class="text-[11px] sm:text-xs text-text-secondary font-semibold uppercase tracking-wider mt-0.5">Chi nhánh toàn quốc</p>
+                  <p class="text-2xl sm:text-3xl font-bold font-display text-primary">13</p>
+                  <p class="text-xs text-text-secondary font-medium uppercase tracking-wider mt-0.5">Chi nhánh toàn quốc</p>
                 </div>
                 <div class="text-right">
-                  <p class="text-2xl sm:text-3xl font-black font-display text-text">24h</p>
-                  <p class="text-[11px] sm:text-xs text-text-secondary font-semibold uppercase tracking-wider mt-0.5">Khảo sát &amp; phản hồi</p>
+                  <p class="text-2xl sm:text-3xl font-bold font-display text-text">24h</p>
+                  <p class="text-xs text-text-secondary font-medium uppercase tracking-wider mt-0.5">Khảo sát &amp; phản hồi</p>
                 </div>
               </div>
             </div>
 
-            <div class="pt-5 mt-5 flex items-center justify-between">
-              <span class="text-xs text-text-muted font-mono">Bắc – Trung – Nam</span>
+            <div class="pt-5 mt-5 flex items-center justify-between border-t border-black/5 dark:border-white/5">
+              <span class="text-xs text-text-muted">Bắc – Trung – Nam</span>
               <NuxtLink :to="localePath('/lien-he')" class="text-primary font-bold text-xs uppercase tracking-wider hover:underline inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
                 Danh sách chi nhánh →
               </NuxtLink>
@@ -235,19 +233,19 @@
           </div>
 
           <!-- Pillar Item 4: Digital Verification & Independent Pricing -->
-          <div class="bg-bg rounded-3xl p-7 sm:p-8 shadow-corporate hover:shadow-2xl transition-all duration-500 flex flex-col justify-between group">
+          <div class="bg-bg rounded-2xl p-7 sm:p-8 shadow-corporate hover:shadow-xl transition-all duration-300 flex flex-col justify-between group border border-black/5 dark:border-white/5">
             <div>
               <div class="flex items-center justify-between mb-5">
-                <div class="w-11 h-11 rounded-2xl bg-primary/10 text-primary flex items-center justify-center group-hover:scale-110 transition-transform">
+                <div class="w-11 h-11 rounded-xl bg-primary/10 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all">
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z" />
                   </svg>
                 </div>
-                <span class="text-[11px] font-mono font-bold uppercase tracking-wider text-text-muted">TRỤ CỘT 04</span>
+                <span class="text-xs font-semibold uppercase tracking-wider text-text-muted">TIÊU CHUẨN 04</span>
               </div>
 
               <h3 class="text-xl sm:text-2xl font-bold font-display text-text group-hover:text-primary transition-colors mb-2.5">
-                Chứng Thư Số QR &amp; Cơ Sở Dữ Liệu Đối Soát Độc Lập
+                Xác Thực Chứng Thư &amp; Kiểm Soát Độc Lập
               </h3>
               <p class="text-xs sm:text-sm text-text-secondary leading-relaxed mb-5">
                 Áp dụng quy trình kiểm soát chất lượng 3 vòng độc lập kết hợp công nghệ mã định danh QR trên từng chứng thư, giúp đối tác ngân hàng và nhà đầu tư tra cứu tính xác thực tức thời, chống rủi ro giả mạo.
@@ -255,26 +253,26 @@
 
               <!-- 3 Proof points -->
               <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 mb-2">
-                <div class="p-3 rounded-2xl bg-surface">
-                  <span class="text-[10px] font-mono font-bold text-primary block uppercase">Kiểm Soát</span>
+                <div class="p-3 rounded-xl bg-surface border border-black/5 dark:border-white/5">
+                  <span class="text-[11px] font-bold text-primary block uppercase">Kiểm Soát</span>
                   <span class="text-xs font-bold text-text mt-0.5 block">Quy trình 3 vòng</span>
                   <span class="text-[10px] text-text-muted">Khảo sát - Thẩm định - Duyệt</span>
                 </div>
-                <div class="p-3 rounded-2xl bg-surface">
-                  <span class="text-[10px] font-mono font-bold text-primary block uppercase">Bảo Mật Số</span>
+                <div class="p-3 rounded-xl bg-surface border border-black/5 dark:border-white/5">
+                  <span class="text-[11px] font-bold text-primary block uppercase">Bảo Mật</span>
                   <span class="text-xs font-bold text-text mt-0.5 block">Mã QR Định Danh</span>
                   <span class="text-[10px] text-text-muted">Xác thực chứng thư online</span>
                 </div>
-                <div class="p-3 rounded-2xl bg-surface">
-                  <span class="text-[10px] font-mono font-bold text-primary block uppercase">Thực Thi</span>
+                <div class="p-3 rounded-xl bg-surface border border-black/5 dark:border-white/5">
+                  <span class="text-[11px] font-bold text-primary block uppercase">Bảo Hiểm</span>
                   <span class="text-xs font-bold text-text mt-0.5 block">Bảo hiểm nghề</span>
                   <span class="text-[10px] text-text-muted">Bảo vệ quyền lợi đối tác</span>
                 </div>
               </div>
             </div>
 
-            <div class="pt-5 mt-5 flex items-center justify-between">
-              <span class="text-xs text-text-muted font-mono">Bảo mật đa tầng</span>
+            <div class="pt-5 mt-5 flex items-center justify-between border-t border-black/5 dark:border-white/5">
+              <span class="text-xs text-text-muted">Bảo mật đa tầng</span>
               <NuxtLink to="/tra-cuu-chung-thu" class="text-primary font-bold text-xs uppercase tracking-wider hover:underline inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
                 Tra cứu chứng thư trực tuyến →
               </NuxtLink>
@@ -290,26 +288,25 @@
     <section class="py-20 md:py-28 bg-bg relative notranslate">
       <div class="container mx-auto px-4 relative z-10 max-w-7xl">
         <div class="text-center max-w-3xl mx-auto mb-10 reveal-on-scroll">
-          <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-bold uppercase tracking-wider bg-primary/10 text-primary mb-4">
-            <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
-            VALUATION PORTFOLIO TERMINAL
+          <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-primary/10 text-primary mb-3">
+            LĨNH VỰC HOẠT ĐỘNG
           </span>
           <h2 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-hero leading-tight mb-4">
-            Danh mục thẩm định giá theo chuẩn mực chuyên biệt
+            Dịch vụ thẩm định giá chuyên sâu
           </h2>
           <p class="text-text-secondary text-sm md:text-base leading-relaxed max-w-2xl mx-auto">
-            Mỗi loại hình tài sản được phân bổ mô hình toán học và phương pháp luận độc lập, thẩm định bởi các chuyên gia giàu kinh nghiệm thực chiến.
+            Mỗi loại hình tài sản được áp dụng mô hình toán học và phương pháp luận độc lập, thực hiện bởi các thẩm định viên giàu kinh nghiệm thực tiễn.
           </p>
         </div>
 
-        <!-- Terminal Tab Selector (2-Col Grid on Mobile for Instant Access, Centered Row on Desktop) -->
+        <!-- Service Tab Selector (Natural Human Navigation) -->
         <div class="grid grid-cols-2 sm:grid-cols-3 md:flex md:items-center md:justify-center gap-2 md:gap-2.5 mb-6 md:mb-10 reveal-on-scroll">
           <button
             v-for="(service, idx) in services"
             :key="idx"
             @click="activeTerminalIndex = idx"
-            class="w-full md:w-auto px-2.5 sm:px-4 md:px-5 py-2.5 md:py-3 rounded-xl md:rounded-full text-[11px] sm:text-xs font-bold uppercase tracking-wider transition-all duration-300 flex items-center justify-start md:justify-center gap-2 shadow-sm text-left md:text-center min-h-[46px] md:min-h-0"
-            :class="activeTerminalIndex === idx ? 'bg-primary text-white shadow-corporate hover:shadow-corporate-hover -translate-y-0.5' : 'bg-surface text-text-secondary hover:text-text hover:bg-surface-muted hover:-translate-y-0.5'"
+            class="w-full md:w-auto px-3 sm:px-4 md:px-5 py-2.5 md:py-3 rounded-xl md:rounded-full text-xs font-semibold tracking-wide transition-all duration-300 flex items-center justify-start md:justify-center gap-2 shadow-sm text-left md:text-center min-h-[46px] md:min-h-0 border"
+            :class="activeTerminalIndex === idx ? 'bg-primary text-white border-primary shadow-corporate' : 'bg-surface text-text-secondary hover:text-text hover:bg-surface-muted border-black/5 dark:border-white/5'"
           >
             <!-- SVG Icon dynamically matching each asset type -->
             <span class="shrink-0 w-4 h-4 flex items-center justify-center">
@@ -336,33 +333,33 @@
           </button>
         </div>
 
-        <!-- Terminal Active Asset Card View (Two-Column Interactive Showcase) -->
+        <!-- Active Service Showcase Card -->
         <div 
-          class="bg-surface rounded-3xl p-5 sm:p-8 lg:p-10 shadow-2xl reveal-on-scroll relative overflow-hidden transition-all duration-500"
+          class="bg-surface rounded-2xl p-6 sm:p-8 lg:p-10 shadow-corporate reveal-on-scroll relative overflow-hidden transition-all duration-300 border border-black/5 dark:border-white/5"
           @touchstart="handleTouchStart"
           @touchend="handleTouchEnd"
         >
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
             
             <!-- Left: High-Res Asset Media & Visual Indicator (6 cols) -->
-            <div class="lg:col-span-6 relative aspect-[16/10] rounded-2xl overflow-hidden shadow-corporate group">
+            <div class="lg:col-span-6 relative aspect-[16/10] rounded-xl overflow-hidden shadow-corporate group">
               <img 
                 :src="services[activeTerminalIndex].image" 
                 :alt="services[activeTerminalIndex].title" 
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
               />
-              <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent"></div>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent"></div>
               
               <div class="absolute top-4 left-4 right-4 flex items-center justify-between z-10">
-                <span class="px-3 py-1.5 bg-black/60 backdrop-blur-md text-white text-[11px] font-mono font-bold uppercase tracking-wider rounded-full shadow-sm">
-                  Danh mục 0{{ activeTerminalIndex + 1 }} / 06
+                <span class="px-3 py-1 bg-black/60 backdrop-blur-md text-white text-xs font-semibold uppercase tracking-wider rounded-full shadow-sm">
+                  Lĩnh vực 0{{ activeTerminalIndex + 1 }} / 06
                 </span>
 
                 <!-- Quick Step Navigation for Mobile Thumb Control -->
                 <div class="flex items-center gap-1.5 md:hidden">
                   <button 
                     @click.stop="prevTerminal"
-                    class="w-8 h-8 rounded-full bg-black/60 backdrop-blur-md text-white flex items-center justify-center hover:bg-primary active:scale-90 transition-all shadow-sm"
+                    class="w-8 h-8 rounded-full bg-black/60 backdrop-blur-md text-white flex items-center justify-center hover:bg-primary active:scale-95 transition-all shadow-sm"
                     aria-label="Danh mục trước"
                   >
                     <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -371,7 +368,7 @@
                   </button>
                   <button 
                     @click.stop="nextTerminal"
-                    class="w-8 h-8 rounded-full bg-black/60 backdrop-blur-md text-white flex items-center justify-center hover:bg-primary active:scale-90 transition-all shadow-sm"
+                    class="w-8 h-8 rounded-full bg-black/60 backdrop-blur-md text-white flex items-center justify-center hover:bg-primary active:scale-95 transition-all shadow-sm"
                     aria-label="Danh mục kế tiếp"
                   >
                     <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -382,7 +379,7 @@
               </div>
 
               <div class="absolute bottom-4 sm:bottom-5 left-4 sm:left-5 right-4 sm:right-5 text-white">
-                <span class="text-[10px] sm:text-[11px] font-mono text-primary font-bold uppercase tracking-wider block mb-1">Quy chuẩn thẩm định áp dụng</span>
+                <span class="text-xs text-primary-light font-semibold uppercase tracking-wider block mb-1">Quy chuẩn định giá áp dụng</span>
                 <h3 class="text-xl sm:text-2xl md:text-3xl font-bold font-display text-white">
                   {{ services[activeTerminalIndex].title }}
                 </h3>
@@ -392,10 +389,9 @@
             <!-- Right: Methodology, Specs & Action (6 cols) -->
             <div class="lg:col-span-6 flex flex-col justify-between space-y-5">
               <div>
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-mono font-bold mb-3">
-                  <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
-                  Chuẩn hóa theo Tiêu chuẩn Thẩm định giá Việt Nam
-                </div>
+                <span class="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold mb-3">
+                  Tiêu chuẩn Thẩm định giá Việt Nam (TĐGVN)
+                </span>
 
                 <p class="text-sm md:text-base text-text-secondary leading-relaxed mb-5">
                   {{ services[activeTerminalIndex].description }}
@@ -403,22 +399,22 @@
 
                 <!-- Technical Specs Breakdown -->
                 <div class="grid grid-cols-2 gap-3.5 pt-1">
-                  <div class="p-4 rounded-2xl bg-bg/80 dark:bg-bg/40">
-                    <span class="text-[10px] font-mono text-text-muted uppercase tracking-wider block">Phương pháp áp dụng:</span>
+                  <div class="p-4 rounded-xl bg-bg/80 dark:bg-bg/40 border border-black/5 dark:border-white/5">
+                    <span class="text-xs text-text-muted uppercase tracking-wider block">Phương pháp tiếp cận:</span>
                     <span class="text-sm font-bold font-display text-text mt-1 block leading-snug">
                       {{ terminalSpecs[activeTerminalIndex].method }}
                     </span>
                   </div>
-                  <div class="p-4 rounded-2xl bg-bg/80 dark:bg-bg/40">
-                    <span class="text-[10px] font-mono text-text-muted uppercase tracking-wider block">Thời gian phát hành:</span>
+                  <div class="p-4 rounded-xl bg-bg/80 dark:bg-bg/40 border border-black/5 dark:border-white/5">
+                    <span class="text-xs text-text-muted uppercase tracking-wider block">Thời gian bàn giao:</span>
                     <span class="text-sm font-bold font-display text-primary mt-1 block leading-snug">
                       {{ terminalSpecs[activeTerminalIndex].turnaround }}
                     </span>
                   </div>
                 </div>
 
-                <div class="mt-3.5 p-3.5 rounded-2xl bg-bg/80 dark:bg-bg/40 flex flex-wrap sm:flex-nowrap items-center gap-2 sm:gap-3">
-                  <span class="text-xs text-text-muted font-mono shrink-0">Đối tượng mục tiêu:</span>
+                <div class="mt-3.5 p-3.5 rounded-xl bg-bg/80 dark:bg-bg/40 flex flex-wrap sm:flex-nowrap items-center gap-2 sm:gap-3 border border-black/5 dark:border-white/5">
+                  <span class="text-xs text-text-muted shrink-0">Đối tượng phục vụ:</span>
                   <span class="text-xs font-semibold text-text">{{ terminalSpecs[activeTerminalIndex].audience }}</span>
                 </div>
               </div>
@@ -427,7 +423,7 @@
               <div class="flex flex-col sm:flex-row items-center gap-3.5 pt-2">
                 <NuxtLink 
                   :to="services[activeTerminalIndex].link" 
-                  class="w-full sm:w-auto px-7 py-3.5 bg-primary hover:bg-primary-hover text-white text-xs font-bold uppercase tracking-wider rounded-full shadow-corporate hover:shadow-corporate-glow transition-all inline-flex items-center justify-center gap-2 transform hover:-translate-y-0.5"
+                  class="w-full sm:w-auto px-7 py-3.5 bg-primary hover:bg-primary-hover text-white text-xs font-bold uppercase tracking-wider rounded-full shadow-corporate transition-all inline-flex items-center justify-center gap-2"
                 >
                   <span>Xem Chi Tiết Dịch Vụ</span>
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -437,7 +433,7 @@
 
                 <NuxtLink 
                   :to="localePath('/lien-he')" 
-                  class="w-full sm:w-auto px-6 py-3.5 bg-bg hover:bg-surface-muted text-text text-xs font-bold uppercase tracking-wider rounded-full transition-all inline-flex items-center justify-center gap-2 transform hover:-translate-y-0.5"
+                  class="w-full sm:w-auto px-6 py-3.5 bg-bg hover:bg-surface-muted text-text text-xs font-bold uppercase tracking-wider rounded-full transition-all inline-flex items-center justify-center gap-2 border border-black/5 dark:border-white/10"
                 >
                   <span>Gửi Hồ Sơ Định Giá</span>
                 </NuxtLink>
@@ -463,23 +459,22 @@
       </div>
     </section>
 
-    <!-- Section 4: High-Impact Valuation Mega-Project Dossiers (Bảo chứng thực chiến ngàn tỷ) -->
+    <!-- Section 4: Featured Valuation Projects (Dự án thẩm định tiêu biểu) -->
     <section class="py-20 md:py-28 bg-surface">
       <div class="container mx-auto px-4 max-w-7xl">
         <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 reveal-on-scroll">
           <div class="max-w-3xl">
-            <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-bold uppercase tracking-wider bg-primary/10 text-primary mb-4">
-              <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
-              HỒ SƠ THẨM ĐỊNH ĐẠI DỰ ÁN
+            <span class="inline-flex items-center px-3.5 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-primary/10 text-primary mb-4">
+              HỒ SƠ NĂNG LỰC
             </span>
             <h2 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-hero leading-tight mb-4">
-              Bảo chứng thực chiến qua các thương vụ quy mô ngàn tỷ
+              Các dự án thẩm định tiêu biểu
             </h2>
             <p class="text-text-secondary text-sm md:text-base leading-relaxed">
-              MHD trực tiếp thực hiện công tác thẩm định giá độc lập cho các tập đoàn nhà nước, đại đô thị sinh thái và dây chuyền nhà máy công nghiệp trọng điểm quốc gia.
+              MHD trực tiếp thực hiện công tác thẩm định giá độc lập cho các tập đoàn lớn, dự án bất động sản phức hợp và dây chuyền công nghiệp trọng điểm trên toàn quốc.
             </p>
           </div>
-          <NuxtLink :to="localePath('/du-an')" class="inline-flex items-center gap-2 px-6 py-3.5 bg-bg text-primary hover:bg-primary hover:text-white rounded-full font-bold shadow-corporate hover:shadow-corporate-hover transition-all group shrink-0 text-xs uppercase tracking-wider mb-1">
+          <NuxtLink :to="localePath('/du-an')" class="inline-flex items-center gap-2 px-6 py-3.5 bg-bg text-primary hover:bg-primary hover:text-white rounded-full font-bold shadow-corporate hover:shadow-corporate-hover transition-all group shrink-0 text-xs uppercase tracking-wider mb-1 border border-black/5 dark:border-white/5">
             <span>Toàn Bộ Dự Án</span>
             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 group-hover:translate-x-1 transition-transform" viewBox="0 0 20 20" fill="currentColor">
               <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
@@ -487,7 +482,7 @@
           </NuxtLink>
         </div>
 
-        <!-- 4 Mega-Project Dossiers Grid (Clean & Borderless) -->
+        <!-- 4 Featured Projects Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <ProjectCard 
             v-for="(project, index) in featuredProjects" 
@@ -500,38 +495,37 @@
       </div>
     </section>
 
-    <!-- Section 5: Nationwide Operations Cockpit (Bản đồ số khảo sát 63 tỉnh thành) -->
+    <!-- Section 5: Nationwide Network (Mạng lưới hoạt động toàn quốc) -->
     <section class="py-20 md:py-28 bg-bg relative overflow-hidden">
       <div class="container mx-auto px-4 max-w-7xl relative z-10">
         
         <!-- Operations Header -->
         <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-12 reveal-on-scroll">
           <div class="max-w-2xl">
-            <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-bold uppercase tracking-wider bg-primary/10 text-primary mb-4">
-              <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
-              MẠNG LƯỚI KHẢO SÁT HIỆN TRƯỜNG TOÀN QUỐC
+            <span class="inline-flex items-center px-3.5 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-primary/10 text-primary mb-4">
+              MẠNG LƯỚI HOẠT ĐỘNG TOÀN QUỐC
             </span>
             <h2 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-hero leading-tight mb-4">
-              Hiện diện 63 tỉnh thành, dữ liệu thực địa sâu sát
+              Hiện diện trên 63 tỉnh thành, am hiểu sâu thị trường địa phương
             </h2>
             <p class="text-text-secondary text-sm md:text-base leading-relaxed">
-              Mạng lưới 13 chi nhánh và khảo sát viên thường trực tại Bắc – Trung – Nam cho phép MHD cơ động tiếp cận hiện trường và thu thập dữ liệu giao dịch thực tế trong thời gian ngắn nhất.
+              Hệ thống 13 chi nhánh cùng đội ngũ chuyên gia khảo sát thường trực tại 3 miền Bắc – Trung – Nam giúp MHD đáp ứng nhanh mọi yêu cầu khảo sát hiện trường với cơ sở dữ liệu giá thực tế, cập nhật.
             </p>
           </div>
 
-          <!-- Real-Time Operational Indicators -->
-          <div class="grid grid-cols-3 gap-3 bg-surface p-4 md:p-6 rounded-3xl shadow-corporate shrink-0 lg:mb-1">
+          <!-- Institutional Trust Indicators -->
+          <div class="grid grid-cols-3 gap-3 bg-surface p-4 md:p-6 rounded-2xl shadow-corporate shrink-0 lg:mb-1 border border-black/5 dark:border-white/5">
             <div class="text-center px-4 py-1">
-              <p class="text-3xl lg:text-4xl font-black font-display text-primary">13</p>
-              <p class="text-[11px] text-text-muted uppercase font-mono mt-1 font-semibold">Chi nhánh</p>
+              <p class="text-3xl lg:text-4xl font-bold font-display text-primary">13</p>
+              <p class="text-xs text-text-muted mt-1 font-semibold uppercase tracking-wider">Chi nhánh</p>
             </div>
-            <div class="text-center px-4 bg-bg/60 rounded-2xl py-2">
-              <p class="text-3xl lg:text-4xl font-black font-display text-text">24h</p>
-              <p class="text-[11px] text-text-muted uppercase font-mono mt-1 font-semibold">Khảo sát</p>
+            <div class="text-center px-4 bg-bg/60 rounded-xl py-2">
+              <p class="text-3xl lg:text-4xl font-bold font-display text-text">24h</p>
+              <p class="text-xs text-text-muted mt-1 font-semibold uppercase tracking-wider">Phản hồi</p>
             </div>
             <div class="text-center px-4 py-1">
-              <p class="text-3xl lg:text-4xl font-black font-display text-primary">63</p>
-              <p class="text-[11px] text-text-muted uppercase font-mono mt-1 font-semibold">Tỉnh thành</p>
+              <p class="text-3xl lg:text-4xl font-bold font-display text-primary">63</p>
+              <p class="text-xs text-text-muted mt-1 font-semibold uppercase tracking-wider">Tỉnh thành</p>
             </div>
           </div>
         </div>
@@ -556,20 +550,19 @@
       <div class="container mx-auto px-4 max-w-7xl relative z-10">
         <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 reveal-on-scroll">
           <div class="max-w-3xl">
-            <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-bold uppercase tracking-wider bg-primary/10 text-primary mb-4">
-              <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
-              CỔNG NGHIỆP VỤ ĐỊNH CHẾ TÀI CHÍNH
+            <span class="inline-flex items-center px-3.5 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-primary/10 text-primary mb-4">
+              DÀNH CHO ĐỐI TÁC TÀI CHÍNH
             </span>
             <h2 class="text-2xl sm:text-3xl lg:text-4xl font-display font-bold text-hero leading-tight mb-3">
-              Công cụ nghiệp vụ dành cho<br class="hidden sm:inline"> Ngân hàng &amp; Khối Quản trị rủi ro
+              Tiện ích dành cho Ngân hàng &amp; Khối Quản trị rủi ro
             </h2>
             <p class="text-text-secondary text-sm md:text-base leading-relaxed max-w-2xl">
-              Giải pháp số hóa giúp ban kiểm soát rủi ro tín dụng và thẩm định viên nội bộ đối soát chứng thư tức thời.
+              Quy trình số hóa giúp ban kiểm soát rủi ro tín dụng và bộ phận quản lý tài sản bảo đảm đối soát thông tin chứng thư chính xác và bảo mật.
             </p>
           </div>
           <div class="shrink-0 mb-1">
-            <NuxtLink to="/cong-thong-tin" class="inline-flex items-center gap-2 px-6 py-3.5 bg-bg text-primary hover:bg-primary hover:text-white rounded-full font-bold shadow-corporate hover:shadow-corporate-hover transition-all text-xs uppercase tracking-wider group">
-              <span>Cổng Tra Cứu B2B</span>
+            <NuxtLink to="/cong-thong-tin" class="inline-flex items-center gap-2 px-6 py-3.5 bg-bg text-primary hover:bg-primary hover:text-white rounded-full font-bold shadow-corporate hover:shadow-corporate-hover transition-all text-xs uppercase tracking-wider group border border-black/5 dark:border-white/5">
+              <span>Cổng Tra Cứu Đối Tác</span>
               <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
@@ -579,19 +572,19 @@
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 reveal-on-scroll">
           <!-- B2B Card 1: Due Diligence Dossier -->
-          <div class="bg-bg p-8 rounded-3xl shadow-corporate hover:shadow-2xl transition-all duration-300 flex flex-col h-full group">
-            <div class="w-12 h-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+          <div class="bg-bg p-8 rounded-2xl shadow-corporate hover:shadow-xl transition-all duration-300 flex flex-col h-full group border border-black/5 dark:border-white/5">
+            <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-all">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
               </svg>
             </div>
-            <span class="text-[10px] text-text-muted font-mono font-bold tracking-widest uppercase mb-2">HỒ SƠ NĂNG LỰC TỔ CHỨC</span>
-            <h3 class="text-lg font-bold font-display text-text group-hover:text-primary transition-colors mb-2">Báo Cáo Năng Lực Chi Tiết</h3>
+            <span class="text-xs text-text-muted font-semibold tracking-wider uppercase mb-2">HỒ SƠ NĂNG LỰC TỔ CHỨC</span>
+            <h3 class="text-lg font-bold font-display text-text group-hover:text-primary transition-colors mb-2">Báo Cáo Năng Lực &amp; Pháp Lý</h3>
             <p class="text-xs text-text-secondary mb-6 flex-grow leading-relaxed">
-              Truy cập hồ sơ pháp lý, danh mục kinh nghiệm thẩm định các dự án quy mô nghìn tỷ dành riêng cho ban kiểm soát rủi ro tín dụng.
+              Cung cấp đầy đủ hồ sơ pháp lý công ty, giấy phép hành nghề của thẩm định viên và năng lực kinh nghiệm thẩm định tài sản cho các tổ chức tín dụng.
             </p>
             <NuxtLink to="/cong-thong-tin" class="inline-flex items-center text-primary font-bold text-xs uppercase tracking-wider hover:underline mt-auto gap-1">
-              Yêu cầu Access Code
+              Xem hồ sơ tổ chức
               <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
               </svg>
@@ -599,19 +592,19 @@
           </div>
 
           <!-- B2B Card 2: QR Validation -->
-          <div class="bg-bg p-8 rounded-3xl shadow-corporate hover:shadow-2xl transition-all duration-300 flex flex-col h-full group">
-            <div class="w-12 h-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+          <div class="bg-bg p-8 rounded-2xl shadow-corporate hover:shadow-xl transition-all duration-300 flex flex-col h-full group border border-black/5 dark:border-white/5">
+            <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-all">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z" />
               </svg>
             </div>
-            <span class="text-[10px] text-text-muted font-mono font-bold tracking-widest uppercase mb-2">BẢO MẬT &amp; CHỐNG GIẢ MẠO</span>
-            <h3 class="text-lg font-bold font-display text-text group-hover:text-primary transition-colors mb-2">Xác Thực Chứng Thư QR</h3>
+            <span class="text-xs text-text-muted font-semibold tracking-wider uppercase mb-2">BẢO MẬT &amp; CHỐNG GIẢ MẠO</span>
+            <h3 class="text-lg font-bold font-display text-text group-hover:text-primary transition-colors mb-2">Xác Thực Chứng Thư Trực Tuyến</h3>
             <p class="text-xs text-text-secondary mb-6 flex-grow leading-relaxed">
-              Quét mã QR độc lập trên chứng thư thẩm định giá để kiểm tra tính hợp pháp, đối soát thời gian phát hành và chữ ký số thẩm định viên.
+              Mỗi chứng thư thẩm định giá đều có mã QR định danh duy nhất, cho phép đối tác kiểm tra tính pháp lý, người ký duyệt và thời hạn hiệu lực của chứng thư.
             </p>
             <NuxtLink to="/tra-cuu-chung-thu" class="inline-flex items-center text-primary font-bold text-xs uppercase tracking-wider hover:underline mt-auto gap-1">
-              Mở Hệ Thống Tra Cứu
+              Tra cứu chứng thư
               <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
               </svg>
@@ -619,19 +612,19 @@
           </div>
 
           <!-- B2B Card 3: Enterprise Project Tracking -->
-          <div class="bg-bg p-8 rounded-3xl shadow-corporate hover:shadow-2xl transition-all duration-300 flex flex-col h-full group">
-            <div class="w-12 h-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+          <div class="bg-bg p-8 rounded-2xl shadow-corporate hover:shadow-xl transition-all duration-300 flex flex-col h-full group border border-black/5 dark:border-white/5">
+            <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-all">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
               </svg>
             </div>
-            <span class="text-[10px] text-text-muted font-mono font-bold tracking-widest uppercase mb-2">QUẢN LÝ DỰ ÁN TRỰC TUYẾN</span>
+            <span class="text-xs text-text-muted font-semibold tracking-wider uppercase mb-2">QUẢN LÝ TIẾN ĐỘ HỒ SƠ</span>
             <h3 class="text-lg font-bold font-display text-text group-hover:text-primary transition-colors mb-2">Theo Dõi Tiến Độ Thẩm Định</h3>
             <p class="text-xs text-text-secondary mb-6 flex-grow leading-relaxed">
-              Cổng quản lý danh mục thẩm định đa tài sản theo thời gian thực: tiến độ khảo sát, biên bản định giá sơ bộ và lịch phát hành chứng thư.
+              Kênh liên lạc trực tiếp cập nhật từng giai đoạn xử lý: từ tiếp nhận hồ sơ, khảo sát thực tế hiện trường đến phát hành chứng thư chính thức.
             </p>
             <NuxtLink :to="localePath('/lien-he')" class="inline-flex items-center text-primary font-bold text-xs uppercase tracking-wider hover:underline mt-auto gap-1">
-              Đăng Ký Tài Khoản Doanh Nghiệp
+              Liên hệ chuyên viên phụ trách
               <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
               </svg>
@@ -641,23 +634,22 @@
       </div>
     </section>
 
-    <!-- Section 7: Market Radar & Regulatory Intelligence (Bản tin thị trường & Pháp lý) -->
+    <!-- Section 7: Market News & Legal Regulatory (Tin tức thị trường & Pháp lý giá) -->
     <section class="py-20 md:py-28 bg-bg">
       <div class="container mx-auto px-4 max-w-7xl">
         <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 reveal-on-scroll">
           <div class="max-w-3xl">
-            <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-bold uppercase tracking-wider bg-primary/10 text-primary mb-4">
-              <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
-              MARKET RADAR &amp; PHÁP LÝ GIÁ
+            <span class="inline-flex items-center px-3.5 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-primary/10 text-primary mb-4">
+              THÔNG TIN &amp; PHÁP LÝ GIÁ
             </span>
             <h2 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-hero leading-tight mb-4">
-              Nhận định thị trường &amp; chuẩn mực pháp lý giá mới nhất
+              Bản tin thị trường &amp; chính sách pháp lý giá mới nhất
             </h2>
             <p class="text-text-secondary text-sm md:text-base leading-relaxed">
-              Cập nhật liên tục các quy định mới từ Bộ Tài chính, thông tư hướng dẫn Luật Giá và các phân tích chuyên sâu về biến động tài sản.
+              Cập nhật liên tục các văn bản chỉ đạo của Bộ Tài chính, thông tư hướng dẫn Luật Giá mới và các phân tích chuyên sâu về biến động tài sản từ ban chuyên môn MHD.
             </p>
           </div>
-          <NuxtLink :to="localePath('/tin-tuc')" class="inline-flex items-center gap-2 px-6 py-3.5 bg-surface text-primary hover:bg-primary hover:text-white rounded-full font-bold shadow-corporate hover:shadow-corporate-hover transition-all group shrink-0 text-xs uppercase tracking-wider mb-1">
+          <NuxtLink :to="localePath('/tin-tuc')" class="inline-flex items-center gap-2 px-6 py-3.5 bg-surface text-primary hover:bg-primary hover:text-white rounded-full font-bold shadow-corporate hover:shadow-corporate-hover transition-all group shrink-0 text-xs uppercase tracking-wider mb-1 border border-black/5 dark:border-white/5">
             <span>Tất Cả Bài Viết</span>
             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 group-hover:translate-x-1 transition-transform" viewBox="0 0 20 20" fill="currentColor">
               <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
@@ -680,15 +672,14 @@
     <!-- Section 8: Institutional Trust Ecosystem (Đối tác Ngân hàng & Tập đoàn) -->
     <section class="py-20 md:py-28 bg-surface overflow-hidden">
       <div class="container mx-auto px-4 mb-16 text-center reveal-on-scroll max-w-3xl">
-        <span class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-mono font-bold uppercase tracking-wider bg-primary/10 text-primary mb-3">
-          <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
-          MẠNG LƯỚI ĐỐI TÁC CHIẾN LƯỢC
+        <span class="inline-flex items-center px-3.5 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-primary/10 text-primary mb-3">
+          MẠNG LƯỚI ĐỐI TÁC
         </span>
         <h2 class="text-3xl md:text-5xl font-display font-bold text-hero mb-3">
           Được tin chọn bởi các định chế tài chính &amp; tập đoàn hàng đầu
         </h2>
         <p class="text-text-secondary text-sm leading-relaxed">
-          Chứng thư thẩm định giá MHD được chấp thuận trên toàn bộ hệ thống ngân hàng thương mại, tòa án và cơ quan quản lý vốn nhà nước.
+          Chứng thư thẩm định giá MHD được công nhận và tin tưởng bởi các ngân hàng thương mại, tập đoàn kinh tế và các cơ quan hữu quan.
         </p>
       </div>
 
@@ -718,14 +709,13 @@
       </div>
     </section>
 
-    <!-- Section 9: Bottom High-Conversion Corporate CTA -->
+    <!-- Section 9: Bottom Corporate CTA -->
     <section class="py-20 md:py-28 bg-bg relative overflow-hidden notranslate">
       <div class="container mx-auto px-4 max-w-5xl relative z-10">
-        <div class="p-10 md:p-16 rounded-3xl bg-surface shadow-2xl text-center reveal-on-scroll relative overflow-hidden">
+        <div class="p-10 md:p-16 rounded-2xl bg-surface shadow-corporate text-center reveal-on-scroll relative overflow-hidden border border-black/5 dark:border-white/5">
           
-          <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-bold uppercase tracking-wider bg-primary/10 text-primary mb-5">
-            <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-            HỢP TÁC CHIẾN LƯỢC &amp; ĐỊNH GIÁ ĐỘC LẬP
+          <span class="inline-flex items-center px-3.5 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-primary/10 text-primary mb-5">
+            TƯ VẤN &amp; THẨM ĐỊNH GIÁ ĐỘC LẬP
           </span>
 
           <h2 class="text-3xl md:text-5xl font-display font-bold text-hero mb-5 leading-tight">
@@ -747,9 +737,19 @@
               </svg>
             </NuxtLink>
 
+            <a 
+              href="tel:02835102555" 
+              class="w-full sm:w-auto px-8 py-4 bg-bg hover:bg-surface-muted text-text text-xs font-bold uppercase tracking-wider rounded-full transition-all inline-flex items-center justify-center gap-2 border border-black/5 dark:border-white/10"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              </svg>
+              <span>Hotline: (028) 3510 2555</span>
+            </a>
+
             <NuxtLink 
               to="/cong-thong-tin" 
-              class="w-full sm:w-auto px-8 py-4 bg-bg hover:bg-surface-muted text-text hover:text-primary text-xs font-bold uppercase tracking-wider rounded-full shadow-sm hover:shadow-corporate transition-all transform hover:-translate-y-0.5 inline-flex items-center justify-center gap-2"
+              class="w-full sm:w-auto px-8 py-4 bg-bg hover:bg-surface-muted text-text hover:text-primary text-xs font-bold uppercase tracking-wider rounded-full shadow-sm hover:shadow-corporate transition-all transform hover:-translate-y-0.5 inline-flex items-center justify-center gap-2 border border-black/5 dark:border-white/10"
             >
               <span>Cổng Thông Tin Đối Tác</span>
               <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -758,7 +758,7 @@
             </NuxtLink>
           </div>
 
-          <div class="mt-8 pt-2 flex flex-wrap items-center justify-center gap-6 text-xs text-text-muted font-mono">
+          <div class="mt-8 pt-2 flex flex-wrap items-center justify-center gap-6 text-xs text-text-secondary font-medium">
             <span class="flex items-center gap-2">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />

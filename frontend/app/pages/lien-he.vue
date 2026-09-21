@@ -18,7 +18,7 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
           
           <!-- Contact Info -->
-          <div class="bg-surface rounded-3xl p-8 sm:p-10 shadow-corporate flex flex-col justify-between">
+          <div class="bg-surface rounded-2xl p-8 sm:p-10 shadow-corporate flex flex-col justify-between border border-black/5 dark:border-white/5">
             <div>
               <h2 class="text-2xl md:text-3xl font-bold text-primary mb-8">{{ $t('contact.company_name') }}</h2>
               
@@ -59,7 +59,7 @@
                   </div>
                   <div>
                     <h3 class="text-base font-semibold text-text mb-1">{{ $t('contact.email') }}</h3>
-                    <a href="mailto:info@mhd.com.vn" class="text-text-secondary hover:text-primary transition-colors text-sm">info@mhd.com.vn</a>
+                    <a href="mailto:info@mhdvaluation.com" class="text-text-secondary hover:text-primary transition-colors text-sm">info@mhdvaluation.com</a>
                   </div>
                 </div>
 
@@ -93,7 +93,7 @@
           </div>
 
           <!-- Contact Form -->
-          <div class="bg-surface rounded-3xl p-8 sm:p-10 shadow-corporate">
+          <div class="bg-surface rounded-2xl p-8 sm:p-10 shadow-corporate border border-black/5 dark:border-white/5">
             <h2 class="text-2xl font-bold text-text mb-6">{{ $t('contact.form.title') }}</h2>
             
             <form @submit.prevent="submitForm" class="space-y-4">

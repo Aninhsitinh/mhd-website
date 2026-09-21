@@ -28,17 +28,50 @@
     <!-- PDF Viewer Section -->
     <section class="py-16 bg-bg">
       <div class="container mx-auto px-4 max-w-5xl reveal-on-scroll delay-100">
-        <div class="bg-surface p-4 rounded-3xl shadow-corporate-lg relative overflow-hidden">
-          <div class="absolute inset-0 bg-primary/5 pointer-events-none"></div>
-          
-          <div class="relative z-10 w-full rounded-2xl overflow-hidden shadow-inner bg-bg" style="height: 80vh;">
-            <iframe 
-              src="/files/HSNL-MHD-2026.pdf" 
+        <div class="bg-surface p-4 rounded-2xl shadow-corporate relative overflow-hidden border border-black/5 dark:border-white/5">
+          <div class="relative z-10 w-full rounded-xl overflow-hidden shadow-inner bg-bg" style="height: 80vh;">
+            <object 
+              data="/files/HSNL-MHD-2026.pdf#toolbar=1&navpanes=1" 
+              type="application/pdf"
               width="100%" 
               height="100%" 
-              class="border-none bg-white"
-              title="Hồ Sơ Năng Lực MHD"
-            ></iframe>
+              class="border-none w-full h-full"
+            >
+              <iframe 
+                src="/files/HSNL-MHD-2026.pdf" 
+                width="100%" 
+                height="100%" 
+                class="border-none bg-white"
+                title="Hồ Sơ Năng Lực MHD"
+              >
+                <!-- Fallback content if browser blocks inline PDF embedding -->
+                <div class="flex flex-col items-center justify-center h-full p-8 text-center bg-surface">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16 text-primary mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                  <h3 class="text-lg font-bold text-text mb-2">Hồ Sơ Năng Lực MHD Valuation</h3>
+                  <p class="text-sm text-text-secondary max-w-md mb-6 leading-relaxed">
+                    Trình duyệt của bạn không hỗ trợ xem trực tiếp tài liệu PDF trong trang. Vui lòng tải về hoặc mở trong tab mới để xem toàn văn hồ sơ.
+                  </p>
+                  <div class="flex items-center gap-3">
+                    <a 
+                      href="/files/HSNL-MHD-2026.pdf" 
+                      target="_blank" 
+                      class="px-5 py-2.5 rounded-full bg-primary text-white text-xs font-bold uppercase tracking-wider shadow-corporate"
+                    >
+                      Mở trong tab mới
+                    </a>
+                    <a 
+                      href="/files/HSNL-MHD-2026.pdf" 
+                      download 
+                      class="px-5 py-2.5 rounded-full bg-surface-muted text-text text-xs font-bold uppercase tracking-wider border border-black/5 dark:border-white/10"
+                    >
+                      Tải về máy
+                    </a>
+                  </div>
+                </div>
+              </iframe>
+            </object>
           </div>
         </div>
       </div>

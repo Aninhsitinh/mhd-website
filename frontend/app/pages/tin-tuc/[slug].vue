@@ -33,10 +33,10 @@
 
           <!-- Category Badge & Read Time Meta -->
           <div class="flex flex-wrap items-center gap-3 mb-4">
-            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-primary/10 text-primary">
+            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-primary/10 text-primary">
               {{ getCategoryName(post) }}
             </span>
-            <span class="px-2.5 py-1 rounded-full text-[11px] font-mono font-medium bg-surface text-text-secondary shadow-sm flex items-center gap-1.5">
+            <span class="px-2.5 py-1 rounded-full text-xs font-medium bg-surface text-text-secondary shadow-sm flex items-center gap-1.5 border border-black/5 dark:border-white/5">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
@@ -55,15 +55,15 @@
         </div>
       </header>
 
-      <!-- 2. Main Editorial Stream with Sticky Sidebar (100% Borderless) -->
+      <!-- 2. Main Editorial Stream with Sticky Sidebar -->
       <div class="container mx-auto px-4 max-w-7xl pb-20">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
           
           <!-- Left Column (8 cols): Main Article Body -->
           <div class="lg:col-span-8 space-y-8">
             
-            <!-- Hero Featured Visual (Borderless) -->
-            <div class="rounded-3xl overflow-hidden shadow-corporate relative aspect-[16/9] bg-surface-muted">
+            <!-- Hero Featured Visual -->
+            <div class="rounded-2xl overflow-hidden shadow-corporate relative aspect-[16/9] bg-surface-muted border border-black/5 dark:border-white/5">
               <img 
                 :src="post.featured_image || 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=1200&auto=format&fit=crop'" 
                 :alt="post.title" 
@@ -72,9 +72,8 @@
               />
             </div>
 
-
-            <!-- Main Prose Article Body (Borderless Card) -->
-            <div class="p-8 md:p-10 rounded-3xl bg-surface shadow-corporate">
+            <!-- Main Prose Article Body -->
+            <div class="p-8 md:p-10 rounded-2xl bg-surface shadow-corporate border border-black/5 dark:border-white/5">
               <div 
                 class="rich-content prose dark:prose-invert prose-lg max-w-none prose-a:text-primary hover:prose-a:text-primary-hover prose-headings:text-text prose-headings:font-display prose-p:text-text-secondary prose-p:leading-relaxed html-content" 
                 v-html="processedContent"
@@ -82,7 +81,7 @@
             </div>
 
             <!-- Image Gallery (If exists) -->
-            <div v-if="post.gallery && post.gallery.length > 0" class="p-8 md:p-10 rounded-3xl bg-surface shadow-corporate space-y-6">
+            <div v-if="post.gallery && post.gallery.length > 0" class="p-8 md:p-10 rounded-2xl bg-surface shadow-corporate space-y-6 border border-black/5 dark:border-white/5">
               <div class="flex items-center justify-between">
                 <div>
                   <h3 class="text-xl font-bold font-display text-text">Hình ảnh tư liệu liên quan</h3>
@@ -90,15 +89,15 @@
                 </div>
               </div>
               <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-                <div v-for="(img, idx) in post.gallery" :key="idx" class="aspect-[4/3] rounded-2xl overflow-hidden shadow-sm bg-surface-muted">
+                <div v-for="(img, idx) in post.gallery" :key="idx" class="aspect-[4/3] rounded-xl overflow-hidden shadow-sm bg-surface-muted border border-black/5 dark:border-white/5">
                   <NuxtImg :src="img" :alt="post.title + ' - Ảnh ' + (idx + 1)" loading="lazy" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" format="webp" />
                 </div>
               </div>
             </div>
 
             <!-- Compact Social Share Bar -->
-            <div class="py-4 px-6 rounded-2xl bg-surface/80 shadow-sm flex items-center justify-between text-xs">
-              <span class="text-text-muted font-mono uppercase text-[11px]">Chia sẻ bài viết này:</span>
+            <div class="py-4 px-6 rounded-xl bg-surface shadow-sm flex items-center justify-between text-xs border border-black/5 dark:border-white/5">
+              <span class="text-text-muted uppercase text-xs font-medium">Chia sẻ bài viết này:</span>
               <SocialShare />
             </div>
 
@@ -108,10 +107,9 @@
           <div class="lg:col-span-4 space-y-6">
             <div class="sticky top-28 space-y-6">
               
-
               <!-- Trending / Related Articles -->
-              <div v-if="relatedPosts && relatedPosts.length > 0" class="p-6 rounded-3xl bg-surface shadow-corporate">
-                <h3 class="text-sm font-bold font-display text-text uppercase tracking-wider font-mono mb-4">
+              <div v-if="relatedPosts && relatedPosts.length > 0" class="p-6 rounded-2xl bg-surface shadow-corporate border border-black/5 dark:border-white/5">
+                <h3 class="text-xs font-bold uppercase tracking-wider text-text mb-4">
                   Bài viết liên quan
                 </h3>
                 <div class="space-y-4">
@@ -127,11 +125,11 @@
                       class="w-16 h-16 rounded-xl object-cover flex-shrink-0 bg-surface-muted group-hover:scale-105 transition-transform" 
                     />
                     <div class="min-w-0">
-                      <span class="text-[10px] text-primary font-bold uppercase block mb-1">
+                      <span class="text-xs text-primary font-bold uppercase block mb-1">
                         {{ getCategoryName(rel) }}
                       </span>
                       <h4 class="text-xs font-bold text-text group-hover:text-primary transition-colors line-clamp-2 leading-snug" v-html="rel.title"></h4>
-                      <span class="text-[10px] text-text-muted block mt-1">{{ formatDate(rel.date) }}</span>
+                      <span class="text-xs text-text-muted block mt-1">{{ formatDate(rel.date) }}</span>
                     </div>
                   </NuxtLink>
                 </div>

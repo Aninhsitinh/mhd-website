@@ -20,10 +20,10 @@
       <div class="container mx-auto px-4 max-w-5xl relative z-10" ref="timelineRef">
         
         <!-- The Track (Vertical Line) -->
-        <div class="absolute left-[2.25rem] md:left-1/2 top-10 bottom-10 w-1.5 bg-border/50 -translate-x-1/2 rounded-full overflow-hidden">
-          <!-- The Glowing Pulse (Fills up on scroll) -->
+        <div class="absolute left-[2.25rem] md:left-1/2 top-10 bottom-10 w-1 bg-border/40 -translate-x-1/2 rounded-full overflow-hidden">
+          <!-- The Fill Bar (Fills up on scroll) -->
           <div 
-            class="w-full bg-gradient-to-b from-primary via-orange-400 to-primary rounded-full shadow-[0_0_20px_rgba(232,93,32,0.8)]"
+            class="w-full bg-primary rounded-full"
             :style="{ height: `${scrollProgress}%`, transition: 'height 0.15s ease-out' }"
           ></div>
         </div>
@@ -38,12 +38,10 @@
           >
             <!-- The Station Node (Dot on the track) -->
             <div 
-              class="absolute left-[2.25rem] md:left-1/2 -translate-x-1/2 w-9 h-9 rounded-full transition-all duration-700 flex items-center justify-center z-20"
-              :class="isActive(index) ? 'bg-primary text-white shadow-[0_0_25px_rgba(232,93,32,0.8)] scale-110' : 'bg-surface text-text-muted shadow-md scale-95'"
+              class="absolute left-[2.25rem] md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full transition-all duration-500 flex items-center justify-center z-20 border"
+              :class="isActive(index) ? 'bg-primary text-white border-primary shadow-corporate' : 'bg-surface text-text-muted border-black/10 dark:border-white/10 shadow-sm'"
             >
-              <!-- Inner pulse for active node -->
-              <div v-if="isActive(index)" class="w-3 h-3 bg-white rounded-full animate-ping"></div>
-              <div v-else class="text-[10px] font-bold text-text-muted">{{ index + 1 }}</div>
+              <div class="text-xs font-bold">{{ index + 1 }}</div>
             </div>
 
             <!-- The Content Card -->

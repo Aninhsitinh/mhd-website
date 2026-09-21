@@ -10,8 +10,7 @@
         </nav>
         <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
           <div>
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-primary/10 text-primary mb-3">
-              <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+            <div class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-primary/10 text-primary mb-3">
               Dịch vụ thẩm định chuyên sâu
             </div>
             <h1 class="text-3xl md:text-5xl font-display font-bold text-text leading-tight uppercase">Lĩnh Vực Thẩm Định Giá</h1>
@@ -20,15 +19,15 @@
             </p>
           </div>
           <!-- Trust Badge Pill -->
-          <div class="flex items-center gap-6 py-3 px-6 bg-surface rounded-2xl shadow-sm">
+          <div class="flex items-center gap-6 py-3 px-6 bg-surface rounded-2xl shadow-sm border border-black/5 dark:border-white/5">
             <div class="text-center">
               <div class="text-2xl font-bold font-display text-primary">06</div>
-              <div class="text-[11px] text-text-muted uppercase font-medium">Lĩnh vực cốt lõi</div>
+              <div class="text-xs text-text-muted uppercase font-medium">Lĩnh vực cốt lõi</div>
             </div>
             <div class="w-px h-8 bg-surface-muted"></div>
             <div class="text-center">
               <div class="text-2xl font-bold font-display text-text">100%</div>
-              <div class="text-[11px] text-text-muted uppercase font-medium">Pháp lý chuẩn mực</div>
+              <div class="text-xs text-text-muted uppercase font-medium">Pháp lý chuẩn mực</div>
             </div>
           </div>
         </div>
@@ -44,7 +43,7 @@
             v-for="(service, idx) in serviceList" 
             :key="service.slug"
             :to="localePath(`/linh-vuc/${service.slug}`)" 
-            class="group flex flex-col h-full bg-surface rounded-3xl overflow-hidden shadow-corporate hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-500 relative"
+            class="group flex flex-col h-full bg-surface rounded-2xl overflow-hidden shadow-corporate hover:shadow-xl hover:-translate-y-1 transition-all duration-300 relative border border-black/5 dark:border-white/5"
           >
             <!-- Top Image Visual with Gradient -->
             <div class="relative aspect-[16/10] overflow-hidden bg-surface-muted">
@@ -52,13 +51,13 @@
                 :src="service.image" 
                 :alt="service.name" 
                 loading="lazy" 
-                class="w-full h-full object-cover transform group-hover:scale-108 transition-transform duration-700 ease-out"
+                class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500 ease-out"
               />
               <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
               
               <!-- Number badge on top left -->
               <div class="absolute top-4 left-4">
-                <span class="px-3 py-1 rounded-full text-[11px] font-mono font-bold bg-black/60 backdrop-blur-md text-white shadow-sm">
+                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-black/60 backdrop-blur-md text-white shadow-sm">
                   0{{ idx + 1 }}
                 </span>
               </div>
@@ -92,10 +91,10 @@
               </div>
 
               <!-- Bottom Action -->
-              <div class="pt-4 flex items-center justify-between text-xs font-bold mt-auto bg-surface">
-                <span class="text-[11px] text-text-muted uppercase tracking-wider font-semibold font-mono">Dịch vụ chuẩn hóa</span>
-                <span class="text-primary group-hover:translate-x-1.5 transition-transform flex items-center gap-1">
-                  Xem chi tiết quy trình
+              <div class="pt-4 flex items-center justify-between text-xs font-bold mt-auto bg-surface border-t border-black/5 dark:border-white/5">
+                <span class="text-xs text-text-muted uppercase tracking-wider font-medium">Tiêu chuẩn TĐGVN</span>
+                <span class="text-primary group-hover:translate-x-1 transition-transform flex items-center gap-1">
+                  Xem chi tiết
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>

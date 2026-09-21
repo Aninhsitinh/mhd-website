@@ -10,9 +10,8 @@
         </nav>
         <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
           <div>
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-primary/10 text-primary mb-3">
-              <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-              Thông tin & Phân tích chuyên sâu
+            <div class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-primary/10 text-primary mb-3">
+              Thông tin &amp; Phân tích chuyên sâu
             </div>
             <h1 class="text-3xl md:text-5xl font-display font-bold text-text leading-tight uppercase">Tin Tức &amp; Sự Kiện</h1>
             <p class="text-text-secondary max-w-2xl mt-3 text-sm md:text-base leading-relaxed">
@@ -20,15 +19,15 @@
             </p>
           </div>
           
-          <div class="flex items-center gap-6 py-3 px-6 bg-surface rounded-2xl shadow-sm">
+          <div class="flex items-center gap-6 py-3 px-6 bg-surface rounded-2xl shadow-sm border border-black/5 dark:border-white/5">
             <div class="text-center">
               <div class="text-2xl font-bold font-display text-primary">24/7</div>
-              <div class="text-[11px] text-text-muted uppercase font-medium">Cập nhật liên tục</div>
+              <div class="text-xs text-text-muted uppercase font-medium">Cập nhật liên tục</div>
             </div>
             <div class="w-px h-8 bg-surface-muted"></div>
             <div class="text-center">
               <div class="text-2xl font-bold font-display text-text">100%</div>
-              <div class="text-[11px] text-text-muted uppercase font-medium">Nguồn chuẩn xác</div>
+              <div class="text-xs text-text-muted uppercase font-medium">Nguồn chuẩn xác</div>
             </div>
           </div>
         </div>
@@ -43,7 +42,7 @@
         <div v-if="featuredPost && activeCategory === 'all'" class="mb-14" data-aos="fade-up">
           <NuxtLink 
             :to="`/tin-tuc/${featuredPost.slug}`"
-            class="group block rounded-3xl overflow-hidden bg-surface shadow-corporate hover:shadow-2xl transition-all duration-500 relative"
+            class="group block rounded-2xl overflow-hidden bg-surface shadow-corporate hover:shadow-xl transition-all duration-300 relative border border-black/5 dark:border-white/5"
           >
             <div class="grid grid-cols-1 lg:grid-cols-12 min-h-[460px]">
               <!-- Left Visual -->

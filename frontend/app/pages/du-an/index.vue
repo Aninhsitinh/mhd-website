@@ -10,18 +10,17 @@
         </nav>
         <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
           <div>
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-primary/10 text-primary mb-3">
-              <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-              Interactive Project Portfolio
+            <div class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-primary/10 text-primary mb-3">
+              Danh mục hồ sơ thẩm định
             </div>
             <h1 class="text-3xl md:text-5xl font-display font-bold text-text leading-tight uppercase">Hồ Sơ Năng Lực Dự Án</h1>
             <p class="text-text-secondary max-w-2xl mt-3 text-sm md:text-base leading-relaxed">
-              Khám phá danh mục dự án thẩm định quy mô lớn của MHD qua góc nhìn tương tác kỹ thuật: Bất động sản phức hợp, hạ tầng đô thị, dây chuyền công nghiệp và M&A.
+              Khám phá danh mục dự án thẩm định quy mô lớn của MHD: Bất động sản phức hợp, hạ tầng khu công nghiệp, nhà máy sản xuất và các thương vụ M&amp;A trọng điểm.
             </p>
           </div>
           
-          <!-- Quick Trust Stats (Borderless & Soft Surface) -->
-          <div class="flex items-center gap-6 py-3 px-6 bg-surface rounded-2xl shadow-sm">
+          <!-- Quick Trust Stats -->
+          <div class="flex items-center gap-6 py-3 px-6 bg-surface rounded-2xl shadow-sm border border-black/5 dark:border-white/5">
             <div class="text-center">
               <div class="text-2xl font-bold font-display text-primary">1.000+</div>
               <div class="text-[11px] text-text-muted uppercase font-medium">Dự án hoàn tất</div>
@@ -56,17 +55,17 @@
           <!-- View Mode Toggle -->
           <div class="flex items-center gap-3 text-xs">
             <span class="text-text-muted hidden sm:inline">Chế độ xem:</span>
-            <div class="flex items-center p-1 bg-surface rounded-xl shadow-sm">
+            <div class="flex items-center p-1 bg-surface rounded-xl shadow-sm border border-black/5 dark:border-white/5">
               <button 
                 @click="viewLayout = 'interactive'" 
                 :class="viewLayout === 'interactive' ? 'bg-primary text-white' : 'text-text-secondary hover:text-text'"
                 class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-semibold transition-all"
-                title="Interactive Blueprint (Split View)"
+                title="Xem chi tiết hồ sơ (2 cột)"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2" />
                 </svg>
-                Tương tác kỹ thuật
+                Chi tiết hồ sơ
               </button>
               <button 
                 @click="viewLayout = 'grid'" 
@@ -95,7 +94,7 @@
               </div>
             </div>
           </div>
-          <div class="lg:col-span-7 h-[600px] bg-surface/80 rounded-3xl shadow-corporate skeleton-shimmer p-8 flex flex-col justify-between">
+          <div class="lg:col-span-7 h-[600px] bg-surface/80 rounded-2xl shadow-corporate skeleton-shimmer p-8 flex flex-col justify-between">
             <div class="h-72 bg-bg/80 rounded-2xl w-full"></div>
             <div class="space-y-3 mt-6">
               <div class="h-6 bg-bg/80 rounded-md w-3/4"></div>
@@ -105,7 +104,7 @@
           </div>
         </div>
 
-        <!-- LAYOUT 1: INTERACTIVE BLUEPRINT SPLIT VIEW (PHƯƠNG ÁN B) -->
+        <!-- LAYOUT 1: INTERACTIVE SPLIT VIEW -->
         <div v-else-if="filteredProjects.length > 0 && viewLayout === 'interactive'" class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
           <!-- LEFT: Project Interactive Master List (5 cols) -->
@@ -115,7 +114,7 @@
               :key="project.id"
               @mouseenter="selectedProject = project"
               @click="selectedProject = project"
-              class="p-4 rounded-2xl cursor-pointer transition-all duration-300 relative group"
+              class="p-4 rounded-2xl cursor-pointer transition-all duration-300 relative group border border-black/5 dark:border-white/5"
               :class="selectedProject?.id === project.id 
                 ? 'bg-surface shadow-corporate translate-x-1.5' 
                 : 'bg-surface/50 hover:bg-surface shadow-sm hover:shadow-md'"
@@ -145,8 +144,8 @@
                     <span class="text-[10px] font-bold uppercase tracking-wider text-primary">
                       {{ getCategoryName(project) }}
                     </span>
-                    <span class="text-[10px] text-text-muted font-mono">
-                      #0{{ idx + 1 }}
+                    <span class="text-[10px] text-text-muted font-medium">
+                      0{{ idx + 1 }}
                     </span>
                   </div>
 
@@ -175,11 +174,11 @@
             </div>
           </div>
 
-          <!-- RIGHT: Interactive Blueprint Viewport (7 cols - Sticky) -->
+          <!-- RIGHT: Interactive Viewport (7 cols - Sticky) -->
           <div class="lg:col-span-7 order-1 lg:order-2 lg:sticky lg:top-28">
-            <div v-if="selectedProject" class="rounded-3xl overflow-hidden bg-surface shadow-2xl transition-all duration-500 relative">
+            <div v-if="selectedProject" class="rounded-2xl overflow-hidden bg-surface shadow-corporate transition-all duration-500 relative border border-black/5 dark:border-white/5">
               
-              <!-- Large Interactive Visual -->
+              <!-- Large Visual -->
               <div class="relative aspect-[16/10] overflow-hidden bg-surface-muted">
                 <img 
                   :key="selectedProject.id"
@@ -188,54 +187,54 @@
                   class="w-full h-full object-cover transform scale-100 hover:scale-105 transition-transform duration-700 ease-out" 
                 />
                 
-                <!-- Blueprint HUD Gradient Overlay -->
-                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/20"></div>
+                <!-- Gentle Gradient Overlay -->
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
 
-                <!-- Top Tech Badges -->
+                <!-- Top Badges -->
                 <div class="absolute top-4 left-4 right-4 flex items-center justify-between">
                   <div class="flex items-center gap-2">
-                    <span class="px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider bg-black/60 backdrop-blur-md text-white shadow-sm">
+                    <span class="px-3 py-1 rounded-full text-[11px] font-semibold uppercase tracking-wider bg-black/60 backdrop-blur-md text-white shadow-sm">
                       {{ getCategoryName(selectedProject) }}
                     </span>
-                    <span v-if="selectedSpecs.badge" class="px-3 py-1 rounded-full text-[11px] font-bold bg-primary text-white shadow-sm">
+                    <span v-if="selectedSpecs.badge" class="px-3 py-1 rounded-full text-[11px] font-semibold bg-primary text-white shadow-sm">
                       {{ selectedSpecs.badge }}
                     </span>
                   </div>
 
-                  <span class="px-2.5 py-1 rounded-full text-[10px] font-mono uppercase bg-black/60 backdrop-blur-md text-emerald-400 flex items-center gap-1.5">
-                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
-                    MHD VERIFIED
+                  <span class="px-2.5 py-1 rounded-full text-[10px] font-semibold uppercase bg-black/60 backdrop-blur-md text-emerald-400 flex items-center gap-1.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                    ĐÃ HOÀN TẤT CHỨNG THƯ
                   </span>
                 </div>
 
-                <!-- Bottom Image Blueprint Metrics -->
+                <!-- Bottom Image Metrics -->
                 <div class="absolute bottom-4 left-4 right-4 text-white">
-                  <div class="text-[11px] font-mono tracking-widest text-primary-light uppercase mb-1">Thẩm định kỹ thuật số</div>
+                  <div class="text-[11px] font-semibold tracking-wider text-primary-light uppercase mb-1">Hồ sơ thẩm định</div>
                   <h2 class="text-xl md:text-2xl font-bold font-display leading-snug drop-shadow-md" v-html="selectedProject.title"></h2>
                 </div>
               </div>
 
-              <!-- Interactive Blueprint Dossier Details -->
+              <!-- Dossier Details -->
               <div class="p-6 md:p-8 space-y-6">
                 <!-- Highlight Summary -->
                 <p class="text-xs md:text-sm text-text-secondary leading-relaxed" v-html="selectedSpecs.highlight || selectedProject.excerpt"></p>
 
-                <!-- Technical Blueprint Grid (4 specs) -->
-                <div class="grid grid-cols-2 gap-3 p-4 rounded-2xl bg-bg shadow-sm">
+                <!-- Technical Spec Grid (4 specs) -->
+                <div class="grid grid-cols-2 gap-3 p-4 rounded-xl bg-bg border border-black/5 dark:border-white/5">
                   <div class="space-y-0.5">
-                    <div class="text-[10px] font-mono text-text-muted uppercase">Quy mô tài sản</div>
+                    <div class="text-xs text-text-muted uppercase font-medium">Quy mô tài sản</div>
                     <div class="text-xs md:text-sm font-bold text-text truncate">{{ selectedSpecs.scale || 'Hồ sơ tiêu chuẩn' }}</div>
                   </div>
                   <div class="space-y-0.5">
-                    <div class="text-[10px] font-mono text-text-muted uppercase">Địa bàn thẩm định</div>
+                    <div class="text-xs text-text-muted uppercase font-medium">Địa bàn thẩm định</div>
                     <div class="text-xs md:text-sm font-bold text-text truncate">{{ selectedSpecs.location || 'Việt Nam' }}</div>
                   </div>
                   <div class="space-y-0.5">
-                    <div class="text-[10px] font-mono text-text-muted uppercase">Phương pháp định giá</div>
+                    <div class="text-xs text-text-muted uppercase font-medium">Phương pháp định giá</div>
                     <div class="text-xs md:text-sm font-bold text-primary truncate">{{ selectedSpecs.method || 'Tiêu chuẩn TĐGVN' }}</div>
                   </div>
                   <div class="space-y-0.5">
-                    <div class="text-[10px] font-mono text-text-muted uppercase">Mục đích thẩm định</div>
+                    <div class="text-xs text-text-muted uppercase font-medium">Mục đích thẩm định</div>
                     <div class="text-xs md:text-sm font-bold text-secondary truncate">{{ selectedSpecs.purpose ? 'Thế chấp & M&A' : 'Tài trợ vốn' }}</div>
                   </div>
                 </div>

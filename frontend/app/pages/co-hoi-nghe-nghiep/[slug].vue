@@ -7,44 +7,43 @@
     <article v-else-if="job" class="min-h-screen bg-bg pt-32 pb-24 notranslate">
       <div class="container mx-auto px-4 max-w-5xl">
         <!-- Breadcrumb -->
-        <nav class="flex items-center gap-2 text-xs font-mono text-text-muted mb-8">
-          <NuxtLink to="/" class="hover:text-primary transition-colors">TRANG CHỦ</NuxtLink>
+        <nav class="flex items-center gap-2 text-xs text-text-muted mb-8">
+          <NuxtLink to="/" class="hover:text-primary transition-colors">Trang chủ</NuxtLink>
           <span>/</span>
-          <NuxtLink to="/co-hoi-nghe-nghiep" class="hover:text-primary transition-colors">CƠ HỘI NGHỀ NGHIỆP</NuxtLink>
+          <NuxtLink to="/co-hoi-nghe-nghiep" class="hover:text-primary transition-colors">Cơ hội nghề nghiệp</NuxtLink>
           <span>/</span>
-          <span class="text-primary font-bold line-clamp-1" v-html="job.title"></span>
+          <span class="text-primary font-medium line-clamp-1" v-html="job.title"></span>
         </nav>
 
-        <!-- Editorial Role Header (100% Borderless) -->
-        <header class="bg-surface p-8 md:p-12 rounded-3xl shadow-corporate mb-10 relative overflow-hidden">
+        <!-- Editorial Role Header -->
+        <header class="bg-surface p-8 md:p-12 rounded-2xl shadow-corporate mb-10 relative overflow-hidden border border-black/5 dark:border-white/5">
           <div class="flex flex-wrap items-center gap-2.5 mb-5">
-            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-bold uppercase tracking-wider bg-primary/10 text-primary">
-              <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-primary/10 text-primary">
               Đang Tuyển Dụng
             </span>
-            <span class="px-3 py-1 rounded-full text-xs font-medium bg-bg text-text-secondary">
+            <span class="px-3 py-1 rounded-full text-xs font-medium bg-bg text-text-secondary border border-black/5 dark:border-white/5">
               {{ getDiaDiem(job.categories) }}
             </span>
           </div>
 
           <h1 class="text-3xl md:text-5xl font-bold font-display text-text leading-tight mb-8" v-html="job.title"></h1>
           
-          <!-- Key Job Spec Pills (Borderless) -->
-          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6 text-xs">
+          <!-- Key Job Spec Pills -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6 text-xs border-t border-black/5 dark:border-white/5">
             <div class="space-y-1">
-              <span class="text-text-muted font-mono uppercase text-[11px] block">Ngày đăng</span>
+              <span class="text-text-muted uppercase text-xs font-medium block">Ngày đăng</span>
               <span class="text-text font-bold">{{ formatDate(job.date) }}</span>
             </div>
             <div class="space-y-1">
-              <span class="text-text-muted font-mono uppercase text-[11px] block">Hình thức</span>
+              <span class="text-text-muted uppercase text-xs font-medium block">Hình thức</span>
               <span class="text-text font-bold">Toàn thời gian</span>
             </div>
             <div class="space-y-1">
-              <span class="text-text-muted font-mono uppercase text-[11px] block">Địa điểm</span>
+              <span class="text-text-muted uppercase text-xs font-medium block">Địa điểm</span>
               <span class="text-text font-bold">{{ getDiaDiem(job.categories) }}</span>
             </div>
             <div class="space-y-1">
-              <span class="text-text-muted font-mono uppercase text-[11px] block">Cấp bậc</span>
+              <span class="text-text-muted uppercase text-xs font-medium block">Cấp bậc</span>
               <span class="text-primary font-bold">{{ getJobRank(job) }}</span>
             </div>
           </div>
@@ -54,7 +53,7 @@
           
           <!-- Main Content Body (8 cols) -->
           <div class="lg:col-span-8 space-y-8">
-            <div class="bg-surface p-8 md:p-12 rounded-3xl shadow-corporate">
+            <div class="bg-surface p-8 md:p-12 rounded-2xl shadow-corporate border border-black/5 dark:border-white/5">
               <div 
                 class="rich-content prose dark:prose-invert prose-lg max-w-none prose-a:text-primary hover:prose-a:text-primary-hover prose-headings:text-text prose-headings:font-display prose-p:text-text-secondary prose-p:leading-relaxed html-content" 
                 v-html="processedContent"
