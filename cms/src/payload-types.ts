@@ -102,14 +102,14 @@ export interface Config {
   db: {
     defaultIDType: number;
   };
-  fallbackLocale: ('false' | 'none' | 'null') | false | null | ('vi' | 'en') | ('vi' | 'en')[];
+  fallbackLocale: null;
   globals: {
     'site-settings': SiteSetting;
   };
   globalsSelect: {
     'site-settings': SiteSettingsSelect<false> | SiteSettingsSelect<true>;
   };
-  locale: 'vi' | 'en';
+  locale: null;
   widgets: {
     collections: CollectionsWidget;
   };
