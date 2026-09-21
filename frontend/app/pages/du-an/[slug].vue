@@ -90,7 +90,7 @@
                 ></div>
                 <div 
                   v-else-if="cleanedContent"
-                  class="prose dark:prose-invert prose-lg max-w-none prose-headings:text-text prose-p:text-text-secondary leading-relaxed html-content bg-bg p-5 rounded-2xl shadow-sm"
+                  class="rich-content prose dark:prose-invert prose-lg max-w-none prose-headings:text-text prose-p:text-text-secondary leading-relaxed html-content bg-bg p-5 rounded-2xl shadow-sm"
                   v-html="cleanedContent"
                 ></div>
               </div>

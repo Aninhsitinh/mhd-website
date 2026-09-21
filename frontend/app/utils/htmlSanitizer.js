@@ -25,13 +25,14 @@ export function cleanLegacyHtml(rawHtml) {
   html = html.replace(/<\/?(?:div|section|span|p)[^>]*?(?:row|col|col-inner|ux-|wp-block|wp-container)[^>]*?>/gi, '')
   html = html.replace(/class="[^"]*(?:wp-|alignleft|alignright|aligncenter|col-inner|size-)[^"]*"/gi, '')
 
-  // 5. Remove obstructive inline styling & fixed dimensions
-  html = html.replace(/\s*style="[^"]*"/gi, '')
-  html = html.replace(/\s*width="\d+"/gi, '')
-  html = html.replace(/\s*height="\d+"/gi, '')
+  // 5. Remove obstructive inline styling & fixed dimensions, backgrounds and text colors
+  // Specifically strip color: ..., background: ..., background-color: ..., font-family: ...
+  html = html.replace(/\s*(?:style|width|height)="[^"]*"/gi, '')
+  html = html.replace(/\s*(?:bgcolor|color|background|border|cellspacing|cellpadding)="[^"]*"/gi, '')
 
   // 6. Clean useless Microsoft Word / WP artifacts like <span lang="...">
   html = html.replace(/<span\s+lang="[^"]*">([\s\S]*?)<\/span>/gi, '$1')
+  html = html.replace(/<font[^>]*>([\s\S]*?)<\/font>/gi, '$1')
   html = html.replace(/<a\s+name="[^"]*"><\/a>/gi, '')
 
   // 7. Fix deeply nested paragraph tags: <p><p>... -> <p>... and </p></p> -> </p>
@@ -44,10 +45,17 @@ export function cleanLegacyHtml(rawHtml) {
   html = html.replace(/&nbsp;/gi, ' ')
   html = html.replace(/ /g, ' ')
 
-  // 9. Remove empty paragraphs or headings
+  // 9. Clean empty paragraphs, headings or rogue spans
   html = html.replace(/<p[^>]*>\s*<\/p>/gi, '')
   html = html.replace(/<h[1-6][^>]*>\s*<\/h[1-6]>/gi, '')
+  html = html.replace(/<span>\s*<\/span>/gi, '')
 
-  // 10. Trim whitespace
+  // 10. Automatically wrap any tables that are not already wrapped in .rich-table-wrapper
+  // Avoid double-wrapping
+  html = html.replace(/(?:<div class="rich-table-wrapper">)?\s*(<table[\s\S]*?<\/table>)\s*(?:<\/div>)?/gi, (match, tableContent) => {
+    return `<div class="rich-table-wrapper">${tableContent}</div>`
+  })
+
+  // 11. Trim whitespace
   return html.trim()
 }

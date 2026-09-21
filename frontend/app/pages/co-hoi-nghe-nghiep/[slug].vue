@@ -56,7 +56,7 @@
           <div class="lg:col-span-8 space-y-8">
             <div class="bg-surface p-8 md:p-12 rounded-3xl shadow-corporate">
               <div 
-                class="prose dark:prose-invert prose-lg max-w-none prose-a:text-primary hover:prose-a:text-primary-hover prose-headings:text-text prose-headings:font-display prose-p:text-text-secondary prose-p:leading-relaxed html-content" 
+                class="rich-content prose dark:prose-invert prose-lg max-w-none prose-a:text-primary hover:prose-a:text-primary-hover prose-headings:text-text prose-headings:font-display prose-p:text-text-secondary prose-p:leading-relaxed html-content" 
                 v-html="processedContent"
               ></div>
             </div>

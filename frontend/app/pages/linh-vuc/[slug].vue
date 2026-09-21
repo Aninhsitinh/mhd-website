@@ -56,7 +56,7 @@
                 TỔNG QUAN DỊCH VỤ
               </div>
               <h2 class="text-xl md:text-2xl font-bold font-display text-text mb-4">Ý nghĩa & Giá trị thẩm định</h2>
-              <div class="text-sm md:text-base text-text-secondary leading-relaxed font-normal bg-bg p-6 rounded-2xl shadow-sm space-y-3" v-html="introText"></div>
+              <div class="rich-content text-sm md:text-base text-text-secondary leading-relaxed font-normal bg-bg p-6 rounded-2xl shadow-sm space-y-3" v-html="introText"></div>
             </div>
 
             <!-- Sections List (Borderless Cards) -->
@@ -77,7 +77,7 @@
               </div>
 
               <!-- Section Content: Directly flush with card padding, beautifully formatted -->
-              <div class="service-content text-sm md:text-base text-text-secondary leading-relaxed" v-html="cleanHtml(section.content)"></div>
+              <div class="rich-content service-content text-sm md:text-base leading-relaxed" v-html="cleanHtml(section.content)"></div>
             </div>
 
             <!-- Process Milestone Box (6-Step Standard Workflow) -->
@@ -210,6 +210,7 @@ import { useRoute } from 'vue-router'
 import { computed, watchEffect } from 'vue'
 import { services } from '~/data/services.js'
 import { useLocalePath } from '#imports'
+import { cleanLegacyHtml } from '~/utils/htmlSanitizer'
 
 const route = useRoute()
 const localePath = useLocalePath()
@@ -225,19 +226,15 @@ const otherServices = [
   { slug: 'tham-dinh-tai-san-de-dinh-cu', name: 'Tài sản Định cư' },
 ]
 
-// Clean HTML and normalize line breaks and formatting
+// Clean HTML thoroughly using global enterprise sanitizer
 const cleanHtml = (html) => {
   if (!html) return ''
-  return html
-    .replace(/<\/?(?:div|section|span)[^>]*?(?:row|col|col-inner|ux-)[^>]*?>/gi, '')
-    .replace(/<style[\s\S]*?<\/style>/gi, '')
-    .replace(/&nbsp;/gi, ' ')
-    .trim()
+  return cleanLegacyHtml(html)
 }
 
 const introText = computed(() => {
   if (!service.value?.introHtml) return ''
-  return cleanHtml(service.value.introHtml)
+  return cleanLegacyHtml(service.value.introHtml)
 })
 
 watchEffect(() => {
