@@ -4,7 +4,7 @@
     <header class="pt-32 pb-12 bg-bg">
       <div class="container mx-auto px-4 max-w-7xl">
         <nav class="text-xs text-text-muted mb-4 flex items-center gap-2">
-          <NuxtLink to="/" class="hover:text-primary transition-colors">Trang chủ</NuxtLink>
+          <NuxtLink :to="localePath('/')" class="hover:text-primary transition-colors">Trang chủ</NuxtLink>
           <span>/</span>
           <span class="text-text-secondary">{{ $t('nav.projects') || 'Dự án' }}</span>
         </nav>
@@ -255,7 +255,7 @@
                   </div>
 
                   <NuxtLink 
-                    :to="`/du-an/${selectedProject.slug}`"
+                    :to="localePath(`/du-an/${selectedProject.slug}`)"
                     class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-primary hover:bg-primary-light text-white text-xs font-bold uppercase tracking-wider shadow-corporate hover:shadow-lg transition-all transform hover:-translate-y-0.5"
                   >
                     Mở hồ sơ khảo sát chi tiết
@@ -309,8 +309,12 @@
 </style>
 
 <script setup>
-import { ref, computed, watch } from 'vue'
+import { ref, computed, watch, onMounted } from 'vue'
 import { getProjectSpecs } from '~/data/projectSpecs'
+import { useLocalePath, useI18n } from '#imports'
+
+const { t } = useI18n()
+const localePath = useLocalePath()
 
 useHead({
   title: 'Hồ sơ năng lực dự án thẩm định giá - MHD Valuation',
@@ -391,12 +395,13 @@ const loadMore = async () => {
   loadingMore.value = true
   try {
     const nextPage = page.value + 1
-    const more = await fetchMorePosts({ per_page: PER_PAGE, page: nextPage }, 'projects')
+    const result = await fetchMorePosts({ per_page: PER_PAGE, page: nextPage }, 'projects')
+    const moreDocs = result?.docs || []
     const existingIds = new Set(projects.value.map(p => p.id))
-    const unique = more.filter(p => !existingIds.has(p.id))
+    const unique = moreDocs.filter(p => !existingIds.has(p.id))
     projects.value.push(...unique)
     page.value = nextPage
-    hasMore.value = more.length >= PER_PAGE
+    hasMore.value = (result?.docs?.length || 0) >= PER_PAGE
   } catch (error) {
     console.error('Load more projects error:', error)
   } finally {

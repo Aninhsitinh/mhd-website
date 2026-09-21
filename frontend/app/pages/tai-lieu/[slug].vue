@@ -9,9 +9,9 @@
         <div class="max-w-5xl mx-auto">
           <!-- Breadcrumb -->
           <div class="flex items-center gap-2 text-sm text-text-secondary mb-8 print:hidden">
-            <NuxtLink to="/" class="hover:text-primary transition-colors">Trang chủ</NuxtLink>
+            <NuxtLink :to="localePath('/')" class="hover:text-primary transition-colors">Trang chủ</NuxtLink>
             <span>/</span>
-            <NuxtLink to="/tai-lieu" class="hover:text-primary transition-colors">Tài liệu</NuxtLink>
+            <NuxtLink :to="localePath('/tai-lieu')" class="hover:text-primary transition-colors">Tài liệu</NuxtLink>
             <span>/</span>
             <span class="text-text line-clamp-1">{{ post.title }}</span>
           </div>
@@ -75,7 +75,7 @@
     
     <div v-else class="min-h-screen pt-32 pb-20 bg-bg text-center">
       <h1 class="text-3xl font-bold text-text mb-4">Tài liệu không tồn tại</h1>
-      <NuxtLink to="/tai-lieu" class="text-primary hover:underline">Quay lại danh sách tài liệu</NuxtLink>
+      <NuxtLink :to="localePath('/tai-lieu')" class="text-primary hover:underline">Quay lại danh sách tài liệu</NuxtLink>
     </div>
   </div>
 </template>
@@ -83,8 +83,10 @@
 <script setup>
 import { useRoute } from 'vue-router'
 import { ref } from 'vue'
+import { useLocalePath } from '#imports'
 
 const route = useRoute()
+const localePath = useLocalePath()
 const carouselRef = ref(null)
 
 const scrollCarousel = (direction) => {

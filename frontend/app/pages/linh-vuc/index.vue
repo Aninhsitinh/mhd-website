@@ -4,7 +4,7 @@
     <header class="pt-32 pb-14 bg-bg">
       <div class="container mx-auto px-4 max-w-7xl">
         <nav class="text-xs text-text-muted mb-4 flex items-center gap-2">
-          <NuxtLink to="/" class="hover:text-primary transition-colors">Trang chủ</NuxtLink>
+          <NuxtLink :to="localePath('/')" class="hover:text-primary transition-colors">Trang chủ</NuxtLink>
           <span>/</span>
           <span class="text-text-secondary">Lĩnh vực</span>
         </nav>
@@ -43,7 +43,7 @@
           <NuxtLink 
             v-for="(service, idx) in serviceList" 
             :key="service.slug"
-            :to="`/linh-vuc/${service.slug}`" 
+            :to="localePath(`/linh-vuc/${service.slug}`)" 
             class="group flex flex-col h-full bg-surface rounded-3xl overflow-hidden shadow-corporate hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-500 relative"
           >
             <!-- Top Image Visual with Gradient -->
@@ -111,6 +111,10 @@
 </template>
 
 <script setup>
+import { useLocalePath } from '#imports'
+
+const localePath = useLocalePath()
+
 useHead({
   title: 'Lĩnh Vực Thẩm Định Giá - MHD Valuation',
   meta: [

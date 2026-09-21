@@ -24,9 +24,9 @@
         <div class="container mx-auto px-4 max-w-7xl relative z-10" data-aos="fade-up">
           <!-- Breadcrumbs -->
           <nav class="flex items-center gap-2 text-xs text-text-muted mb-4">
-            <NuxtLink to="/" class="hover:text-primary transition-colors">Trang chủ</NuxtLink>
+            <NuxtLink :to="localePath('/')" class="hover:text-primary transition-colors">Trang chủ</NuxtLink>
             <span>/</span>
-            <NuxtLink to="/tin-tuc" class="hover:text-primary transition-colors">Tin tức</NuxtLink>
+            <NuxtLink :to="localePath('/tin-tuc')" class="hover:text-primary transition-colors">Tin tức</NuxtLink>
             <span>/</span>
             <span class="text-primary font-medium">{{ getCategoryName(post) }}</span>
           </nav>
@@ -140,7 +140,7 @@
 
               <!-- Back to list -->
               <div class="text-center">
-                <NuxtLink to="/tin-tuc" class="text-xs font-bold text-text-muted hover:text-primary transition-colors inline-flex items-center gap-1.5">
+                <NuxtLink :to="localePath('/tin-tuc')" class="text-xs font-bold text-text-muted hover:text-primary transition-colors inline-flex items-center gap-1.5">
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
                   </svg>
@@ -157,7 +157,7 @@
     
     <div v-else class="min-h-screen pt-32 pb-20 bg-bg text-center">
       <h1 class="text-3xl font-bold text-text mb-4">Bài viết không tồn tại</h1>
-      <NuxtLink to="/tin-tuc" class="text-primary hover:underline">Quay lại danh sách tin tức</NuxtLink>
+      <NuxtLink :to="localePath('/tin-tuc')" class="text-primary hover:underline">Quay lại danh sách tin tức</NuxtLink>
     </div>
   </div>
 </template>
@@ -167,8 +167,10 @@ import { useRoute } from 'vue-router'
 import { ref, computed, watchEffect } from 'vue'
 import { cleanLegacyHtml } from '~/utils/htmlSanitizer'
 import { isLegalDocument } from '~/utils/legalClassifier'
+import { useLocalePath } from '#imports'
 
 const route = useRoute()
+const localePath = useLocalePath()
 const { fetchPage, fetchMorePosts } = usePayload()
 
 // Fetch post by slug from 'posts' collection
@@ -184,7 +186,8 @@ if (post.value && isLegalDocument(post.value)) {
 const relatedPosts = ref([])
 if (post.value?.categories?.length) {
   try {
-    const more = await fetchMorePosts({ per_page: 8 }, 'posts')
+    const result = await fetchMorePosts({ per_page: 8 }, 'posts')
+    const more = result?.docs || []
     relatedPosts.value = more
       .filter(p => p.slug !== route.params.slug && !isLegalDocument(p))
       .slice(0, 3)

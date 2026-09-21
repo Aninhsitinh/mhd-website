@@ -4,7 +4,7 @@
     <header class="pt-32 pb-16 bg-bg notranslate">
       <div class="container mx-auto px-4 max-w-6xl">
         <nav class="text-xs text-text-muted mb-4 flex items-center gap-2 font-mono">
-          <NuxtLink to="/" class="hover:text-primary transition-colors">TRANG CHỦ</NuxtLink>
+          <NuxtLink :to="localePath('/')" class="hover:text-primary transition-colors">TRANG CHỦ</NuxtLink>
           <span>/</span>
           <span class="text-primary font-bold">{{ ($t('nav.documents') || 'TÀI LIỆU').toUpperCase() }}</span>
         </nav>
@@ -160,6 +160,9 @@ useHead({
   ]
 })
 
+import { useLocalePath } from '#imports'
+
+const localePath = useLocalePath()
 const { fetchPosts } = usePayload()
 
 const activeCategory = ref(0) // 0 = Tất cả

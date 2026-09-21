@@ -4,7 +4,7 @@
     <header class="pt-32 pb-12 bg-bg">
       <div class="container mx-auto px-4 max-w-7xl">
         <nav class="text-xs text-text-muted mb-4 flex items-center gap-2">
-          <NuxtLink to="/" class="hover:text-primary transition-colors">Trang chủ</NuxtLink>
+          <NuxtLink :to="localePath('/')" class="hover:text-primary transition-colors">Trang chủ</NuxtLink>
           <span>/</span>
           <span class="text-text-secondary">{{ $t('nav.news') || 'Tin tức' }}</span>
         </nav>
@@ -161,7 +161,9 @@ useHead({
 })
 
 import { isLegalDocument } from '~/utils/legalClassifier'
+import { useLocalePath } from '#imports'
 
+const localePath = useLocalePath()
 const { fetchPosts, fetchMorePosts } = usePayload()
 
 const PER_PAGE = 20
@@ -174,17 +176,18 @@ const categories = [
 ]
 
 // Fetch posts
-const { data: initialPosts, pending } = await fetchPosts({ per_page: 100, page: 1 }, 'posts')
+const { data: initialPosts, pending } = await fetchPosts({ per_page: PER_PAGE, page: 1 }, 'posts')
 
 // Filter out legal documents from news listing
 const posts = ref((initialPosts.value || []).filter(p => !isLegalDocument(p)))
 const page = ref(1)
-const hasMore = ref(false)
+const hasMore = ref((initialPosts.value || []).length >= PER_PAGE)
 const loadingMore = ref(false)
 
 watch(initialPosts, (value) => {
   if (value) {
     posts.value = value.filter(p => !isLegalDocument(p))
+    hasMore.value = value.length >= PER_PAGE
   }
 })
 
@@ -226,12 +229,13 @@ const loadMore = async () => {
   loadingMore.value = true
   try {
     const nextPage = page.value + 1
-    const more = await fetchMorePosts({ per_page: PER_PAGE, page: nextPage }, 'posts')
+    const result = await fetchMorePosts({ per_page: PER_PAGE, page: nextPage }, 'posts')
+    const moreDocs = (result?.docs || []).filter(p => !isLegalDocument(p))
     const existingIds = new Set(posts.value.map(p => p.id))
-    const unique = more.filter(p => !existingIds.has(p.id))
+    const unique = moreDocs.filter(p => !existingIds.has(p.id))
     posts.value.push(...unique)
     page.value = nextPage
-    hasMore.value = more.length >= PER_PAGE
+    hasMore.value = (result?.docs?.length || 0) >= PER_PAGE
   } catch (error) {
     console.error('Load more news error:', error)
   } finally {

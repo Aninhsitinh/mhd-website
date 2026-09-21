@@ -35,7 +35,7 @@
             </p>
             
             <div class="flex flex-col sm:flex-row items-center gap-3.5 w-full">
-              <NuxtLink to="/lien-he" class="w-full sm:w-auto px-7 py-3.5 text-center justify-center bg-primary hover:bg-primary-hover text-white text-xs font-bold uppercase tracking-wider rounded-full shadow-corporate hover:shadow-corporate-glow transition-all transform hover:-translate-y-0.5 inline-flex items-center gap-2">
+              <NuxtLink :to="localePath('/lien-he')" class="w-full sm:w-auto px-7 py-3.5 text-center justify-center bg-primary hover:bg-primary-hover text-white text-xs font-bold uppercase tracking-wider rounded-full shadow-corporate hover:shadow-corporate-glow transition-all transform hover:-translate-y-0.5 inline-flex items-center gap-2">
                 <span>Yêu cầu thẩm định tài sản</span>
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -147,7 +147,7 @@
 
             <div class="pt-5 mt-5 flex items-center justify-between">
               <span class="text-xs text-text-muted font-mono">ĐKDN: 0312231570</span>
-              <NuxtLink to="/ho-so-phap-ly" class="text-primary font-bold text-xs uppercase tracking-wider hover:underline inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+              <NuxtLink :to="localePath('/ho-so-phap-ly')" class="text-primary font-bold text-xs uppercase tracking-wider hover:underline inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
                 Xem hồ sơ pháp lý →
               </NuxtLink>
             </div>
@@ -187,7 +187,7 @@
 
             <div class="pt-5 mt-5 flex items-center justify-between">
               <span class="text-xs text-text-muted font-mono">100% chứng thư ký duyệt độc lập</span>
-              <NuxtLink to="/doi-ngu-nhan-su" class="text-primary font-bold text-xs uppercase tracking-wider hover:underline inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+              <NuxtLink :to="localePath('/doi-ngu-nhan-su')" class="text-primary font-bold text-xs uppercase tracking-wider hover:underline inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
                 Xem hội đồng chuyên môn →
               </NuxtLink>
             </div>
@@ -228,7 +228,7 @@
 
             <div class="pt-5 mt-5 flex items-center justify-between">
               <span class="text-xs text-text-muted font-mono">Bắc – Trung – Nam</span>
-              <NuxtLink to="/lien-he" class="text-primary font-bold text-xs uppercase tracking-wider hover:underline inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+              <NuxtLink :to="localePath('/lien-he')" class="text-primary font-bold text-xs uppercase tracking-wider hover:underline inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
                 Danh sách chi nhánh →
               </NuxtLink>
             </div>
@@ -436,7 +436,7 @@
                 </NuxtLink>
 
                 <NuxtLink 
-                  to="/lien-he" 
+                  :to="localePath('/lien-he')" 
                   class="w-full sm:w-auto px-6 py-3.5 bg-bg hover:bg-surface-muted text-text text-xs font-bold uppercase tracking-wider rounded-full transition-all inline-flex items-center justify-center gap-2 transform hover:-translate-y-0.5"
                 >
                   <span>Gửi Hồ Sơ Định Giá</span>
@@ -479,7 +479,7 @@
               MHD trực tiếp thực hiện công tác thẩm định giá độc lập cho các tập đoàn nhà nước, đại đô thị sinh thái và dây chuyền nhà máy công nghiệp trọng điểm quốc gia.
             </p>
           </div>
-          <NuxtLink to="/du-an" class="inline-flex items-center gap-2 px-6 py-3.5 bg-bg text-primary hover:bg-primary hover:text-white rounded-full font-bold shadow-corporate hover:shadow-corporate-hover transition-all group shrink-0 text-xs uppercase tracking-wider mb-1">
+          <NuxtLink :to="localePath('/du-an')" class="inline-flex items-center gap-2 px-6 py-3.5 bg-bg text-primary hover:bg-primary hover:text-white rounded-full font-bold shadow-corporate hover:shadow-corporate-hover transition-all group shrink-0 text-xs uppercase tracking-wider mb-1">
             <span>Toàn Bộ Dự Án</span>
             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 group-hover:translate-x-1 transition-transform" viewBox="0 0 20 20" fill="currentColor">
               <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
@@ -630,7 +630,7 @@
             <p class="text-xs text-text-secondary mb-6 flex-grow leading-relaxed">
               Cổng quản lý danh mục thẩm định đa tài sản theo thời gian thực: tiến độ khảo sát, biên bản định giá sơ bộ và lịch phát hành chứng thư.
             </p>
-            <NuxtLink to="/lien-he" class="inline-flex items-center text-primary font-bold text-xs uppercase tracking-wider hover:underline mt-auto gap-1">
+            <NuxtLink :to="localePath('/lien-he')" class="inline-flex items-center text-primary font-bold text-xs uppercase tracking-wider hover:underline mt-auto gap-1">
               Đăng Ký Tài Khoản Doanh Nghiệp
               <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
@@ -657,7 +657,7 @@
               Cập nhật liên tục các quy định mới từ Bộ Tài chính, thông tư hướng dẫn Luật Giá và các phân tích chuyên sâu về biến động tài sản.
             </p>
           </div>
-          <NuxtLink to="/tin-tuc" class="inline-flex items-center gap-2 px-6 py-3.5 bg-surface text-primary hover:bg-primary hover:text-white rounded-full font-bold shadow-corporate hover:shadow-corporate-hover transition-all group shrink-0 text-xs uppercase tracking-wider mb-1">
+          <NuxtLink :to="localePath('/tin-tuc')" class="inline-flex items-center gap-2 px-6 py-3.5 bg-surface text-primary hover:bg-primary hover:text-white rounded-full font-bold shadow-corporate hover:shadow-corporate-hover transition-all group shrink-0 text-xs uppercase tracking-wider mb-1">
             <span>Tất Cả Bài Viết</span>
             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 group-hover:translate-x-1 transition-transform" viewBox="0 0 20 20" fill="currentColor">
               <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
@@ -738,7 +738,7 @@
 
           <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
             <NuxtLink 
-              to="/lien-he" 
+              :to="localePath('/lien-he')" 
               class="w-full sm:w-auto px-8 py-4 bg-primary hover:bg-primary-hover text-white text-xs font-bold uppercase tracking-wider rounded-full shadow-corporate hover:shadow-corporate-glow transition-all transform hover:-translate-y-0.5 inline-flex items-center justify-center gap-2"
             >
               <span>Gửi Yêu Cầu Thẩm Định</span>
@@ -787,9 +787,10 @@
 
 <script setup>
 import { ref, computed, onMounted, nextTick } from 'vue'
-import { useI18n } from '#imports'
+import { useI18n, useLocalePath } from '#imports'
 
 const { t } = useI18n()
+const localePath = useLocalePath()
 const { reobserve } = useScrollReveal()
 
 useHead({

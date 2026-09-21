@@ -4,7 +4,7 @@
     <header class="pt-32 pb-16 bg-bg">
       <div class="container mx-auto px-4 max-w-6xl">
         <nav class="text-xs text-text-muted mb-3">
-          <NuxtLink to="/" class="hover:text-primary transition-colors">Trang chủ</NuxtLink>
+          <NuxtLink :to="localePath('/')" class="hover:text-primary transition-colors">Trang chủ</NuxtLink>
           <span class="mx-2">/</span>
           <span class="text-text-secondary">{{ $t('nav.contact') || 'Liên hệ' }}</span>
         </nav>
@@ -227,9 +227,10 @@
 
 <script setup>
 import { computed, reactive, ref } from 'vue'
-import { useI18n } from '#imports'
+import { useI18n, useLocalePath } from '#imports'
 
 const { t, tm } = useI18n()
+const localePath = useLocalePath()
 
 // Form Data
 const formData = reactive({

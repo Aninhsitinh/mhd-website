@@ -3,7 +3,7 @@
     <!-- 404 Not Found -->
     <div v-if="!service" class="min-h-screen pt-32 pb-20 bg-bg text-center flex flex-col items-center justify-center">
       <h1 class="text-4xl font-bold text-text mb-4">Lĩnh vực không tồn tại</h1>
-      <NuxtLink to="/linh-vuc" class="px-8 py-3 bg-primary hover:bg-primary-hover text-white font-bold rounded-full transition-all shadow-corporate">
+      <NuxtLink :to="localePath('/linh-vuc')" class="px-8 py-3 bg-primary hover:bg-primary-hover text-white font-bold rounded-full transition-all shadow-corporate">
         Về Trang Lĩnh Vực
       </NuxtLink>
     </div>
@@ -19,9 +19,9 @@
 
         <div class="container mx-auto px-4 max-w-7xl relative z-10" data-aos="fade-up">
           <nav class="text-xs text-text-muted mb-4 flex items-center gap-2">
-            <NuxtLink to="/" class="hover:text-primary transition-colors">Trang chủ</NuxtLink>
+            <NuxtLink :to="localePath('/')" class="hover:text-primary transition-colors">Trang chủ</NuxtLink>
             <span>/</span>
-            <NuxtLink to="/linh-vuc" class="hover:text-primary transition-colors">Lĩnh vực</NuxtLink>
+            <NuxtLink :to="localePath('/linh-vuc')" class="hover:text-primary transition-colors">Lĩnh vực</NuxtLink>
             <span>/</span>
             <span class="text-primary font-medium truncate max-w-[250px]" v-html="service.title"></span>
           </nav>
@@ -154,7 +154,7 @@
                   <NuxtLink 
                     v-for="s in otherServices" 
                     :key="s.slug"
-                    :to="`/linh-vuc/${s.slug}`"
+                    :to="localePath(`/linh-vuc/${s.slug}`)"
                     class="flex items-center justify-between p-3 rounded-xl transition-all text-xs font-semibold"
                     :class="s.slug === currentSlug ? 'bg-primary text-white shadow-sm' : 'text-text-secondary hover:text-primary hover:bg-bg'"
                   >
@@ -175,7 +175,7 @@
                     MHD cung cấp mức phí cạnh tranh, thời gian phát hành chứng thư nhanh chóng và đáp ứng khắt khe các yêu cầu bảo mật.
                   </p>
                   <NuxtLink 
-                    to="/lien-he" 
+                    :to="localePath('/lien-he')" 
                     class="w-full inline-flex items-center justify-center gap-2 py-3 px-6 rounded-xl bg-white text-primary font-bold text-xs uppercase tracking-wider shadow-lg hover:bg-white/90 transition-all transform hover:-translate-y-0.5"
                   >
                     Yêu cầu báo phí thẩm định
@@ -188,7 +188,7 @@
 
               <!-- Back to list -->
               <div class="text-center">
-                <NuxtLink to="/linh-vuc" class="text-xs font-bold text-text-muted hover:text-primary transition-colors inline-flex items-center gap-1.5">
+                <NuxtLink :to="localePath('/linh-vuc')" class="text-xs font-bold text-text-muted hover:text-primary transition-colors inline-flex items-center gap-1.5">
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
                   </svg>
@@ -209,8 +209,10 @@
 import { useRoute } from 'vue-router'
 import { computed, watchEffect } from 'vue'
 import { services } from '~/data/services.js'
+import { useLocalePath } from '#imports'
 
 const route = useRoute()
+const localePath = useLocalePath()
 const currentSlug = computed(() => route.params.slug)
 const service = computed(() => services[currentSlug.value] || null)
 
