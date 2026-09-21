@@ -184,7 +184,7 @@ const sendMessage = async () => {
     if (response && response.reply) {
       messages.value.push({ role: 'assistant', content: response.reply })
     }
-  } catch (error: any) {
+  } catch (error) {
     const errorMsg = error?.data?.statusMessage || error?.statusMessage || 'Xin lỗi, hệ thống AI đang quá tải hoặc gặp sự cố. Vui lòng thử lại sau.'
     messages.value.push({ role: 'assistant', content: errorMsg })
     console.error(error)
