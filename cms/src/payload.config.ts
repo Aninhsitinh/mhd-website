@@ -32,6 +32,14 @@ export default buildConfig({
       description: 'Hệ thống quản lý nội dung MHD Valuation',
     },
   },
+  localization: {
+    locales: [
+      { label: 'Tiếng Việt', code: 'vi' },
+      { label: 'English', code: 'en' },
+    ],
+    defaultLocale: 'vi',
+    fallback: true,
+  },
   globals: [
     SiteSettings,
   ],

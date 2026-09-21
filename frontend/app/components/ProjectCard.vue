@@ -75,9 +75,9 @@
       
       <!-- Card Footer (Borderless) -->
       <div class="pt-3 flex items-center justify-between text-xs font-bold mt-auto bg-surface border-t border-black/5 dark:border-white/5">
-        <span class="text-[11px] text-text-muted uppercase tracking-wider font-semibold">Hồ sơ năng lực</span>
+        <span class="text-[11px] text-text-muted uppercase tracking-wider font-semibold">{{ isEn ? 'Dossier' : 'Hồ sơ năng lực' }}</span>
         <span class="text-primary group-hover:translate-x-1 transition-transform flex items-center gap-1 font-semibold">
-          Xem chi tiết
+          {{ isEn ? 'View Details' : 'Xem chi tiết' }}
           <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
           </svg>
@@ -102,28 +102,36 @@ const props = defineProps({
 
 const specs = computed(() => getProjectSpecs(props.project.slug))
 
+const { locale } = useI18n()
+const isEn = computed(() => locale.value === 'en')
+
 const cleanTitle = computed(() => {
   return (props.project?.title || '').replace(/<[^>]*>?/gm, '')
 })
 
 const displayLocation = computed(() => {
-  return specs.value.location || 'TP. Hồ Chí Minh & Toàn quốc'
+  if (specs.value.location) return specs.value.location
+  return isEn.value ? 'Ho Chi Minh City & Nationwide' : 'TP. Hồ Chí Minh & Toàn quốc'
 })
 
 const displayPurpose = computed(() => {
-  return specs.value.purpose || 'Thẩm định giá trị tài sản độc lập'
+  if (specs.value.purpose) return specs.value.purpose
+  return isEn.value ? 'Independent Asset & Corporate Valuation' : 'Thẩm định giá trị tài sản độc lập'
 })
 
 const displayExcerpt = computed(() => {
   const raw = props.project?.excerpt || ''
   const stripped = raw.replace(/<[^>]*>?/gm, '').trim()
-  return stripped || 'Hồ sơ năng lực thẩm định giá chi tiết tài sản và dự án đầu tư theo tiêu chuẩn quốc gia & quốc tế.'
+  if (stripped) return stripped
+  return isEn.value 
+    ? 'Comprehensive appraisal portfolio for assets and investment projects according to VVS & IVS standards.'
+    : 'Hồ sơ năng lực thẩm định giá chi tiết tài sản và dự án đầu tư theo tiêu chuẩn quốc gia & quốc tế.'
 })
 
 const getCategoryName = (project) => {
-  if (project.categories?.includes(64)) return 'Bất động sản'
-  if (project.categories?.includes(66)) return 'Doanh nghiệp'
-  if (project.categories?.includes(70)) return 'Máy móc thiết bị'
-  return 'Thẩm định giá'
+  if (project.categories?.includes(64)) return isEn.value ? 'Real Estate' : 'Bất động sản'
+  if (project.categories?.includes(66)) return isEn.value ? 'Corporate' : 'Doanh nghiệp'
+  if (project.categories?.includes(70)) return isEn.value ? 'Machinery & Equipment' : 'Máy móc thiết bị'
+  return isEn.value ? 'Valuation' : 'Thẩm định giá'
 }
 </script>

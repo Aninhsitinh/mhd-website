@@ -1,8 +1,18 @@
 import { useFetch, useRuntimeConfig, useNuxtApp } from '#app'
+import { useI18n } from '#imports'
 
 export const usePayload = () => {
   const config = useRuntimeConfig()
   const nuxtApp = useNuxtApp()
+  let currentLocale = 'vi'
+  try {
+    const { locale } = useI18n()
+    currentLocale = locale.value || 'vi'
+  } catch (e) {
+    // In contexts where useI18n is not initialized yet
+    currentLocale = 'vi'
+  }
+
   // Use internal Docker URL during SSR if available, otherwise public URL
   const payloadUrl = import.meta.server
     ? (config.payloadServerUrl || config.public.payloadApiUrl || 'http://localhost:3001/api')
@@ -13,7 +23,7 @@ export const usePayload = () => {
 
   // Build Payload REST query params from a plain object
   const buildQuery = (params = {}) => {
-    const query = { depth: 1 }
+    const query = { depth: 1, locale: params.locale || currentLocale }
     if (params.per_page || params.limit) query.limit = params.per_page || params.limit
     if (params.page) query.page = params.page
     if (params.sort) query.sort = params.sort

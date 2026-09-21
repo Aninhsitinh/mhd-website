@@ -21,6 +21,7 @@ export const Projects: CollectionConfig = {
       type: 'text',
       required: true,
       label: 'Tiêu đề dự án',
+      localized: true,
     },
     {
       name: 'slug',
@@ -34,6 +35,7 @@ export const Projects: CollectionConfig = {
       name: 'content',
       type: 'richText',
       label: 'Nội dung chi tiết',
+      localized: true,
     },
 
     lexicalHTML('content', { name: 'lexicalHtml' }),
@@ -41,6 +43,7 @@ export const Projects: CollectionConfig = {
       name: 'excerpt',
       type: 'textarea',
       label: 'Tóm tắt',
+      localized: true,
     },
     {
       name: 'featuredImage',
