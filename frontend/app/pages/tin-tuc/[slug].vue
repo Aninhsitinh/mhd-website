@@ -228,17 +228,48 @@ const getCategoryName = (post) => {
   return 'Thị Trường'
 }
 
+import { getArticleSchema, getBreadcrumbSchema } from '~/utils/seoSchema'
+
 watchEffect(() => {
   if (post.value) {
-    const titleText = `${post.value.title.replace(/<[^>]*>?/gm, '')} - Tin Tức MHD Valuation`
+    const rawTitle = post.value.title || ''
+    const cleanTitle = rawTitle.replace(/<[^>]*>?/gm, '').trim()
+    const titleText = `${cleanTitle} - Tin Tức MHD Valuation`
     const descText = post.value.excerpt ? post.value.excerpt.replace(/<[^>]*>?/gm, '').substring(0, 160) : ''
+    const postImage = post.value.featured_image || '/images/logo-mhd.png'
     
     useSeoMeta({
       title: titleText,
       ogTitle: titleText,
       description: descText,
       ogDescription: descText,
-      ogImage: post.value.featured_image || '/images/logo-mhd.png'
+      ogImage: postImage,
+      articlePublishedTime: post.value.date || post.value.createdAt,
+      articleModifiedTime: post.value.updatedAt || post.value.date
+    })
+
+    useHead({
+      script: [
+        {
+          type: 'application/ld+json',
+          children: JSON.stringify(getArticleSchema({
+            slug: post.value.slug || route.params.slug,
+            title: cleanTitle,
+            description: descText,
+            datePublished: post.value.date || post.value.createdAt,
+            dateModified: post.value.updatedAt || post.value.date,
+            image: postImage
+          }))
+        },
+        {
+          type: 'application/ld+json',
+          children: JSON.stringify(getBreadcrumbSchema([
+            { name: 'Trang chủ', url: '/' },
+            { name: 'Tin tức & Nghiệp vụ', url: '/tin-tuc' },
+            { name: cleanTitle, url: `/tin-tuc/${post.value.slug || route.params.slug}` }
+          ]))
+        }
+      ]
     })
   }
 })
@@ -250,7 +281,7 @@ watchEffect(() => {
 }
 
 :deep(.html-content p) {
-  @apply mb-5 leading-relaxed text-left;
+  @apply mb-5 leading-relaxed text-justify;
 }
 
 :deep(.html-content strong) {

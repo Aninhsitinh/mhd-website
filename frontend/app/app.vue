@@ -9,6 +9,24 @@
   <ExitIntentPopup />
   <ScrollToTop />
 </template>
+
+<script setup>
+import { getOrganizationSchema, getWebSiteSchema } from '~/utils/seoSchema'
+
+useHead({
+  script: [
+    {
+      type: 'application/ld+json',
+      children: JSON.stringify(getOrganizationSchema())
+    },
+    {
+      type: 'application/ld+json',
+      children: JSON.stringify(getWebSiteSchema())
+    }
+  ]
+})
+</script>
+
 <style>
 
 .page-enter-active,

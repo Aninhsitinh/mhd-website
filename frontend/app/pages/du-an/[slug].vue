@@ -455,18 +455,55 @@ const prevImage = () => {
   }
 }
 
+import { getBreadcrumbSchema, SITE_URL, DEFAULT_LOGO } from '~/utils/seoSchema'
+
 // SEO Meta
 watchEffect(() => {
   if (project.value) {
-    const titleText = `${project.value.title.replace(/<[^>]*>?/gm, '')} - Hồ Sơ Năng Lực Thẩm Định MHD`
+    const rawTitle = project.value.title || ''
+    const cleanTitle = rawTitle.replace(/<[^>]*>?/gm, '').trim()
+    const titleText = `${cleanTitle} - Hồ Sơ Năng Lực Thẩm Định MHD`
     const descText = specs.value.highlight || (project.value.excerpt ? project.value.excerpt.replace(/<[^>]*>?/gm, '').substring(0, 160) : '')
+    const projectImage = project.value.featured_image || DEFAULT_LOGO
     
     useSeoMeta({
       title: titleText,
       ogTitle: titleText,
       description: descText,
       ogDescription: descText,
-      ogImage: project.value.featured_image || '/images/logo-mhd.png'
+      ogImage: projectImage
+    })
+
+    useHead({
+      script: [
+        {
+          type: 'application/ld+json',
+          children: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Article',
+            '@id': `${SITE_URL}/du-an/${project.value.slug}#project`,
+            headline: cleanTitle,
+            description: descText,
+            image: [projectImage],
+            author: {
+              '@type': 'Organization',
+              name: 'MHD Valuation',
+              url: SITE_URL
+            },
+            publisher: {
+              '@id': `${SITE_URL}/#organization`
+            }
+          })
+        },
+        {
+          type: 'application/ld+json',
+          children: JSON.stringify(getBreadcrumbSchema([
+            { name: 'Trang chủ', url: '/' },
+            { name: 'Dự án thẩm định', url: '/du-an' },
+            { name: cleanTitle, url: `/du-an/${project.value.slug}` }
+          ]))
+        }
+      ]
     })
   }
 })

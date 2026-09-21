@@ -237,13 +237,36 @@ const introText = computed(() => {
   return cleanLegacyHtml(service.value.introHtml)
 })
 
+import { getServiceSchema, getBreadcrumbSchema } from '~/utils/seoSchema'
+
 watchEffect(() => {
   if (service.value) {
-    const title = `${service.value.title.replace(/<[^>]*>?/gm, '')} - Lĩnh Vực Thẩm Định MHD`
+    const cleanTitle = service.value.title.replace(/<[^>]*>?/gm, '')
+    const title = `${cleanTitle} - Lĩnh Vực Thẩm Định MHD`
+    const desc = `Dịch vụ ${cleanTitle} tại MHD Valuation. Độc lập, khách quan, bảo mật và chính xác theo Tiêu chuẩn Thẩm định giá Việt Nam.`
+    
     useHead({
       title: title,
       meta: [
-        { name: 'description', content: `Dịch vụ ${service.value.title} tại MHD Valuation. Độc lập, khách quan, bảo mật và chính xác theo Tiêu chuẩn Thẩm định giá Việt Nam.` }
+        { name: 'description', content: desc }
+      ],
+      script: [
+        {
+          type: 'application/ld+json',
+          children: JSON.stringify(getServiceSchema({
+            slug: currentSlug.value,
+            title: cleanTitle,
+            description: desc
+          }))
+        },
+        {
+          type: 'application/ld+json',
+          children: JSON.stringify(getBreadcrumbSchema([
+            { name: 'Trang chủ', url: '/' },
+            { name: 'Lĩnh vực thẩm định', url: '/linh-vuc' },
+            { name: cleanTitle, url: `/linh-vuc/${currentSlug.value}` }
+          ]))
+        }
       ]
     })
   }
@@ -256,7 +279,7 @@ watchEffect(() => {
 }
 
 :deep(.service-content li) {
-  @apply relative pl-6 text-text-secondary leading-relaxed text-left block;
+  @apply relative pl-6 text-text-secondary leading-relaxed text-justify block;
 }
 
 :deep(.service-content li::before) {
@@ -265,7 +288,7 @@ watchEffect(() => {
 }
 
 :deep(.service-content p) {
-  @apply mb-4 leading-relaxed text-left text-text-secondary;
+  @apply mb-4 leading-relaxed text-justify text-text-secondary;
 }
 
 :deep(.service-content p:last-child) {

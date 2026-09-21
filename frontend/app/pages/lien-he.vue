@@ -312,8 +312,30 @@ const submitForm = async () => {
 
 const branches = computed(() => tm('contact.branches') || [])
 
+import { getBreadcrumbSchema, getOrganizationSchema, SITE_URL } from '~/utils/seoSchema'
+
 useHead({
-  title: computed(() => t('contact.meta_title'))
+  title: computed(() => t('contact.meta_title')),
+  script: [
+    {
+      type: 'application/ld+json',
+      children: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'ContactPage',
+        '@id': `${SITE_URL}/lien-he#webpage`,
+        name: 'Liên hệ Thẩm định giá MHD',
+        description: 'Liên hệ Công ty Cổ phần Thẩm định giá MHD (MHD Valuation) để được tư vấn và báo giá dịch vụ thẩm định giá bất động sản, doanh nghiệp, động sản, dự án đầu tư nhanh chóng và chính xác.',
+        mainEntity: getOrganizationSchema()
+      })
+    },
+    {
+      type: 'application/ld+json',
+      children: JSON.stringify(getBreadcrumbSchema([
+        { name: 'Trang chủ', url: '/' },
+        { name: 'Liên hệ', url: '/lien-he' }
+      ]))
+    }
+  ]
 })
 
 useSeoMeta({
