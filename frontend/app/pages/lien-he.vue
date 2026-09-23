@@ -59,7 +59,7 @@
                   </div>
                   <div>
                     <h3 class="text-base font-semibold text-text mb-1">{{ $t('contact.email') }}</h3>
-                    <a href="mailto:info@mhdvaluation.com" class="text-text-secondary hover:text-primary transition-colors text-sm">info@mhdvaluation.com</a>
+                    <a href="mailto:info@mhd.com.vn" class="text-text-secondary hover:text-primary transition-colors text-sm">info@mhd.com.vn</a>
                   </div>
                 </div>
 
