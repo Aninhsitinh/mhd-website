@@ -195,6 +195,20 @@ export const usePayload = () => {
       }
     }
 
+    // Process file attachment (PDF, DOCX, etc.)
+    let fileAttachmentData = null
+    if (doc.fileAttachment) {
+      const fa = doc.fileAttachment
+      const fileUrl = fa.url ? (fa.url.startsWith('http') ? fa.url : `${publicMediaBase}${fa.url}`) : null
+      fileAttachmentData = {
+        id: fa.id,
+        url: fileUrl,
+        filename: fa.filename || '',
+        mimeType: fa.mimeType || '',
+        filesize: fa.filesize || 0,
+      }
+    }
+
     return {
       id: doc.id,
       title: doc.title || '',
@@ -205,7 +219,8 @@ export const usePayload = () => {
       featured_image: imageUrl,
       categories: cats,
       featuredMediaId: doc.featuredImage?.id || null,
-      gallery: galleryImages
+      gallery: galleryImages,
+      fileAttachment: fileAttachmentData
     }
   }
 

@@ -5,13 +5,27 @@
   >
     <!-- Top Header: Badge & Date / Category -->
     <div class="flex items-center justify-between gap-3 mb-5">
-      <span 
-        class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-mono font-bold uppercase tracking-wider"
-        :class="isLegalDoc(doc) ? 'bg-primary/10 text-primary' : 'bg-surface-muted text-text-secondary'"
-      >
-        <span class="w-1.5 h-1.5 rounded-full" :class="isLegalDoc(doc) ? 'bg-primary' : 'bg-text-muted'"></span>
-        {{ getCategoryLabel(doc) }}
-      </span>
+      <div class="flex items-center gap-1.5 flex-wrap">
+        <span 
+          class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-mono font-bold uppercase tracking-wider"
+          :class="isLegalDoc(doc) ? 'bg-primary/10 text-primary' : 'bg-surface-muted text-text-secondary'"
+        >
+          <span class="w-1.5 h-1.5 rounded-full" :class="isLegalDoc(doc) ? 'bg-primary' : 'bg-text-muted'"></span>
+          {{ getCategoryLabel(doc) }}
+        </span>
+        <span 
+          v-if="hasDocx(doc)"
+          class="px-2 py-0.5 rounded-md text-[10px] font-mono font-bold uppercase bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20"
+        >
+          DOCX
+        </span>
+        <span 
+          v-else-if="hasPdf(doc)"
+          class="px-2 py-0.5 rounded-md text-[10px] font-mono font-bold uppercase bg-red-500/10 text-red-600 dark:text-red-400 border border-red-500/20"
+        >
+          PDF
+        </span>
+      </div>
 
       <span class="text-[11px] text-text-muted font-mono flex items-center gap-1">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 text-text-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -81,6 +95,24 @@ const props = defineProps({
 const isLegalDoc = (doc) => {
   return doc.categories?.includes(94) || 
          /thông tư|quyết định|nghị định|luật/i.test(doc.title || '')
+}
+
+const hasDocx = (doc) => {
+  const fa = doc.fileAttachment
+  if (!fa) return false
+  const m = (fa.mimeType || '').toLowerCase()
+  const u = (fa.url || '').toLowerCase()
+  const fn = (fa.filename || '').toLowerCase()
+  return m.includes('word') || m.includes('officedocument') || u.endsWith('.docx') || u.endsWith('.doc') || fn.endsWith('.docx') || fn.endsWith('.doc')
+}
+
+const hasPdf = (doc) => {
+  const fa = doc.fileAttachment
+  if (!fa) return false
+  const m = (fa.mimeType || '').toLowerCase()
+  const u = (fa.url || '').toLowerCase()
+  const fn = (fa.filename || '').toLowerCase()
+  return m.includes('pdf') || u.endsWith('.pdf') || fn.endsWith('.pdf')
 }
 
 const getCategoryLabel = (doc) => {

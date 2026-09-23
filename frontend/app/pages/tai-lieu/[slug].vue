@@ -32,8 +32,25 @@
             </div>
           </header>
 
-          <!-- Print / Download Button -->
-          <div class="flex justify-end mb-8 print:hidden">
+          <!-- Actions Bar: Direct File Download & Print -->
+          <div class="flex flex-wrap items-center justify-between gap-4 mb-8 print:hidden">
+            <!-- Direct Download Attachment if uploaded -->
+            <div v-if="post.fileAttachment?.url">
+              <a 
+                :href="post.fileAttachment.url" 
+                download 
+                target="_blank" 
+                class="px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-full flex items-center gap-2.5 transition-all shadow-corporate hover:shadow-corporate-hover transform hover:-translate-y-0.5 font-bold text-sm"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                </svg>
+                <span>Tải tệp đính kèm ({{ formatFileSize(post.fileAttachment.filesize) }})</span>
+              </a>
+            </div>
+            <div v-else></div>
+
+            <!-- Print / PDF Standard Export -->
             <button @click="printDocument" class="px-6 py-3 bg-primary text-white rounded-full flex items-center gap-2.5 hover:bg-primary-hover transition-all shadow-corporate hover:shadow-corporate-hover transform hover:-translate-y-0.5 font-bold text-sm">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
@@ -42,11 +59,130 @@
             </button>
           </div>
 
-          <!-- Legal Document Sheet Container (100% Borderless) -->
-          <div class="bg-surface rounded-2xl p-8 sm:p-12 md:p-16 shadow-corporate-lg mb-12 print:p-0 print:border-none print:shadow-none print:rounded-none print:bg-transparent">
+          <!-- Embedded PDF Viewer (if attached file is a PDF) -->
+          <div v-if="isPdfAttachment(post.fileAttachment)" class="mb-12 print:hidden">
+            <div class="bg-surface p-4 rounded-3xl shadow-corporate border border-black/5 dark:border-white/5">
+              <div class="w-full rounded-2xl overflow-hidden shadow-inner bg-bg" style="height: 80vh;">
+                <object 
+                  :data="`${post.fileAttachment.url}#toolbar=1&navpanes=1`" 
+                  type="application/pdf"
+                  width="100%" 
+                  height="100%" 
+                  class="border-none w-full h-full"
+                >
+                  <iframe 
+                    :src="`${post.fileAttachment.url}#toolbar=1&navpanes=1`" 
+                    width="100%" 
+                    height="100%" 
+                    class="border-none w-full h-full bg-white"
+                    :title="post.title"
+                  ></iframe>
+                </object>
+              </div>
+            </div>
+          </div>
+
+          <!-- Embedded DOCX Preview & Attachment Showcase Card -->
+          <div v-else-if="isDocxAttachment(post.fileAttachment)" class="mb-12">
+            <!-- Loading DOCX preview -->
+            <div v-if="loadingDocx" class="bg-surface rounded-3xl p-12 text-center shadow-corporate border border-black/5 dark:border-white/5 mb-8">
+              <div class="w-10 h-10 border-4 border-primary/20 border-t-primary rounded-full animate-spin mx-auto mb-4"></div>
+              <p class="text-sm font-semibold text-text mb-1">Đang tải và trích xuất nội dung văn bản Word...</p>
+              <p class="text-xs text-text-muted">Hệ thống đang xử lý để bạn có thể xem trực tiếp ngay trên trình duyệt</p>
+            </div>
+
+            <!-- Rendered DOCX Document Sheet -->
+            <div v-else-if="docxHtml" class="bg-surface rounded-2xl p-8 sm:p-12 md:p-16 shadow-corporate-lg mb-8 print:p-0 print:border-none print:shadow-none print:rounded-none print:bg-transparent">
+              <div class="flex items-center justify-between pb-6 mb-6 border-b border-black/5 dark:border-white/5 print:hidden">
+                <div class="flex items-center gap-2 text-xs font-semibold text-emerald-600 dark:text-emerald-400">
+                  <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                  <span>Đang xem trước toàn văn tài liệu Word (.docx)</span>
+                </div>
+                <div class="flex items-center gap-4">
+                  <button @click="printDocument" class="text-xs font-bold text-text-secondary hover:text-primary flex items-center gap-1.5 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+                    </svg>
+                    <span>In tài liệu</span>
+                  </button>
+                  <a :href="post.fileAttachment.url" download class="text-xs font-bold text-primary hover:underline flex items-center gap-1">
+                    <span>Tải bản gốc (.docx)</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+              <div class="document-content leading-relaxed" v-html="docxHtml"></div>
+            </div>
+
+            <!-- Fallback Info Card if DOCX could not be previewed -->
+            <div v-else class="bg-surface rounded-3xl p-8 sm:p-12 shadow-corporate border border-black/5 dark:border-white/5 text-center flex flex-col items-center print:hidden">
+              <div class="w-20 h-20 rounded-2xl bg-blue-50 dark:bg-blue-950/40 text-blue-600 flex items-center justify-center mb-6 shadow-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+              </div>
+
+              <h2 class="text-xl sm:text-2xl font-bold font-display text-text mb-2">{{ post.fileAttachment.filename }}</h2>
+              <p class="text-xs sm:text-sm text-text-secondary max-w-lg mb-6 leading-relaxed">
+                Tài liệu đính kèm định dạng <strong>Microsoft Word (DOCX)</strong> (Kích thước: {{ formatFileSize(post.fileAttachment.filesize) }}). Bạn có thể tải tệp về để xem toàn bộ nội dung.
+              </p>
+
+              <div class="flex flex-wrap items-center justify-center gap-3">
+                <a 
+                  :href="post.fileAttachment.url" 
+                  download 
+                  class="px-8 py-3.5 bg-primary hover:bg-primary-hover text-white rounded-full flex items-center gap-2 shadow-corporate hover:shadow-corporate-hover font-bold text-xs uppercase tracking-wider transition-all transform hover:-translate-y-0.5"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                  </svg>
+                  <span>Tải tệp tin về máy</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Fallback Card for other file attachments (e.g. Zip, Excel) -->
+          <div v-else-if="post.fileAttachment?.url && !processedContent" class="mb-12">
+            <div class="bg-surface rounded-3xl p-8 sm:p-12 shadow-corporate border border-black/5 dark:border-white/5 text-center flex flex-col items-center print:hidden">
+              <div class="w-20 h-20 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-6 shadow-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                </svg>
+              </div>
+
+              <h2 class="text-xl sm:text-2xl font-bold font-display text-text mb-2">{{ post.fileAttachment.filename }}</h2>
+              <p class="text-xs sm:text-sm text-text-secondary max-w-lg mb-6 leading-relaxed">
+                Tài liệu đính kèm (Kích thước: {{ formatFileSize(post.fileAttachment.filesize) }}). Bạn có thể tải tệp về để xem toàn bộ nội dung.
+              </p>
+
+              <div class="flex flex-wrap items-center justify-center gap-3">
+                <a 
+                  :href="post.fileAttachment.url" 
+                  download 
+                  class="px-8 py-3.5 bg-primary hover:bg-primary-hover text-white rounded-full flex items-center gap-2 shadow-corporate hover:shadow-corporate-hover font-bold text-xs uppercase tracking-wider transition-all transform hover:-translate-y-0.5"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                  </svg>
+                  <span>Tải tệp tin về máy</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Legal Document Sheet Container (when HTML text content is available) -->
+          <div v-if="processedContent" class="bg-surface rounded-2xl p-8 sm:p-12 md:p-16 shadow-corporate-lg mb-12 print:p-0 print:border-none print:shadow-none print:rounded-none print:bg-transparent">
             <!-- Article Content -->
             <div class="document-content leading-relaxed" v-html="processedContent">
             </div>
+          </div>
+
+          <!-- Empty Content Fallback (No content and no attachment) -->
+          <div v-else-if="!post.fileAttachment?.url" class="bg-surface rounded-3xl p-12 text-center shadow-corporate border border-black/5 dark:border-white/5 mb-12">
+            <p class="text-sm text-text-secondary">Nội dung tài liệu đang được cập nhật.</p>
           </div>
 
           <!-- Image Gallery Carousel -->
@@ -88,6 +224,8 @@ import { useLocalePath } from '#imports'
 const route = useRoute()
 const localePath = useLocalePath()
 const carouselRef = ref(null)
+const docxHtml = ref('')
+const loadingDocx = ref(false)
 
 const scrollCarousel = (direction) => {
   if (!carouselRef.value) return
@@ -112,6 +250,37 @@ const post = computed(() => {
   if (postsData.value && postsData.value.length > 0) return postsData.value[0]
   if (fallbackData.value && fallbackData.value.length > 0) return fallbackData.value[0]
   return null
+})
+
+// Convert DOCX attachment into HTML on client side
+const convertDocxToHtml = async (fileUrl) => {
+  if (!import.meta.client || !fileUrl) return
+  try {
+    loadingDocx.value = true
+    const res = await fetch(fileUrl)
+    if (!res.ok) throw new Error('Không thể tải file Word')
+    const arrayBuffer = await res.arrayBuffer()
+    const mammoth = await import('mammoth/mammoth.browser')
+    const result = await mammoth.convertToHtml({ arrayBuffer })
+    docxHtml.value = result.value || ''
+  } catch (err) {
+    console.error('Lỗi chuyển đổi DOCX preview:', err)
+    docxHtml.value = ''
+  } finally {
+    loadingDocx.value = false
+  }
+}
+
+onMounted(() => {
+  if (post.value?.fileAttachment && isDocxAttachment(post.value.fileAttachment)) {
+    convertDocxToHtml(post.value.fileAttachment.url)
+  }
+})
+
+watch(() => post.value, (newPost) => {
+  if (newPost?.fileAttachment && isDocxAttachment(newPost.fileAttachment)) {
+    convertDocxToHtml(newPost.fileAttachment.url)
+  }
 })
 
 const processedContent = computed(() => {
@@ -224,6 +393,27 @@ const getCategoryName = (post) => {
 const printDocument = () => {
   window.print()
 }
+
+const isPdfAttachment = (attachment) => {
+  if (!attachment?.url) return false
+  return attachment.mimeType === 'application/pdf' || attachment.url.toLowerCase().endsWith('.pdf')
+}
+
+const isDocxAttachment = (attachment) => {
+  if (!attachment?.url && !attachment?.filename) return false
+  const m = (attachment.mimeType || '').toLowerCase()
+  const u = (attachment.url || '').toLowerCase()
+  const fn = (attachment.filename || '').toLowerCase()
+  return m.includes('word') || m.includes('officedocument') || u.endsWith('.docx') || u.endsWith('.doc') || fn.endsWith('.docx') || fn.endsWith('.doc')
+}
+
+const formatFileSize = (bytes) => {
+  if (!bytes || bytes === 0) return '0 KB'
+  const k = 1024
+  const sizes = ['Bytes', 'KB', 'MB', 'GB']
+  const i = Math.floor(Math.log(bytes) / Math.log(k))
+  return `${parseFloat((bytes / Math.pow(k, i)).toFixed(1))} ${sizes[i]}`
+}
 </script>
 
 <style scoped lang="postcss">
@@ -244,18 +434,42 @@ const printDocument = () => {
   line-height: 1.6;
 }
 
-/* Base table style for legal documents */
+/* Base table style */
 :deep(.document-content table) {
   width: 100% !important;
   border-collapse: collapse !important;
-  border: none !important;
   margin-top: 1rem !important;
   margin-bottom: 1.5rem !important;
   background: transparent !important;
 }
 
-:deep(.document-content table td),
-:deep(.document-content table th) {
+/* Normal data / content tables (Word documents, lists, specifications) */
+:deep(.document-content table:not(.legal-header-table):not(.legal-sign-table)) {
+  border: 1px solid rgba(15, 23, 42, 0.15) !important;
+}
+
+:deep(.document-content table:not(.legal-header-table):not(.legal-sign-table) th),
+:deep(.document-content table:not(.legal-header-table):not(.legal-sign-table) td) {
+  border: 1px solid rgba(15, 23, 42, 0.15) !important;
+  padding: 8px 12px !important;
+  vertical-align: top !important;
+}
+
+:deep(.document-content table:not(.legal-header-table):not(.legal-sign-table) th) {
+  background-color: rgba(15, 23, 42, 0.04) !important;
+  font-weight: 600;
+}
+
+/* Legal Header and Signature Tables without outer borders */
+:deep(.document-content table.legal-header-table),
+:deep(.document-content table.legal-sign-table) {
+  border: none !important;
+}
+
+:deep(.document-content table.legal-header-table td),
+:deep(.document-content table.legal-header-table th),
+:deep(.document-content table.legal-sign-table td),
+:deep(.document-content table.legal-sign-table th) {
   border: none !important;
   padding: 4px 8px !important;
   vertical-align: top !important;

@@ -1,4 +1,10 @@
 import type { CollectionConfig } from 'payload'
+import path from 'path'
+import { fileURLToPath } from 'url'
+
+const filename = fileURLToPath(import.meta.url)
+const dirname = path.dirname(filename)
+const staticMediaDir = path.resolve(dirname, '../../../media')
 
 export const Media: CollectionConfig = {
   slug: 'media',
@@ -10,7 +16,7 @@ export const Media: CollectionConfig = {
     read: () => true, // Public read access
   },
   upload: {
-    staticDir: '../media', // Files stored in cms/media/
+    staticDir: staticMediaDir, // Files stored in root /media/
     mimeTypes: ['image/*', 'application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'],
     imageSizes: [
       {
