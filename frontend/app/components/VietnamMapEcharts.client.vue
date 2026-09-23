@@ -280,13 +280,6 @@ onMounted(async () => {
   }
 })
 
-// Dynamic theme re-rendering when user toggles dark/light mode
-watch(isDark, () => {
-  if (chart) {
-    initChart()
-  }
-})
-
 onUnmounted(() => {
   if (observer) {
     observer.disconnect()

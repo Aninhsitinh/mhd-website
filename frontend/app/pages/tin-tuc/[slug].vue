@@ -169,14 +169,10 @@ import { useLocalePath } from '#imports'
 
 const route = useRoute()
 const localePath = useLocalePath()
-const { fetchPosts, fetchMorePosts } = usePayload()
+const { fetchPage, fetchMorePosts } = usePayload()
 
-// Fetch post by slug from 'posts' collection using reactive fetchPosts
-const { data: postsData, pending } = await fetchPosts({ slug: route.params.slug }, 'posts')
-
-const post = computed(() => {
-  return postsData.value && postsData.value.length > 0 ? postsData.value[0] : null
-})
+// Fetch post by slug from 'posts' collection
+const { data: post, pending } = await fetchPage(route.params.slug, 'posts')
 
 // If this post is a decree/circular/standard/law, seamlessly redirect to /tai-lieu/[slug]
 if (post.value && isLegalDocument(post.value)) {
