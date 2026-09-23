@@ -40,8 +40,8 @@
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
               </NuxtLink>
-              <NuxtLink to="/cong-thong-tin" class="w-full sm:w-auto px-6 py-3.5 text-center justify-center bg-white/10 hover:bg-white/20 text-white text-xs font-bold uppercase tracking-wider rounded-full transition-all transform hover:-translate-y-0.5 border border-white/15">
-                Cổng thông tin Doanh nghiệp &amp; Ngân hàng
+              <NuxtLink :to="localePath('/ho-so-nang-luc')" class="w-full sm:w-auto px-6 py-3.5 text-center justify-center bg-white/10 hover:bg-white/20 text-white text-xs font-bold uppercase tracking-wider rounded-full transition-all transform hover:-translate-y-0.5 border border-white/15">
+                Hồ sơ năng lực Doanh nghiệp &amp; Ngân hàng
               </NuxtLink>
             </div>
           </div>
@@ -273,8 +273,8 @@
 
             <div class="pt-5 mt-5 flex items-center justify-between border-t border-black/5 dark:border-white/5">
               <span class="text-xs text-text-muted">Bảo mật đa tầng</span>
-              <NuxtLink to="/tra-cuu-chung-thu" class="text-primary font-bold text-xs uppercase tracking-wider hover:underline inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
-                Tra cứu chứng thư trực tuyến →
+              <NuxtLink :to="localePath('/ho-so-phap-ly')" class="text-primary font-bold text-xs uppercase tracking-wider hover:underline inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                Tra cứu pháp lý doanh nghiệp →
               </NuxtLink>
             </div>
           </div>
@@ -561,8 +561,8 @@
             </p>
           </div>
           <div class="shrink-0 mb-1">
-            <NuxtLink to="/cong-thong-tin" class="inline-flex items-center gap-2 px-6 py-3.5 bg-bg text-primary hover:bg-primary hover:text-white rounded-full font-bold shadow-corporate hover:shadow-corporate-hover transition-all text-xs uppercase tracking-wider group border border-black/5 dark:border-white/5">
-              <span>Cổng Tra Cứu Đối Tác</span>
+            <NuxtLink :to="localePath('/ho-so-nang-luc')" class="inline-flex items-center gap-2 px-6 py-3.5 bg-bg text-primary hover:bg-primary hover:text-white rounded-full font-bold shadow-corporate hover:shadow-corporate-hover transition-all text-xs uppercase tracking-wider group border border-black/5 dark:border-white/5">
+              <span>Cổng Hồ Sơ Đối Tác</span>
               <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
@@ -583,7 +583,7 @@
             <p class="text-xs text-text-secondary mb-6 flex-grow leading-relaxed">
               Cung cấp đầy đủ hồ sơ pháp lý công ty, giấy phép hành nghề của thẩm định viên và năng lực kinh nghiệm thẩm định tài sản cho các tổ chức tín dụng.
             </p>
-            <NuxtLink to="/cong-thong-tin" class="inline-flex items-center text-primary font-bold text-xs uppercase tracking-wider hover:underline mt-auto gap-1">
+            <NuxtLink :to="localePath('/ho-so-nang-luc')" class="inline-flex items-center text-primary font-bold text-xs uppercase tracking-wider hover:underline mt-auto gap-1">
               Xem hồ sơ tổ chức
               <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
@@ -599,12 +599,12 @@
               </svg>
             </div>
             <span class="text-xs text-text-muted font-semibold tracking-wider uppercase mb-2">BẢO MẬT &amp; CHỐNG GIẢ MẠO</span>
-            <h3 class="text-lg font-bold font-display text-text group-hover:text-primary transition-colors mb-2">Xác Thực Chứng Thư Trực Tuyến</h3>
+            <h3 class="text-lg font-bold font-display text-text group-hover:text-primary transition-colors mb-2">Hồ Sơ Pháp Lý Doanh Nghiệp</h3>
             <p class="text-xs text-text-secondary mb-6 flex-grow leading-relaxed">
-              Mỗi chứng thư thẩm định giá đều có mã QR định danh duy nhất, cho phép đối tác kiểm tra tính pháp lý, người ký duyệt và thời hạn hiệu lực của chứng thư.
+              Minh bạch mọi giấy phép hoạt động đủ điều kiện hành nghề thẩm định giá của Bộ Tài chính và hệ thống quản trị rủi ro chuyên nghiệp.
             </p>
-            <NuxtLink to="/tra-cuu-chung-thu" class="inline-flex items-center text-primary font-bold text-xs uppercase tracking-wider hover:underline mt-auto gap-1">
-              Tra cứu chứng thư
+            <NuxtLink :to="localePath('/ho-so-phap-ly')" class="inline-flex items-center text-primary font-bold text-xs uppercase tracking-wider hover:underline mt-auto gap-1">
+              Xem hồ sơ pháp lý
               <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
               </svg>
@@ -748,10 +748,10 @@
             </a>
 
             <NuxtLink 
-              to="/cong-thong-tin" 
+              :to="localePath('/ho-so-nang-luc')" 
               class="w-full sm:w-auto px-8 py-4 bg-bg hover:bg-surface-muted text-text hover:text-primary text-xs font-bold uppercase tracking-wider rounded-full shadow-sm hover:shadow-corporate transition-all transform hover:-translate-y-0.5 inline-flex items-center justify-center gap-2 border border-black/5 dark:border-white/10"
             >
-              <span>Cổng Thông Tin Đối Tác</span>
+              <span>Hồ Sơ Năng Lực Đối Tác</span>
               <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
               </svg>

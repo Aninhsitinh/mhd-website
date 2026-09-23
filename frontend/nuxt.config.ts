@@ -65,7 +65,7 @@ export default defineNuxtConfig({
     strategy: 'prefix_except_default',
     defaultLocale: 'vi',
     locales: ['vi', 'en'],
-    vueI18n: './i18n.config.ts',
+    vueI18n: '../i18n/i18n.config.ts',
     detectBrowserLanguage: false
   },
   routeRules: {
@@ -84,8 +84,6 @@ export default defineNuxtConfig({
 
     // 3. Dynamic Interactive & Form Pages: SSR without cache
     '/lien-he': { ssr: true },
-    '/cong-thong-tin': { ssr: true },
-    '/tra-cuu-chung-thu': { ssr: true },
 
     // 4. API Endpoints: Strictly disable cache to ensure POST bodies & rate limits work properly
     '/api/**': { cache: false, cors: true },
