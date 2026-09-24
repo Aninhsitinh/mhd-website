@@ -24,9 +24,9 @@
         <div class="container mx-auto px-4 max-w-7xl relative z-10" data-aos="fade-up">
           <!-- Breadcrumbs -->
           <nav class="flex items-center gap-2 text-xs text-text-muted mb-4">
-            <NuxtLink :to="localePath('/')" class="hover:text-primary transition-colors">Trang chủ</NuxtLink>
+            <NuxtLink :to="localePath('/')" class="hover:text-primary transition-colors">{{ $t('nav.home') }}</NuxtLink>
             <span>/</span>
-            <NuxtLink :to="localePath('/tin-tuc')" class="hover:text-primary transition-colors">Tin tức</NuxtLink>
+            <NuxtLink :to="localePath('/tin-tuc')" class="hover:text-primary transition-colors">{{ $t('nav.news') || 'Tin tức' }}</NuxtLink>
             <span>/</span>
             <span class="text-primary font-medium">{{ getCategoryName(post) }}</span>
           </nav>
@@ -262,9 +262,9 @@ watchEffect(() => {
         {
           type: 'application/ld+json',
           children: JSON.stringify(getBreadcrumbSchema([
-            { name: 'Trang chủ', url: '/' },
-            { name: 'Tin tức & Nghiệp vụ', url: '/tin-tuc' },
-            { name: cleanTitle, url: `/tin-tuc/${post.value.slug || route.params.slug}` }
+            { name: t('nav.home') || 'Trang chủ', url: localePath('/') },
+            { name: t('nav.news') || 'Tin tức', url: localePath('/tin-tuc') },
+            { name: cleanTitle, url: localePath(`/tin-tuc/${post.value.slug || route.params.slug}`) }
           ]))
         }
       ]

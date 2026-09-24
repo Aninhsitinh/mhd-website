@@ -4,7 +4,7 @@
     <header class="pt-32 pb-16 bg-bg">
       <div class="container mx-auto px-4 max-w-5xl">
         <nav class="text-xs text-text-muted mb-3">
-          <NuxtLink to="/" class="hover:text-primary transition-colors">Trang chủ</NuxtLink>
+          <NuxtLink :to="localePath('/')" class="hover:text-primary transition-colors">{{ $t('nav.home') }}</NuxtLink>
           <span class="mx-2">/</span>
           <span class="text-text-secondary">{{ $t('nav.process') || 'Quy trình' }}</span>
         </nav>
@@ -96,7 +96,7 @@
         <h2 class="text-3xl font-bold text-text mb-6">{{ $t('process.cta_title') }}</h2>
         <p class="text-text-secondary mb-10 text-lg">{{ $t('process.cta_desc') }}</p>
         <div class="flex flex-wrap justify-center gap-4">
-          <NuxtLink to="/lien-he" class="px-8 py-3 bg-primary text-white font-bold rounded-full hover:bg-orange-600 transition-colors shadow-lg shadow-primary/30">{{ $t('process.cta_button') }}</NuxtLink>
+          <NuxtLink :to="localePath('/lien-he')" class="px-8 py-3 bg-primary text-white font-bold rounded-full hover:bg-orange-600 transition-colors shadow-lg shadow-primary/30">{{ $t('process.cta_button') }}</NuxtLink>
         </div>
       </div>
     </section>
@@ -106,9 +106,10 @@
 <script setup>
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { useScrollReveal } from '~/composables/useScrollReveal'
-import { useI18n } from '#imports'
+import { useI18n, useLocalePath } from '#imports'
 
 const { t } = useI18n()
+const localePath = useLocalePath()
 useScrollReveal()
 
 useHead({

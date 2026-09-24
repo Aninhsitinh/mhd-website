@@ -1,14 +1,14 @@
 <template>
   <NuxtLink 
     :to="`/tai-lieu/${doc.slug}`"
-    class="group flex flex-col h-full bg-surface rounded-3xl p-7 transition-all duration-500 shadow-corporate hover:shadow-2xl hover:-translate-y-1.5 relative overflow-hidden"
+    class="group flex flex-col h-full glass-card rounded-3xl p-7 transition-all duration-500 relative overflow-hidden border border-white/60 dark:border-white/10"
   >
     <!-- Top Header: Badge & Date / Category -->
     <div class="flex items-center justify-between gap-3 mb-5">
       <div class="flex items-center gap-1.5 flex-wrap">
         <span 
           class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-mono font-bold uppercase tracking-wider"
-          :class="isLegalDoc(doc) ? 'bg-primary/10 text-primary' : 'bg-surface-muted text-text-secondary'"
+          :class="isLegalDoc(doc) ? 'bg-primary/10 text-primary' : 'glass-pill text-text-secondary'"
         >
           <span class="w-1.5 h-1.5 rounded-full" :class="isLegalDoc(doc) ? 'bg-primary' : 'bg-text-muted'"></span>
           {{ getCategoryLabel(doc) }}
@@ -39,7 +39,7 @@
     <div class="flex items-start gap-4 mb-4">
       <div 
         class="w-12 h-12 rounded-2xl flex-shrink-0 flex items-center justify-center transition-all duration-300 group-hover:scale-105"
-        :class="isLegalDoc(doc) ? 'bg-primary text-white shadow-md' : 'bg-surface-muted text-primary'"
+        :class="isLegalDoc(doc) ? 'bg-primary text-white shadow-md' : 'glass-pill text-primary'"
       >
         <!-- Legal Scale / Document Icon -->
         <svg v-if="isLegalDoc(doc)" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -66,8 +66,8 @@
       {{ getCleanExcerpt(doc) }}
     </p>
 
-    <!-- Bottom Action Footer (Borderless) -->
-    <div class="pt-4 mt-auto flex items-center justify-between text-xs">
+    <!-- Bottom Action Footer (Clean hairline divider) -->
+    <div class="pt-4 mt-auto flex items-center justify-between text-xs border-t border-black/5 dark:border-white/10">
       <span class="text-[11px] text-text-muted font-medium flex items-center gap-1.5">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />

@@ -25,7 +25,7 @@ import * as echarts from 'echarts'
 // Restoring the original detailed GeoJSON (2.1MB) for high-definition map and islands
 import vietnamGeoJson from '~/assets/vietnam2.json'
 
-const { t, tm } = useI18n()
+const { t, tm, locale } = useI18n()
 const colorMode = useColorMode()
 const chartRef = ref(null)
 const errorMsg = ref('')
@@ -84,30 +84,61 @@ const getThemeConfig = (dark) => {
   }
 }
 
+// Fallback coordinates by index matching contact.branches order in i18n
+const branchCoordinatesByIndex = [
+  [105.8342, 21.0278], // 0: Hanoi
+  [105.6813, 18.6734], // 1: Nghe An
+  [108.2022, 16.0544], // 2: Da Nang
+  [109.2272, 13.7820], // 3: Binh Dinh
+  [109.1967, 12.2388], // 4: Khanh Hoa
+  [108.0382, 12.6667], // 5: Dak Lak
+  [106.8997, 11.8367], // 6: Binh Phuoc
+  [107.4714, 10.3936], // 7: Ba Ria - Vung Tau
+  [107.1243, 11.0333], // 8: Dong Nai
+  [106.4353, 9.7408],  // 9: Tra Vinh
+  [106.1150, 10.6364], // 10: Long An
+  [104.9167, 10.6167], // 11: An Giang
+  [105.7722, 10.1520]  // 12: Vinh Long
+]
+
 // Adjusted real coordinates with artificial spacing (jitter) to prevent overlap on the map
 const coordinateMap = {
+  // Vietnamese names
   "CHI NHÁNH HÀ NỘI": [105.8342, 21.0278],
   "CHI NHÁNH NGHỆ AN": [105.6813, 18.6734],
   "CHI NHÁNH ĐÀ NẴNG": [108.2022, 16.0544],
   "CHI NHÁNH BÌNH ĐỊNH": [109.2272, 13.7820],
   "CHI NHÁNH KHÁNH HOÀ": [109.1967, 12.2388],
   "CHI NHÁNH ĐĂKLĂK": [108.0382, 12.6667],
-  
-  // Southern cluster - offset to spread them out visually
-  "CHI NHÁNH BÌNH PHƯỚC": [106.8997, 11.8367], // Moved slightly North
-  "VPĐD ĐỒNG NAI": [107.1243, 11.0333], // Moved East
-  "CHI NHÁNH BÀ RỊA - VŨNG TÀU": [107.4714, 10.3936], // Moved South-East
-  "VPĐD LONG AN": [106.1150, 10.6364], // Moved West
-  "VPĐD TRÀ VINH": [106.4353, 9.7408], // Moved South
-  "VPĐD VĨNH LONG": [105.7722, 10.1520], // Moved West
-  "VPĐD AN GIANG": [104.9167, 10.6167], // Moved West
+  "CHI NHÁNH BÌNH PHƯỚC": [106.8997, 11.8367],
+  "CHI NHÁNH BÀ RỊA - VŨNG TÀU": [107.4714, 10.3936],
+  "VPĐD ĐỒNG NAI": [107.1243, 11.0333],
+  "VPĐD TRÀ VINH": [106.4353, 9.7408],
+  "VPĐD LONG AN": [106.1150, 10.6364],
+  "VPĐD AN GIANG": [104.9167, 10.6167],
+  "VPĐD VĨNH LONG": [105.7722, 10.1520],
+
+  // English names
+  "HANOI BRANCH": [105.8342, 21.0278],
+  "NGHE AN BRANCH": [105.6813, 18.6734],
+  "DA NANG BRANCH": [108.2022, 16.0544],
+  "BINH DINH BRANCH": [109.2272, 13.7820],
+  "KHANH HOA BRANCH": [109.1967, 12.2388],
+  "DAK LAK BRANCH": [108.0382, 12.6667],
+  "BINH PHUOC BRANCH": [106.8997, 11.8367],
+  "BA RIA - VUNG TAU BRANCH": [107.4714, 10.3936],
+  "DONG NAI REP. OFFICE": [107.1243, 11.0333],
+  "TRA VINH REP. OFFICE": [106.4353, 9.7408],
+  "LONG AN REP. OFFICE": [106.1150, 10.6364],
+  "AN GIANG REP. OFFICE": [104.9167, 10.6167],
+  "VINH LONG REP. OFFICE": [105.7722, 10.1520],
 }
 
 // Prepare data points from i18n
 const getMapData = () => {
   const rawBranches = tm('contact.branches') || []
-  const dataPoints = rawBranches.map(b => {
-    const coords = coordinateMap[b.name] || [106.6297, 10.8231]
+  const dataPoints = rawBranches.map((b, idx) => {
+    const coords = coordinateMap[b.name] || branchCoordinatesByIndex[idx] || [106.6297, 10.8231]
     return {
       name: b.name,
       value: coords.concat([100]), // [lng, lat, value/size]
@@ -119,7 +150,7 @@ const getMapData = () => {
   
   // Add HQ
   dataPoints.push({
-    name: "TRỤ SỞ CHÍNH (TP.HCM)",
+    name: t('contact.headquarters_map_title') || (locale.value === 'en' ? "HEADQUARTERS (HCMC)" : "TRỤ SỞ CHÍNH (TP.HCM)"),
     value: [106.6297, 10.8231, 200],
     address: t('contact.address'),
     phone: "028 3515 3516",
@@ -144,9 +175,26 @@ const updateMapTheme = () => {
   })
 }
 
+const updateMapData = () => {
+  if (!chart) return
+  const mapData = getMapData()
+  chart.setOption({
+    series: [
+      {
+        data: mapData
+      }
+    ]
+  })
+}
+
 // Watch theme change
 watch(isDark, () => {
   updateMapTheme()
+})
+
+// Watch language change
+watch(locale, () => {
+  updateMapData()
 })
 
 const handleResize = () => {

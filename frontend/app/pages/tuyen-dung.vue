@@ -4,18 +4,18 @@
     <header class="pt-32 pb-16 bg-bg">
       <div class="container mx-auto px-4 max-w-6xl">
         <nav class="text-xs text-text-muted mb-3 flex items-center gap-2">
-          <NuxtLink to="/" class="hover:text-primary transition-colors">Trang chủ</NuxtLink>
+          <NuxtLink :to="localePath('/')" class="hover:text-primary transition-colors">{{ $t('nav.home') }}</NuxtLink>
           <span>/</span>
           <span class="text-text-secondary">{{ $t('nav.careers') || 'Tuyển dụng' }}</span>
         </nav>
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-6">
           <div>
             <h1 class="text-3xl md:text-4xl font-display font-bold text-text leading-tight uppercase">{{ $t('careers.title') }}</h1>
-            <p class="text-text-secondary max-w-xl mt-3 text-base leading-relaxed">Gia nhập đội ngũ thẩm định viên và chuyên viên định giá tài sản chuyên nghiệp tại MHD Valuation.</p>
+            <p class="text-text-secondary max-w-xl mt-3 text-base leading-relaxed">{{ $t('careers.subtitle') }}</p>
           </div>
           <div class="flex items-center gap-3 shrink-0">
-            <NuxtLink to="/tuyen-dung" class="px-5 py-2.5 rounded-full bg-primary text-white text-xs font-bold uppercase tracking-wider shadow-corporate transition-all">{{ $t('careers.nav_submit') }}</NuxtLink>
-            <NuxtLink to="/co-hoi-nghe-nghiep" class="px-5 py-2.5 rounded-full bg-surface text-text hover:text-primary shadow-sm hover:shadow-corporate transition-all text-xs font-bold uppercase tracking-wider">{{ $t('careers.nav_opportunities') }}</NuxtLink>
+            <NuxtLink :to="localePath('/tuyen-dung')" class="px-5 py-2.5 rounded-full bg-primary text-white text-xs font-bold uppercase tracking-wider shadow-corporate transition-all">{{ $t('careers.nav_submit') }}</NuxtLink>
+            <NuxtLink :to="localePath('/co-hoi-nghe-nghiep')" class="px-5 py-2.5 rounded-full bg-surface text-text hover:text-primary shadow-sm hover:shadow-corporate transition-all text-xs font-bold uppercase tracking-wider">{{ $t('careers.nav_opportunities') }}</NuxtLink>
           </div>
         </div>
       </div>
@@ -115,9 +115,10 @@ import {
   SparklesIcon 
 } from '@heroicons/vue/24/outline'
 import { computed } from 'vue'
-import { useI18n } from '#imports'
+import { useI18n, useLocalePath } from '#imports'
 
 const { t, tm } = useI18n()
+const localePath = useLocalePath()
 
 const benefitIcons = [GiftIcon, HeartIcon, UserGroupIcon, AcademicCapIcon, CalendarDaysIcon, SparklesIcon]
 

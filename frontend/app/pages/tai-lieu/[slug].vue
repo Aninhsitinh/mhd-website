@@ -9,9 +9,9 @@
         <div class="max-w-5xl mx-auto">
           <!-- Breadcrumb -->
           <div class="flex items-center gap-2 text-sm text-text-secondary mb-8 print:hidden">
-            <NuxtLink :to="localePath('/')" class="hover:text-primary transition-colors">Trang chủ</NuxtLink>
+            <NuxtLink :to="localePath('/')" class="hover:text-primary transition-colors">{{ $t('nav.home') }}</NuxtLink>
             <span>/</span>
-            <NuxtLink :to="localePath('/tai-lieu')" class="hover:text-primary transition-colors">Tài liệu</NuxtLink>
+            <NuxtLink :to="localePath('/tai-lieu')" class="hover:text-primary transition-colors">{{ $t('nav.documents') || 'Tài liệu' }}</NuxtLink>
             <span>/</span>
             <span class="text-text line-clamp-1">{{ post.title }}</span>
           </div>

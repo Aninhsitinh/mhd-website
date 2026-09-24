@@ -4,13 +4,13 @@
     <header class="pt-32 pb-16 bg-bg">
       <div class="container mx-auto px-4 max-w-5xl">
         <nav class="text-xs text-text-muted mb-3 flex items-center gap-2">
-          <NuxtLink to="/" class="hover:text-primary transition-colors">Trang chủ</NuxtLink>
+          <NuxtLink :to="localePath('/')" class="hover:text-primary transition-colors">{{ $t('nav.home') }}</NuxtLink>
           <span>/</span>
-          <span class="text-text-secondary">{{ $t('nav.legal') || 'Hồ sơ pháp lý' }}</span>
+          <span class="text-text-secondary">{{ $t('legal.title') }}</span>
         </nav>
-        <h1 class="text-3xl md:text-4xl font-display font-bold text-text leading-tight uppercase">Hồ Sơ Pháp Lý</h1>
+        <h1 class="text-3xl md:text-4xl font-display font-bold text-text leading-tight uppercase">{{ $t('legal.title') }}</h1>
         <p class="text-text-secondary max-w-xl mt-3 text-base leading-relaxed">
-          MHD Valuation hoạt động dựa trên cơ sở pháp lý minh bạch, được cấp phép đầy đủ bởi Bộ Tài chính và các cơ quan quản lý nhà nước có thẩm quyền.
+          {{ $t('legal.subtitle') }}
         </p>
       </div>
     </header>
@@ -24,7 +24,7 @@
           <div class="bg-surface rounded-2xl p-7 shadow-corporate hover:shadow-corporate-hover transition-all duration-300 group flex flex-col">
             <div class="aspect-[3/4] rounded-xl bg-bg overflow-hidden mb-6 relative shadow-inner">
               <!-- Carousel Images -->
-              <img :src="docs[0].images[docs[0].current]" :alt="docs[0].title" class="w-full h-full object-cover transition-opacity duration-300 cursor-pointer" @click="openLightbox(0, docs[0].current)">
+              <img :src="docs[0].images[docs[0].current]" :alt="$t('legal.doc1_title')" class="w-full h-full object-cover transition-opacity duration-300 cursor-pointer" @click="openLightbox(0, docs[0].current)">
               
               <!-- Carousel Controls -->
               <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-3 bg-black/50 backdrop-blur-sm rounded-full px-4 py-2">
@@ -44,9 +44,9 @@
                 </div>
               </div>
             </div>
-            <h3 class="text-xl font-bold text-text mb-3 group-hover:text-primary transition-colors">Giấy chứng nhận đăng ký doanh nghiệp</h3>
+            <h3 class="text-xl font-bold text-text mb-3 group-hover:text-primary transition-colors">{{ $t('legal.doc1_title') }}</h3>
             <p class="text-text-secondary text-sm line-clamp-3">
-              Giấy chứng nhận đăng ký doanh nghiệp Công ty TNHH Thẩm định giá MHD do Sở KH&amp;ĐT TP.HCM cấp, mã số doanh nghiệp 0312231570.
+              {{ $t('legal.doc1_desc') }}
             </p>
           </div>
 
@@ -54,7 +54,7 @@
           <div class="bg-surface rounded-2xl p-7 shadow-corporate hover:shadow-corporate-hover transition-all duration-300 group flex flex-col">
             <div class="aspect-[3/4] rounded-xl bg-bg overflow-hidden mb-6 relative shadow-inner">
               <!-- Carousel Images -->
-              <img :src="docs[1].images[docs[1].current]" :alt="docs[1].title" class="w-full h-full object-cover transition-opacity duration-300 cursor-pointer" @click="openLightbox(1, docs[1].current)">
+              <img :src="docs[1].images[docs[1].current]" :alt="$t('legal.doc2_title')" class="w-full h-full object-cover transition-opacity duration-300 cursor-pointer" @click="openLightbox(1, docs[1].current)">
               
               <!-- Carousel Controls -->
               <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-3 bg-black/50 backdrop-blur-sm rounded-full px-4 py-2">
@@ -74,9 +74,9 @@
                 </div>
               </div>
             </div>
-            <h3 class="text-xl font-bold text-text mb-3 group-hover:text-primary transition-colors">Giấy chứng nhận đủ điều kiện kinh doanh</h3>
+            <h3 class="text-xl font-bold text-text mb-3 group-hover:text-primary transition-colors">{{ $t('legal.doc2_title') }}</h3>
             <p class="text-text-secondary text-sm line-clamp-3">
-              Cấp bởi Bộ Tài chính, mã số 056/TĐG. Chứng nhận MHD đáp ứng đủ các điều kiện kinh doanh dịch vụ thẩm định giá.
+              {{ $t('legal.doc2_desc') }}
             </p>
           </div>
 
@@ -129,13 +129,18 @@
 
 <script setup>
 import { ref, reactive, computed } from 'vue'
-import { useHead } from '#imports'
+import { useHead, useSeoMeta, useI18n, useLocalePath } from '#imports'
+
+const { t } = useI18n()
+const localePath = useLocalePath()
 
 useHead({
-  title: 'Hồ sơ pháp lý - MHD Valuation',
-  meta: [
-    { name: 'description', content: 'Hồ sơ pháp lý, giấy phép hoạt động và chứng nhận đủ điều kiện kinh doanh của MHD Valuation.' }
-  ]
+  title: computed(() => t('legal.meta_title'))
+})
+
+useSeoMeta({
+  title: computed(() => t('legal.meta_title')),
+  description: computed(() => t('legal.meta_desc'))
 })
 
 const docs = reactive([

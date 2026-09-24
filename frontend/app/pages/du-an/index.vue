@@ -4,7 +4,7 @@
     <header class="pt-32 pb-12 bg-bg">
       <div class="container mx-auto px-4 max-w-7xl">
         <nav class="text-xs text-text-muted mb-4 flex items-center gap-2">
-          <NuxtLink :to="localePath('/')" class="hover:text-primary transition-colors">Trang chủ</NuxtLink>
+          <NuxtLink :to="localePath('/')" class="hover:text-primary transition-colors">{{ $t('nav.home') }}</NuxtLink>
           <span>/</span>
           <span class="text-text-secondary">{{ $t('nav.projects') || 'Dự án' }}</span>
         </nav>

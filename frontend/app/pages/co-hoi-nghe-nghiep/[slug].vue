@@ -8,9 +8,9 @@
       <div class="container mx-auto px-4 max-w-5xl">
         <!-- Breadcrumb -->
         <nav class="flex items-center gap-2 text-xs text-text-muted mb-8">
-          <NuxtLink to="/" class="hover:text-primary transition-colors">Trang chủ</NuxtLink>
+          <NuxtLink :to="localePath('/')" class="hover:text-primary transition-colors">{{ $t('nav.home') }}</NuxtLink>
           <span>/</span>
-          <NuxtLink to="/co-hoi-nghe-nghiep" class="hover:text-primary transition-colors">Cơ hội nghề nghiệp</NuxtLink>
+          <NuxtLink :to="localePath('/co-hoi-nghe-nghiep')" class="hover:text-primary transition-colors">{{ $t('careers.nav_opportunities') }}</NuxtLink>
           <span>/</span>
           <span class="text-primary font-medium line-clamp-1" v-html="job.title"></span>
         </nav>
@@ -164,8 +164,10 @@
 import { useRoute } from 'vue-router'
 import { ref, computed, watchEffect } from 'vue'
 import { cleanLegacyHtml } from '~/utils/htmlSanitizer'
+import { useLocalePath } from '#imports'
 
 const route = useRoute()
+const localePath = useLocalePath()
 const carouselRef = ref(null)
 
 const scrollCarousel = (direction) => {

@@ -2,7 +2,7 @@
   <NuxtLink 
     :to="getPostLink(post)" 
     data-aos="fade-up" 
-    class="group flex flex-col h-full bg-surface rounded-3xl overflow-hidden transition-all duration-500 shadow-corporate hover:shadow-2xl hover:-translate-y-1.5 relative"
+    class="group flex flex-col h-full glass-card rounded-3xl overflow-hidden transition-all duration-500 hover:-translate-y-1.5 relative border border-white/60 dark:border-white/10"
   >
     <!-- Top Image Container with 16:10 Ratio -->
     <div class="relative aspect-[16/10] overflow-hidden bg-surface-muted">
@@ -38,8 +38,8 @@
       </div>
     </div>
 
-    <!-- Content Body (Clean & Borderless) -->
-    <div class="p-6 flex flex-col flex-grow bg-surface">
+    <!-- Content Body -->
+    <div class="p-6 flex flex-col flex-grow bg-transparent">
       <h3 
         class="text-base font-bold text-text mb-2.5 group-hover:text-primary transition-colors line-clamp-2 leading-snug tracking-tight" 
         v-html="post.title"
@@ -50,7 +50,7 @@
         v-html="post.excerpt"
       ></p>
       
-      <div class="pt-3 flex items-center justify-between text-xs font-bold mt-auto bg-surface">
+      <div class="pt-3 flex items-center justify-between text-xs font-bold mt-auto border-t border-black/5 dark:border-white/10">
         <span class="text-[11px] text-text-muted uppercase tracking-wider font-semibold font-mono">Bản tin thị trường</span>
         <span class="text-primary group-hover:translate-x-1.5 transition-transform flex items-center gap-1">
           Đọc bài viết

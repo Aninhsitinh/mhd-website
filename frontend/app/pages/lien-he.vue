@@ -1,10 +1,16 @@
 <template>
-  <div class="min-h-screen bg-bg">
+  <div class="min-h-screen bg-bg relative overflow-hidden">
+    <!-- Ambient Diffused Glow -->
+    <div class="ambient-glow-container">
+      <div class="ambient-orb ambient-orb-orange w-96 h-96 -top-20 -left-20"></div>
+      <div class="ambient-orb ambient-orb-navy w-[550px] h-[550px] top-1/4 -right-20"></div>
+    </div>
+
     <!-- Corporate Header -->
-    <header class="pt-32 pb-16 bg-bg">
+    <header class="pt-32 pb-16 bg-transparent relative z-10">
       <div class="container mx-auto px-4 max-w-6xl">
         <nav class="text-xs text-text-muted mb-3">
-          <NuxtLink :to="localePath('/')" class="hover:text-primary transition-colors">Trang chủ</NuxtLink>
+          <NuxtLink :to="localePath('/')" class="hover:text-primary transition-colors">{{ $t('nav.home') }}</NuxtLink>
           <span class="mx-2">/</span>
           <span class="text-text-secondary">{{ $t('nav.contact') || 'Liên hệ' }}</span>
         </nav>
@@ -13,19 +19,19 @@
     </header>
 
     <!-- Main Content -->
-    <div class="container mx-auto px-4 pb-20 md:pb-28">
+    <div class="container mx-auto px-4 pb-20 md:pb-28 relative z-10">
       <div class="max-w-6xl mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
           
-          <!-- Contact Info -->
-          <div class="bg-surface rounded-2xl p-8 sm:p-10 shadow-corporate flex flex-col justify-between border border-black/5 dark:border-white/5">
+          <!-- Contact Info (Frosted Glass Panel) -->
+          <div class="glass-card rounded-3xl p-8 sm:p-10 shadow-2xl flex flex-col justify-between border border-white/60 dark:border-white/10">
             <div>
               <h2 class="text-2xl md:text-3xl font-bold text-primary mb-8">{{ $t('contact.company_name') }}</h2>
               
               <div class="space-y-6">
                 <!-- Address -->
                 <div class="flex items-start gap-4 group">
-                  <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors shrink-0">
+                  <div class="w-12 h-12 rounded-2xl glass-pill flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all shrink-0 shadow-sm">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -39,7 +45,7 @@
 
                 <!-- Hotline -->
                 <div class="flex items-start gap-4 group">
-                  <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors shrink-0">
+                  <div class="w-12 h-12 rounded-2xl glass-pill flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all shrink-0 shadow-sm">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                     </svg>
@@ -52,7 +58,7 @@
 
                 <!-- Email -->
                 <div class="flex items-start gap-4 group">
-                  <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors shrink-0">
+                  <div class="w-12 h-12 rounded-2xl glass-pill flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all shrink-0 shadow-sm">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
@@ -65,7 +71,7 @@
 
                 <!-- Tax -->
                 <div class="flex items-start gap-4 group">
-                  <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors shrink-0">
+                  <div class="w-12 h-12 rounded-2xl glass-pill flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all shrink-0 shadow-sm">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 14l6-6m-5.5.5h.01m4.99 5h.01M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16l3.5-2 3.5 2 3.5-2 3.5 2zM10 8.5a.5.5 0 11-1 0 .5.5 0 011 0zm5 5a.5.5 0 11-1 0 .5.5 0 011 0z" />
                     </svg>
@@ -78,7 +84,7 @@
 
                 <!-- Bank -->
                 <div class="flex items-start gap-4 group">
-                  <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors shrink-0">
+                  <div class="w-12 h-12 rounded-2xl glass-pill flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all shrink-0 shadow-sm">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z" />
                     </svg>
@@ -92,8 +98,8 @@
             </div>
           </div>
 
-          <!-- Contact Form -->
-          <div class="bg-surface rounded-2xl p-8 sm:p-10 shadow-corporate border border-black/5 dark:border-white/5">
+          <!-- Contact Form (Frosted Glass Panel) -->
+          <div class="glass-card rounded-3xl p-8 sm:p-10 shadow-2xl border border-white/60 dark:border-white/10">
             <h2 class="text-2xl font-bold text-text mb-6">{{ $t('contact.form.title') }}</h2>
             
             <form @submit.prevent="submitForm" class="space-y-4">
@@ -103,7 +109,7 @@
                   type="text" 
                   v-model="formData.name"
                   :placeholder="$t('contact.form.name_placeholder')" 
-                  class="w-full px-4 py-3.5 min-h-[48px] text-base sm:text-sm rounded-xl bg-bg text-text shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all placeholder:text-text-muted"
+                  class="w-full px-4 py-3.5 min-h-[48px] text-base sm:text-sm rounded-2xl glass-input text-text placeholder:text-text-muted focus:outline-none transition-all"
                   :class="{ 'ring-2 ring-red-500': errors.name }"
                 />
               </div>
@@ -115,7 +121,7 @@
                     type="email" 
                     v-model="formData.email"
                     :placeholder="$t('contact.form.email_placeholder')" 
-                    class="w-full px-4 py-3.5 min-h-[48px] text-base sm:text-sm rounded-xl bg-bg text-text shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all placeholder:text-text-muted"
+                    class="w-full px-4 py-3.5 min-h-[48px] text-base sm:text-sm rounded-2xl glass-input text-text placeholder:text-text-muted focus:outline-none transition-all"
                     :class="{ 'ring-2 ring-red-500': errors.email }"
                   />
                 </div>
@@ -124,7 +130,7 @@
                     type="tel" 
                     v-model="formData.phone"
                     :placeholder="$t('contact.form.phone_placeholder')" 
-                    class="w-full px-4 py-3.5 min-h-[48px] text-base sm:text-sm rounded-xl bg-bg text-text shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all placeholder:text-text-muted"
+                    class="w-full px-4 py-3.5 min-h-[48px] text-base sm:text-sm rounded-2xl glass-input text-text placeholder:text-text-muted focus:outline-none transition-all"
                     :class="{ 'ring-2 ring-red-500': errors.phone }"
                   />
                 </div>
@@ -136,7 +142,7 @@
                   v-model="formData.message"
                   :placeholder="$t('contact.form.message_placeholder')" 
                   rows="4"
-                  class="w-full px-4 py-3.5 text-base sm:text-sm rounded-xl bg-bg text-text shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all resize-none placeholder:text-text-muted"
+                  class="w-full px-4 py-3.5 text-base sm:text-sm rounded-2xl glass-input text-text placeholder:text-text-muted focus:outline-none transition-all resize-none"
                   :class="{ 'ring-2 ring-red-500': errors.message }"
                 ></textarea>
               </div>
@@ -145,7 +151,7 @@
               <button 
                 type="submit" 
                 :disabled="isSubmitting"
-                class="w-full py-4 bg-primary text-white font-bold rounded-xl hover:bg-orange-600 transition-all shadow-corporate hover:shadow-corporate-glow transform hover:-translate-y-0.5 active:scale-[0.99] flex justify-center items-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
+                class="w-full py-4 bg-primary text-white font-bold rounded-full hover:bg-orange-600 transition-all shadow-corporate hover:shadow-corporate-glow transform hover:-translate-y-0.5 active:scale-[0.99] flex justify-center items-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
               >
                 <svg v-if="isSubmitting" class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                   <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
@@ -161,14 +167,14 @@
     </div>
     
 
-    <!-- Branches Section -->
-    <div class="container mx-auto px-4 pb-16 md:pb-20">
+    <!-- Branches Section (Frosted Glass Grid) -->
+    <div class="container mx-auto px-4 pb-16 md:pb-20 relative z-10">
       <div class="text-center mb-12 md:mb-16">
         <h2 class="text-2xl md:text-4xl font-bold text-text">{{ $t('contact.branch_system') }}</h2>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto">
-        <div v-for="(branch, index) in branches" :key="index" class="bg-surface rounded-2xl p-6 shadow-corporate hover:shadow-corporate-hover transition-all duration-300 group flex flex-col">
+        <div v-for="(branch, index) in branches" :key="index" class="glass-card rounded-3xl p-6 transition-all duration-300 group flex flex-col border border-white/60 dark:border-white/10 hover:-translate-y-1">
           <h3 class="text-xl font-bold text-primary mb-4 pb-1 transition-colors">{{ branch.name }}</h3>
           
           <div class="space-y-4 flex-1 flex flex-col justify-between">
@@ -188,7 +194,7 @@
         </div>
       </div>
 
-      <div class="max-w-4xl mx-auto mt-16 p-6 bg-surface shadow-corporate rounded-2xl">
+      <div class="max-w-4xl mx-auto mt-16 p-6 glass-card shadow-corporate rounded-3xl border border-white/60 dark:border-white/10">
         <p class="text-sm text-text-secondary italic leading-relaxed text-center">
           <strong class="text-text">{{ $t('contact.notice') }}</strong> {{ $t('contact.notice_desc') }}
         </p>
@@ -331,8 +337,8 @@ useHead({
     {
       type: 'application/ld+json',
       children: JSON.stringify(getBreadcrumbSchema([
-        { name: 'Trang chủ', url: '/' },
-        { name: 'Liên hệ', url: '/lien-he' }
+        { name: t('nav.home') || 'Trang chủ', url: localePath('/') },
+        { name: t('nav.contact') || 'Liên hệ', url: localePath('/lien-he') }
       ]))
     }
   ]

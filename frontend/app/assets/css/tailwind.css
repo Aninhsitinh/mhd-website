@@ -4,29 +4,29 @@
 
 @layer base {
   :root {
-    /* Light Theme (MHD Corporate) */
-    --color-bg: 244 242 238; /* Warm Paper: #F4F2EE */
+    /* Light Theme (Frosted Glass Minimalism) */
+    --color-bg: 248 250 252; /* Crisp Luminous Slate-50: #F8FAFC */
     --color-surface: 255 255 255; /* White: #FFFFFF */
-    --color-border: 63 69 71; /* Graphite with opacity for borders */
-    --color-text: 17 24 39; /* Deep Solid Black for text headings & body: #111827 */
-    --color-text-secondary: 31 41 55; /* Clear Dark Slate for readable paragraph content: #1F2937 */
-    --color-text-muted: 100 116 139; /* Muted gray for small metadata: #64748B */
+    --color-border: 226 232 240; /* Refined Slate-200: #E2E8F0 */
+    --color-text: 15 23 42; /* Pure Navy/Slate-900: #0F172A */
+    --color-text-secondary: 51 65 85; /* Slate-700: #334155 */
+    --color-text-muted: 100 116 139; /* Slate-500: #64748B */
     --color-primary: 236 74 0; /* MHD Orange: #EC4A00 */
     --color-primary-hover: 189 57 0; /* Orange Dark: #BD3900 */
-    --color-hero: 63 69 71; /* Graphite: #3F4547 */
+    --color-hero: 15 23 42; /* Deep Navy */
   }
 
   .dark {
-    /* Dark Theme (Adapted for MHD Corporate) */
-    --color-bg: 24 33 36; /* Dark background: #182124 */
-    --color-surface: 31 41 44; /* Dark Surface: #1F292C */
-    --color-border: 244 242 238; /* Warm Paper with opacity for borders */
-    --color-text: 241 245 249; /* Crisp Light Gray/White for headings on dark: #F1F5F9 */
-    --color-text-secondary: 203 213 225; /* Soft Muted Slate Gray for content on dark: #CBD5E1 */
+    /* Dark Theme (Obsidian Glass) */
+    --color-bg: 11 15 25; /* Deep Obsidian Slate: #0B0F19 */
+    --color-surface: 17 24 39; /* Dark Slate Surface: #111827 */
+    --color-border: 51 65 85; /* Slate-700 border */
+    --color-text: 248 250 252; /* Crisp Light Gray/White: #F8FAFC */
+    --color-text-secondary: 203 213 225; /* Soft Muted Slate: #CBD5E1 */
     --color-text-muted: 148 163 184; /* Soft slate gray: #94A3B8 */
     --color-primary: 236 74 0; /* MHD Orange */
     --color-primary-hover: 189 57 0; /* Orange Dark */
-    --color-hero: 244 242 238; /* Warm Paper inverse */
+    --color-hero: 248 250 252; /* Crisp White inverse */
   }
 
   html {
@@ -268,7 +268,6 @@
   padding-left: 1.5rem;
   margin-top: 0.5rem;
   margin-bottom: 1.25rem;
-  space-y: 0.5rem;
 }
 
 .rich-content ol,
@@ -483,4 +482,133 @@
 }
 .rich-table-wrapper::-webkit-scrollbar-thumb:hover {
   background: rgba(var(--color-primary), 0.6);
+}
+
+/* ==========================================================================
+   Frosted Glass & Minimalism Utility Engine
+   Precision blur, specular reflections, ambient lighting, and micro-interactions
+   ========================================================================== */
+
+/* 1. Glass Panel (Static structural container) */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.04), inset 0 1px 1px 0 rgba(255, 255, 255, 0.8);
+}
+.dark .glass-panel {
+  background: rgba(17, 24, 39, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.35), inset 0 1px 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* 2. Glass Card (Interactive card with subtle 3D lift & glow) */
+.glass-card {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  box-shadow: 0 8px 30px -4px rgba(15, 23, 42, 0.04), inset 0 1px 1px 0 rgba(255, 255, 255, 0.85);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.dark .glass-card {
+  background: rgba(17, 24, 39, 0.68);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 30px -4px rgba(0, 0, 0, 0.3), inset 0 1px 1px 0 rgba(255, 255, 255, 0.12);
+}
+.glass-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(236, 74, 0, 0.35);
+  box-shadow: 0 20px 40px -8px rgba(15, 23, 42, 0.08), inset 0 1px 1px 0 rgba(255, 255, 255, 1);
+}
+.dark .glass-card:hover {
+  border-color: rgba(236, 74, 0, 0.45);
+  box-shadow: 0 20px 40px -8px rgba(0, 0, 0, 0.5), inset 0 1px 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* 3. Glass Header (Ultra-clean floating frosted bar) */
+.glass-header {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(20px) saturate(190%);
+  -webkit-backdrop-filter: blur(20px) saturate(190%);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+}
+.dark .glass-header {
+  background: rgba(11, 15, 25, 0.82);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* 4. Glass Pill (Badges, Category filters, subtle toggles) */
+.glass-pill {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 2px 10px 0 rgba(15, 23, 42, 0.03);
+  transition: all 0.25s ease;
+}
+.dark .glass-pill {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2);
+}
+.glass-pill:hover {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(236, 74, 0, 0.3);
+}
+.dark .glass-pill:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(236, 74, 0, 0.4);
+}
+
+/* 5. Glass Input & Controls */
+.glass-input {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  transition: all 0.25s ease;
+}
+.dark .glass-input {
+  background: rgba(17, 24, 39, 0.7);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+.glass-input:focus {
+  background: #ffffff;
+  border-color: rgb(var(--color-primary));
+  box-shadow: 0 0 0 3px rgba(236, 74, 0, 0.15);
+}
+.dark .glass-input:focus {
+  background: rgb(17 24 39);
+  border-color: rgb(var(--color-primary));
+  box-shadow: 0 0 0 3px rgba(236, 74, 0, 0.25);
+}
+
+/* 6. Ambient Diffused Lighting (Underlying glowing mesh for glass refraction) */
+.ambient-glow-container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+.ambient-orb {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(80px);
+  opacity: 0.6;
+  pointer-events: none;
+}
+.ambient-orb-orange {
+  background: radial-gradient(circle, rgba(236, 74, 0, 0.15) 0%, rgba(236, 74, 0, 0) 70%);
+}
+.ambient-orb-navy {
+  background: radial-gradient(circle, rgba(15, 23, 42, 0.08) 0%, rgba(15, 23, 42, 0) 70%);
+}
+.dark .ambient-orb-orange {
+  background: radial-gradient(circle, rgba(236, 74, 0, 0.22) 0%, rgba(236, 74, 0, 0) 70%);
+}
+.dark .ambient-orb-navy {
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.12) 0%, rgba(56, 189, 248, 0) 70%);
 }

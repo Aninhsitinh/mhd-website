@@ -1,17 +1,23 @@
 <template>
-  <div class="min-h-screen bg-bg">
+  <div class="min-h-screen bg-bg relative overflow-hidden">
+    <!-- Ambient Diffused Glow for Document Library -->
+    <div class="ambient-glow-container">
+      <div class="ambient-orb ambient-orb-orange w-96 h-96 -top-24 -left-20"></div>
+      <div class="ambient-orb ambient-orb-navy w-[500px] h-[500px] top-1/3 -right-24"></div>
+    </div>
+
     <!-- Editorial Header: Archive & Standard Repository -->
-    <header class="pt-32 pb-16 bg-bg notranslate">
+    <header class="pt-32 pb-16 bg-transparent notranslate relative z-10">
       <div class="container mx-auto px-4 max-w-6xl">
         <nav class="text-xs text-text-muted mb-4 flex items-center gap-2">
-          <NuxtLink :to="localePath('/')" class="hover:text-primary transition-colors">Trang chủ</NuxtLink>
+          <NuxtLink :to="localePath('/')" class="hover:text-primary transition-colors">{{ $t('nav.home') }}</NuxtLink>
           <span>/</span>
           <span class="text-primary font-medium">{{ $t('nav.documents') || 'Tài liệu' }}</span>
         </nav>
         
         <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div class="max-w-2xl">
-            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-primary/10 text-primary mb-3">
+            <span class="inline-flex items-center px-3.5 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-primary/10 text-primary mb-3.5">
               Kho Lưu Trữ Pháp Quy &amp; Tiêu Chuẩn Thẩm Định Giá
             </span>
             <h1 class="text-3xl md:text-5xl font-display font-bold text-text leading-tight uppercase">
@@ -22,13 +28,13 @@
             </p>
           </div>
 
-          <!-- Quick Stats / Badges -->
+          <!-- Quick Stats / Badges (Frosted Glass Island) -->
           <div class="flex items-center gap-3">
-            <div class="p-4 rounded-2xl bg-surface shadow-corporate text-center min-w-[100px] border border-black/5 dark:border-white/5">
+            <div class="p-4 rounded-3xl glass-card text-center min-w-[110px] border border-white/60 dark:border-white/10 shadow-lg">
               <div class="text-2xl font-bold font-display text-primary">{{ posts?.length || 10 }}</div>
               <div class="text-xs text-text-muted uppercase font-medium mt-0.5">Văn bản số hóa</div>
             </div>
-            <div class="p-4 rounded-2xl bg-surface shadow-corporate text-center min-w-[100px] border border-black/5 dark:border-white/5">
+            <div class="p-4 rounded-3xl glass-card text-center min-w-[110px] border border-white/60 dark:border-white/10 shadow-lg">
               <div class="text-2xl font-bold font-display text-emerald-500">100%</div>
               <div class="text-xs text-text-muted uppercase font-medium mt-0.5">Chuẩn NĐ 30/2020</div>
             </div>
@@ -38,20 +44,20 @@
     </header>
 
     <!-- Main Repository Section -->
-    <section class="py-12 bg-bg notranslate">
+    <section class="py-12 bg-transparent notranslate relative z-10">
       <div class="container mx-auto px-4 max-w-6xl">
         
         <!-- Controls Bar: Category Filter Tabs & Live Search -->
         <div class="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4 mb-10">
           
-          <!-- Category Filter Tabs (Borderless Pills) -->
+          <!-- Category Filter Tabs (Frosted Glass Pills) -->
           <div class="flex flex-wrap items-center gap-2">
             <button 
               v-for="tab in categories" 
               :key="tab.id"
               @click="activeCategory = tab.id"
-              class="px-5 py-2.5 rounded-full font-bold text-xs uppercase tracking-wider transition-all duration-300 border border-black/5 dark:border-white/5"
-              :class="activeCategory === tab.id ? 'bg-primary text-white shadow-corporate' : 'bg-surface text-text-secondary hover:text-primary shadow-sm'"
+              class="px-5 py-2.5 rounded-full font-bold text-xs uppercase tracking-wider transition-all duration-300"
+              :class="activeCategory === tab.id ? 'bg-primary text-white shadow-corporate scale-[1.02]' : 'glass-pill text-text-secondary hover:text-primary'"
             >
               {{ tab.name }}
               <span class="ml-1.5 opacity-70 text-[10px]">
@@ -60,13 +66,13 @@
             </button>
           </div>
 
-          <!-- Live Search Input (Borderless Floating Surface) -->
+          <!-- Live Search Input (Frosted Glass Input) -->
           <div class="relative min-w-[260px] md:w-72">
             <input 
               v-model="searchQuery" 
               type="text" 
               placeholder="Tìm số hiệu, tên văn bản..." 
-              class="w-full pl-10 pr-4 py-2.5 rounded-full bg-surface shadow-corporate text-xs text-text placeholder-text-muted focus:outline-none focus:ring-2 focus:ring-primary transition-all"
+              class="w-full pl-10 pr-4 py-2.5 rounded-full glass-input text-xs text-text placeholder-text-muted focus:outline-none focus:ring-2 focus:ring-primary transition-all shadow-sm"
             />
             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-text-muted absolute left-3.5 top-1/2 -translate-y-1/2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -84,18 +90,18 @@
 
         <!-- Documents Loading State with Shimmer -->
         <div v-if="pending" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div v-for="i in 6" :key="i" class="bg-surface rounded-3xl p-6 shadow-corporate skeleton-shimmer flex flex-col justify-between h-64">
+          <div v-for="i in 6" :key="i" class="glass-card rounded-3xl p-6 shadow-corporate skeleton-shimmer flex flex-col justify-between h-64 border border-white/60 dark:border-white/10">
             <div class="space-y-3">
               <div class="flex items-center justify-between">
-                <div class="w-10 h-10 rounded-xl bg-bg/80"></div>
-                <div class="h-4 bg-bg/80 rounded-full w-20"></div>
+                <div class="w-10 h-10 rounded-xl bg-black/5 dark:bg-white/5"></div>
+                <div class="h-4 bg-black/5 dark:bg-white/5 rounded-full w-20"></div>
               </div>
-              <div class="h-5 bg-bg/80 rounded-md w-full mt-4"></div>
-              <div class="h-4 bg-bg/80 rounded-md w-2/3"></div>
+              <div class="h-5 bg-black/5 dark:bg-white/5 rounded-md w-full mt-4"></div>
+              <div class="h-4 bg-black/5 dark:bg-white/5 rounded-md w-2/3"></div>
             </div>
             <div class="flex items-center justify-between pt-4">
-              <div class="h-3 bg-bg/80 rounded-md w-24"></div>
-              <div class="h-8 bg-bg/80 rounded-full w-24"></div>
+              <div class="h-3 bg-black/5 dark:bg-white/5 rounded-md w-24"></div>
+              <div class="h-8 bg-black/5 dark:bg-white/5 rounded-full w-24"></div>
             </div>
           </div>
         </div>
@@ -114,7 +120,7 @@
           <div v-if="visibleCount < filteredPosts.length" class="flex justify-center mt-10">
             <button 
               @click="loadMore" 
-              class="px-8 py-3.5 bg-surface rounded-full text-text hover:text-primary transition-all font-bold text-xs uppercase tracking-wider shadow-corporate hover:shadow-corporate-hover transform hover:-translate-y-0.5 inline-flex items-center gap-2"
+              class="px-8 py-3.5 glass-pill hover:bg-white/90 dark:hover:bg-white/10 rounded-full text-text hover:text-primary transition-all font-bold text-xs uppercase tracking-wider shadow-sm hover:shadow-corporate transform hover:-translate-y-0.5 inline-flex items-center gap-2"
             >
               Xem thêm tài liệu lưu trữ
               <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -125,8 +131,8 @@
         </div>
         
         <!-- Empty State -->
-        <div v-else class="text-center py-20 bg-surface rounded-3xl shadow-corporate max-w-xl mx-auto p-8">
-          <div class="w-16 h-16 rounded-full bg-surface-muted flex items-center justify-center mx-auto text-text-muted mb-4">
+        <div v-else class="text-center py-20 glass-card rounded-3xl max-w-xl mx-auto p-8 border border-white/60 dark:border-white/10">
+          <div class="w-16 h-16 rounded-full glass-pill flex items-center justify-center mx-auto text-text-muted mb-4">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
             </svg>

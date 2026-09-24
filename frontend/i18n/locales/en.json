@@ -11,7 +11,8 @@
     "language": "Language",
     "profile": "Company Profile",
     "legal": "Legal Documents",
-    "process": "Valuation Process"
+    "process": "Valuation Process",
+    "team": "Our Team"
   },
   "footer": {
     "about_title": "About MHD Valuation",
@@ -65,13 +66,183 @@
     "view_all_projects": "View all projects",
     "news_title": "News & <span class=\"text-primary\">Events</span>",
     "news_desc": "Update the latest market information and industry knowledge.",
-    "partners_title": "Trusted <span class=\"text-primary\">Partners</span>",
+    "partners_title": "Partnering With Banks & Leading Corporations",
     "partners_desc": "Accompanying hundreds of large enterprises and organizations nationwide.",
     "cta_title": "Need Valuation <span class=\"text-primary\">Consulting?</span>",
     "cta_desc": "Contact MHD Valuation now to receive professional advice and the fastest service quote.",
     "cta_button": "Request a Quote Now",
     "meta_title": "Home - MHD VALUATION COMPANY LIMITED",
-    "meta_desc": "MHD VALUATION COMPANY LIMITED provides professional valuation services in Vietnam."
+    "meta_desc": "MHD VALUATION COMPANY LIMITED provides professional valuation services in Vietnam.",
+    "hero_qualification": "QUALIFIED FOR PRACTICE UNDER MINISTRY OF FINANCE REGULATIONS",
+    "hero_heading_1": "Accurate, transparent valuation",
+    "hero_heading_2": "according to international standards",
+    "hero_sub": "MHD provides independent valuation services for enterprises, real estate, movables, and investment projects — strictly complying with Vietnamese & international standards, safeguarding investors and credit institutions.",
+    "hero_cta_valuation": "Request Asset Valuation",
+    "hero_cta_profile": "Corporate & Banking Profile",
+    "hero_stats_title": "CORPORATE CAPACITY",
+    "hero_stats_period": "Cumulative 2010 – Present",
+    "hero_stat_reports": "Reports Issued",
+    "hero_stat_appraisers": "Certified Appraisers",
+    "hero_stat_legal": "Legal Compliance",
+    "hero_compliance_note": "Valuation procedures strictly adhere to Vietnam Valuation Standards issued under",
+    "trust_badge": "CAPACITY & OPERATIONAL STANDARDS",
+    "trust_title": "Legal Value & Independent Valuation Prestige",
+    "trust_sub": "Each certificate issued by MHD combines Ministry of Finance certified appraisers, rigorous legal standards, and independent audit processes.",
+    "pillar_1_badge": "STANDARD 01",
+    "pillar_1_title": "Solid Legal Foundation Licensed by Ministry of Finance",
+    "pillar_1_desc": "Valuation enterprise fully qualified to practice under the Price Law 2023. The list of appraisers is publicly announced by the Ministry of Finance on the national portal, ensuring highest legal validity before Courts, Banks, and Tax Authorities.",
+    "pillar_1_std1": "Standard 01",
+    "pillar_1_std1_sub": "Professional Ethics",
+    "pillar_1_std2": "Standard 02",
+    "pillar_1_std2_sub": "Asset Inspection",
+    "pillar_1_std3": "Standard 03",
+    "pillar_1_std3_sub": "Standardized Certificate",
+    "pillar_view_legal": "View legal documents →",
+    "pillar_2_badge": "STANDARD 02",
+    "pillar_2_title": "Senior Ministry-Certified Valuation Specialists",
+    "pillar_2_desc": "100% of key specialists hold valuation cards issued by the Ministry of Finance, with 10 - 25 years of experience completing thousands of complex appraisals for financial institutions.",
+    "pillar_2_point1": "Member of Vietnam Valuation Association (VVA)",
+    "pillar_2_point2": "Field experience across all 63 provinces",
+    "pillar_2_point3": "Legally accountable before the State",
+    "pillar_2_stat1_val": "60+",
+    "pillar_2_stat1_label": "Appraisers & Specialists",
+    "pillar_2_stat2_val": "15+",
+    "pillar_2_stat2_label": "Average Years Experience",
+    "pillar_2_footer_note": "100% independently certified",
+    "pillar_view_team": "View our team →",
+    "pillar_3_badge": "STANDARD 03",
+    "pillar_3_title": "Nationwide Survey Network Across 63 Provinces",
+    "pillar_3_desc": "With 13 branches and permanent on-site surveyors across North, Central, and South regions, MHD fulfills field survey requirements within 24–48 hours upon receipt of required legal documents.",
+    "pillar_3_stat1_val": "13",
+    "pillar_3_stat1_label": "Branches Nationwide",
+    "pillar_3_stat2_val": "24h",
+    "pillar_3_stat2_label": "Survey & Response",
+    "pillar_3_footer_note": "North – Central – South",
+    "pillar_view_branches": "Branch Directory →",
+    "pillar_4_badge": "STANDARD 04",
+    "pillar_4_title": "Certificate Verification & Independent Quality Control",
+    "pillar_4_desc": "Applying a 3-tier independent quality control workflow combined with unique QR identifier technology on each certificate, enabling banking partners and investors to verify authenticity instantly against forgery risks.",
+    "pillar_4_point1_tag": "Control",
+    "pillar_4_point1_title": "3-Tier Process",
+    "pillar_4_point1_sub": "Survey - Appraisal - Approval",
+    "pillar_4_point2_tag": "Security",
+    "pillar_4_point2_title": "Unique QR Code",
+    "pillar_4_point2_sub": "Online Certificate Verification",
+    "pillar_4_point3_tag": "Insurance",
+    "pillar_4_point3_title": "Professional Liability",
+    "pillar_4_point3_sub": "Protecting Partner Interests",
+    "pillar_4_footer_note": "Multi-tier security",
+    "pillar_view_legal_search": "Search Corporate Legals →",
+    "services_terminal_badge": "PRACTICE AREAS",
+    "services_terminal_title": "In-Depth Valuation Services",
+    "services_terminal_sub": "Each asset class applies independent mathematical models and methodologies, conducted by seasoned appraisers with hands-on expertise.",
+    "terminal_prefix": "Asset Class",
+    "terminal_standards_tag": "Vietnam Valuation Standards (VVS)",
+    "terminal_standard_applied": "Applied Valuation Framework",
+    "terminal_method_label": "Methodology:",
+    "terminal_turnaround_label": "Turnaround Time:",
+    "terminal_audience_label": "Target Stakeholders:",
+    "terminal_detail_btn": "View Service Details",
+    "terminal_submit_btn": "Submit Valuation Dossier",
+    "terminal_prev": "Previous category",
+    "terminal_next": "Next category",
+    "terminal_method": "Core Methodology",
+    "terminal_turnaround": "Turnaround Time",
+    "terminal_audience": "Intended Purpose",
+    "terminal_cta": "Request Valuation for this Asset",
+    "terminal_detail": "View service details",
+    "terminal_services": {
+      "real_estate": {
+        "title": "Real Estate",
+        "desc": "Valuation of land use rights, townhouses, urban developments, commercial complexes, and industrial parks.",
+        "method": "Sales Comparison & Residual Approach",
+        "turnaround": "2 - 3 business days",
+        "audience": "Developers, Mortgage Banks, Courts"
+      },
+      "movables": {
+        "title": "Machinery & Equipment",
+        "desc": "Valuation of machinery, automated production lines, specialized maritime and roadway transport vehicles.",
+        "method": "Replacement Cost & Physical Depreciation",
+        "turnaround": "2 - 4 business days",
+        "audience": "Factories, Logistics Providers, Insurers"
+      },
+      "project": {
+        "title": "Investment Projects",
+        "desc": "Valuation of real estate ventures, industrial parks, renewable energy, and infrastructure for credit limits.",
+        "method": "Discounted Cash Flow (DCF) & Capitalization",
+        "turnaround": "5 - 7 business days",
+        "audience": "Investment Funds, PMUs, Financial Institutions"
+      },
+      "business": {
+        "title": "Enterprise & M&A",
+        "desc": "Determining fair business value for M&A, equitization, capital restructuring, and private equity fundraising.",
+        "method": "Net Asset Value & EBITDA Multiples",
+        "turnaround": "5 - 10 business days",
+        "audience": "Founding Shareholders, M&A Buyers, Auditors"
+      },
+      "goodwill": {
+        "title": "Commercial Goodwill & IP",
+        "desc": "Valuation of intangible assets: brand trademarks, invention patents, tech software, and proprietary rights.",
+        "method": "Relief-from-Royalty Method",
+        "turnaround": "3 - 5 business days",
+        "audience": "Tech Firms, Startups, IP Conglomerates"
+      },
+      "immigration": {
+        "title": "Immigration Asset Portfolio",
+        "desc": "International standard asset valuation for financial capacity verification: US EB-5, Canada, Australia.",
+        "method": "International Valuation Standards (IVS)",
+        "turnaround": "2 - 4 business days",
+        "audience": "Immigration Applicants, Lawyers, Consulates"
+      }
+    },
+    "featured_projects_badge": "CAPABILITY PORTFOLIO",
+    "featured_projects_title": "Featured Valuation Projects",
+    "featured_projects_desc": "MHD directly undertakes independent valuation assignments for major conglomerates, complex real estate, and vital industrial facilities nationwide.",
+    "featured_projects_all": "All Projects",
+    "network_badge": "NATIONWIDE NETWORK",
+    "network_title": "Present across 63 provinces with deep local market insights",
+    "network_desc": "13 branches and permanent on-site surveyors across North, Central, and South regions ensure prompt field surveys backed by real-time transaction data.",
+    "network_branches": "Branches",
+    "network_response": "Response",
+    "network_provinces": "Provinces",
+    "b2b_header_badge": "FOR FINANCIAL PARTNERS",
+    "b2b_header_title": "Utilities for Banks & Risk Governance",
+    "b2b_header_desc": "Digitalized workflows empower credit risk committees and collateral management teams to reconcile valuation certificates securely and accurately.",
+    "b2b_portal_btn": "Partner Dossier Portal",
+    "b2b_badge": "FOR FINANCIAL PARTNERS",
+    "b2b_title": "Utilities for Banks & Risk Governance",
+    "b2b_sub": "Digitalized workflows empower credit risk committees and collateral management teams to reconcile valuation certificates securely and accurately.",
+    "b2b_card1_tag": "INSTITUTIONAL PORTFOLIO",
+    "b2b_card1_title": "Capability & Legal Dossier",
+    "b2b_card1_desc": "Comprehensive company legal filings, appraiser operating licenses, and asset valuation track records for credit institutions.",
+    "b2b_card1_link": "View organizational dossier",
+    "b2b_card2_tag": "SECURITY & ANTI-FRAUD",
+    "b2b_card2_title": "Corporate Legal Documents",
+    "b2b_card2_desc": "Transparent operating licenses and qualifications from the Ministry of Finance paired with professional risk controls.",
+    "b2b_card2_link": "View legal documents",
+    "b2b_card3_tag": "DOSSIER TRACKING",
+    "b2b_card3_title": "Track Valuation Progress",
+    "b2b_card3_desc": "Direct communication channel tracking each milestone: intake, on-site inspection, draft review, and official certificate release.",
+    "b2b_card3_link": "Contact account officer",
+    "news_badge": "VALUATION NEWS & REGULATORY UPDATES",
+    "news_header_title": "Latest Market Insights & Valuation Regulatory Policies",
+    "news_header_desc": "Continuous updates on Ministry of Finance directives, new Price Law circulars, and in-depth market evaluations from MHD specialists.",
+    "news_all_btn": "All Articles",
+    "partners_section_badge": "PARTNER NETWORK",
+    "partners_section_title": "Trusted by Leading Financial Institutions & Conglomerates",
+    "partners_section_desc": "MHD valuation certificates are recognized and trusted by commercial banks, economic groups, and state authorities.",
+    "partners_badge": "PARTNER NETWORK",
+    "partners_sub": "MHD valuation certificates are recognized and trusted by commercial banks, economic groups, and state authorities.",
+    "bottom_cta_badge": "INDEPENDENT VALUATION & CONSULTING",
+    "bottom_cta_title": "Initiate Your Asset Valuation Dossier<br class=\"hidden sm:inline\"> With MHD Today",
+    "bottom_cta_sub": "Our certified appraisers are ready to receive inquiries, perform on-site inspections swiftly, and issue compliant valuation reports for your financial objectives.",
+    "bottom_cta_quote": "Request Valuation Fee Quote",
+    "bottom_cta_submit": "Submit Valuation Request",
+    "bottom_cta_hotline": "Hotline: (028) 3515 3516",
+    "bottom_cta_profile": "Partner Capability Profile",
+    "bottom_cta_feature_1": "Strict data confidentiality",
+    "bottom_cta_feature_2": "Preliminary response within 24 hours",
+    "bottom_cta_feature_3": "Compliant with Price Law 2023"
   },
   "about": {
     "title": "About Us",
@@ -89,7 +260,24 @@
     "cta_title": "Do you need consulting on Valuation Services?",
     "cta_button": "Contact MHD Now",
     "meta_title": "About Us - MHD Valuation",
-    "meta_desc": "Learn about MHD Valuation, our experienced team of experts and our mission to bring real value to customers in the field of valuation."
+    "meta_desc": "Learn about MHD Valuation, our experienced team of experts and our mission to bring real value to customers in the field of valuation.",
+    "hero_badge": "CORPORATE CAPABILITY PROFILE",
+    "hero_heading_1": "Creating Value With",
+    "hero_heading_2": "Transparency & High Standards",
+    "hero_sub": "Leading independent, reliable valuation partner for credit institutions, financial conglomerates, and the business community in Vietnam.",
+    "story_badge": "BRAND STORY",
+    "trust_appraisers": "Ministry of Finance Certified Appraisers",
+    "trust_response": "Survey & Preliminary Feedback",
+    "trust_standards": "International Valuation Standards",
+    "team_photo_title": "Appraisal Team",
+    "team_photo_sub": "Extensive experience, utmost professional integrity",
+    "strategy_badge": "STRATEGIC DIRECTION",
+    "strategy_title": "Vision, Mission & Core Values",
+    "strategy_sub": "The guiding compass for all consulting and certificate issuance activities at MHD",
+    "leadership_badge": "EXECUTIVE LEADERSHIP TEAM",
+    "leadership_sub": "Board of Directors and senior valuation specialists leading professional standards at MHD",
+    "cta_badge": "CONNECT WITH MHD EXPERTS",
+    "cta_sub": "Our valuation team is ready to conduct field surveys and provide optimal advisory for your assets within 24 hours."
   },
   "process": {
     "title": "Valuation Process",
@@ -157,6 +345,13 @@
   "team": {
     "title": "Our Team",
     "subtitle": "MHD Valuation's experienced, dynamic and dedicated team of experts, always accompanying our customers' success.",
+    "executive_title": "Executive Leadership & Board",
+    "executive_subtitle": "Strategic directors and senior signatories of valuation certificates",
+    "executive_tag": "Leadership",
+    "executive_board_tag": "Executive Board",
+    "senior_title": "Senior Appraisers & Valuation Specialists",
+    "senior_subtitle": "Ministry of Finance certified appraisers and field survey experts",
+    "appraiser_tag": "Appraiser",
     "experience_label": "Experience: ",
     "cta_title": "Become an MHD Member?",
     "cta_desc": "We always welcome new talents to join our team.",
@@ -293,6 +488,7 @@
   },
   "careers": {
     "title": "Careers",
+    "subtitle": "Join our team of professional appraisers and asset valuation specialists at MHD Valuation.",
     "nav_submit": "Submission Info",
     "nav_opportunities": "Career Opportunities",
     "meta_title": "Careers - MHD Valuation",
@@ -346,6 +542,7 @@
     "meta_desc": "Contact MHD Valuation immediately via Hotline or Email for valuation service consultation. Our nationwide branch system is always ready to serve.",
     "company_name": "MHD VALUATION COMPANY LIMITED",
     "headquarters": "Headquarters",
+    "headquarters_map_title": "HEADQUARTERS (HCMC)",
     "address": "52 Tran Binh Trong, Binh Loi Trung ward, Ho Chi Minh City",
     "hotline": "Hotline",
     "email": "Email",
@@ -368,20 +565,102 @@
       "validation": "Please fill in all required fields."
     },
     "branches": [
-      { "name": "HANOI BRANCH", "address": "No. 34, Alley 8 Hoa Lu, Hai Ba Trung Ward, Hanoi City", "phone": "0989 294 636 - Ms. Ha", "email": "hanoi.cn@mhd.com.vn" },
-      { "name": "NGHE AN BRANCH", "address": "No. 187 Pham Dinh Toai, Vinh Phu ward, Nghe An province", "phone": "0236 655 8555 - Mr. Dung", "email": "nghean.cn@mhd.com.vn" },
-      { "name": "DA NANG BRANCH", "address": "373 Trung Nu Vuong, Hai Chau ward, Da Nang city", "phone": "0909 63 0504 - Mr. Anh", "email": "danang.cn@mhd.com.vn" },
-      { "name": "BINH DINH BRANCH", "address": "Lot N1LK20, extended Thanh Thai street, Quy Nhon Nam ward, Gia Lai province", "phone": "0902 315 934 - Mr. Quynh", "email": "binhdinh.cn@mhd.com.vn" },
-      { "name": "KHANH HOA BRANCH", "address": "No. 22 Cao Ba Quat, Nha Trang ward, Khanh Hoa province", "phone": "0888 91 6969 - Mr Nhat", "email": "cnkhanhhoa@mhd.com.vn" },
-      { "name": "DAK LAK BRANCH", "address": "213 Nguyen Cong Tru, Buon Ma Thuot ward, Dak Lak province", "phone": "038 447 2212 - Mr. Hai", "email": "daklak.cn@mhd.com.vn" },
-      { "name": "BINH PHUOC BRANCH", "address": "No. 1291 Phu Rieng Do, Binh Phuoc ward, Dong Nai province", "phone": "0914 412 233 - Mr. Ly", "email": "binhphuoc.cn@mhd.com.vn" },
-      { "name": "BA RIA - VUNG TAU BRANCH", "address": "No. 03 Hoang Viet, Long Huong ward, Ho Chi Minh City", "phone": "0909 630 504 - Mr. Anh", "email": "bariavungtau.cn@mhd.com.vn" },
-      { "name": "DONG NAI REP. OFFICE", "address": "117/3, quarter 3, Trang Dai ward, Dong Nai province", "phone": "0906 606 739 - Mr Nam", "email": "dongnai.cn@mhd.com.vn" },
-      { "name": "TRA VINH REP. OFFICE", "address": "No. 64A Nguyen Thai Hoc, Ward 2, Tra Vinh city", "phone": "0901 02 03 48 - Mr Vien", "email": "travinh.vpdd@mhd.com.vn" },
-      { "name": "LONG AN REP. OFFICE", "address": "46 Nguyen Thong, Long An ward, Tay Ninh province", "phone": "0989 294 636 - Ms. Ha", "email": "longan.vpdd@mhd.com.vn" },
-      { "name": "AN GIANG REP. OFFICE", "address": "No. 3 Stadium residence, Chau Doc ward, An Giang province", "phone": "0931 037 907 - Ms. Tuyet Nhi", "email": "angiang.vpdd@mhd.com.vn" },
-      { "name": "VINH LONG REP. OFFICE", "address": "No. 221 Tran Dai Nghia, Phuoc Hau ward, Vinh Long province", "phone": "0981 546 469 - Ms. Cam Tu", "email": "vinhlong.vpdd@mhd.com.vn" }
+      {
+        "name": "HANOI BRANCH",
+        "address": "No. 34, Alley 8 Hoa Lu, Hai Ba Trung Ward, Hanoi City",
+        "phone": "0989 294 636 - Ms. Ha",
+        "email": "hanoi.cn@mhd.com.vn"
+      },
+      {
+        "name": "NGHE AN BRANCH",
+        "address": "No. 187 Pham Dinh Toai, Vinh Phu ward, Nghe An province",
+        "phone": "0236 655 8555 - Mr. Dung",
+        "email": "nghean.cn@mhd.com.vn"
+      },
+      {
+        "name": "DA NANG BRANCH",
+        "address": "373 Trung Nu Vuong, Hai Chau ward, Da Nang city",
+        "phone": "0909 63 0504 - Mr. Anh",
+        "email": "danang.cn@mhd.com.vn"
+      },
+      {
+        "name": "BINH DINH BRANCH",
+        "address": "Lot N1LK20, extended Thanh Thai street, Quy Nhon Nam ward, Gia Lai province",
+        "phone": "0902 315 934 - Mr. Quynh",
+        "email": "binhdinh.cn@mhd.com.vn"
+      },
+      {
+        "name": "KHANH HOA BRANCH",
+        "address": "No. 22 Cao Ba Quat, Nha Trang ward, Khanh Hoa province",
+        "phone": "0888 91 6969 - Mr Nhat",
+        "email": "cnkhanhhoa@mhd.com.vn"
+      },
+      {
+        "name": "DAK LAK BRANCH",
+        "address": "213 Nguyen Cong Tru, Buon Ma Thuot ward, Dak Lak province",
+        "phone": "038 447 2212 - Mr. Hai",
+        "email": "daklak.cn@mhd.com.vn"
+      },
+      {
+        "name": "BINH PHUOC BRANCH",
+        "address": "No. 1291 Phu Rieng Do, Binh Phuoc ward, Dong Nai province",
+        "phone": "0914 412 233 - Mr. Ly",
+        "email": "binhphuoc.cn@mhd.com.vn"
+      },
+      {
+        "name": "BA RIA - VUNG TAU BRANCH",
+        "address": "No. 03 Hoang Viet, Long Huong ward, Ho Chi Minh City",
+        "phone": "0909 630 504 - Mr. Anh",
+        "email": "bariavungtau.cn@mhd.com.vn"
+      },
+      {
+        "name": "DONG NAI REP. OFFICE",
+        "address": "117/3, quarter 3, Trang Dai ward, Dong Nai province",
+        "phone": "0906 606 739 - Mr Nam",
+        "email": "dongnai.cn@mhd.com.vn"
+      },
+      {
+        "name": "TRA VINH REP. OFFICE",
+        "address": "No. 64A Nguyen Thai Hoc, Ward 2, Tra Vinh city",
+        "phone": "0901 02 03 48 - Mr Vien",
+        "email": "travinh.vpdd@mhd.com.vn"
+      },
+      {
+        "name": "LONG AN REP. OFFICE",
+        "address": "46 Nguyen Thong, Long An ward, Tay Ninh province",
+        "phone": "0989 294 636 - Ms. Ha",
+        "email": "longan.vpdd@mhd.com.vn"
+      },
+      {
+        "name": "AN GIANG REP. OFFICE",
+        "address": "No. 3 Stadium residence, Chau Doc ward, An Giang province",
+        "phone": "0931 037 907 - Ms. Tuyet Nhi",
+        "email": "angiang.vpdd@mhd.com.vn"
+      },
+      {
+        "name": "VINH LONG REP. OFFICE",
+        "address": "No. 221 Tran Dai Nghia, Phuoc Hau ward, Vinh Long province",
+        "phone": "0981 546 469 - Ms. Cam Tu",
+        "email": "vinhlong.vpdd@mhd.com.vn"
+      }
     ]
+  },
+  "legal": {
+    "title": "Legal Documents",
+    "subtitle": "MHD Valuation operates under a transparent legal framework, fully licensed by the Ministry of Finance and state regulatory authorities.",
+    "doc1_title": "Enterprise Registration Certificate",
+    "doc1_desc": "Business Registration Certificate of MHD Valuation Co., Ltd. issued by HCMC Department of Planning and Investment, Enterprise Code: 0312231570.",
+    "doc2_title": "Certificate of Eligibility for Valuation Services",
+    "doc2_desc": "Issued by the Ministry of Finance, License No. 056/TDG, certifying MHD meets all statutory conditions for valuation service operations.",
+    "meta_title": "Legal Documents - MHD Valuation",
+    "meta_desc": "Transparent and complete legal credentials and government licenses of MHD Valuation Company Limited."
+  },
+  "profile": {
+    "title": "Capability Profile",
+    "subtitle": "Discover details about the capabilities, operational expertise, and legal standing of MHD Valuation.",
+    "download_pdf": "Download PDF File",
+    "meta_title": "Capability Profile - MHD Valuation",
+    "meta_desc": "View and download the corporate capability profile of MHD Valuation - Leading independent valuation firm in Vietnam."
   },
   "popup": {
     "title": "Need Valuation Consulting?",
@@ -392,5 +671,8 @@
   },
   "news": {
     "related": "Related Articles"
+  },
+  "header": {
+    "experience_tag": "Over 15 years of comprehensive valuation experience"
   }
 }

@@ -2,7 +2,7 @@
   <NuxtLink 
     :to="localePath(`/du-an/${project.slug}`)" 
     data-aos="fade-up" 
-    class="group flex flex-col h-full bg-surface rounded-3xl overflow-hidden transition-all duration-500 shadow-corporate hover:shadow-2xl hover:-translate-y-1.5 relative border border-black/5 dark:border-white/5"
+    class="group flex flex-col h-full glass-card rounded-3xl overflow-hidden transition-all duration-500 hover:-translate-y-1.5 relative border border-white/60 dark:border-white/10"
   >
     <!-- Top Image Container -->
     <div class="relative aspect-[16/10] overflow-hidden bg-surface-muted">
@@ -42,7 +42,7 @@
     </div>
     
     <!-- Content Body -->
-    <div class="p-5 flex flex-col flex-grow bg-surface">
+    <div class="p-5 flex flex-col flex-grow bg-transparent">
       <!-- Title (Locked min-h for 2 lines) -->
       <h3 
         class="text-base font-bold text-text mb-2.5 line-clamp-2 min-h-[2.75rem] group-hover:text-primary transition-colors leading-snug tracking-tight" 
@@ -73,8 +73,8 @@
         v-html="displayExcerpt"
       ></p>
       
-      <!-- Card Footer (Borderless) -->
-      <div class="pt-3 flex items-center justify-between text-xs font-bold mt-auto bg-surface border-t border-black/5 dark:border-white/5">
+      <!-- Card Footer -->
+      <div class="pt-3 flex items-center justify-between text-xs font-bold mt-auto border-t border-black/5 dark:border-white/10">
         <span class="text-[11px] text-text-muted uppercase tracking-wider font-semibold">Hồ sơ năng lực</span>
         <span class="text-primary group-hover:translate-x-1 transition-transform flex items-center gap-1 font-semibold">
           Xem chi tiết

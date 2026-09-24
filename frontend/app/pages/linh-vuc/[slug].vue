@@ -19,9 +19,9 @@
 
         <div class="container mx-auto px-4 max-w-7xl relative z-10" data-aos="fade-up">
           <nav class="text-xs text-text-muted mb-4 flex items-center gap-2">
-            <NuxtLink :to="localePath('/')" class="hover:text-primary transition-colors">Trang chủ</NuxtLink>
+            <NuxtLink :to="localePath('/')" class="hover:text-primary transition-colors">{{ $t('nav.home') }}</NuxtLink>
             <span>/</span>
-            <NuxtLink :to="localePath('/linh-vuc')" class="hover:text-primary transition-colors">Lĩnh vực</NuxtLink>
+            <NuxtLink :to="localePath('/linh-vuc')" class="hover:text-primary transition-colors">{{ $t('nav.services') || 'Lĩnh vực' }}</NuxtLink>
             <span>/</span>
             <span class="text-primary font-medium truncate max-w-[250px]" v-html="service.title"></span>
           </nav>
@@ -207,11 +207,12 @@
 import { useRoute } from 'vue-router'
 import { computed, watchEffect } from 'vue'
 import { services } from '~/data/services.js'
-import { useLocalePath } from '#imports'
+import { useLocalePath, useI18n } from '#imports'
 import { cleanLegacyHtml } from '~/utils/htmlSanitizer'
 
 const route = useRoute()
 const localePath = useLocalePath()
+const { t } = useI18n()
 const currentSlug = computed(() => route.params.slug)
 const service = computed(() => services[currentSlug.value] || null)
 
@@ -260,9 +261,9 @@ watchEffect(() => {
         {
           type: 'application/ld+json',
           children: JSON.stringify(getBreadcrumbSchema([
-            { name: 'Trang chủ', url: '/' },
-            { name: 'Lĩnh vực thẩm định', url: '/linh-vuc' },
-            { name: cleanTitle, url: `/linh-vuc/${currentSlug.value}` }
+            { name: t('nav.home') || 'Trang chủ', url: localePath('/') },
+            { name: t('nav.services') || 'Lĩnh vực', url: localePath('/linh-vuc') },
+            { name: cleanTitle, url: localePath(`/linh-vuc/${currentSlug.value}`) }
           ]))
         }
       ]

@@ -4,11 +4,11 @@
     <header class="pt-32 pb-16 bg-bg notranslate">
       <div class="container mx-auto px-4 max-w-6xl">
         <nav class="text-xs text-text-muted mb-4 flex items-center gap-2">
-          <NuxtLink to="/" class="hover:text-primary transition-colors">Trang chủ</NuxtLink>
+          <NuxtLink :to="localePath('/')" class="hover:text-primary transition-colors">{{ $t('nav.home') }}</NuxtLink>
           <span>/</span>
-          <NuxtLink to="/tuyen-dung" class="hover:text-primary transition-colors">Tuyển dụng</NuxtLink>
+          <NuxtLink :to="localePath('/tuyen-dung')" class="hover:text-primary transition-colors">{{ $t('nav.careers') }}</NuxtLink>
           <span>/</span>
-          <span class="text-primary font-medium">Cơ hội nghề nghiệp</span>
+          <span class="text-primary font-medium">{{ $t('careers.nav_opportunities') }}</span>
         </nav>
 
         <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-8">
@@ -17,23 +17,23 @@
               Gia Nhập Đội Ngũ Thẩm Định MHD
             </span>
             <h1 class="text-3xl md:text-5xl font-display font-bold text-text leading-tight uppercase">
-              Cơ Hội Nghề Nghiệp
+              {{ $t('careers.nav_opportunities') }}
             </h1>
             <p class="text-text-secondary mt-3 text-sm md:text-base leading-relaxed">
-              Phát triển sự nghiệp cùng MHD Valuation — Môi trường thẩm định giá chuyên nghiệp, minh bạch với lộ trình thăng tiến rõ ràng và cơ hội tiếp cận các dự án tài chính quy mô lớn.
+              {{ $t('careers.meta_desc') }}
             </p>
           </div>
 
           <!-- Quick Navigation Pill Toggle -->
           <div class="flex items-center gap-2.5 p-1.5 bg-surface rounded-full shadow-corporate shrink-0 self-start lg:self-auto border border-black/5 dark:border-white/5">
             <NuxtLink 
-              to="/tuyen-dung" 
+              :to="localePath('/tuyen-dung')" 
               class="px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider text-text-secondary hover:text-primary transition-all"
             >
               Văn Hóa &amp; Quyền Lợi
             </NuxtLink>
             <NuxtLink 
-              to="/co-hoi-nghe-nghiep" 
+              :to="localePath('/co-hoi-nghe-nghiep')" 
               class="px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider bg-primary text-white shadow-md transition-all"
             >
               Vị Trí Đang Mở ({{ postsData?.length || 3 }})
@@ -200,7 +200,7 @@
               <!-- Action Right -->
               <div class="flex sm:flex-row md:flex-col items-stretch sm:items-center md:items-end gap-3 shrink-0 pt-4 md:pt-0">
                 <NuxtLink 
-                  :to="`/co-hoi-nghe-nghiep/${job.slug}`" 
+                  :to="localePath(`/co-hoi-nghe-nghiep/${job.slug}`)" 
                   class="w-full sm:w-auto px-6 py-3.5 rounded-2xl bg-primary text-white font-bold text-xs uppercase tracking-wider shadow-md hover:bg-primary-hover transition-all text-center inline-flex items-center justify-center gap-2 group-hover:scale-105"
                 >
                   Xem Mô Tả &amp; Ứng Tuyển
@@ -236,7 +236,7 @@
               Xem Tất Cả Vị Trí
             </button>
             <NuxtLink 
-              to="/tuyen-dung" 
+              :to="localePath('/tuyen-dung')" 
               class="px-5 py-2.5 rounded-full bg-bg text-text text-xs font-bold uppercase tracking-wider hover:text-primary transition-colors"
             >
               Gửi Hồ Sơ Dự Tuyển
@@ -260,7 +260,7 @@
             </p>
           </div>
           <NuxtLink 
-            to="/tuyen-dung" 
+            :to="localePath('/tuyen-dung')" 
             class="px-8 py-3.5 rounded-2xl bg-bg text-text hover:text-primary font-bold text-xs uppercase tracking-wider shadow-corporate hover:shadow-corporate-hover transition-all shrink-0 inline-flex items-center gap-2"
           >
             <span>Gửi Hồ Sơ Dự Tuyển</span>
@@ -276,6 +276,9 @@
 
 <script setup>
 import { reactive, computed } from 'vue'
+import { useLocalePath } from '#imports'
+
+const localePath = useLocalePath()
 
 const { fetchPosts } = usePayload()
 

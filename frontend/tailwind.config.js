@@ -22,6 +22,9 @@ export default {
         },
         hero: 'rgb(var(--color-hero) / <alpha-value>)',
         accent: {
+          DEFAULT: '#F59E0B',
+          light: '#FDE68A',
+          hover: '#D97706',
           soft: '#FFF0E8'
         },
         surface: 'rgb(var(--color-surface) / <alpha-value>)',
@@ -49,6 +52,9 @@ export default {
         'corporate-lg': '0 20px 40px -12px rgba(0, 0, 0, 0.09)',
         'corporate-dark': '0 8px 24px -4px rgba(0, 0, 0, 0.35)',
         'corporate-glow': '0 8px 25px -4px rgba(236, 74, 0, 0.35)',
+        'glass': '0 8px 32px 0 rgba(15, 23, 42, 0.04), inset 0 1px 1px 0 rgba(255, 255, 255, 0.8)',
+        'glass-hover': '0 20px 40px -8px rgba(15, 23, 42, 0.08), inset 0 1px 1px 0 rgba(255, 255, 255, 1)',
+        'glass-dark': '0 8px 32px 0 rgba(0, 0, 0, 0.35), inset 0 1px 1px 0 rgba(255, 255, 255, 0.1)',
       },
       borderRadius: {
         'corporate': '20px',
